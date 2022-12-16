@@ -5,6 +5,6 @@ const theme = JSON.parse(
   fs.readFileSync("../lib/themes/GitHubLight.json", "utf8")
 );
 
-highlight("hello *w*", "md", theme).then((tokens) => {
+highlight("const x", "js", theme).then((tokens) => {
   console.log(JSON.stringify(tokens));
 });
