@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "lib",
+      "test",
+      "web"
+    ]
+  },
+  "repository": "code-hike/lighter",
+  "author": "pomber <pombopombopombo@gmail.com>"
+}
