@@ -7,6 +7,11 @@ export const config = {
 
 // api/grammars?lang=js
 export default async (req) => {
+  if (req.method === "OPTIONS") {
+    res.status(200).end();
+    return;
+  }
+
   const url = new URL(req.url);
   const lang = url.searchParams.get("lang");
   const version = url.searchParams.get("v");
@@ -27,6 +32,10 @@ export default async (req) => {
   );
 
   const res = NextResponse.json(grammars);
+
   res.headers.set("Cache-Control", "s-maxage=1, stale-while-revalidate");
+  res.headers.set("Access-Control-Allow-Methods", "GET");
+  res.headers.set("Access-Control-Allow-Origin", "*");
+
   return res;
 };
