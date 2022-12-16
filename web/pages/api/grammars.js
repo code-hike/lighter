@@ -10,7 +10,7 @@ export default async (req) => {
   const url = new URL(req.url);
   const lang = url.searchParams.get("lang");
   const version = url.searchParams.get("v");
-  console.log("fetching grammars", lang, v);
+  console.log("fetching grammars", lang, version);
 
   const languages = getLanguagesToLoad(lang);
 
