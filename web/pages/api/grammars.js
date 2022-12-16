@@ -25,6 +25,7 @@ export default async (req) => {
         `https://unpkg.com/@code-hike/lighter@${version}/grammars/${language.path}`
       );
       const grammar = await r.json();
+
       grammar.names = [language.id, ...(language.aliases || [])];
       grammar.embeddedLangs = language.embeddedLangs || [];
       return grammar;
