@@ -1,4 +1,4 @@
-import { highlight } from "../lib/dist/index.js";
+import { highlight } from "../lib/dist/index.esm.mjs";
 import fs from "fs";
 
 const theme = JSON.parse(
