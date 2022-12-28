@@ -1,6 +1,6 @@
 {
   "name": "@code-hike/lighter",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "license": "MIT",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.mjs",
@@ -12,9 +12,11 @@
     "@babel/core": "^7.19.0",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^14.0.0",
     "@rollup/plugin-replace": "^5.0.1",
     "@rollup/pluginutils": "^5.0.2",
+    "resolve": "^1.22.1",
     "rollup": "^2.79.0",
     "vscode-oniguruma": "^1.0.0",
     "vscode-textmate": "^7.0.0"
