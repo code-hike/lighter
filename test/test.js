@@ -1,10 +1,10 @@
-import { highlight } from "../lib/dist/index.esm.mjs";
+import { highlight } from "@code-hike/lighter";
 import fs from "fs";
 
-const theme = JSON.parse(
-  fs.readFileSync("../lib/themes/GitHubLight.json", "utf8")
-);
+highlight("const x", "js").then((tokens) => {
+  console.log("default", JSON.stringify(tokens));
+});
 
-highlight("const x", "js", theme).then((tokens) => {
-  console.log(JSON.stringify(tokens));
+highlight("const x", "js", "dracula").then((tokens) => {
+  console.log("dracula", JSON.stringify(tokens));
 });
