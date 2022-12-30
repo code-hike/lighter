@@ -1,13 +1,14 @@
 {
   "name": "@code-hike/lighter",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "license": "MIT",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/",
-    "grammars/"
+    "grammars/",
+    "themes/"
   ],
   "devDependencies": {
     "@babel/core": "^7.19.0",
@@ -18,10 +19,12 @@
     "@rollup/plugin-replace": "^5.0.1",
     "@rollup/pluginutils": "^5.0.2",
     "@types/react": "^18.0.26",
-    "resolve": "^1.22.1",
     "rollup": "^2.79.0",
     "vscode-oniguruma": "^1.0.0",
     "vscode-textmate": "^7.0.0"
+  },
+  "overrides": {
+    "is-core-module": "false"
   },
   "scripts": {
     "build": "rollup -c",
