@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@code-hike/lighter": "*",
+    "@code-hike/lighter": "latest",
     "next": "^13.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
