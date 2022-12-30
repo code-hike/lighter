@@ -41,8 +41,7 @@ jobs:
       - name: Push changes
         if: steps.version.outputs.changes == 'true'
         run: |
-          git config user.email "<email>"
-          git config user.name "<name>"
+          git config user.name "GitHub Action"
           git add -A
           git commit -m "New version" || echo "No changes to commit"
           git push
