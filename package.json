@@ -10,7 +10,8 @@
   "scripts": {
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "changeset publish"
+    "build": "yarn workspace @code-hike/lighter build",
+    "release": "yarn build && changeset publish"
   },
   "repository": "code-hike/lighter",
   "author": "pomber",
