@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.1.2
+
+### Patch Changes
+
+- b73d1b7: Test commit
+
 ## 0.1.1
 
 ### Patch Changes
