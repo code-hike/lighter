@@ -31,7 +31,7 @@ jobs:
 
       - name: Release packages
         if: steps.version.outputs.changes == 'true'
-        uses: changesets/action@main
+        uses: changesets/action@v1
         with:
           publish: yarn release
         env:
