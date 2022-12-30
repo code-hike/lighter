@@ -7,6 +7,14 @@
       "web"
     ]
   },
+  "scripts": {
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish"
+  },
   "repository": "code-hike/lighter",
-  "author": "pomber <pombopombopombo@gmail.com>"
+  "author": "pomber",
+  "dependencies": {
+    "@changesets/cli": "^2.26.0"
+  }
 }
