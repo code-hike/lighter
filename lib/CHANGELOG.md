@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.1.3
+
+### Patch Changes
+
+- bca305e: Better parallelism
+
 ## 0.1.2
 
 ### Patch Changes
