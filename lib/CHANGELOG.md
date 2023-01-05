@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.1.4
+
+### Patch Changes
+
+- b2af740: Load grammars once
+
 ## 0.1.3
 
 ### Patch Changes
