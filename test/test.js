@@ -4,6 +4,13 @@ import { highlight } from "@code-hike/lighter";
 //   console.log("default", JSON.stringify(tokens));
 // });
 
-highlight("const x", "js", "dracula").then((tokens) => {
+highlight(
+  `
+~~~js
+const re = /ab+c/;
+~~~`,
+  "vue",
+  "dracula"
+).then((tokens) => {
   console.log("dracula", JSON.stringify(tokens));
 });

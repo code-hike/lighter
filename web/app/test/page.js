@@ -7,7 +7,7 @@ export default function Page() {
         {`# hello
 
 ~~~js
-console.log(1)
+const re = /ab+c/;
 ~~~
 
 ~~~py
