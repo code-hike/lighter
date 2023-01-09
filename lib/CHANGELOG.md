@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.1.5
+
+### Patch Changes
+
+- a112aa0: Improve promise cache
+
 ## 0.1.4
 
 ### Patch Changes
