@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.1.6
+
+### Patch Changes
+
+- 466ba9a: Fix resolve imports
+
 ## 0.1.5
 
 ### Patch Changes
