@@ -213,6 +213,12 @@ export const highlight: (
   foreground: string;
   background: string;
   colorScheme: string;
-  selectionBackground: string;
   lineNumberForeground: string;
+  selectionBackground: string;
+  editorBackground: string;
+  editorGroupHeaderBackground: string;
+  activeTabBackground: string;
+  activeTabForeground: string;
+  tabBorder: string;
+  activeTabBorder: string;
 }>;
