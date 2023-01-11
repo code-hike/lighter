@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.1.8
+
+### Patch Changes
+
+- 7d501df: Remove theme from bundle
+
 ## 0.1.7
 
 ### Patch Changes
