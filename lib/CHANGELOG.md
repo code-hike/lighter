@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.1.7
+
+### Patch Changes
+
+- d3208da: Add tabs colors
+
 ## 0.1.6
 
 ### Patch Changes

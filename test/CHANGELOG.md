@@ -1,5 +1,12 @@
 # lighter-test
 
+## 0.1.7
+
+### Patch Changes
+
+- Updated dependencies [d3208da]
+  - @code-hike/lighter@0.1.7
+
 ## 0.1.6
 
 ### Patch Changes
