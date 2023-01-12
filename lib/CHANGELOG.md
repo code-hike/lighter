@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.1.9
+
+### Patch Changes
+
+- 65e9b5d: Better error handling
+
 ## 0.1.8
 
 ### Patch Changes
