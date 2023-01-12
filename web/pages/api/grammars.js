@@ -2,14 +2,13 @@ import { NextResponse } from "next/server";
 import { getLanguagesToLoad } from "../../../lib/src/grammars";
 
 export const config = {
-  runtime: "experimental-edge",
+  runtime: "edge",
 };
 
-// api/grammars?lang=js
+// api/grammars?lang=js&v=0.1.8
 export default async (req) => {
   if (req.method === "OPTIONS") {
-    res.status(200).end();
-    return;
+    return new Response(null, { status: 200 });
   }
 
   const url = new URL(req.url);
@@ -17,13 +16,35 @@ export default async (req) => {
   const version = url.searchParams.get("v");
   console.log("fetching grammars", lang, version);
 
-  const languages = getLanguagesToLoad(lang);
+  try {
+    const grammars = await getGrammars(lang, version);
+    const res = NextResponse.json(grammars);
 
+    res.headers.set("Cache-Control", "s-maxage=1, stale-while-revalidate");
+    res.headers.set("Access-Control-Allow-Methods", "GET");
+    res.headers.set("Access-Control-Allow-Origin", "*");
+
+    return res;
+  } catch (e) {
+    console.log("error fetching grammars", e);
+    return new Response(e.message, { status: 500 });
+  }
+};
+
+async function getGrammars(lang, version) {
+  const languages = getLanguagesToLoad(lang);
   const grammars = await Promise.all(
     languages.map(async (language) => {
       const r = await fetch(
         `https://unpkg.com/@code-hike/lighter@${version}/grammars/${language.path}`
       );
+
+      if (!r.ok) {
+        throw new Error(
+          `https://unpkg.com/@code-hike/lighter@${version}/grammars/${language.path} ${r.status} ${r.statusText}`
+        );
+      }
+
       const grammar = await r.json();
 
       grammar.names = [language.id, ...(language.aliases || [])];
@@ -31,12 +52,5 @@ export default async (req) => {
       return grammar;
     })
   );
-
-  const res = NextResponse.json(grammars);
-
-  res.headers.set("Cache-Control", "s-maxage=1, stale-while-revalidate");
-  res.headers.set("Access-Control-Allow-Methods", "GET");
-  res.headers.set("Access-Control-Allow-Origin", "*");
-
-  return res;
-};
+  return grammars;
+}

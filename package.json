@@ -8,6 +8,7 @@
     ]
   },
   "scripts": {
+    "dev": "yarn workspace @code-hike/lighter watch & yarn workspace lighter-web dev",
     "changeset": "changeset",
     "version": "changeset version",
     "build": "yarn workspace @code-hike/lighter build",
