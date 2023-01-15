@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.2.0
+
+### Minor Changes
+
+- 3ae2337: Remove logs
+
 ## 0.1.9
 
 ### Patch Changes
