@@ -204,6 +204,10 @@ export type Token = { style: React.CSSProperties; content: string };
 
 export type Theme = StringTheme | Object;
 
+export class UnknownLanguageError extends Error {
+  alias: string;
+}
+
 export const highlight: (
   code: string,
   lang: Lang,
