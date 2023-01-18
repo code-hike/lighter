@@ -1,6 +1,6 @@
 import resolveSync from "./resolve";
 
-export async function readJSON(folder, filename) {
+export async function readJSON(folder: string, filename: string) {
   const fs = await import("fs").then((m) => m.promises);
   const path = await import("path");
   const { URL } = await import("url");

@@ -1,5 +1,7 @@
 // import { MetadataConsts, FontStyle } from "vscode-textmate";
 
+import { IGrammar, StackElement } from "vscode-textmate";
+
 // MetadataConsts
 const FONT_STYLE_MASK = 0b00000000000000000111100000000000;
 const FOREGROUND_MASK = 0b00000000111111111000000000000000;
@@ -17,12 +19,24 @@ const FontStyle = {
   Strikethrough: 8,
 };
 
-export function tokenize(code, grammar, colors) {
-  let stack = null;
+type Line = Token[];
+
+type Token = {
+  content: string;
+  style: {
+    color: string;
+    fontStyle?: "italic";
+    fontWeight?: "bold";
+    textDecoration?: "underline" | "line-through";
+  };
+};
+
+export function tokenize(code: string, grammar: IGrammar, colors: string[]) {
+  let stack: StackElement | null = null;
   const lines = code.split(/\r?\n|\r/g);
   return lines.map((line) => {
     const { tokens, ruleStack } = grammar.tokenizeLine2(line, stack);
-    const newTokens = [];
+    const newTokens: Line = [];
     let tokenEnd = line.length;
     for (let i = tokens.length - 2; i >= 0; i = i - 2) {
       const tokenStart = tokens[i];
@@ -38,14 +52,13 @@ export function tokenize(code, grammar, colors) {
   });
 }
 
-function getStyle(metadata, colors) {
+function getStyle(metadata: number, colors: string[]): Token["style"] {
   const fg = (metadata & FOREGROUND_MASK) >>> FOREGROUND_OFFSET;
   // const bg = (metadata & BACKGROUND_MASK) >>> BACKGROUND_OFFSET;
   const style = {
     color: colors[fg],
     // backgroundColor: colors[bg],
   };
-
   const fs = (metadata & FONT_STYLE_MASK) >>> FONT_STYLE_OFFSET;
   if (fs & FontStyle.Italic) {
     style["fontStyle"] = "italic";

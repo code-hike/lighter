@@ -1,26 +1,29 @@
+// this will be replaced at build time with the version from package json
+const LIGHTER_VERSION = "__LIGHTER_VERSION__";
+
 // endpoints:
-// grammars?lang=${alias}
+// grammars?lang=${langId}
 // theme?name=${name}
-export async function fetchJSON(endpoint) {
+export async function fetchJSON(endpoint: string) {
   if (typeof fetch === "function") {
     // console.log(
     //   `using fetch`,
-    //   `https://lighter.codehike.org/api/${endpoint}&v=${__LIGHTER_VERSION__}`
+    //   `https://lighter.codehike.org/api/${endpoint}&v=${LIGHTER_VERSION}`
     // );
     const r = await fetch(
-      `https://lighter.codehike.org/api/${endpoint}&v=${__LIGHTER_VERSION__}`
+      `https://lighter.codehike.org/api/${endpoint}&v=${LIGHTER_VERSION}`
     );
     return await r.json();
   }
   // console.log(
   //   `using https`,
-  //   `https://lighter.codehike.org/api/${endpoint}&v=${__LIGHTER_VERSION__}`
+  //   `https://lighter.codehike.org/api/${endpoint}&v=${LIGHTER_VERSION}`
   // );
 
   const https = await import("https");
   const options = {
     host: "lighter.codehike.org",
-    path: `/api/${endpoint}&v=${__LIGHTER_VERSION__}`,
+    path: `/api/${endpoint}&v=${LIGHTER_VERSION}`,
     method: "GET",
   };
 

@@ -1,8 +1,12 @@
 import { languages } from "./languages.mjs";
 
+type LanguageObject = {
+  id: string;
+};
+
 // Description: Convert an alias to lang
 // returns undefined if the alias is not found
-export function aliasToLang(alias) {
+export function aliasToLang(alias: string) {
   const id = aliasToId[alias] || alias;
   const lang = languages.find((l) => l.id === id);
   return lang;
