@@ -1,14 +1,24 @@
 import { Registry } from "vscode-textmate";
-import vscodeOniguruma from "vscode-oniguruma";
+import {
+  loadWASM,
+  createOnigScanner,
+  createOnigString,
+} from "vscode-oniguruma";
+// @ts-ignore
 import onig from "vscode-oniguruma/release/onig.wasm";
 import { loadTheme, getThemeColors } from "./themes";
 import { tokenize } from "./tokenizer.js";
 import { loadGrammarByScope } from "./grammars.js";
 import { aliasToLangData } from "./language";
+import { LanguageAlias } from "./language-data";
 
-let registry = null;
+let registry: Registry | null = null;
 
-export async function highlight(code, alias, themeOrThemeName = "dark-plus") {
+export async function highlight(
+  code: string,
+  alias: LanguageAlias,
+  themeOrThemeName = "dark-plus"
+) {
   // get the language object from the alias
   const langData = aliasToLangData(alias);
 
@@ -19,9 +29,12 @@ export async function highlight(code, alias, themeOrThemeName = "dark-plus") {
 
   // initialize the registry the first time
   if (!registry) {
-    await vscodeOniguruma.loadWASM(onig);
+    const onigLibPromise = loadWASM(onig).then(() => ({
+      createOnigScanner,
+      createOnigString,
+    }));
     registry = new Registry({
-      onigLib: vscodeOniguruma,
+      onigLib: onigLibPromise,
       loadGrammar: (scopeName) => loadGrammarByScope(scopeName),
     });
   }
@@ -31,7 +44,7 @@ export async function highlight(code, alias, themeOrThemeName = "dark-plus") {
   const theme = await loadTheme(themeOrThemeName);
   registry.setTheme(theme);
 
-  const grammar = await grammarsPromise;
+  const grammar = (await grammarsPromise)!;
   const colorMap = registry.getColorMap();
 
   return {
@@ -42,8 +55,8 @@ export async function highlight(code, alias, themeOrThemeName = "dark-plus") {
 }
 
 export class UnknownLanguageError extends Error {
-  alias;
-  constructor(alias) {
+  alias: string;
+  constructor(alias: string) {
     super(`Unknown language: ${alias}`);
     this.alias = alias;
   }
