@@ -6,18 +6,19 @@ import {
 } from "vscode-oniguruma";
 // @ts-ignore
 import onig from "vscode-oniguruma/release/onig.wasm";
-import { loadTheme, getThemeColors } from "./themes";
+import { loadTheme, Theme } from "./theme";
 import { tokenize } from "./tokenizer.js";
 import { loadGrammarByScope } from "./grammars.js";
 import { aliasToLangData } from "./language";
 import { LanguageAlias } from "./language-data";
+import { getThemeColors } from "./theme-colors";
 
 let registry: Registry | null = null;
 
 export async function highlight(
   code: string,
   alias: LanguageAlias,
-  themeOrThemeName = "dark-plus"
+  themeOrThemeName: Theme = "dark-plus"
 ) {
   // get the language object from the alias
   const langData = aliasToLangData(alias);
@@ -42,6 +43,10 @@ export async function highlight(
   // start loading grammars and theme in parallel
   const grammarsPromise = registry.loadGrammar(langData.scopeName);
   const theme = await loadTheme(themeOrThemeName);
+  if (!theme) {
+    throw new UnknownThemeError(themeOrThemeName as string);
+  }
+
   registry.setTheme(theme);
 
   const grammar = (await grammarsPromise)!;
@@ -59,5 +64,13 @@ export class UnknownLanguageError extends Error {
   constructor(alias: string) {
     super(`Unknown language: ${alias}`);
     this.alias = alias;
+  }
+}
+
+export class UnknownThemeError extends Error {
+  theme: string;
+  constructor(theme: string) {
+    super(`Unknown theme: ${theme}`);
+    this.theme = theme;
   }
 }

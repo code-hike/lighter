@@ -1,23 +1,34 @@
-export function getThemeColors(theme) {
+import type { FinalTheme } from "./theme";
+
+export function getThemeColors(theme: FinalTheme) {
   return {
-    background: theme.bg,
-    foreground: theme.fg,
-    colorScheme: getColorScheme(theme),
-    lineNumberForeground: getColor(theme, "editorLineNumber.foreground"),
-    selectionBackground: getColor(theme, "editor.selectionBackground"),
-    editorBackground: getColor(theme, "editor.background"),
-    editorGroupHeaderBackground: getColor(
-      theme,
-      "editorGroupHeader.tabsBackground"
-    ),
-    activeTabBackground: getColor(theme, "tab.activeBackground"),
-    activeTabForeground: getColor(theme, "tab.activeForeground"),
-    tabBorder: getColor(theme, "tab.border"),
-    activeTabBorder: getColor(theme, "tab.activeBorder"),
+    colorScheme: theme.type,
+    ...getColors(theme),
   };
 }
 
-function getColor(theme, name) {
+const colorNamesToKeys = {
+  background: "editor.background",
+  foreground: "editor.foreground",
+  lineNumberForeground: "editorLineNumber.foreground",
+  selectionBackground: "editor.selectionBackground",
+  editorBackground: "editor.background",
+  editorGroupHeaderBackground: "editorGroupHeader.tabsBackground",
+  activeTabBackground: "tab.activeBackground",
+  activeTabForeground: "tab.activeForeground",
+  tabBorder: "tab.border",
+  activeTabBorder: "tab.activeBorder",
+};
+
+function getColors(theme: FinalTheme) {
+  const colors = {};
+  for (const key in colorNamesToKeys) {
+    colors[key] = getColor(theme, colorNamesToKeys[key]);
+  }
+  return colors as typeof colorNamesToKeys;
+}
+
+export function getColor(theme: FinalTheme, name: string) {
   const colors = theme.colors || {};
   if (colors[name]) {
     return colors[name];
@@ -31,8 +42,21 @@ function getColor(theme, name) {
   return getDefault(theme, defaultColors);
 }
 
+function getDefault(theme: FinalTheme, defaults) {
+  return defaults[theme.type];
+}
+
+// defaults from: https://github.com/microsoft/vscode/blob/main/src/vs/workbench/common/theme.ts
+// and: https://github.com/microsoft/vscode/blob/main/src/vs/editor/common/core/editorColorRegistry.ts
+// and: https://github.com/microsoft/vscode/blob/main/src/vs/platform/theme/common/colorRegistry.ts
+// keys from : https://code.visualstudio.com/api/references/theme-color#editor-groups-tabs
 const contrastBorder = "#6FC3DF";
 const defaults = {
+  "editor.foreground": {
+    dark: "#bbbbbb",
+    light: "#333333",
+    hc: "#ffffff",
+  },
   "editorLineNumber.foreground": {
     dark: "#858585",
     light: "#237893",
@@ -66,34 +90,3 @@ const defaults = {
   },
   "tab.activeBorder": "tab.activeBackground",
 };
-
-export function getColorScheme(theme) {
-  const themeType = getThemeType(theme);
-  if (themeType === "dark") {
-    return "dark";
-  } else if (themeType === "light") {
-    return "light";
-  }
-  return undefined;
-}
-
-function getThemeType(theme) {
-  return theme.type
-    ? theme.type
-    : theme.name?.toLowerCase().includes("light")
-    ? "light"
-    : "dark";
-}
-function getDefault(theme, defaults) {
-  return defaults[getThemeType(theme)];
-}
-
-function getGlobalSettings(theme) {
-  let settings = theme.settings ? theme.settings : theme.tokenColors;
-  const globalSetting = settings
-    ? settings.find((s) => {
-        return !s.name && !s.scope;
-      })
-    : undefined;
-  return globalSetting?.settings;
-}
