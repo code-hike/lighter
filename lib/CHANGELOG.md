@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.2.1
+
+### Patch Changes
+
+- fe1ebb8: Add unknown language error
+
 ## 0.2.0
 
 ### Minor Changes
