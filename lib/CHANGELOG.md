@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.2.2
+
+### Patch Changes
+
+- 38d0970: Better theme types
+
 ## 0.2.1
 
 ### Patch Changes

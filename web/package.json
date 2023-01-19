@@ -1,6 +1,6 @@
 {
   "private": "true",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "name": "lighter-web",
   "scripts": {
     "dev": "next dev",
@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@code-hike/lighter": "0.2.1",
+    "@code-hike/lighter": "0.2.2",
     "next": "^13.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
