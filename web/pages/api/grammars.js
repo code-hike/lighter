@@ -509,6 +509,7 @@ const idToPaths = {
     "ini.tmLanguage.json",
     "html.tmLanguage.json",
     "css.tmLanguage.json",
+    "applescript.tmLanguage.json",
   ],
   marko: [
     "marko.tmLanguage.json",
@@ -579,6 +580,7 @@ const idToPaths = {
     "css.tmLanguage.json",
     "markdown.tmLanguage.json",
     "jsx.tmLanguage.json",
+    "applescript.tmLanguage.json",
   ],
   mermaid: ["mermaid.tmLanguage.json"],
   nginx: ["nginx.tmLanguage.json", "c.tmLanguage.json", "lua.tmLanguage.json"],

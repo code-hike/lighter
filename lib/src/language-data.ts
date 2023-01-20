@@ -1391,6 +1391,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.ini",
       "text.html.basic",
       "source.css",
+      "source.applescript",
     ],
   },
   "text.marko": {
@@ -1471,6 +1472,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.css",
       "text.html.markdown",
       "source.js.jsx",
+      "source.applescript",
     ],
   },
   "source.mermaid": {
