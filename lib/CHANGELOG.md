@@ -1,5 +1,13 @@
 # @code-hike/lighter
 
+## 0.2.3
+
+### Patch Changes
+
+- d50eedb: Add missing grammar dependency
+- bb84fce: Update grammars
+- fa82451: Better theme cache
+
 ## 0.2.2
 
 ### Patch Changes
