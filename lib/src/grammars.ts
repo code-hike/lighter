@@ -63,8 +63,5 @@ export async function loadGrammarByScope(
 }
 
 export async function loadGrammarFromFile(path: string) {
-  const grammar = await readJSON("grammars", path);
-  // grammar.names = [language.id, ...(language.aliases || [])];
-  // grammar.embeddedLangs = language.embeddedLangs || [];
-  return grammar as IRawGrammar;
+  return (await readJSON("grammars", path)) as IRawGrammar;
 }

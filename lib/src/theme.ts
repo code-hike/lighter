@@ -8,22 +8,22 @@ export async function loadTheme(theme: Theme) {
   return toFinalTheme(rawTheme);
 }
 
-// TODO map names to promises, to avoid loading the same theme twice
-const themeCache = new Map<StringTheme, RawTheme>();
-async function loadThemeByName(
-  name: StringTheme
-): Promise<RawTheme | undefined> {
+const themeCache = new Map<StringTheme, Promise<RawTheme>>();
+function loadThemeByName(name: StringTheme): Promise<RawTheme | undefined> {
   if (!ALL_NAMES.includes(name)) {
     return Promise.resolve(undefined);
   }
 
-  if (themeCache.has(name)) {
-    return themeCache.get(name)!;
+  if (!themeCache.has(name)) {
+    themeCache.set(name, reallyLoadThemeByName(name));
   }
+
+  return themeCache.get(name)!;
+}
+
+async function reallyLoadThemeByName(name: StringTheme): Promise<RawTheme> {
   try {
-    const rawTheme = await readJSON("themes", name + ".json");
-    themeCache.set(name, rawTheme);
-    return rawTheme;
+    return await readJSON("themes", name + ".json");
   } catch (e) {
     return await fetchJSON(`theme?name=${name}`);
   }
