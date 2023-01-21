@@ -1,5 +1,12 @@
 # lighter-test
 
+## 0.1.14
+
+### Patch Changes
+
+- Updated dependencies [eccf1a2]
+  - @code-hike/lighter@0.2.4
+
 ## 0.1.13
 
 ### Patch Changes
