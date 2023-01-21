@@ -77,7 +77,7 @@ function getColorScheme(theme: RawTheme) {
   }
 }
 
-type RawTheme = {
+export type RawTheme = {
   name?: string;
   type?: string;
   tokenColors?: ThemeSetting[];
@@ -127,6 +127,6 @@ const ALL_NAMES = [
   "solarized-light",
 ] as const;
 type NamesTuple = typeof ALL_NAMES;
-type StringTheme = NamesTuple[number];
+export type StringTheme = NamesTuple[number];
 
 export type Theme = StringTheme | RawTheme;

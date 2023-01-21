@@ -6,15 +6,16 @@ import {
 } from "vscode-oniguruma";
 // @ts-ignore
 import onig from "vscode-oniguruma/release/onig.wasm";
-import { loadTheme, Theme } from "./theme";
+import { loadTheme, Theme, StringTheme, RawTheme } from "./theme";
 import { tokenize } from "./tokenizer.js";
 import { loadGrammarByScope } from "./grammars.js";
 import { aliasToLangData } from "./language";
 import { LanguageAlias } from "./language-data";
 import { getThemeColors } from "./theme-colors";
 
-let registry: Registry | null = null;
+export { LanguageAlias, Theme, StringTheme, RawTheme };
 
+let registry: Registry | null = null;
 export async function highlight(
   code: string,
   alias: LanguageAlias,

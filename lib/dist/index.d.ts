@@ -56,4 +56,4 @@ declare class UnknownThemeError extends Error {
     constructor(theme: string);
 }
 
-export { UnknownLanguageError, UnknownThemeError, highlight };
+export { LanguageAlias, RawTheme, StringTheme, Theme, UnknownLanguageError, UnknownThemeError, highlight };
