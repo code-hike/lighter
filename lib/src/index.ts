@@ -48,9 +48,9 @@ export async function highlight(
     throw new UnknownThemeError(themeOrThemeName as string);
   }
 
-  registry.setTheme(theme);
-
   const grammar = (await grammarsPromise)!;
+
+  registry.setTheme(theme);
   const colorMap = registry.getColorMap();
 
   return {
