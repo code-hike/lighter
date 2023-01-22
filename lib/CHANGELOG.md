@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.2.5
+
+### Patch Changes
+
+- 91111f8: Fix wrong theme usage
+
 ## 0.2.4
 
 ### Patch Changes

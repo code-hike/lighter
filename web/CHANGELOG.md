@@ -1,5 +1,12 @@
 # lighter-web
 
+## 0.1.15
+
+### Patch Changes
+
+- Updated dependencies [91111f8]
+  - @code-hike/lighter@0.2.5
+
 ## 0.1.14
 
 ### Patch Changes
