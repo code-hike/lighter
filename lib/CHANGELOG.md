@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.2.6
+
+### Patch Changes
+
+- 1abaf99: Remove path-parse dep
+
 ## 0.2.5
 
 ### Patch Changes
