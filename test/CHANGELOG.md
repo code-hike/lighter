@@ -1,5 +1,12 @@
 # lighter-test
 
+## 0.1.17
+
+### Patch Changes
+
+- Updated dependencies [198900c]
+  - @code-hike/lighter@0.3.0
+
 ## 0.1.16
 
 ### Patch Changes

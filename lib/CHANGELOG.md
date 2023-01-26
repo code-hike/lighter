@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.3.0
+
+### Minor Changes
+
+- 198900c: Add annotations
+
 ## 0.2.6
 
 ### Patch Changes
