@@ -1,5 +1,4 @@
 import { IGrammar } from "vscode-textmate";
-import { highlight } from ".";
 import { Token } from "./annotations";
 import { highlightTokens } from "./highlighter";
 import { CodeRange, parseRelativeRanges } from "./range";
@@ -31,7 +30,7 @@ export type Annotation = {
   ranges: CodeRange[];
 };
 
-export function extractComments(
+export function extractCommentsFromCode(
   code: string,
   grammar: IGrammar,
   annotationNames: string[]
@@ -139,24 +138,11 @@ function getAnnotationsFromLine(
   };
 }
 
-function parseRange(args: string, lineNumber: number) {
-  if (!args) {
-    return { start: lineNumber, end: lineNumber };
-  }
-
-  const [start, end] = args
-    .slice(1, -1)
-    .split(",")
-    .map((n) => parseInt(n, 10));
-
-  return { start, end };
-}
-
 function getAnnotationData(content: string) {
   const regex = /\s*([\w-]+)?(\([^\)]*\)|\[[^\]]*\])?(.*)$/;
   const match = content.match(regex);
   const name = match[1];
   const rangeString = match[2];
-  const query = match[3];
+  const query = match[3]?.trim();
   return { name, rangeString, query };
 }

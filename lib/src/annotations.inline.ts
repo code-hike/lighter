@@ -8,6 +8,7 @@ type TokenWrapper = {
 
 type FakeTokenGroup = {
   annotationName: string;
+  annotationQuery?: string;
   fromColumn: number;
   toColumn: number;
   tokens: (TokenWrapper | FakeTokenGroup)[];
@@ -38,6 +39,7 @@ function removeFakeGroups(
   if ("tokens" in group) {
     return {
       annotationName: group.annotationName,
+      annotationQuery: group.annotationQuery,
       fromColumn: group.fromColumn,
       toColumn: group.toColumn,
       tokens: group.tokens.map((group) => removeFakeGroups(group)),
@@ -51,7 +53,7 @@ function reannotateLine(
   annotatedLine: (TokenWrapper | FakeTokenGroup)[],
   annotation: InlineAnnotation
 ) {
-  const { range, name, ...rest } = annotation;
+  const { range, name, query } = annotation;
   const { fromColumn, toColumn } = range;
   const newAnnotatedLine: (TokenWrapper | FakeTokenGroup)[] = [];
 
@@ -67,6 +69,7 @@ function reannotateLine(
 
   const newGroup: FakeTokenGroup = {
     annotationName: annotation.name,
+    annotationQuery: annotation.query,
     fromColumn,
     toColumn,
     tokens: [],

@@ -8,6 +8,7 @@ type LineWrapper = {
 
 type FakeLineGroup = {
   annotationName: string;
+  annotationQuery?: string;
   fromLineNumber: number;
   toLineNumber: number;
   lines: (LineWrapper | FakeLineGroup)[];
@@ -43,6 +44,7 @@ function removeFakeGroups(
   } else {
     return {
       annotationName: group.annotationName,
+      annotationQuery: group.annotationQuery,
       fromLineNumber: group.fromLineNumber,
       toLineNumber: group.toLineNumber,
       lines: group.lines.map((line) => removeFakeGroups(line)),
@@ -54,7 +56,7 @@ function reannotateLines(
   annotatedLines: (LineWrapper | FakeLineGroup)[],
   annotation: MultilineAnnotation
 ) {
-  const { range, name, ...rest } = annotation;
+  const { range, name, query } = annotation;
   const { fromLineNumber, toLineNumber } = range;
   const newAnnotatedLines: (LineWrapper | FakeLineGroup)[] = [];
 
@@ -73,6 +75,7 @@ function reannotateLines(
 
   const newGroup: FakeLineGroup = {
     annotationName: name,
+    annotationQuery: query,
     fromLineNumber,
     toLineNumber,
     lines: [],

@@ -15,6 +15,7 @@ export type Token = {
 
 export type TokenGroup = {
   annotationName: string;
+  annotationQuery?: string;
   fromColumn: number;
   toColumn: number;
   tokens: Tokens;
@@ -25,6 +26,7 @@ type Tokens = (Token | TokenGroup)[];
 export type Line = { lineNumber: number; tokens: Tokens };
 export type LineGroup = {
   annotationName: string;
+  annotationQuery?: string;
   fromLineNumber: number;
   toLineNumber: number;
   lines: Lines;
@@ -48,7 +50,6 @@ export function applyAnnotations(lines: Token[][], annotations: Annotation[]) {
   return annotateLines(annotatedLines, multilineAnnotations);
 }
 
-// replace ranges with range
 export type InlineAnnotation = Omit<Annotation, "ranges"> & {
   range: InlineRange;
 };
