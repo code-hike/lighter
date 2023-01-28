@@ -85,7 +85,18 @@ function reannotateLines(
   if (firstGroup.fromLineNumber < fromLineNumber) {
     const [firstHalf, secondHalf] = splitGroup(firstGroup, fromLineNumber);
     newAnnotatedLines.push(firstHalf);
-    newGroup.lines.push(secondHalf);
+    newAnnotatedLines.push(newGroup);
+
+    if (secondHalf.toLineNumber > toLineNumber) {
+      const [secondFirstHalf, secondSecondHalf] = splitGroup(
+        secondHalf,
+        toLineNumber + 1
+      );
+      newGroup.lines.push(secondFirstHalf);
+      newAnnotatedLines.push(secondSecondHalf);
+    } else {
+      newGroup.lines.push(secondHalf);
+    }
     i++;
   }
 
@@ -96,8 +107,6 @@ function reannotateLines(
     newGroup.lines.push(annotatedLines[i]);
     i++;
   }
-
-  newAnnotatedLines.push(newGroup);
 
   if (i === annotatedLines.length) {
     return newAnnotatedLines;

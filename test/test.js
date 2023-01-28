@@ -9,7 +9,7 @@ const x = 1; /* bar x */ more /* notannotated */ code`;
 
 const code = `
 // mark[4:7]
-console.log(1)
+consolessssssssss
 `.trim();
 // const code = `// foo `;
 const alias = "js";

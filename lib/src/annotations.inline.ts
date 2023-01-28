@@ -82,7 +82,20 @@ function reannotateLine(
     const [firstHalf, secondHalf] = splitGroup(firstGroup, fromColumn);
 
     newAnnotatedLine.push(firstHalf);
-    newGroup.tokens.push(secondHalf);
+    newAnnotatedLine.push(newGroup);
+
+    if (secondHalf.toColumn > toColumn) {
+      // we need to split the second half in two
+      const [secondFirstHalf, secondSecondHalf] = splitGroup(
+        secondHalf,
+        toColumn + 1
+      );
+
+      newGroup.tokens.push(secondFirstHalf);
+      newAnnotatedLine.push(secondSecondHalf);
+    } else {
+      newGroup.tokens.push(secondHalf);
+    }
     i++;
   }
 
@@ -90,8 +103,6 @@ function reannotateLine(
     newGroup.tokens.push(annotatedLine[i]);
     i++;
   }
-
-  newAnnotatedLine.push(newGroup);
 
   if (i === annotatedLine.length) {
     return newAnnotatedLine;
