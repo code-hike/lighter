@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.3.3
+
+### Patch Changes
+
+- 1983108: Better annotation splitting
+
 ## 0.3.2
 
 ### Patch Changes
