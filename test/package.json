@@ -2,8 +2,8 @@
   "name": "lighter-test",
   "private": true,
   "type": "module",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "dependencies": {
-    "@code-hike/lighter": "0.3.1"
+    "@code-hike/lighter": "0.3.2"
   }
 }

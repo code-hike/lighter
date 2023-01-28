@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.3.2
+
+### Patch Changes
+
+- e5b4473: Fix token splitting
+
 ## 0.3.1
 
 ### Patch Changes
