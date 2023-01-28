@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.3.1
+
+### Patch Changes
+
+- dadb687: Fix annotation nesting
+
 ## 0.3.0
 
 ### Minor Changes
