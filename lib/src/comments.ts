@@ -50,6 +50,10 @@ export function extractCommentsFromCode(
 
       allAnnotations.push(...annotations);
 
+      if (lineWithoutComments) {
+        lineNumber++;
+      }
+
       return lineWithoutComments;
     })
     .filter((line) => line !== null);

@@ -21,7 +21,7 @@ export type TokenGroup = {
   tokens: Tokens;
 };
 
-type Tokens = (Token | TokenGroup)[];
+export type Tokens = (Token | TokenGroup)[];
 
 export type Line = { lineNumber: number; tokens: Tokens };
 export type LineGroup = {

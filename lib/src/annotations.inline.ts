@@ -23,6 +23,7 @@ export function annotateLine(line: Token[], annotations: InlineAnnotation[]) {
       toColumn: columnNumber + token.content.length - 1,
       token,
     });
+    columnNumber += token.content.length;
   });
 
   annotations.forEach((annotation) => {
@@ -53,7 +54,7 @@ function reannotateLine(
   annotatedLine: (TokenWrapper | FakeTokenGroup)[],
   annotation: InlineAnnotation
 ) {
-  const { range, name, query } = annotation;
+  const { range } = annotation;
   const { fromColumn, toColumn } = range;
   const newAnnotatedLine: (TokenWrapper | FakeTokenGroup)[] = [];
 
@@ -77,14 +78,11 @@ function reannotateLine(
   const firstGroup = annotatedLine[i];
   if (firstGroup.fromColumn < fromColumn) {
     // we need to split the first group in two
-    newGroup.tokens.push({
-      ...firstGroup,
-      toColumn: fromColumn - 1,
-    });
-    newGroup.tokens.push({
-      ...firstGroup,
-      fromColumn,
-    });
+
+    const [firstHalf, secondHalf] = splitGroup(firstGroup, fromColumn);
+
+    newAnnotatedLine.push(firstHalf);
+    newGroup.tokens.push(secondHalf);
     i++;
   }
 
@@ -102,14 +100,11 @@ function reannotateLine(
   const lastGroup = annotatedLine[i];
   if (lastGroup.toColumn > toColumn) {
     // we need to split the last group in two
-    newGroup.tokens.push({
-      ...lastGroup,
-      toColumn,
-    });
-    newGroup.tokens.push({
-      ...lastGroup,
-      fromColumn: toColumn + 1,
-    });
+
+    const [firstHalf, secondHalf] = splitGroup(lastGroup, toColumn + 1);
+
+    newGroup.tokens.push(firstHalf);
+    newAnnotatedLine.push(secondHalf);
     i++;
   }
 
@@ -119,4 +114,58 @@ function reannotateLine(
   }
 
   return newAnnotatedLine;
+}
+
+function splitGroup<G extends TokenWrapper | FakeTokenGroup>(
+  group: G,
+  column: number
+): [G, G] {
+  if ("token" in group) {
+    const firstToken = {
+      ...group.token,
+      content: group.token.content.slice(0, column - group.fromColumn),
+    };
+    const secondToken = {
+      ...group.token,
+      content: group.token.content.slice(column - group.fromColumn),
+    };
+    const firstGroup = {
+      ...group,
+      toColumn: column - 1,
+      token: firstToken,
+    };
+    const secondGroup = {
+      ...group,
+      fromColumn: column,
+      token: secondToken,
+    };
+    return [firstGroup, secondGroup];
+  } else {
+    const firstTokens = [];
+    const secondTokens = [];
+
+    group.tokens.forEach((token) => {
+      if (token.toColumn < column) {
+        firstTokens.push(token);
+      } else if (token.fromColumn >= column) {
+        secondTokens.push(token);
+      } else {
+        const [firstGroup, secondGroup] = splitGroup(token, column);
+        firstTokens.push(firstGroup);
+        secondTokens.push(secondGroup);
+      }
+    });
+
+    const firstGroup = {
+      ...group,
+      toColumn: column - 1,
+      tokens: firstTokens,
+    };
+    const secondGroup = {
+      ...group,
+      fromColumn: column,
+      tokens: secondTokens,
+    };
+    return [firstGroup, secondGroup];
+  }
 }

@@ -8,29 +8,17 @@ const test1 = `
 const x = 1; /* bar x */ more /* notannotated */ code`;
 
 const code = `
-// title mything.ts
-console.log("hello");
-
-/* nothing */
-// mark[2:5]
-const x = 1; // foo x
-`;
+// mark(2:3) first
+// mark(1:2) second
+foo1
+foo2
+foo3
+`.trim();
 // const code = `// foo `;
 const alias = "js";
 const theme = "dracula";
 
 async function run() {
-  // try {
-  //   const result = await highlight(code, alias, theme);
-
-  //   console.log("dracula", JSON.stringify(result));
-  // } catch (e) {
-  //   if (e instanceof UnknownLanguageError) {
-  //     console.log("Unknown language", e.alias);
-  //   } else {
-  //     throw e;
-  //   }
-  // }
   const { code: newCode, annotations } = await extractAnnotations(code, alias, [
     "mark",
     "foo",
@@ -38,8 +26,95 @@ async function run() {
   ]);
 
   const result = await annotatedHighlight(newCode, alias, theme, annotations);
-  console.log(annotations, newCode);
-  // console.log(JSON.stringify(result.lines, null, 1));
+  // console.log(JSON.stringify(result.lines));
+  console.log(JSON.stringify(result.lines, null, 1));
 }
 
 run();
+
+const x = [
+  {
+    lineNumber: 1,
+    tokens: [
+      {
+        content: "console.",
+        style: {
+          color: "#F8F8F2",
+        },
+      },
+      {
+        content: "log",
+        style: {
+          color: "#50FA7B",
+        },
+      },
+      {
+        content: "(",
+        style: {
+          color: "#F8F8F2",
+        },
+      },
+      {
+        content: "1",
+        style: {
+          color: "#BD93F9",
+        },
+      },
+      {
+        content: ")",
+        style: {
+          color: "#F8F8F2",
+        },
+      },
+    ],
+  },
+  {
+    lineNumber: 2,
+    tokens: [
+      {
+        annotationName: "mark",
+        annotationQuery: "",
+        fromColumn: 4,
+        toColumn: 7,
+        tokens: [
+          {
+            content: "console.",
+            style: {
+              color: "#F8F8F2",
+            },
+          },
+          {
+            content: "console.",
+            style: {
+              color: "#F8F8F2",
+            },
+          },
+          {
+            content: "log",
+            style: {
+              color: "#50FA7B",
+            },
+          },
+          {
+            content: "(",
+            style: {
+              color: "#F8F8F2",
+            },
+          },
+          {
+            content: "2",
+            style: {
+              color: "#BD93F9",
+            },
+          },
+          {
+            content: ")",
+            style: {
+              color: "#F8F8F2",
+            },
+          },
+        ],
+      },
+    ],
+  },
+];

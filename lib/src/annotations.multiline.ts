@@ -83,14 +83,9 @@ function reannotateLines(
 
   const firstGroup = annotatedLines[i];
   if (firstGroup.fromLineNumber < fromLineNumber) {
-    newGroup.lines.push({
-      ...firstGroup,
-      toLineNumber: fromLineNumber - 1,
-    });
-    newGroup.lines.push({
-      ...firstGroup,
-      fromLineNumber,
-    });
+    const [firstHalf, secondHalf] = splitGroup(firstGroup, fromLineNumber);
+    newAnnotatedLines.push(firstHalf);
+    newGroup.lines.push(secondHalf);
     i++;
   }
 
@@ -110,14 +105,9 @@ function reannotateLines(
 
   const lastGroup = annotatedLines[i];
   if (lastGroup.toLineNumber > toLineNumber) {
-    newAnnotatedLines.push({
-      ...lastGroup,
-      toLineNumber,
-    });
-    newAnnotatedLines.push({
-      ...lastGroup,
-      fromLineNumber: toLineNumber + 1,
-    });
+    const [firstHalf, secondHalf] = splitGroup(lastGroup, toLineNumber + 1);
+    newGroup.lines.push(firstHalf);
+    newAnnotatedLines.push(secondHalf);
     i++;
   }
 
@@ -127,4 +117,50 @@ function reannotateLines(
   }
 
   return newAnnotatedLines;
+}
+
+function splitGroup<G extends LineWrapper | FakeLineGroup>(
+  group: G,
+  lineNumber: number
+): [G, G] {
+  if ("line" in group) {
+    return [
+      {
+        ...group,
+        toLineNumber: lineNumber - 1,
+      },
+      {
+        ...group,
+        fromLineNumber: lineNumber,
+      },
+    ];
+  } else {
+    const firstLines = [];
+    const secondLines = [];
+
+    group.lines.forEach((line) => {
+      if (line.toLineNumber < lineNumber) {
+        firstLines.push(line);
+      } else if (line.fromLineNumber >= lineNumber) {
+        secondLines.push(line);
+      } else {
+        const [firstLine, secondLine] = splitGroup(line, lineNumber);
+        firstLines.push(firstLine);
+        secondLines.push(secondLine);
+      }
+    });
+
+    return [
+      {
+        ...group,
+        toLineNumber: lineNumber - 1,
+        lines: firstLines,
+      },
+      {
+        ...group,
+        fromLineNumber: lineNumber,
+        lines: secondLines,
+      },
+    ];
+  }
 }

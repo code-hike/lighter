@@ -7,9 +7,29 @@ import {
   UnknownLanguageError,
 } from "./highlighter";
 import { Annotation, extractCommentsFromCode } from "./comments";
-import { applyAnnotations, Lines } from "./annotations";
+import {
+  applyAnnotations,
+  Lines,
+  LineGroup,
+  Line,
+  TokenGroup,
+  Tokens,
+  Token,
+} from "./annotations";
 
-export type { LanguageAlias, Theme, StringTheme, RawTheme, Annotation, Lines };
+export type {
+  LanguageAlias,
+  Theme,
+  StringTheme,
+  RawTheme,
+  Annotation,
+  Lines,
+  LineGroup,
+  Line,
+  TokenGroup,
+  Tokens,
+  Token,
+};
 export { UnknownLanguageError };
 
 export async function highlight(
