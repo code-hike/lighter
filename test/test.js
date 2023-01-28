@@ -4,12 +4,9 @@ import { annotatedHighlight, extractAnnotations } from "@code-hike/lighter";
 //   console.log("default", JSON.stringify(tokens));
 // });
 
-const test1 = `
-const x = 1; /* bar x */ more /* notannotated */ code`;
-
 const code = `
-// mark[4:7]
-consolessssssssss
+// foo[9:11]
+const x = 20
 `.trim();
 // const code = `// foo `;
 const alias = "js";
@@ -28,90 +25,3 @@ async function run() {
 }
 
 run();
-
-const x = [
-  {
-    lineNumber: 1,
-    tokens: [
-      {
-        content: "console.",
-        style: {
-          color: "#F8F8F2",
-        },
-      },
-      {
-        content: "log",
-        style: {
-          color: "#50FA7B",
-        },
-      },
-      {
-        content: "(",
-        style: {
-          color: "#F8F8F2",
-        },
-      },
-      {
-        content: "1",
-        style: {
-          color: "#BD93F9",
-        },
-      },
-      {
-        content: ")",
-        style: {
-          color: "#F8F8F2",
-        },
-      },
-    ],
-  },
-  {
-    lineNumber: 2,
-    tokens: [
-      {
-        annotationName: "mark",
-        annotationQuery: "",
-        fromColumn: 4,
-        toColumn: 7,
-        tokens: [
-          {
-            content: "console.",
-            style: {
-              color: "#F8F8F2",
-            },
-          },
-          {
-            content: "console.",
-            style: {
-              color: "#F8F8F2",
-            },
-          },
-          {
-            content: "log",
-            style: {
-              color: "#50FA7B",
-            },
-          },
-          {
-            content: "(",
-            style: {
-              color: "#F8F8F2",
-            },
-          },
-          {
-            content: "2",
-            style: {
-              color: "#BD93F9",
-            },
-          },
-          {
-            content: ")",
-            style: {
-              color: "#F8F8F2",
-            },
-          },
-        ],
-      },
-    ],
-  },
-];

@@ -97,9 +97,11 @@ function reannotateLine(
       newGroup.tokens.push(secondHalf);
     }
     i++;
+  } else {
+    newAnnotatedLine.push(newGroup);
   }
 
-  while (i < annotatedLine.length && annotatedLine[i].toColumn < toColumn) {
+  while (i < annotatedLine.length && annotatedLine[i].toColumn <= toColumn) {
     newGroup.tokens.push(annotatedLine[i]);
     i++;
   }

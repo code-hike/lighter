@@ -98,6 +98,8 @@ function reannotateLines(
       newGroup.lines.push(secondHalf);
     }
     i++;
+  } else {
+    newAnnotatedLines.push(newGroup);
   }
 
   while (
