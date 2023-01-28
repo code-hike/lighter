@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.3.4
+
+### Patch Changes
+
+- d9abe7b: Fix one char tokens
+
 ## 0.3.3
 
 ### Patch Changes
