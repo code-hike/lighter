@@ -98,7 +98,7 @@ function reannotateLine(
   }
 
   const lastGroup = annotatedLine[i];
-  if (lastGroup.toColumn > toColumn) {
+  if (lastGroup.fromColumn <= toColumn) {
     // we need to split the last group in two
 
     const [firstHalf, secondHalf] = splitGroup(lastGroup, toColumn + 1);

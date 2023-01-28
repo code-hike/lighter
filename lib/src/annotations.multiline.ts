@@ -104,7 +104,7 @@ function reannotateLines(
   }
 
   const lastGroup = annotatedLines[i];
-  if (lastGroup.toLineNumber > toLineNumber) {
+  if (lastGroup.fromLineNumber <= toLineNumber) {
     const [firstHalf, secondHalf] = splitGroup(lastGroup, toLineNumber + 1);
     newGroup.lines.push(firstHalf);
     newAnnotatedLines.push(secondHalf);

@@ -8,11 +8,8 @@ const test1 = `
 const x = 1; /* bar x */ more /* notannotated */ code`;
 
 const code = `
-// mark(2:3) first
-// mark(1:2) second
-foo1
-foo2
-foo3
+// mark[4:7]
+console.log(1)
 `.trim();
 // const code = `// foo `;
 const alias = "js";
