@@ -1,6 +1,6 @@
 import { loadTheme, Theme, StringTheme, RawTheme } from "./theme";
 import { LanguageAlias } from "./language-data";
-import { getThemeColors } from "./theme-colors";
+import { getThemeColors, ThemeColors } from "./theme-colors";
 import {
   highlightTokens,
   loadGrammars,
@@ -29,6 +29,7 @@ export type {
   TokenGroup,
   Tokens,
   Token,
+  ThemeColors,
 };
 export { UnknownLanguageError };
 
@@ -49,7 +50,7 @@ export async function highlight(
   return {
     lines: highlightTokens(code, grammar, theme),
     lang: langId,
-    ...getThemeColors(theme),
+    colors: getThemeColors(theme),
   };
 }
 
@@ -95,7 +96,7 @@ export async function annotatedHighlight(
   return {
     lines: applyAnnotations(lines, annotations),
     lang: langId,
-    ...getThemeColors(theme),
+    colors: getThemeColors(theme),
   };
 }
 

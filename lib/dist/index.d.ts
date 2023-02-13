@@ -19,10 +19,47 @@ type ThemeSetting = {
         background?: string;
     };
 };
+type FinalTheme = {
+    name: string;
+    type: "dark" | "light";
+    settings: ThemeSetting[];
+    colors: {
+        [key: string]: string;
+    };
+};
 declare const ALL_NAMES: readonly ["dark-plus", "dracula-soft", "dracula", "github-dark", "github-dark-dimmed", "github-light", "light-plus", "material-darker", "material-default", "material-lighter", "material-ocean", "material-palenight", "min-dark", "min-light", "monokai", "nord", "one-dark-pro", "poimandres", "slack-dark", "slack-ochin", "solarized-dark", "solarized-light"];
 type NamesTuple = typeof ALL_NAMES;
 type StringTheme = NamesTuple[number];
 type Theme = StringTheme | RawTheme;
+
+type ThemeColors = ReturnType<typeof getThemeColors>;
+declare function getThemeColors(theme: FinalTheme): {
+    background: string;
+    foreground: string;
+    lineNumberForeground: string;
+    selectionBackground: string;
+    editorBackground: string;
+    editorGroupHeaderBackground: string;
+    activeTabBackground: string;
+    activeTabForeground: string;
+    tabBorder: string;
+    activeTabBorder: string;
+    inactiveTabBackground: string;
+    inactiveTabForeground: string;
+    diffInsertedTextBackground: string;
+    diffInsertedLineBackground: string;
+    diffRemovedTextBackground: string;
+    diffRemovedLineBackground: string;
+    iconForeground: string;
+    sideBarBackground: string;
+    sideBarForeground: string;
+    sideBarBorder: string;
+    listSelectionBackground: string;
+    listSelectionForeground: string;
+    listHoverBackground: string;
+    listHoverForeground: string;
+    colorScheme: "dark" | "light";
+};
 
 type LineNumber = number;
 type ColumnNumber = number;
@@ -79,42 +116,74 @@ declare class UnknownLanguageError extends Error {
 }
 
 declare function highlight(code: string, alias: LanguageAlias, themeOrThemeName?: Theme): Promise<{
-    background: string;
-    foreground: string;
-    lineNumberForeground: string;
-    selectionBackground: string;
-    editorBackground: string;
-    editorGroupHeaderBackground: string;
-    activeTabBackground: string;
-    activeTabForeground: string;
-    tabBorder: string;
-    activeTabBorder: string;
-    colorScheme: "dark" | "light";
     lines: Token[][];
     lang: LanguageName;
+    colors: {
+        background: string;
+        foreground: string;
+        lineNumberForeground: string;
+        selectionBackground: string;
+        editorBackground: string;
+        editorGroupHeaderBackground: string;
+        activeTabBackground: string;
+        activeTabForeground: string;
+        tabBorder: string;
+        activeTabBorder: string;
+        inactiveTabBackground: string;
+        inactiveTabForeground: string;
+        diffInsertedTextBackground: string;
+        diffInsertedLineBackground: string;
+        diffRemovedTextBackground: string;
+        diffRemovedLineBackground: string;
+        iconForeground: string;
+        sideBarBackground: string;
+        sideBarForeground: string;
+        sideBarBorder: string;
+        listSelectionBackground: string;
+        listSelectionForeground: string;
+        listHoverBackground: string;
+        listHoverForeground: string;
+        colorScheme: "dark" | "light";
+    };
 }>;
 declare function extractAnnotations(code: string, alias: LanguageAlias, annotationNames?: string[]): Promise<{
     code: string;
     annotations: Annotation[];
 }>;
 declare function annotatedHighlight(code: string, alias: LanguageAlias, themeOrThemeName?: Theme, annotations?: Annotation[]): Promise<{
-    background: string;
-    foreground: string;
-    lineNumberForeground: string;
-    selectionBackground: string;
-    editorBackground: string;
-    editorGroupHeaderBackground: string;
-    activeTabBackground: string;
-    activeTabForeground: string;
-    tabBorder: string;
-    activeTabBorder: string;
-    colorScheme: "dark" | "light";
     lines: Lines;
     lang: LanguageName;
+    colors: {
+        background: string;
+        foreground: string;
+        lineNumberForeground: string;
+        selectionBackground: string;
+        editorBackground: string;
+        editorGroupHeaderBackground: string;
+        activeTabBackground: string;
+        activeTabForeground: string;
+        tabBorder: string;
+        activeTabBorder: string;
+        inactiveTabBackground: string;
+        inactiveTabForeground: string;
+        diffInsertedTextBackground: string;
+        diffInsertedLineBackground: string;
+        diffRemovedTextBackground: string;
+        diffRemovedLineBackground: string;
+        iconForeground: string;
+        sideBarBackground: string;
+        sideBarForeground: string;
+        sideBarBorder: string;
+        listSelectionBackground: string;
+        listSelectionForeground: string;
+        listHoverBackground: string;
+        listHoverForeground: string;
+        colorScheme: "dark" | "light";
+    };
 }>;
 declare class UnknownThemeError extends Error {
     theme: string;
     constructor(theme: string);
 }
 
-export { Annotation, LanguageAlias, Line, LineGroup, Lines, RawTheme, StringTheme, Theme, Token, TokenGroup, Tokens, UnknownLanguageError, UnknownThemeError, annotatedHighlight, extractAnnotations, highlight };
+export { Annotation, LanguageAlias, Line, LineGroup, Lines, RawTheme, StringTheme, Theme, ThemeColors, Token, TokenGroup, Tokens, UnknownLanguageError, UnknownThemeError, annotatedHighlight, extractAnnotations, highlight };

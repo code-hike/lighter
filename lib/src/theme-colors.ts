@@ -1,4 +1,7 @@
+import { transparent } from "./color";
 import type { FinalTheme } from "./theme";
+
+export type ThemeColors = ReturnType<typeof getThemeColors>;
 
 export function getThemeColors(theme: FinalTheme) {
   return {
@@ -18,6 +21,20 @@ const colorNamesToKeys = {
   activeTabForeground: "tab.activeForeground",
   tabBorder: "tab.border",
   activeTabBorder: "tab.activeBorder",
+  inactiveTabBackground: "tab.inactiveBackground",
+  inactiveTabForeground: "tab.inactiveForeground",
+  diffInsertedTextBackground: "diffEditor.insertedTextBackground",
+  diffInsertedLineBackground: "diffEditor.insertedLineBackground",
+  diffRemovedTextBackground: "diffEditor.removedTextBackground",
+  diffRemovedLineBackground: "diffEditor.removedLineBackground",
+  iconForeground: "icon.foreground",
+  sideBarBackground: "sideBar.background",
+  sideBarForeground: "sideBar.foreground",
+  sideBarBorder: "sideBar.border",
+  listSelectionBackground: "list.inactiveSelectionBackground",
+  listSelectionForeground: "list.inactiveSelectionForeground",
+  listHoverBackground: "list.hoverBackground",
+  listHoverForeground: "list.hoverForeground",
 };
 
 function getColors(theme: FinalTheme) {
@@ -43,7 +60,13 @@ export function getColor(theme: FinalTheme, name: string) {
 }
 
 function getDefault(theme: FinalTheme, defaults) {
-  return defaults[theme.type];
+  const defaultByScheme = defaults[theme.type];
+  if (Array.isArray(defaultByScheme)) {
+    const [fn, name, ...args] = defaultByScheme;
+    const color = getColor(theme, name);
+    return fn(color, ...args);
+  }
+  return defaultByScheme;
 }
 
 // defaults from: https://github.com/microsoft/vscode/blob/main/src/vs/workbench/common/theme.ts
@@ -78,15 +101,45 @@ const defaults = {
     hc: undefined,
   },
   "tab.activeBackground": "editor.background",
-  "tab.activeForeground": {
-    dark: "#ffffff",
-    light: "#333333",
+  "tab.activeForeground": { dark: "#ffffff", light: "#333333", hc: "#ffffff" },
+  "tab.border": { dark: "#252526", light: "#F3F3F3", hc: contrastBorder },
+  "tab.activeBorder": "tab.activeBackground",
+  "tab.inactiveBackground": {
+    dark: "#2D2D2D",
+    light: "#ECECEC",
+    hc: undefined,
+  },
+  "tab.inactiveForeground": {
+    dark: [transparent, "tab.activeForeground", 0.5],
+    light: [transparent, "tab.activeForeground", 0.5],
     hc: "#ffffff",
   },
-  "tab.border": {
-    dark: "#252526",
-    light: "#F3F3F3",
-    hc: contrastBorder,
+  "diffEditor.insertedTextBackground": {
+    dark: "#9ccc2c33",
+    light: "#9ccc2c40",
+    hc: undefined,
   },
-  "tab.activeBorder": "tab.activeBackground",
+  "diffEditor.removedTextBackground": {
+    dark: "#ff000033",
+    light: "#ff000033",
+    hc: undefined,
+  },
+  "diffEditor.insertedLineBackground": {
+    dark: "#9bb95533",
+    light: "#9bb95533",
+    hc: undefined,
+  },
+  "diffEditor.removedLineBackground": {
+    dark: "#ff000033",
+    light: "#ff000033",
+    hc: undefined,
+  },
+  "icon.foreground": { dark: "#C5C5C5", light: "#424242", hc: "#FFFFFF" },
+  "sideBar.background": { dark: "#252526", light: "#F3F3F3", hc: "#000000" },
+  "sideBar.foreground": "editor.foreground",
+  "sideBar.border": "sideBar.background",
+  "list.inactiveSelectionBackground": { dark: "#37373D", light: "#E4E6F1" },
+  "list.inactiveSelectionForeground": { dark: undefined, light: undefined },
+  "list.hoverBackground": { dark: "#2A2D2E", light: "#F0F0F0" },
+  "list.hoverForeground": { dark: undefined, light: undefined },
 };
