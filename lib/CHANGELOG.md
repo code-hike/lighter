@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.4.0
+
+### Minor Changes
+
+- 5053678: Add more theme colors
+
 ## 0.3.4
 
 ### Patch Changes
