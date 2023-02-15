@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.4.1
+
+### Patch Changes
+
+- 06459bf: Add more colors
+
 ## 0.4.0
 
 ### Minor Changes
