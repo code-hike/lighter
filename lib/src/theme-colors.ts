@@ -35,6 +35,10 @@ const colorNamesToKeys = {
   listSelectionForeground: "list.inactiveSelectionForeground",
   listHoverBackground: "list.hoverBackground",
   listHoverForeground: "list.hoverForeground",
+  tabsBorder: "editorGroupHeader.tabsBorder",
+  activeTabTopBorder: "tab.activeBorderTop",
+  hoverTabBackground: "tab.hoverBackground",
+  hoverTabForeground: "tab.hoverForeground",
 };
 
 function getColors(theme: FinalTheme) {
@@ -142,4 +146,8 @@ const defaults = {
   "list.inactiveSelectionForeground": { dark: undefined, light: undefined },
   "list.hoverBackground": { dark: "#2A2D2E", light: "#F0F0F0" },
   "list.hoverForeground": { dark: undefined, light: undefined },
+  "editorGroupHeader.tabsBorder": { hc: contrastBorder },
+  "tab.activeBorderTop": { hc: contrastBorder },
+  "tab.hoverBackground": "tab.inactiveBackground",
+  "tab.hoverForeground": "tab.inactiveForeground",
 };

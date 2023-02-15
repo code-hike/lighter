@@ -21,7 +21,7 @@ async function run() {
 
   const result = await annotatedHighlight(newCode, alias, theme, annotations);
   // console.log(JSON.stringify(result.lines));
-  console.log(JSON.stringify(result.lines, null, 1));
+  console.log(JSON.stringify(result.colors, null, 1));
 }
 
 run();

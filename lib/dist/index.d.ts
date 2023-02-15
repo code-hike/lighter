@@ -58,6 +58,10 @@ declare function getThemeColors(theme: FinalTheme): {
     listSelectionForeground: string;
     listHoverBackground: string;
     listHoverForeground: string;
+    tabsBorder: string;
+    activeTabTopBorder: string;
+    hoverTabBackground: string;
+    hoverTabForeground: string;
     colorScheme: "dark" | "light";
 };
 
@@ -143,6 +147,10 @@ declare function highlight(code: string, alias: LanguageAlias, themeOrThemeName?
         listSelectionForeground: string;
         listHoverBackground: string;
         listHoverForeground: string;
+        tabsBorder: string;
+        activeTabTopBorder: string;
+        hoverTabBackground: string;
+        hoverTabForeground: string;
         colorScheme: "dark" | "light";
     };
 }>;
@@ -178,6 +186,10 @@ declare function annotatedHighlight(code: string, alias: LanguageAlias, themeOrT
         listSelectionForeground: string;
         listHoverBackground: string;
         listHoverForeground: string;
+        tabsBorder: string;
+        activeTabTopBorder: string;
+        hoverTabBackground: string;
+        hoverTabForeground: string;
         colorScheme: "dark" | "light";
     };
 }>;
