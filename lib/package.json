@@ -4,6 +4,7 @@
   "license": "MIT",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.mjs",
+  "browser": "./dist/browser.esm.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/",
