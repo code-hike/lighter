@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.5.0
+
+### Minor Changes
+
+- 4111eb7: Add browser export without file-system
+
 ## 0.4.1
 
 ### Patch Changes
