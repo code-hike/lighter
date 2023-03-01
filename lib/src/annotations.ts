@@ -11,6 +11,7 @@ export type Token = {
     fontWeight?: "bold";
     textDecoration?: "underline" | "line-through";
   };
+  scopes?: string[];
 };
 
 export type TokenGroup = {

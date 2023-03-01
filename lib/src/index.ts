@@ -2,6 +2,7 @@ import { loadTheme, Theme, StringTheme, RawTheme } from "./theme";
 import { LanguageAlias } from "./language-data";
 import { getThemeColors, ThemeColors } from "./theme-colors";
 import {
+  highlightTokensWithScopes,
   highlightTokens,
   loadGrammars,
   UnknownLanguageError,
@@ -32,6 +33,27 @@ export type {
   ThemeColors,
 };
 export { UnknownLanguageError };
+
+export async function highlightWithScopes(
+  code: string,
+  alias: LanguageAlias,
+  themeOrThemeName: Theme = "dark-plus"
+) {
+  const { langId, grammarsPromise } = loadGrammars(alias);
+
+  const theme = await loadTheme(themeOrThemeName);
+  if (!theme) {
+    throw new UnknownThemeError(themeOrThemeName as string);
+  }
+
+  const grammar = await grammarsPromise;
+
+  return {
+    lines: highlightTokensWithScopes(code, grammar, theme),
+    lang: langId,
+    colors: getThemeColors(theme),
+  };
+}
 
 export async function highlight(
   code: string,

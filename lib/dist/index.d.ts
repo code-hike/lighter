@@ -92,6 +92,7 @@ type Token = {
         fontWeight?: "bold";
         textDecoration?: "underline" | "line-through";
     };
+    scopes?: string[];
 };
 type TokenGroup = {
     annotationName: string;
@@ -119,6 +120,41 @@ declare class UnknownLanguageError extends Error {
     constructor(alias: string);
 }
 
+declare function highlightWithScopes(code: string, alias: LanguageAlias, themeOrThemeName?: Theme): Promise<{
+    lines: Token[][];
+    lang: LanguageName;
+    colors: {
+        background: string;
+        foreground: string;
+        lineNumberForeground: string;
+        selectionBackground: string;
+        editorBackground: string;
+        editorGroupHeaderBackground: string;
+        activeTabBackground: string;
+        activeTabForeground: string;
+        tabBorder: string;
+        activeTabBorder: string;
+        inactiveTabBackground: string;
+        inactiveTabForeground: string;
+        diffInsertedTextBackground: string;
+        diffInsertedLineBackground: string;
+        diffRemovedTextBackground: string;
+        diffRemovedLineBackground: string;
+        iconForeground: string;
+        sideBarBackground: string;
+        sideBarForeground: string;
+        sideBarBorder: string;
+        listSelectionBackground: string;
+        listSelectionForeground: string;
+        listHoverBackground: string;
+        listHoverForeground: string;
+        tabsBorder: string;
+        activeTabTopBorder: string;
+        hoverTabBackground: string;
+        hoverTabForeground: string;
+        colorScheme: "dark" | "light";
+    };
+}>;
 declare function highlight(code: string, alias: LanguageAlias, themeOrThemeName?: Theme): Promise<{
     lines: Token[][];
     lang: LanguageName;
@@ -198,4 +234,4 @@ declare class UnknownThemeError extends Error {
     constructor(theme: string);
 }
 
-export { Annotation, LanguageAlias, Line, LineGroup, Lines, RawTheme, StringTheme, Theme, ThemeColors, Token, TokenGroup, Tokens, UnknownLanguageError, UnknownThemeError, annotatedHighlight, extractAnnotations, highlight };
+export { Annotation, LanguageAlias, Line, LineGroup, Lines, RawTheme, StringTheme, Theme, ThemeColors, Token, TokenGroup, Tokens, UnknownLanguageError, UnknownThemeError, annotatedHighlight, extractAnnotations, highlight, highlightWithScopes };

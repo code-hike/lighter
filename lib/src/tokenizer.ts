@@ -41,24 +41,65 @@ export function tokenize(code: string, grammar: IGrammar, colors: string[]) {
   });
 }
 
-// export function tokenizeWithScopes(code: string, grammar: IGrammar) {
-//   let stack: StackElement | null = null;
-//   const lines = code.split(/\r?\n|\r/g);
-//   return lines.map((line) => {
-//     const { tokens, ruleStack } = grammar.tokenizeLine(line, stack);
-//     const newTokens: { content: string; scopes: string }[] = [];
+export function tokenizeWithScopes(
+  code: string,
+  grammar: IGrammar,
+  colors: string[]
+) {
+  let stack: StackElement | null = null;
+  const lines = code.split(/\r?\n|\r/g);
 
-//     for (let i = 0; i < tokens.length; i++) {
-//       const { startIndex, endIndex, scopes } = tokens[i];
-//       newTokens.push({
-//         content: line.slice(startIndex, endIndex),
-//         scopes: scopes.join(" "),
-//       });
-//     }
-//     stack = ruleStack;
-//     return newTokens;
-//   });
-// }
+  return lines.map((line) => {
+    const { tokens, ruleStack } = grammar.tokenizeLine2(line, stack);
+
+    const newTokens: Token[] = [];
+    let tokenEnd = line.length;
+    for (let i = tokens.length - 2; i >= 0; i = i - 2) {
+      const tokenStart = tokens[i];
+      const metadata = tokens[i + 1];
+      newTokens.unshift({
+        content: line.slice(tokenStart, tokenEnd),
+        style: getStyle(metadata, colors),
+      } as Token);
+      tokenEnd = tokenStart;
+    }
+    const tokensWithScopes = addScopesToLine(line, stack, grammar, newTokens);
+    stack = ruleStack;
+    return tokensWithScopes;
+  });
+}
+
+export function addScopesToLine(
+  line: string,
+  stack: StackElement | null,
+  grammar: IGrammar,
+  styledTokens: Token[]
+) {
+  const { tokens } = grammar.tokenizeLine(line, stack);
+
+  const newTokens: Token[] = [];
+
+  for (let i = 0; i < tokens.length; i++) {
+    const { startIndex, endIndex, scopes } = tokens[i];
+
+    let count = 0;
+    const styledToken = styledTokens.find((t) => {
+      count += t.content.length;
+
+      if (startIndex < count) {
+        return true;
+      }
+    });
+
+    newTokens.push({
+      ...styledToken,
+      content: line.slice(startIndex, endIndex),
+      scopes: scopes.reverse(),
+    });
+  }
+
+  return newTokens;
+}
 
 function getStyle(metadata: number, colors: string[]): Token["style"] {
   const fg = (metadata & FOREGROUND_MASK) >>> FOREGROUND_OFFSET;

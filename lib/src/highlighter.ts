@@ -9,7 +9,7 @@ import onig from "vscode-oniguruma/release/onig.wasm";
 import { aliasToLangData } from "./language";
 import { loadGrammarByScope } from "./grammars";
 import { LanguageAlias } from "./language-data";
-import { tokenize } from "./tokenizer";
+import { tokenizeWithScopes, tokenize } from "./tokenizer";
 import { FinalTheme } from "./theme";
 
 let registry: Registry | null = null;
@@ -55,4 +55,14 @@ export function highlightTokens(
   registry.setTheme(theme);
   const colorMap = registry.getColorMap();
   return tokenize(code, grammar, colorMap);
+}
+
+export function highlightTokensWithScopes(
+  code: string,
+  grammar: IGrammar,
+  theme: FinalTheme
+) {
+  registry.setTheme(theme);
+  const colorMap = registry.getColorMap();
+  return tokenizeWithScopes(code, grammar, colorMap);
 }
