@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.5.1
+
+### Patch Changes
+
+- 2433479: Add highlight with scopes
+
 ## 0.5.0
 
 ### Minor Changes
