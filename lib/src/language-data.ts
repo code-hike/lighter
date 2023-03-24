@@ -8,6 +8,7 @@ export type LanguageAlias =
   | "apex"
   | "apl"
   | "applescript"
+  | "ara"
   | "asm"
   | "astro"
   | "awk"
@@ -39,6 +40,7 @@ export type LanguageAlias =
   | "cue"
   | "d"
   | "dart"
+  | "dax"
   | "diff"
   | "docker"
   | "dream-maker"
@@ -71,10 +73,12 @@ export type LanguageAlias =
   | "http"
   | "imba"
   | "ini"
+  | "properties"
   | "java"
   | "javascript"
   | "js"
   | "jinja-html"
+  | "jison"
   | "json"
   | "json5"
   | "jsonc"
@@ -84,6 +88,8 @@ export type LanguageAlias =
   | "jsx"
   | "julia"
   | "kotlin"
+  | "kusto"
+  | "kql"
   | "latex"
   | "less"
   | "liquid"
@@ -110,6 +116,7 @@ export type LanguageAlias =
   | "php"
   | "plsql"
   | "postcss"
+  | "powerquery"
   | "powershell"
   | "ps"
   | "ps1"
@@ -141,9 +148,10 @@ export type LanguageAlias =
   | "shaderlab"
   | "shader"
   | "shellscript"
-  | "shell"
   | "bash"
+  | "console"
   | "sh"
+  | "shell"
   | "zsh"
   | "smalltalk"
   | "solidity"
@@ -178,6 +186,7 @@ export type LanguageAlias =
   | "wasm"
   | "wenyan"
   | "文言"
+  | "wgsl"
   | "xml"
   | "xsl"
   | "yaml"
@@ -191,6 +200,7 @@ export type LanguageName =
   | "apex"
   | "apl"
   | "applescript"
+  | "ara"
   | "asm"
   | "astro"
   | "awk"
@@ -215,6 +225,7 @@ export type LanguageName =
   | "cue"
   | "d"
   | "dart"
+  | "dax"
   | "diff"
   | "docker"
   | "dream-maker"
@@ -245,6 +256,7 @@ export type LanguageName =
   | "java"
   | "javascript"
   | "jinja-html"
+  | "jison"
   | "json"
   | "json5"
   | "jsonc"
@@ -253,6 +265,7 @@ export type LanguageName =
   | "jsx"
   | "julia"
   | "kotlin"
+  | "kusto"
   | "latex"
   | "less"
   | "liquid"
@@ -276,6 +289,7 @@ export type LanguageName =
   | "php"
   | "plsql"
   | "postcss"
+  | "powerquery"
   | "powershell"
   | "prisma"
   | "prolog"
@@ -326,6 +340,7 @@ export type LanguageName =
   | "vue"
   | "wasm"
   | "wenyan"
+  | "wgsl"
   | "xml"
   | "xsl"
   | "yaml"
@@ -338,6 +353,7 @@ export type ScopeName =
   | "source.apex"
   | "source.apl"
   | "source.applescript"
+  | "source.ara"
   | "source.asm.x86_64"
   | "source.astro"
   | "source.awk"
@@ -362,6 +378,7 @@ export type ScopeName =
   | "source.cue"
   | "source.d"
   | "source.dart"
+  | "source.dax"
   | "source.diff"
   | "source.dockerfile"
   | "source.dm"
@@ -392,6 +409,7 @@ export type ScopeName =
   | "source.java"
   | "source.js"
   | "text.html.jinja"
+  | "source.jison"
   | "source.json"
   | "source.json5"
   | "source.json.comments"
@@ -400,6 +418,7 @@ export type ScopeName =
   | "source.js.jsx"
   | "source.julia"
   | "source.kotlin"
+  | "source.kusto"
   | "text.tex.latex"
   | "source.css.less"
   | "text.html.liquid"
@@ -423,6 +442,7 @@ export type ScopeName =
   | "source.php"
   | "source.plsql.oracle"
   | "source.css.postcss"
+  | "source.powerquery"
   | "source.powershell"
   | "source.prisma"
   | "source.prolog"
@@ -473,6 +493,7 @@ export type ScopeName =
   | "source.vue"
   | "source.wat"
   | "source.wenyan"
+  | "source.wgsl"
   | "text.xml"
   | "text.xml.xsl"
   | "source.yaml"
@@ -492,6 +513,7 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   apex: "source.apex",
   apl: "source.apl",
   applescript: "source.applescript",
+  ara: "source.ara",
   asm: "source.asm.x86_64",
   astro: "source.astro",
   awk: "source.awk",
@@ -523,6 +545,7 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   cue: "source.cue",
   d: "source.d",
   dart: "source.dart",
+  dax: "source.dax",
   diff: "source.diff",
   docker: "source.dockerfile",
   "dream-maker": "source.dm",
@@ -555,10 +578,12 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   http: "source.http",
   imba: "source.imba",
   ini: "source.ini",
+  properties: "source.ini",
   java: "source.java",
   javascript: "source.js",
   js: "source.js",
   "jinja-html": "text.html.jinja",
+  jison: "source.jison",
   json: "source.json",
   json5: "source.json5",
   jsonc: "source.json.comments",
@@ -568,6 +593,8 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   jsx: "source.js.jsx",
   julia: "source.julia",
   kotlin: "source.kotlin",
+  kusto: "source.kusto",
+  kql: "source.kusto",
   latex: "text.tex.latex",
   less: "source.css.less",
   liquid: "text.html.liquid",
@@ -594,6 +621,7 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   php: "source.php",
   plsql: "source.plsql.oracle",
   postcss: "source.css.postcss",
+  powerquery: "source.powerquery",
   powershell: "source.powershell",
   ps: "source.powershell",
   ps1: "source.powershell",
@@ -625,9 +653,10 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   shaderlab: "source.shaderlab",
   shader: "source.shaderlab",
   shellscript: "source.shell",
-  shell: "source.shell",
   bash: "source.shell",
+  console: "source.shell",
   sh: "source.shell",
+  shell: "source.shell",
   zsh: "source.shell",
   smalltalk: "source.smalltalk",
   solidity: "source.solidity",
@@ -662,6 +691,7 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   wasm: "source.wat",
   wenyan: "source.wenyan",
   文言: "source.wenyan",
+  wgsl: "source.wgsl",
   xml: "text.xml",
   xsl: "text.xml.xsl",
   yaml: "source.yaml",
@@ -711,6 +741,11 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
     path: "applescript.tmLanguage.json",
     embeddedScopes: [],
   },
+  "source.ara": {
+    id: "ara",
+    path: "ara.tmLanguage.json",
+    embeddedScopes: [],
+  },
   "source.asm.x86_64": {
     id: "asm",
     path: "asm.tmLanguage.json",
@@ -720,12 +755,13 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
     id: "astro",
     path: "astro.tmLanguage.json",
     embeddedScopes: [
-      "source.stylus",
-      "source.css.scss",
-      "source.sass",
-      "source.css.less",
-      "source.css",
       "source.tsx",
+      "source.css.postcss",
+      "source.css.less",
+      "source.css.scss",
+      "source.css",
+      "source.sass",
+      "source.stylus",
       "source.ts",
       "source.js",
       "source.json",
@@ -919,6 +955,11 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   "source.dart": {
     id: "dart",
     path: "dart.tmLanguage.json",
+    embeddedScopes: [],
+  },
+  "source.dax": {
+    id: "dax",
+    path: "dax.tmLanguage.json",
     embeddedScopes: [],
   },
   "source.diff": {
@@ -1219,6 +1260,11 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
     path: "jinja-html.tmLanguage.json",
     embeddedScopes: ["source.css", "source.js", "text.html.basic"],
   },
+  "source.jison": {
+    id: "jison",
+    path: "jison.tmLanguage.json",
+    embeddedScopes: ["source.js"],
+  },
   "source.json": {
     id: "json",
     path: "json.tmLanguage.json",
@@ -1265,6 +1311,11 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   "source.kotlin": {
     id: "kotlin",
     path: "kotlin.tmLanguage.json",
+    embeddedScopes: [],
+  },
+  "source.kusto": {
+    id: "kusto",
+    path: "kusto.tmLanguage.json",
     embeddedScopes: [],
   },
   "text.tex.latex": {
@@ -1607,6 +1658,11 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   "source.css.postcss": {
     id: "postcss",
     path: "postcss.tmLanguage.json",
+    embeddedScopes: [],
+  },
+  "source.powerquery": {
+    id: "powerquery",
+    path: "powerquery.tmLanguage.json",
     embeddedScopes: [],
   },
   "source.powershell": {
@@ -2092,6 +2148,11 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   "source.wenyan": {
     id: "wenyan",
     path: "wenyan.tmLanguage.json",
+    embeddedScopes: [],
+  },
+  "source.wgsl": {
+    id: "wgsl",
+    path: "wgsl.tmLanguage.json",
     embeddedScopes: [],
   },
   "text.xml": {
