@@ -1,5 +1,12 @@
 # @code-hike/lighter
 
+## 0.5.2
+
+### Patch Changes
+
+- dad4be4: Update grammars
+- 0437455: Export theme and lang names
+
 ## 0.5.1
 
 ### Patch Changes
