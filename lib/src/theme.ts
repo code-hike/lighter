@@ -10,7 +10,7 @@ export async function loadTheme(theme: Theme) {
 
 const themeCache = new Map<StringTheme, Promise<RawTheme>>();
 function loadThemeByName(name: StringTheme): Promise<RawTheme | undefined> {
-  if (!ALL_NAMES.includes(name)) {
+  if (!THEME_NAMES.includes(name)) {
     return Promise.resolve(undefined);
   }
 
@@ -102,7 +102,7 @@ export type FinalTheme = {
   colors: { [key: string]: string };
 };
 
-const ALL_NAMES = [
+export const THEME_NAMES = [
   "dark-plus",
   "dracula-soft",
   "dracula",
@@ -126,7 +126,7 @@ const ALL_NAMES = [
   "solarized-dark",
   "solarized-light",
 ] as const;
-type NamesTuple = typeof ALL_NAMES;
+type NamesTuple = typeof THEME_NAMES;
 export type StringTheme = NamesTuple[number];
 
 export type Theme = StringTheme | RawTheme;

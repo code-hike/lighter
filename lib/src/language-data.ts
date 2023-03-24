@@ -1,197 +1,200 @@
 // generated with `node utils/update-language-data.mjs`
 
-export type LanguageAlias =
-  | "abap"
-  | "actionscript-3"
-  | "ada"
-  | "apache"
-  | "apex"
-  | "apl"
-  | "applescript"
-  | "ara"
-  | "asm"
-  | "astro"
-  | "awk"
-  | "ballerina"
-  | "bat"
-  | "batch"
-  | "berry"
-  | "be"
-  | "bibtex"
-  | "bicep"
-  | "blade"
-  | "c"
-  | "cadence"
-  | "cdc"
-  | "clarity"
-  | "clojure"
-  | "clj"
-  | "cmake"
-  | "cobol"
-  | "codeql"
-  | "ql"
-  | "coffee"
-  | "cpp"
-  | "crystal"
-  | "csharp"
-  | "c#"
-  | "cs"
-  | "css"
-  | "cue"
-  | "d"
-  | "dart"
-  | "dax"
-  | "diff"
-  | "docker"
-  | "dream-maker"
-  | "elixir"
-  | "elm"
-  | "erb"
-  | "erlang"
-  | "erl"
-  | "fish"
-  | "fsharp"
-  | "f#"
-  | "fs"
-  | "gherkin"
-  | "git-commit"
-  | "git-rebase"
-  | "glsl"
-  | "gnuplot"
-  | "go"
-  | "graphql"
-  | "groovy"
-  | "hack"
-  | "haml"
-  | "handlebars"
-  | "hbs"
-  | "haskell"
-  | "hs"
-  | "hcl"
-  | "hlsl"
-  | "html"
-  | "http"
-  | "imba"
-  | "ini"
-  | "properties"
-  | "java"
-  | "javascript"
-  | "js"
-  | "jinja-html"
-  | "jison"
-  | "json"
-  | "json5"
-  | "jsonc"
-  | "jsonnet"
-  | "jssm"
-  | "fsl"
-  | "jsx"
-  | "julia"
-  | "kotlin"
-  | "kusto"
-  | "kql"
-  | "latex"
-  | "less"
-  | "liquid"
-  | "lisp"
-  | "logo"
-  | "lua"
-  | "make"
-  | "makefile"
-  | "markdown"
-  | "md"
-  | "marko"
-  | "matlab"
-  | "mdx"
-  | "mermaid"
-  | "nginx"
-  | "nim"
-  | "nix"
-  | "objective-c"
-  | "objc"
-  | "objective-cpp"
-  | "ocaml"
-  | "pascal"
-  | "perl"
-  | "php"
-  | "plsql"
-  | "postcss"
-  | "powerquery"
-  | "powershell"
-  | "ps"
-  | "ps1"
-  | "prisma"
-  | "prolog"
-  | "proto"
-  | "pug"
-  | "jade"
-  | "puppet"
-  | "purescript"
-  | "python"
-  | "py"
-  | "r"
-  | "raku"
-  | "perl6"
-  | "razor"
-  | "rel"
-  | "riscv"
-  | "rst"
-  | "ruby"
-  | "rb"
-  | "rust"
-  | "rs"
-  | "sas"
-  | "sass"
-  | "scala"
-  | "scheme"
-  | "scss"
-  | "shaderlab"
-  | "shader"
-  | "shellscript"
-  | "bash"
-  | "console"
-  | "sh"
-  | "shell"
-  | "zsh"
-  | "smalltalk"
-  | "solidity"
-  | "sparql"
-  | "sql"
-  | "ssh-config"
-  | "stata"
-  | "stylus"
-  | "styl"
-  | "svelte"
-  | "swift"
-  | "system-verilog"
-  | "tasl"
-  | "tcl"
-  | "tex"
-  | "toml"
-  | "tsx"
-  | "turtle"
-  | "twig"
-  | "typescript"
-  | "ts"
-  | "v"
-  | "vb"
-  | "cmd"
-  | "verilog"
-  | "vhdl"
-  | "viml"
-  | "vim"
-  | "vimscript"
-  | "vue-html"
-  | "vue"
-  | "wasm"
-  | "wenyan"
-  | "文言"
-  | "wgsl"
-  | "xml"
-  | "xsl"
-  | "yaml"
-  | "yml"
-  | "zenscript";
+export const LANG_NAMES = [
+  "abap",
+  "actionscript-3",
+  "ada",
+  "apache",
+  "apex",
+  "apl",
+  "applescript",
+  "ara",
+  "asm",
+  "astro",
+  "awk",
+  "ballerina",
+  "bat",
+  "batch",
+  "berry",
+  "be",
+  "bibtex",
+  "bicep",
+  "blade",
+  "c",
+  "cadence",
+  "cdc",
+  "clarity",
+  "clojure",
+  "clj",
+  "cmake",
+  "cobol",
+  "codeql",
+  "ql",
+  "coffee",
+  "cpp",
+  "crystal",
+  "csharp",
+  "c#",
+  "cs",
+  "css",
+  "cue",
+  "d",
+  "dart",
+  "dax",
+  "diff",
+  "docker",
+  "dream-maker",
+  "elixir",
+  "elm",
+  "erb",
+  "erlang",
+  "erl",
+  "fish",
+  "fsharp",
+  "f#",
+  "fs",
+  "gherkin",
+  "git-commit",
+  "git-rebase",
+  "glsl",
+  "gnuplot",
+  "go",
+  "graphql",
+  "groovy",
+  "hack",
+  "haml",
+  "handlebars",
+  "hbs",
+  "haskell",
+  "hs",
+  "hcl",
+  "hlsl",
+  "html",
+  "http",
+  "imba",
+  "ini",
+  "properties",
+  "java",
+  "javascript",
+  "js",
+  "jinja-html",
+  "jison",
+  "json",
+  "json5",
+  "jsonc",
+  "jsonnet",
+  "jssm",
+  "fsl",
+  "jsx",
+  "julia",
+  "kotlin",
+  "kusto",
+  "kql",
+  "latex",
+  "less",
+  "liquid",
+  "lisp",
+  "logo",
+  "lua",
+  "make",
+  "makefile",
+  "markdown",
+  "md",
+  "marko",
+  "matlab",
+  "mdx",
+  "mermaid",
+  "nginx",
+  "nim",
+  "nix",
+  "objective-c",
+  "objc",
+  "objective-cpp",
+  "ocaml",
+  "pascal",
+  "perl",
+  "php",
+  "plsql",
+  "postcss",
+  "powerquery",
+  "powershell",
+  "ps",
+  "ps1",
+  "prisma",
+  "prolog",
+  "proto",
+  "pug",
+  "jade",
+  "puppet",
+  "purescript",
+  "python",
+  "py",
+  "r",
+  "raku",
+  "perl6",
+  "razor",
+  "rel",
+  "riscv",
+  "rst",
+  "ruby",
+  "rb",
+  "rust",
+  "rs",
+  "sas",
+  "sass",
+  "scala",
+  "scheme",
+  "scss",
+  "shaderlab",
+  "shader",
+  "shellscript",
+  "bash",
+  "console",
+  "sh",
+  "shell",
+  "zsh",
+  "smalltalk",
+  "solidity",
+  "sparql",
+  "sql",
+  "ssh-config",
+  "stata",
+  "stylus",
+  "styl",
+  "svelte",
+  "swift",
+  "system-verilog",
+  "tasl",
+  "tcl",
+  "tex",
+  "toml",
+  "tsx",
+  "turtle",
+  "twig",
+  "typescript",
+  "ts",
+  "v",
+  "vb",
+  "cmd",
+  "verilog",
+  "vhdl",
+  "viml",
+  "vim",
+  "vimscript",
+  "vue-html",
+  "vue",
+  "wasm",
+  "wenyan",
+  "文言",
+  "wgsl",
+  "xml",
+  "xsl",
+  "yaml",
+  "yml",
+  "zenscript",
+];
+type NamesTuple = typeof LANG_NAMES;
+export type LanguageAlias = NamesTuple[number];
 export type LanguageName =
   | "abap"
   | "actionscript-3"
@@ -856,6 +859,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.stylus",
       "source.sass",
       "source.glsl",
+      "source.applescript",
       "text.bibtex",
       "text.tex.latex",
       "source.elixir",
@@ -1023,6 +1027,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.stylus",
       "source.sass",
       "source.glsl",
+      "source.applescript",
       "text.bibtex",
       "text.tex.latex",
       "source.elixir",
@@ -1135,6 +1140,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "text.tex",
       "source.stylus",
       "source.glsl",
+      "source.applescript",
       "text.bibtex",
       "text.tex.latex",
       "source.elixir",
@@ -1391,6 +1397,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.stylus",
       "source.sass",
       "source.glsl",
+      "source.applescript",
       "text.bibtex",
       "text.tex.latex",
       "source.elixir",
@@ -1518,6 +1525,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.ini",
       "text.html.basic",
       "source.css",
+      "source.applescript",
       "source.tsx",
       "source.yaml",
       "text.html.markdown",
@@ -1543,6 +1551,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "text.tex",
       "source.stylus",
       "source.sass",
+      "source.applescript",
       "text.bibtex",
       "text.tex.latex",
       "source.elixir",
@@ -1855,6 +1864,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.haskell",
       "text.tex",
       "source.glsl",
+      "source.applescript",
       "text.bibtex",
       "text.tex.latex",
       "source.elixir",
@@ -2009,6 +2019,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.haskell",
       "text.tex",
       "source.glsl",
+      "source.applescript",
       "text.bibtex",
       "text.tex.latex",
       "source.elixir",
@@ -2078,6 +2089,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.haskell",
       "text.tex",
       "source.glsl",
+      "source.applescript",
       "text.bibtex",
       "text.tex.latex",
       "source.elixir",

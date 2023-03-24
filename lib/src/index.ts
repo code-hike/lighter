@@ -1,5 +1,5 @@
-import { loadTheme, Theme, StringTheme, RawTheme } from "./theme";
-import { LanguageAlias } from "./language-data";
+import { loadTheme, Theme, StringTheme, RawTheme, THEME_NAMES } from "./theme";
+import { LanguageAlias, LANG_NAMES } from "./language-data";
 import { getThemeColors, ThemeColors } from "./theme-colors";
 import {
   highlightTokensWithScopes,
@@ -32,7 +32,16 @@ export type {
   Token,
   ThemeColors,
 };
-export { UnknownLanguageError };
+
+class UnknownThemeError extends Error {
+  theme: string;
+  constructor(theme: string) {
+    super(`Unknown theme: ${theme}`);
+    this.theme = theme;
+  }
+}
+
+export { UnknownLanguageError, UnknownThemeError, THEME_NAMES, LANG_NAMES };
 
 export async function highlightWithScopes(
   code: string,
@@ -120,12 +129,4 @@ export async function annotatedHighlight(
     lang: langId,
     colors: getThemeColors(theme),
   };
-}
-
-export class UnknownThemeError extends Error {
-  theme: string;
-  constructor(theme: string) {
-    super(`Unknown theme: ${theme}`);
-    this.theme = theme;
-  }
 }
