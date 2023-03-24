@@ -429,7 +429,7 @@ export type ScopeName =
   | "text.html.markdown"
   | "text.marko"
   | "source.matlab"
-  | "text.html.markdown.jsx"
+  | "source.mdx"
   | "source.mermaid"
   | "source.nginx"
   | "source.nim"
@@ -607,7 +607,7 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   md: "text.html.markdown",
   marko: "text.marko",
   matlab: "source.matlab",
-  mdx: "text.html.markdown.jsx",
+  mdx: "source.mdx",
   mermaid: "source.mermaid",
   nginx: "source.nginx",
   nim: "source.nim",
@@ -1442,7 +1442,6 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.ini",
       "text.html.basic",
       "source.css",
-      "source.applescript",
     ],
   },
   "text.marko": {
@@ -1460,7 +1459,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
     path: "matlab.tmLanguage.json",
     embeddedScopes: [],
   },
-  "text.html.markdown.jsx": {
+  "source.mdx": {
     id: "mdx",
     path: "mdx.tmLanguage.json",
     embeddedScopes: [
@@ -1478,7 +1477,6 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.dart",
       "source.fsharp",
       "source.cs",
-      "source.tsx",
       "source.ts",
       "source.shell",
       "source.scala",
@@ -1506,7 +1504,6 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.coffee",
       "source.clojure",
       "source.batchfile",
-      "source.yaml",
       "text.xml.xsl",
       "text.xml",
       "source.asp.vb.net",
@@ -1521,9 +1518,10 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.ini",
       "text.html.basic",
       "source.css",
+      "source.tsx",
+      "source.yaml",
       "text.html.markdown",
       "source.js.jsx",
-      "source.applescript",
     ],
   },
   "source.mermaid": {
