@@ -32,7 +32,8 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "watch": "rollup -c -w"
+    "watch": "rollup -c -w",
+    "regenerate": "node ./utils/update.mjs"
   },
   "repository": "https://github.com/code-hike/lighter",
   "homepage": "https://lighter.codehike.org",
