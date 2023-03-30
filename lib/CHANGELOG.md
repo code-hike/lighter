@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.6.0
+
+### Minor Changes
+
+- 3a1d920: Read grammars and themes from public folder when using network
+
 ## 0.5.2
 
 ### Patch Changes
