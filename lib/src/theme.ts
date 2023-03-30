@@ -25,7 +25,7 @@ async function reallyLoadThemeByName(name: StringTheme): Promise<RawTheme> {
   try {
     return await readJSON("themes", name + ".json");
   } catch (e) {
-    return await fetchJSON(`theme?name=${name}`);
+    return await fetchJSON(`themes/${name}`);
   }
 }
 

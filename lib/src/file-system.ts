@@ -1,6 +1,7 @@
 import resolveSync from "./resolve";
 
 export async function readJSON(folder: string, filename: string) {
+  // throw new Error("no file system");
   const fs = await import("fs").then((m) => m.promises);
   const path = await import("path");
   const { URL } = await import("url");

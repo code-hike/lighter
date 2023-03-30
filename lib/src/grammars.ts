@@ -41,7 +41,7 @@ export async function loadGrammarByScope(
   }
 
   // console.log("loading from network", lang.id);
-  const fetchPromise = fetchJSON(`grammars?lang=${lang.id}`) as Promise<
+  const fetchPromise = fetchJSON(`grammars/${lang.id}`) as Promise<
     IRawGrammar[]
   >;
 

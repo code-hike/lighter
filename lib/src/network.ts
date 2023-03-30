@@ -2,28 +2,20 @@
 const LIGHTER_VERSION = "__LIGHTER_VERSION__";
 
 // endpoints:
-// grammars?lang=${langId}
-// theme?name=${name}
+// /grammars/${name}.json
+// /themes/${name}.json
 export async function fetchJSON(endpoint: string) {
   if (typeof fetch === "function") {
-    // console.log(
-    //   `using fetch`,
-    //   `https://lighter.codehike.org/api/${endpoint}&v=${LIGHTER_VERSION}`
-    // );
-    const r = await fetch(
-      `https://lighter.codehike.org/api/${endpoint}&v=${LIGHTER_VERSION}`
-    );
+    // console.log(`using fetch`, `https://lighter.codehike.org/${endpoint}.json`);
+    const r = await fetch(`https://lighter.codehike.org/${endpoint}.json`);
     return await r.json();
   }
-  // console.log(
-  //   `using https`,
-  //   `https://lighter.codehike.org/api/${endpoint}&v=${LIGHTER_VERSION}`
-  // );
+  // console.log(`using https`, `https://lighter.codehike.org/${endpoint}.json`);
 
   const https = await import("https");
   const options = {
     host: "lighter.codehike.org",
-    path: `/api/${endpoint}&v=${LIGHTER_VERSION}`,
+    path: `/${endpoint}.json`,
     method: "GET",
   };
 
