@@ -20,6 +20,8 @@
     "@rollup/plugin-replace": "^5.0.1",
     "@rollup/pluginutils": "^5.0.2",
     "@types/react": "^18.0.26",
+    "jsonc-parser": "^3.2.0",
+    "node-fetch": "^3.3.1",
     "rollup": "^2.79.0",
     "rollup-plugin-dts": "^5.1.1",
     "rollup-plugin-typescript2": "^0.34.1",
