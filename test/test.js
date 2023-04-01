@@ -1,4 +1,4 @@
-import { highlightWithScopes } from "@code-hike/lighter";
+import { highlight } from "@code-hike/lighter";
 
 // highlight("const x", "js").then((tokens) => {
 //   console.log("default", JSON.stringify(tokens));
@@ -12,14 +12,15 @@ const alias = "js";
 const theme = "dracula";
 
 async function run() {
-  const result = await highlightWithScopes(code, alias, theme);
+  const result = await highlight(code, alias, theme, { scopes: true });
   // console.log(JSON.stringify(result.lines));
   // console.log(result.lines[0].map((t) => `${t.style?.color} ${t.content}`));
+
   table(
     result.lines[0].map((t) => ({
       t: t.content,
       c: t.style.color,
-      s: t.scopes.join(" ").slice(0, 24),
+      s: t.scopes?.join(" ").slice(0, 24),
     }))
   );
 }
