@@ -80,7 +80,17 @@ export async function highlight<GivenConfig extends Config>(
   themeOrThemeName: Theme = "dark-plus",
   config: Config = {}
 ) {
-  const { langId, grammarsPromise } = loadGrammars(lang);
+  const theCode = code || "";
+  const theLang = lang || "js"; // TODO default to text
+
+  if (typeof theCode !== "string") {
+    throw new Error("Syntax highlighter error: code must be a string");
+  }
+  if (typeof theLang !== "string") {
+    throw new Error("Syntax highlighter error: lang must be a string");
+  }
+
+  const { langId, grammarsPromise } = loadGrammars(theLang);
 
   const theme = await loadTheme(themeOrThemeName);
   if (!theme) {
@@ -90,8 +100,8 @@ export async function highlight<GivenConfig extends Config>(
   const grammar = await grammarsPromise;
 
   const lines = config?.scopes
-    ? highlightTokensWithScopes(code, grammar, theme)
-    : highlightTokens(code, grammar, theme);
+    ? highlightTokensWithScopes(theCode, grammar, theme)
+    : highlightTokens(theCode, grammar, theme);
 
   if (isAnnotatedConfig(config)) {
     const annotations = config?.annotations || [];
