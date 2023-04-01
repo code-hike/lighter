@@ -59,6 +59,272 @@ exports[`highlight js 1`] = `
 }
 `;
 
+exports[`highlight js with theme 1`] = `
+{
+  "colors": {
+    "activeTabBackground": "#0d1117",
+    "activeTabBorder": "#0d1117",
+    "activeTabForeground": "#c9d1d9",
+    "activeTabTopBorder": "#f78166",
+    "background": "#0d1117",
+    "colorScheme": "dark",
+    "diffInsertedLineBackground": "#23863633",
+    "diffInsertedTextBackground": "#2386364d",
+    "diffRemovedLineBackground": "#da363333",
+    "diffRemovedTextBackground": "#da36334d",
+    "editorBackground": "#0d1117",
+    "editorGroupHeaderBackground": "#010409",
+    "foreground": "#c9d1d9",
+    "hoverTabBackground": "#0d1117",
+    "hoverTabForeground": "#8b949e",
+    "iconForeground": "#8b949e",
+    "inactiveTabBackground": "#010409",
+    "inactiveTabForeground": "#8b949e",
+    "lineNumberForeground": "#6e7681",
+    "listHoverBackground": "#6e76811a",
+    "listHoverForeground": "#c9d1d9",
+    "listSelectionBackground": "#6e768166",
+    "listSelectionForeground": "#c9d1d9",
+    "selectionBackground": "#264F78",
+    "sideBarBackground": "#010409",
+    "sideBarBorder": "#30363d",
+    "sideBarForeground": "#c9d1d9",
+    "tabBorder": "#30363d",
+    "tabsBorder": "#30363d",
+  },
+  "lang": "javascript",
+  "lines": [
+    [
+      {
+        "content": "x ",
+        "style": {
+          "color": "#C9D1D9",
+        },
+      },
+      {
+        "content": "=",
+        "style": {
+          "color": "#FF7B72",
+        },
+      },
+      {
+        "content": " ",
+        "style": {
+          "color": "#C9D1D9",
+        },
+      },
+      {
+        "content": "1",
+        "style": {
+          "color": "#79C0FF",
+        },
+      },
+    ],
+  ],
+}
+`;
+
+exports[`highlight with empty theme 1`] = `
+{
+  "colors": {
+    "activeTabBackground": "#1E1E1E",
+    "activeTabBorder": "#1E1E1E",
+    "activeTabForeground": "#ffffff",
+    "activeTabTopBorder": undefined,
+    "background": "#1E1E1E",
+    "colorScheme": "dark",
+    "diffInsertedLineBackground": "#9bb95533",
+    "diffInsertedTextBackground": "#9ccc2c33",
+    "diffRemovedLineBackground": "#ff000033",
+    "diffRemovedTextBackground": "#ff000033",
+    "editorBackground": "#1E1E1E",
+    "editorGroupHeaderBackground": "#252526",
+    "foreground": "#bbbbbb",
+    "hoverTabBackground": "#2D2D2D",
+    "hoverTabForeground": "#ffffff80",
+    "iconForeground": "#C5C5C5",
+    "inactiveTabBackground": "#2D2D2D",
+    "inactiveTabForeground": "#ffffff80",
+    "lineNumberForeground": "#858585",
+    "listHoverBackground": "#2A2D2E",
+    "listHoverForeground": undefined,
+    "listSelectionBackground": "#37373D",
+    "listSelectionForeground": undefined,
+    "selectionBackground": "#264F78",
+    "sideBarBackground": "#252526",
+    "sideBarBorder": "#252526",
+    "sideBarForeground": "#bbbbbb",
+    "tabBorder": "#252526",
+    "tabsBorder": undefined,
+  },
+  "lang": "javascript",
+  "lines": [
+    [
+      {
+        "content": "x = 1",
+        "style": {
+          "color": "#BBBBBB",
+        },
+      },
+    ],
+  ],
+}
+`;
+
+exports[`highlight with scopes 1`] = `
+{
+  "colors": {
+    "activeTabBackground": "#0d1117",
+    "activeTabBorder": "#0d1117",
+    "activeTabForeground": "#c9d1d9",
+    "activeTabTopBorder": "#f78166",
+    "background": "#0d1117",
+    "colorScheme": "dark",
+    "diffInsertedLineBackground": "#23863633",
+    "diffInsertedTextBackground": "#2386364d",
+    "diffRemovedLineBackground": "#da363333",
+    "diffRemovedTextBackground": "#da36334d",
+    "editorBackground": "#0d1117",
+    "editorGroupHeaderBackground": "#010409",
+    "foreground": "#c9d1d9",
+    "hoverTabBackground": "#0d1117",
+    "hoverTabForeground": "#8b949e",
+    "iconForeground": "#8b949e",
+    "inactiveTabBackground": "#010409",
+    "inactiveTabForeground": "#8b949e",
+    "lineNumberForeground": "#6e7681",
+    "listHoverBackground": "#6e76811a",
+    "listHoverForeground": "#c9d1d9",
+    "listSelectionBackground": "#6e768166",
+    "listSelectionForeground": "#c9d1d9",
+    "selectionBackground": "#264F78",
+    "sideBarBackground": "#010409",
+    "sideBarBorder": "#30363d",
+    "sideBarForeground": "#c9d1d9",
+    "tabBorder": "#30363d",
+    "tabsBorder": "#30363d",
+  },
+  "lang": "javascript",
+  "lines": [
+    [
+      {
+        "content": "x",
+        "scopes": [
+          "variable.other.readwrite.js",
+          "source.js",
+        ],
+        "style": {
+          "color": "#C9D1D9",
+        },
+      },
+      {
+        "content": " ",
+        "scopes": [
+          "source.js",
+        ],
+        "style": {
+          "color": "#C9D1D9",
+        },
+      },
+      {
+        "content": "=",
+        "scopes": [
+          "keyword.operator.assignment.js",
+          "source.js",
+        ],
+        "style": {
+          "color": "#FF7B72",
+        },
+      },
+      {
+        "content": " ",
+        "scopes": [
+          "source.js",
+        ],
+        "style": {
+          "color": "#C9D1D9",
+        },
+      },
+      {
+        "content": "1",
+        "scopes": [
+          "constant.numeric.decimal.js",
+          "source.js",
+        ],
+        "style": {
+          "color": "#79C0FF",
+        },
+      },
+    ],
+  ],
+}
+`;
+
+exports[`highlight with theme 1`] = `
+{
+  "colors": {
+    "activeTabBackground": "#0d1117",
+    "activeTabBorder": "#0d1117",
+    "activeTabForeground": "#c9d1d9",
+    "activeTabTopBorder": "#f78166",
+    "background": "#0d1117",
+    "colorScheme": "dark",
+    "diffInsertedLineBackground": "#23863633",
+    "diffInsertedTextBackground": "#2386364d",
+    "diffRemovedLineBackground": "#da363333",
+    "diffRemovedTextBackground": "#da36334d",
+    "editorBackground": "#0d1117",
+    "editorGroupHeaderBackground": "#010409",
+    "foreground": "#c9d1d9",
+    "hoverTabBackground": "#0d1117",
+    "hoverTabForeground": "#8b949e",
+    "iconForeground": "#8b949e",
+    "inactiveTabBackground": "#010409",
+    "inactiveTabForeground": "#8b949e",
+    "lineNumberForeground": "#6e7681",
+    "listHoverBackground": "#6e76811a",
+    "listHoverForeground": "#c9d1d9",
+    "listSelectionBackground": "#6e768166",
+    "listSelectionForeground": "#c9d1d9",
+    "selectionBackground": "#264F78",
+    "sideBarBackground": "#010409",
+    "sideBarBorder": "#30363d",
+    "sideBarForeground": "#c9d1d9",
+    "tabBorder": "#30363d",
+    "tabsBorder": "#30363d",
+  },
+  "lang": "javascript",
+  "lines": [
+    [
+      {
+        "content": "x ",
+        "style": {
+          "color": "#C9D1D9",
+        },
+      },
+      {
+        "content": "=",
+        "style": {
+          "color": "#FF7B72",
+        },
+      },
+      {
+        "content": " ",
+        "style": {
+          "color": "#C9D1D9",
+        },
+      },
+      {
+        "content": "1",
+        "style": {
+          "color": "#79C0FF",
+        },
+      },
+    ],
+  ],
+}
+`;
+
 exports[`null code 1`] = `
 {
   "colors": {

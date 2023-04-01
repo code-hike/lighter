@@ -23,4 +23,21 @@ export function runTests({ highlight }) {
     const result = await highlight("x = 1", "js");
     expect(result).toMatchSnapshot();
   });
+
+  test("highlight with theme", async () => {
+    const result = await highlight("x = 1", "js", "github-dark");
+    expect(result).toMatchSnapshot();
+  });
+
+  test("highlight with empty theme", async () => {
+    const result = await highlight("x = 1", "js", {});
+    expect(result).toMatchSnapshot();
+  });
+
+  test("highlight with scopes", async () => {
+    const result = await highlight("x = 1", "js", "github-dark", {
+      scopes: true,
+    });
+    expect(result).toMatchSnapshot();
+  });
 }
