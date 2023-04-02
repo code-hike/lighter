@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.6.2
+
+### Patch Changes
+
+- bc57e68: Fix text annotations
+
 ## 0.6.1
 
 ### Patch Changes
