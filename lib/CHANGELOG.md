@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.6.1
+
+### Patch Changes
+
+- ee37d6d: Add text grammar
+
 ## 0.6.0
 
 ### Minor Changes
