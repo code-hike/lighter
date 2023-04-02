@@ -1,6 +1,6 @@
 import { IGrammar } from "vscode-textmate";
 import { Token } from "./annotations";
-import { highlightTokens } from "./highlighter";
+import { highlightText, highlightTokens } from "./highlighter";
 import { CodeRange, parseRelativeRanges } from "./range";
 import { FinalTheme } from "./theme";
 
@@ -35,7 +35,9 @@ export function extractCommentsFromCode(
   grammar: IGrammar,
   annotationNames: string[]
 ) {
-  const lines = highlightTokens(code, grammar, commentsTheme);
+  const lines = !grammar
+    ? highlightText(code)
+    : highlightTokens(code, grammar, commentsTheme);
 
   const allAnnotations: Annotation[] = [];
 

@@ -1,5 +1,228 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`extract annottations 1`] = `
+{
+  "annotations": [
+    {
+      "name": "foo",
+      "query": "",
+      "ranges": [
+        {
+          "fromLineNumber": 2,
+          "toLineNumber": 2,
+        },
+      ],
+    },
+  ],
+  "code": "const x = 1;
+const y = 2;",
+}
+`;
+
+exports[`extract annottations 2`] = `
+{
+  "colors": {
+    "activeTabBackground": "#1E1E1E",
+    "activeTabBorder": "#1E1E1E",
+    "activeTabForeground": "#ffffff",
+    "activeTabTopBorder": undefined,
+    "background": "#1E1E1E",
+    "colorScheme": "dark",
+    "diffInsertedLineBackground": "#9bb95533",
+    "diffInsertedTextBackground": "#9ccc2c33",
+    "diffRemovedLineBackground": "#ff000033",
+    "diffRemovedTextBackground": "#ff000033",
+    "editorBackground": "#1E1E1E",
+    "editorGroupHeaderBackground": "#252526",
+    "foreground": "#D4D4D4",
+    "hoverTabBackground": "#2D2D2D",
+    "hoverTabForeground": "#ffffff80",
+    "iconForeground": "#C5C5C5",
+    "inactiveTabBackground": "#2D2D2D",
+    "inactiveTabForeground": "#ffffff80",
+    "lineNumberForeground": "#858585",
+    "listHoverBackground": "#2A2D2E",
+    "listHoverForeground": undefined,
+    "listSelectionBackground": "#37373D",
+    "listSelectionForeground": undefined,
+    "selectionBackground": "#264F78",
+    "sideBarBackground": "#252526",
+    "sideBarBorder": "#252526",
+    "sideBarForeground": "#D4D4D4",
+    "tabBorder": "#252526",
+    "tabsBorder": undefined,
+  },
+  "lang": "javascript",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "tokens": [
+        {
+          "content": "const",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": " ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "x",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "1",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+        {
+          "content": ";",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+    {
+      "annotationName": "foo",
+      "annotationQuery": "",
+      "fromLineNumber": 2,
+      "lines": [
+        {
+          "lineNumber": 2,
+          "tokens": [
+            {
+              "content": "const",
+              "style": {
+                "color": "#569CD6",
+              },
+            },
+            {
+              "content": " ",
+              "style": {
+                "color": "#D4D4D4",
+              },
+            },
+            {
+              "content": "y",
+              "style": {
+                "color": "#4FC1FF",
+              },
+            },
+            {
+              "content": " = ",
+              "style": {
+                "color": "#D4D4D4",
+              },
+            },
+            {
+              "content": "2",
+              "style": {
+                "color": "#B5CEA8",
+              },
+            },
+            {
+              "content": ";",
+              "style": {
+                "color": "#D4D4D4",
+              },
+            },
+          ],
+        },
+      ],
+      "toLineNumber": 2,
+    },
+  ],
+}
+`;
+
+exports[`extract annottations from text 1`] = `
+{
+  "annotations": [],
+  "code": "const x = 1;
+// foo[3:5]
+const y = 2;",
+}
+`;
+
+exports[`extract annottations from text 2`] = `
+{
+  "colors": {
+    "activeTabBackground": "#1E1E1E",
+    "activeTabBorder": "#1E1E1E",
+    "activeTabForeground": "#ffffff",
+    "activeTabTopBorder": undefined,
+    "background": "#1E1E1E",
+    "colorScheme": "dark",
+    "diffInsertedLineBackground": "#9bb95533",
+    "diffInsertedTextBackground": "#9ccc2c33",
+    "diffRemovedLineBackground": "#ff000033",
+    "diffRemovedTextBackground": "#ff000033",
+    "editorBackground": "#1E1E1E",
+    "editorGroupHeaderBackground": "#252526",
+    "foreground": "#D4D4D4",
+    "hoverTabBackground": "#2D2D2D",
+    "hoverTabForeground": "#ffffff80",
+    "iconForeground": "#C5C5C5",
+    "inactiveTabBackground": "#2D2D2D",
+    "inactiveTabForeground": "#ffffff80",
+    "lineNumberForeground": "#858585",
+    "listHoverBackground": "#2A2D2E",
+    "listHoverForeground": undefined,
+    "listSelectionBackground": "#37373D",
+    "listSelectionForeground": undefined,
+    "selectionBackground": "#264F78",
+    "sideBarBackground": "#252526",
+    "sideBarBorder": "#252526",
+    "sideBarForeground": "#D4D4D4",
+    "tabBorder": "#252526",
+    "tabsBorder": undefined,
+  },
+  "lang": "text",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "tokens": [
+        {
+          "content": "const x = 1;",
+          "style": {},
+        },
+      ],
+    },
+    {
+      "lineNumber": 2,
+      "tokens": [
+        {
+          "content": "// foo[3:5]",
+          "style": {},
+        },
+      ],
+    },
+    {
+      "lineNumber": 3,
+      "tokens": [
+        {
+          "content": "const y = 2;",
+          "style": {},
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`highlight js 1`] = `
 {
   "colors": {
