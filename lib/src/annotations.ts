@@ -6,7 +6,7 @@ import { InlineRange, MultiLineRange } from "./range";
 export type Token = {
   content: string;
   style: {
-    color: string;
+    color?: string;
     fontStyle?: "italic";
     fontWeight?: "bold";
     textDecoration?: "underline" | "line-through";

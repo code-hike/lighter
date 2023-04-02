@@ -19,6 +19,10 @@ export function runTests({ highlight }) {
     expect(highlight("x = 1", {})).rejects.toThrow();
   });
 
+  test("unknown lang", async () => {
+    expect(highlight("x = 1", "not-a-lang")).rejects.toThrow();
+  });
+
   test("highlight js", async () => {
     const result = await highlight("x = 1", "js");
     expect(result).toMatchSnapshot();
@@ -39,5 +43,14 @@ export function runTests({ highlight }) {
       scopes: true,
     });
     expect(result).toMatchSnapshot();
+  });
+
+  test("highlight text", async () => {
+    const result = await highlight("x = 1", "text");
+    expect(result).toMatchSnapshot();
+  });
+
+  test("highlight with unknown theme name", async () => {
+    expect(highlight("x = 1", "js", "unknown-theme")).rejects.toThrow();
   });
 }

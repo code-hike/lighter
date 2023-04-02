@@ -11,18 +11,11 @@ import { loadGrammarByScope } from "./grammars";
 import { LanguageAlias } from "./language-data";
 import { tokenizeWithScopes, tokenize } from "./tokenizer";
 import { FinalTheme } from "./theme";
+import { Token } from "./annotations";
 
 let registry: Registry | null = null;
 
-export function loadGrammars(alias: LanguageAlias) {
-  // get the language object from the alias
-  const langData = aliasToLangData(alias);
-
-  // if the language object is not found, throw
-  if (!langData) {
-    throw new UnknownLanguageError(alias);
-  }
-
+export function preloadGrammars(languages: LanguageAlias[]) {
   // initialize the registry the first time
   if (!registry) {
     const onigLibPromise = loadWASM(onig).then(() => ({
@@ -35,8 +28,51 @@ export function loadGrammars(alias: LanguageAlias) {
     });
   }
 
-  const grammarsPromise = registry.loadGrammar(langData.scopeName);
-  return { langId: langData.id, grammarsPromise };
+  const promises = languages
+    .filter((alias) => alias != "text")
+    .map((alias) => {
+      const langData = aliasToLangData(alias);
+      if (!langData) {
+        throw new UnknownLanguageError(alias);
+      }
+      return registry.loadGrammar(langData.scopeName);
+    });
+
+  return Promise.all(promises);
+}
+
+export function getGrammar(alias: LanguageAlias): {
+  langId: string;
+  grammar: IGrammar | null;
+} {
+  if (alias == "text") {
+    return {
+      langId: "text",
+      grammar: null,
+    };
+  }
+
+  const langData = aliasToLangData(alias);
+  if (!langData) {
+    throw new UnknownLanguageError(alias);
+  }
+
+  const grammar = getGrammarFromRegistry(langData.scopeName);
+  if (!grammar) {
+    throw new Error(
+      `Syntax highlighting error: grammar for ${alias} not loaded`
+    );
+  }
+
+  return {
+    langId: langData.id,
+    grammar,
+  };
+}
+
+function getGrammarFromRegistry(scopeName: string) {
+  const { _syncRegistry } = registry as any;
+  return _syncRegistry?._grammars[scopeName] as IGrammar;
 }
 
 export class UnknownLanguageError extends Error {
@@ -65,4 +101,9 @@ export function highlightTokensWithScopes(
   registry.setTheme(theme);
   const colorMap = registry.getColorMap();
   return tokenizeWithScopes(code, grammar, colorMap);
+}
+
+export function highlightText(code: string): Token[][] {
+  const lines = code.split(/\r?\n|\r/g);
+  return lines.map((line) => [{ content: line, style: {} }]);
 }

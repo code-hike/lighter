@@ -2,23 +2,39 @@ import { readJSON } from "./file-system";
 import { fetchJSON } from "./network";
 import { getColor } from "./theme-colors";
 
-export async function loadTheme(theme: Theme) {
-  let rawTheme: RawTheme | undefined =
-    typeof theme === "string" ? await loadThemeByName(theme) : theme;
-  return toFinalTheme(rawTheme);
+const promiseCache = new Map<StringTheme, Promise<RawTheme>>();
+const themeCache = new Map<StringTheme, RawTheme>();
+
+export async function preloadTheme(theme: Theme) {
+  if (typeof theme === "string") {
+    const name = theme;
+    if (!THEME_NAMES.includes(name)) {
+      throw new UnknownThemeError(name);
+    }
+    if (!promiseCache.has(name)) {
+      const promise = reallyLoadThemeByName(name).then((theme) => {
+        themeCache.set(name, theme);
+        return theme;
+      });
+
+      promiseCache.set(name, promise);
+    }
+    return promiseCache.get(name);
+  }
+  return theme;
 }
 
-const themeCache = new Map<StringTheme, Promise<RawTheme>>();
-function loadThemeByName(name: StringTheme): Promise<RawTheme | undefined> {
-  if (!THEME_NAMES.includes(name)) {
-    return Promise.resolve(undefined);
+export function getTheme(theme: Theme): FinalTheme {
+  let rawTheme = null;
+  if (typeof theme === "string") {
+    rawTheme = themeCache.get(theme);
+    if (!rawTheme) {
+      throw new Error("Syntax highlighting error: theme not loaded");
+    }
+  } else {
+    rawTheme = theme;
   }
-
-  if (!themeCache.has(name)) {
-    themeCache.set(name, reallyLoadThemeByName(name));
-  }
-
-  return themeCache.get(name)!;
+  return toFinalTheme(rawTheme);
 }
 
 async function reallyLoadThemeByName(name: StringTheme): Promise<RawTheme> {
@@ -130,3 +146,11 @@ type NamesTuple = typeof THEME_NAMES;
 export type StringTheme = NamesTuple[number];
 
 export type Theme = StringTheme | RawTheme;
+
+export class UnknownThemeError extends Error {
+  theme: string;
+  constructor(theme: string) {
+    super(`Unknown theme: ${theme}`);
+    this.theme = theme;
+  }
+}

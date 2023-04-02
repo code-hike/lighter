@@ -89,7 +89,7 @@ type Annotation = {
 type Token = {
     content: string;
     style: {
-        color: string;
+        color?: string;
         fontStyle?: "italic";
         fontWeight?: "bold";
         textDecoration?: "underline" | "line-through";
@@ -145,6 +145,7 @@ type AnnotatedResult = {
 };
 declare function highlight(code: string, lang: LanguageAlias, themeOrThemeName?: Theme, config?: Config): Promise<Result>;
 declare function highlight(code: string, lang: LanguageAlias, themeOrThemeName: Theme, config: AnnotatedConfig): Promise<AnnotatedResult>;
+declare function preload(langs: LanguageAlias[], theme?: Theme): Promise<void>;
 /** @deprecated use highlight instead */
 declare function highlightWithScopes(code: string, alias: LanguageAlias, themeOrThemeName?: Theme): Promise<Result>;
 /** @deprecated use highlight instead */
@@ -154,4 +155,4 @@ declare function extractAnnotations(code: string, lang: LanguageAlias, annotatio
     annotations: Annotation[];
 }>;
 
-export { Annotation, LANG_NAMES, LanguageAlias, Line, LineGroup, Lines, RawTheme, StringTheme, THEME_NAMES, Theme, ThemeColors, Token, TokenGroup, Tokens, UnknownLanguageError, UnknownThemeError, annotatedHighlight, extractAnnotations, highlight, highlightWithScopes };
+export { Annotation, LANG_NAMES, LanguageAlias, Line, LineGroup, Lines, RawTheme, StringTheme, THEME_NAMES, Theme, ThemeColors, Token, TokenGroup, Tokens, UnknownLanguageError, UnknownThemeError, annotatedHighlight, extractAnnotations, highlight, highlightWithScopes, preload };

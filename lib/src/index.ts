@@ -1,11 +1,20 @@
-import { loadTheme, Theme, StringTheme, RawTheme, THEME_NAMES } from "./theme";
+import {
+  Theme,
+  StringTheme,
+  RawTheme,
+  THEME_NAMES,
+  preloadTheme,
+  getTheme,
+} from "./theme";
 import { LanguageAlias, LanguageName, LANG_NAMES } from "./language-data";
 import { getThemeColors, ThemeColors } from "./theme-colors";
 import {
   highlightTokensWithScopes,
   highlightTokens,
-  loadGrammars,
   UnknownLanguageError,
+  getGrammar,
+  preloadGrammars,
+  highlightText,
 } from "./highlighter";
 import { Annotation, extractCommentsFromCode } from "./comments";
 import {
@@ -81,7 +90,7 @@ export async function highlight<GivenConfig extends Config>(
   config: Config = {}
 ) {
   const theCode = code || "";
-  const theLang = lang || "js"; // TODO default to text
+  const theLang = lang || "text";
 
   if (typeof theCode !== "string") {
     throw new Error("Syntax highlighter error: code must be a string");
@@ -90,18 +99,16 @@ export async function highlight<GivenConfig extends Config>(
     throw new Error("Syntax highlighter error: lang must be a string");
   }
 
-  const { langId, grammarsPromise } = loadGrammars(theLang);
+  await preload([theLang], themeOrThemeName);
+  const { langId, grammar } = getGrammar(theLang);
+  const theme = getTheme(themeOrThemeName);
 
-  const theme = await loadTheme(themeOrThemeName);
-  if (!theme) {
-    throw new UnknownThemeError(themeOrThemeName as string);
-  }
-
-  const grammar = await grammarsPromise;
-
-  const lines = config?.scopes
-    ? highlightTokensWithScopes(theCode, grammar, theme)
-    : highlightTokens(theCode, grammar, theme);
+  const lines =
+    langId == "text"
+      ? highlightText(theCode)
+      : config?.scopes
+      ? highlightTokensWithScopes(theCode, grammar, theme)
+      : highlightTokens(theCode, grammar, theme);
 
   if (isAnnotatedConfig(config)) {
     const annotations = config?.annotations || [];
@@ -117,6 +124,10 @@ export async function highlight<GivenConfig extends Config>(
       colors: getThemeColors(theme),
     };
   }
+}
+
+export async function preload(langs: LanguageAlias[], theme?: Theme) {
+  await Promise.all([preloadGrammars(langs), preloadTheme(theme)]);
 }
 
 /** @deprecated use highlight instead */
@@ -146,9 +157,8 @@ export async function extractAnnotations(
     return { code, annotations: [] };
   }
 
-  const { grammarsPromise } = loadGrammars(lang);
-
-  const grammar = await grammarsPromise;
+  await preloadGrammars([lang]);
+  const { grammar } = getGrammar(lang);
 
   const { newCode, annotations } = extractCommentsFromCode(
     code,
