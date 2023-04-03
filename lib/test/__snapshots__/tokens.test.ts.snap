@@ -1,0 +1,78 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`remove empty space tokens 1`] = `
+[
+  [
+    {
+      "content": "export",
+      "style": {
+        "color": "#FF7B72",
+      },
+    },
+    {
+      "content": " ",
+      "style": {
+        "color": "#FFA657",
+      },
+    },
+    {
+      "content": "default",
+      "style": {
+        "color": "#FF7B72",
+      },
+    },
+    {
+      "content": "   ",
+      "style": {
+        "color": "#FFA657",
+      },
+    },
+    {
+      "content": "function",
+      "style": {
+        "color": "#FF7B72",
+      },
+    },
+    {
+      "content": " ",
+      "style": {
+        "color": "#FFA657",
+      },
+    },
+    {
+      "content": "Gallery",
+      "style": {
+        "color": "#D2A8FF",
+      },
+    },
+    {
+      "content": "() ",
+      "style": {
+        "color": "#FFA657",
+      },
+    },
+    {
+      "content": "{",
+      "style": {
+        "color": "#C9D1D9",
+      },
+    },
+  ],
+  [
+    {
+      "content": "",
+      "style": {
+        "color": "#C9D1D9",
+      },
+    },
+  ],
+  [
+    {
+      "content": "  }",
+      "style": {
+        "color": "#C9D1D9",
+      },
+    },
+  ],
+]
+`;

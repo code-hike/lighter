@@ -28,8 +28,12 @@ export function runTests({ highlight }) {
     expect(result).toMatchSnapshot();
   });
 
-  test("highlight with theme", async () => {
-    const result = await highlight("x = 1", "js", "github-dark");
+  test("highlight html with theme", async () => {
+    const result = await highlight(
+      "<script> const x = 1 </script>",
+      "html",
+      "github-dark"
+    );
     expect(result).toMatchSnapshot();
   });
 
