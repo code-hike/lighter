@@ -1,5 +1,178 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`highlight with scopes 1`] = `
+[
+  [
+    {
+      "content": "export",
+      "scopes": [
+        "keyword.control.export.js",
+        "meta.export.default.js",
+        "source.js",
+      ],
+      "style": {
+        "color": "#FF7B72",
+      },
+    },
+    {
+      "content": " ",
+      "scopes": [
+        "meta.export.default.js",
+        "source.js",
+      ],
+      "style": {
+        "color": "#FFA657",
+      },
+    },
+    {
+      "content": "default",
+      "scopes": [
+        "keyword.control.default.js",
+        "meta.export.default.js",
+        "source.js",
+      ],
+      "style": {
+        "color": "#FF7B72",
+      },
+    },
+    {
+      "content": "   ",
+      "scopes": [
+        "meta.export.default.js",
+        "source.js",
+      ],
+      "style": {
+        "color": "#FFA657",
+      },
+    },
+    {
+      "content": "function",
+      "scopes": [
+        "storage.type.function.js",
+        "meta.function.expression.js",
+        "meta.export.default.js",
+        "source.js",
+      ],
+      "style": {
+        "color": "#FF7B72",
+      },
+    },
+    {
+      "content": " ",
+      "scopes": [
+        "meta.function.expression.js",
+        "meta.export.default.js",
+        "source.js",
+      ],
+      "style": {
+        "color": "#FFA657",
+      },
+    },
+    {
+      "content": "Gallery",
+      "scopes": [
+        "entity.name.function.js",
+        "meta.definition.function.js",
+        "meta.function.expression.js",
+        "meta.export.default.js",
+        "source.js",
+      ],
+      "style": {
+        "color": "#D2A8FF",
+      },
+    },
+    {
+      "content": "(",
+      "scopes": [
+        "punctuation.definition.parameters.begin.js",
+        "meta.parameters.js",
+        "meta.function.expression.js",
+        "meta.export.default.js",
+        "source.js",
+      ],
+      "style": {
+        "color": "#FFA657",
+      },
+    },
+    {
+      "content": ")",
+      "scopes": [
+        "punctuation.definition.parameters.end.js",
+        "meta.parameters.js",
+        "meta.function.expression.js",
+        "meta.export.default.js",
+        "source.js",
+      ],
+      "style": {
+        "color": "#FFA657",
+      },
+    },
+    {
+      "content": " ",
+      "scopes": [
+        "meta.function.expression.js",
+        "meta.export.default.js",
+        "source.js",
+      ],
+      "style": {
+        "color": "#FFA657",
+      },
+    },
+    {
+      "content": "{",
+      "scopes": [
+        "punctuation.definition.block.js",
+        "meta.block.js",
+        "meta.function.expression.js",
+        "meta.export.default.js",
+        "source.js",
+      ],
+      "style": {
+        "color": "#C9D1D9",
+      },
+    },
+  ],
+  [
+    {
+      "content": "",
+      "scopes": [
+        "meta.block.js",
+        "meta.function.expression.js",
+        "meta.export.default.js",
+        "source.js",
+      ],
+    },
+  ],
+  [
+    {
+      "content": "  ",
+      "scopes": [
+        "meta.block.js",
+        "meta.function.expression.js",
+        "meta.export.default.js",
+        "source.js",
+      ],
+      "style": {
+        "color": "#C9D1D9",
+      },
+    },
+    {
+      "content": "}",
+      "scopes": [
+        "punctuation.definition.block.js",
+        "meta.block.js",
+        "meta.function.expression.js",
+        "meta.export.default.js",
+        "source.js",
+      ],
+      "style": {
+        "color": "#C9D1D9",
+      },
+    },
+  ],
+]
+`;
+
 exports[`remove empty space tokens 1`] = `
 [
   [

@@ -7,6 +7,7 @@ import { Line, Token } from "./annotations";
 const FONT_STYLE_MASK = 0b00000000000000000111100000000000;
 const FOREGROUND_MASK = 0b00000000111111111000000000000000;
 const BACKGROUND_MASK = 0b11111111000000000000000000000000;
+const STYLE_MASK = 0b00000000111111111111100000000000;
 const FONT_STYLE_OFFSET = 11;
 const FOREGROUND_OFFSET = 15;
 const BACKGROUND_OFFSET = 24;
@@ -35,20 +36,53 @@ export function tokenize(code: string, grammar: IGrammar, colors: string[]) {
 
 type RawToken = { content: string; metadata: number };
 
-function tokenizeLine(grammar: IGrammar, stack: StackElement, line: string) {
+function tokenizeLine(
+  grammar: IGrammar,
+  stack: StackElement,
+  line: string,
+  config?: { preserveWhitespace?: boolean }
+) {
   const { tokens, ruleStack } = grammar.tokenizeLine2(line, stack);
   const newTokens: RawToken[] = [];
   let tokenEnd = line.length;
   for (let i = tokens.length - 2; i >= 0; i = i - 2) {
     const tokenStart = tokens[i];
     const metadata = tokens[i + 1];
-    newTokens.unshift({
-      content: line.slice(tokenStart, tokenEnd),
-      metadata,
-    });
+    const content = line.slice(tokenStart, tokenEnd);
+    newTokens.unshift({ content, metadata });
     tokenEnd = tokenStart;
   }
-  return { rawTokens: newTokens, nextStack: ruleStack };
+
+  let rawTokens: RawToken[] = [];
+
+  if (config?.preserveWhitespace) {
+    rawTokens = newTokens;
+  } else {
+    // join empty space tokens with the previous token (or the next token if there's no previous token)
+    for (let i = 0; i < newTokens.length; i++) {
+      const token = newTokens[i];
+      if (token.content.trim() !== "") {
+        // if has same style as previous token, join with previous token
+        const prev = rawTokens[rawTokens.length - 1];
+        if (
+          prev &&
+          (prev.metadata & STYLE_MASK) === (token.metadata & STYLE_MASK)
+        ) {
+          prev.content += token.content;
+        } else {
+          rawTokens.push(token);
+        }
+      } else if (rawTokens.length > 0) {
+        rawTokens[rawTokens.length - 1].content += token.content;
+      } else if (i < newTokens.length - 1) {
+        newTokens[i + 1].content = token.content + newTokens[i + 1].content;
+      } else {
+        rawTokens.push(token);
+      }
+    }
+  }
+
+  return { rawTokens, nextStack: ruleStack };
 }
 
 export function tokenizeWithScopes(
@@ -60,7 +94,9 @@ export function tokenizeWithScopes(
   const lines = code.split(/\r?\n|\r/g);
 
   return lines.map((line) => {
-    const { rawTokens, nextStack } = tokenizeLine(grammar, stack, line);
+    const { rawTokens, nextStack } = tokenizeLine(grammar, stack, line, {
+      preserveWhitespace: true,
+    });
     const newTokens = rawTokens.map(({ content, metadata }) => ({
       content,
       style: getStyle(metadata, colors),

@@ -58,15 +58,9 @@ exports[`extract annottations 2`] = `
       "lineNumber": 1,
       "tokens": [
         {
-          "content": "const",
+          "content": "const ",
           "style": {
             "color": "#569CD6",
-          },
-        },
-        {
-          "content": " ",
-          "style": {
-            "color": "#D4D4D4",
           },
         },
         {
@@ -104,15 +98,9 @@ exports[`extract annottations 2`] = `
           "lineNumber": 2,
           "tokens": [
             {
-              "content": "const",
+              "content": "const ",
               "style": {
                 "color": "#569CD6",
-              },
-            },
-            {
-              "content": " ",
-              "style": {
-                "color": "#D4D4D4",
               },
             },
             {
@@ -278,51 +266,27 @@ exports[`highlight html with theme 1`] = `
         },
       },
       {
-        "content": "const",
+        "content": "const ",
         "style": {
           "color": "#FF7B72",
         },
       },
       {
-        "content": " ",
-        "style": {
-          "color": "#C9D1D9",
-        },
-      },
-      {
-        "content": "x",
+        "content": "x ",
         "style": {
           "color": "#79C0FF",
         },
       },
       {
-        "content": " ",
-        "style": {
-          "color": "#C9D1D9",
-        },
-      },
-      {
-        "content": "=",
+        "content": "= ",
         "style": {
           "color": "#FF7B72",
         },
       },
       {
-        "content": " ",
-        "style": {
-          "color": "#C9D1D9",
-        },
-      },
-      {
-        "content": "1",
+        "content": "1 ",
         "style": {
           "color": "#79C0FF",
-        },
-      },
-      {
-        "content": " ",
-        "style": {
-          "color": "#C9D1D9",
         },
       },
       {

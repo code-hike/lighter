@@ -4,39 +4,9 @@ exports[`remove empty space tokens 1`] = `
 [
   [
     {
-      "content": "export",
+      "content": "export default   function ",
       "style": {
         "color": "#FF7B72",
-      },
-    },
-    {
-      "content": " ",
-      "style": {
-        "color": "#FFA657",
-      },
-    },
-    {
-      "content": "default",
-      "style": {
-        "color": "#FF7B72",
-      },
-    },
-    {
-      "content": "   ",
-      "style": {
-        "color": "#FFA657",
-      },
-    },
-    {
-      "content": "function",
-      "style": {
-        "color": "#FF7B72",
-      },
-    },
-    {
-      "content": " ",
-      "style": {
-        "color": "#FFA657",
       },
     },
     {
