@@ -24,21 +24,31 @@ export function tokenize(code: string, grammar: IGrammar, colors: string[]) {
   let stack: StackElement | null = null;
   const lines = code.split(/\r?\n|\r/g);
   return lines.map((line) => {
-    const { tokens, ruleStack } = grammar.tokenizeLine2(line, stack);
-    const newTokens: Token[] = [];
-    let tokenEnd = line.length;
-    for (let i = tokens.length - 2; i >= 0; i = i - 2) {
-      const tokenStart = tokens[i];
-      const metadata = tokens[i + 1];
-      newTokens.unshift({
-        content: line.slice(tokenStart, tokenEnd),
-        style: getStyle(metadata, colors),
-      });
-      tokenEnd = tokenStart;
-    }
-    stack = ruleStack;
-    return newTokens;
+    const { rawTokens, nextStack } = tokenizeLine(grammar, stack, line);
+    stack = nextStack;
+    return rawTokens.map(({ content, metadata }) => ({
+      content,
+      style: getStyle(metadata, colors),
+    }));
   });
+}
+
+type RawToken = { content: string; metadata: number };
+
+function tokenizeLine(grammar: IGrammar, stack: StackElement, line: string) {
+  const { tokens, ruleStack } = grammar.tokenizeLine2(line, stack);
+  const newTokens: RawToken[] = [];
+  let tokenEnd = line.length;
+  for (let i = tokens.length - 2; i >= 0; i = i - 2) {
+    const tokenStart = tokens[i];
+    const metadata = tokens[i + 1];
+    newTokens.unshift({
+      content: line.slice(tokenStart, tokenEnd),
+      metadata,
+    });
+    tokenEnd = tokenStart;
+  }
+  return { rawTokens: newTokens, nextStack: ruleStack };
 }
 
 export function tokenizeWithScopes(
@@ -50,21 +60,14 @@ export function tokenizeWithScopes(
   const lines = code.split(/\r?\n|\r/g);
 
   return lines.map((line) => {
-    const { tokens, ruleStack } = grammar.tokenizeLine2(line, stack);
-
-    const newTokens: Token[] = [];
-    let tokenEnd = line.length;
-    for (let i = tokens.length - 2; i >= 0; i = i - 2) {
-      const tokenStart = tokens[i];
-      const metadata = tokens[i + 1];
-      newTokens.unshift({
-        content: line.slice(tokenStart, tokenEnd),
-        style: getStyle(metadata, colors),
-      } as Token);
-      tokenEnd = tokenStart;
-    }
+    const { rawTokens, nextStack } = tokenizeLine(grammar, stack, line);
+    const newTokens = rawTokens.map(({ content, metadata }) => ({
+      content,
+      style: getStyle(metadata, colors),
+    }));
     const tokensWithScopes = addScopesToLine(line, stack, grammar, newTokens);
-    stack = ruleStack;
+
+    stack = nextStack;
     return tokensWithScopes;
   });
 }
