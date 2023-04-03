@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.6.3
+
+### Patch Changes
+
+- 8b0eeb4: Join tokens when possible
+
 ## 0.6.2
 
 ### Patch Changes
