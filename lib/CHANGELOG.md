@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.6.4
+
+### Patch Changes
+
+- 8a857ff: Add highlightSync
+
 ## 0.6.3
 
 ### Patch Changes
