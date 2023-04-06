@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 import { highlight } from "..";
 
-test.only("highlight with scopes", async () => {
+test("highlight with scopes", async () => {
   const code = `export default   function Gallery() {
 
   }`;

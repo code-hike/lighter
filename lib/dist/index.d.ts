@@ -126,33 +126,35 @@ declare class UnknownThemeError extends Error {
     theme: string;
     constructor(theme: string);
 }
-
 type Config = {
     scopes?: boolean;
 };
 type AnnotatedConfig = {
     annotations: Annotation[];
 } & Config;
-type Result = {
+type LighterResult = {
     lines: Token[][];
     lang: LanguageName;
     colors: ThemeColors;
 };
-type AnnotatedResult = {
+type AnnotatedLighterResult = {
     lines: Lines;
     lang: LanguageName;
     colors: ThemeColors;
 };
-declare function highlight(code: string, lang: LanguageAlias, themeOrThemeName?: Theme, config?: Config): Promise<Result>;
-declare function highlight(code: string, lang: LanguageAlias, themeOrThemeName: Theme, config: AnnotatedConfig): Promise<AnnotatedResult>;
+
 declare function preload(langs: LanguageAlias[], theme?: Theme): Promise<void>;
+declare function highlight(code: string, lang: LanguageAlias, themeOrThemeName?: Theme, config?: Config): Promise<LighterResult>;
+declare function highlight(code: string, lang: LanguageAlias, themeOrThemeName: Theme, config: AnnotatedConfig): Promise<AnnotatedLighterResult>;
+declare function highlightSync(code: string, lang: LanguageAlias, themeOrThemeName?: Theme, config?: Config): LighterResult;
+declare function highlightSync(code: string, lang: LanguageAlias, themeOrThemeName: Theme, config: AnnotatedConfig): AnnotatedLighterResult;
 /** @deprecated use highlight instead */
-declare function highlightWithScopes(code: string, alias: LanguageAlias, themeOrThemeName?: Theme): Promise<Result>;
+declare function highlightWithScopes(code: string, alias: LanguageAlias, themeOrThemeName?: Theme): Promise<LighterResult>;
 /** @deprecated use highlight instead */
-declare function annotatedHighlight(code: string, alias: LanguageAlias, themeOrThemeName?: Theme, annotations?: Annotation[]): Promise<AnnotatedResult>;
+declare function annotatedHighlight(code: string, alias: LanguageAlias, themeOrThemeName?: Theme, annotations?: Annotation[]): Promise<AnnotatedLighterResult>;
 declare function extractAnnotations(code: string, lang: LanguageAlias, annotationNames?: string[]): Promise<{
     code: string;
     annotations: Annotation[];
 }>;
 
-export { Annotation, LANG_NAMES, LanguageAlias, Line, LineGroup, Lines, RawTheme, StringTheme, THEME_NAMES, Theme, ThemeColors, Token, TokenGroup, Tokens, UnknownLanguageError, UnknownThemeError, annotatedHighlight, extractAnnotations, highlight, highlightWithScopes, preload };
+export { AnnotatedLighterResult, Annotation, LANG_NAMES, LanguageAlias, LighterResult, Line, LineGroup, Lines, RawTheme, StringTheme, THEME_NAMES, Theme, ThemeColors, Token, TokenGroup, Tokens, UnknownLanguageError, UnknownThemeError, annotatedHighlight, extractAnnotations, highlight, highlightSync, highlightWithScopes, preload };

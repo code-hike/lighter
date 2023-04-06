@@ -27,6 +27,29 @@ import {
   Token,
 } from "./annotations";
 
+class UnknownThemeError extends Error {
+  theme: string;
+  constructor(theme: string) {
+    super(`Unknown theme: ${theme}`);
+    this.theme = theme;
+  }
+}
+
+type Config = { scopes?: boolean };
+type AnnotatedConfig = { annotations: Annotation[] } & Config;
+type LighterResult = {
+  lines: Token[][];
+  lang: LanguageName;
+  colors: ThemeColors;
+};
+type AnnotatedLighterResult = {
+  lines: Lines;
+  lang: LanguageName;
+  colors: ThemeColors;
+};
+
+export { UnknownLanguageError, UnknownThemeError, THEME_NAMES, LANG_NAMES };
+
 export type {
   LanguageAlias,
   Theme,
@@ -40,29 +63,8 @@ export type {
   Tokens,
   Token,
   ThemeColors,
-};
-
-class UnknownThemeError extends Error {
-  theme: string;
-  constructor(theme: string) {
-    super(`Unknown theme: ${theme}`);
-    this.theme = theme;
-  }
-}
-
-export { UnknownLanguageError, UnknownThemeError, THEME_NAMES, LANG_NAMES };
-
-type Config = { scopes?: boolean };
-type AnnotatedConfig = { annotations: Annotation[] } & Config;
-type Result = {
-  lines: Token[][];
-  lang: LanguageName;
-  colors: ThemeColors;
-};
-type AnnotatedResult = {
-  lines: Lines;
-  lang: LanguageName;
-  colors: ThemeColors;
+  LighterResult,
+  AnnotatedLighterResult,
 };
 
 function isAnnotatedConfig(
@@ -71,23 +73,27 @@ function isAnnotatedConfig(
   return "annotations" in config;
 }
 
+export async function preload(langs: LanguageAlias[], theme?: Theme) {
+  await Promise.all([preloadGrammars(langs), preloadTheme(theme)]);
+}
+
 export async function highlight(
   code: string,
   lang: LanguageAlias,
   themeOrThemeName?: Theme,
   config?: Config
-): Promise<Result>;
+): Promise<LighterResult>;
 export async function highlight(
   code: string,
   lang: LanguageAlias,
   themeOrThemeName: Theme,
   config: AnnotatedConfig
-): Promise<AnnotatedResult>;
-export async function highlight<GivenConfig extends Config>(
+): Promise<AnnotatedLighterResult>;
+export async function highlight(
   code: string,
   lang: LanguageAlias,
   themeOrThemeName: Theme = "dark-plus",
-  config: Config = {}
+  config: Config | AnnotatedConfig = {}
 ) {
   const theCode = code || "";
   const theLang = lang || "text";
@@ -100,6 +106,36 @@ export async function highlight<GivenConfig extends Config>(
   }
 
   await preload([theLang], themeOrThemeName);
+  return highlightSync(theCode, theLang, themeOrThemeName, config) as any;
+}
+export function highlightSync(
+  code: string,
+  lang: LanguageAlias,
+  themeOrThemeName?: Theme,
+  config?: Config
+): LighterResult;
+export function highlightSync(
+  code: string,
+  lang: LanguageAlias,
+  themeOrThemeName: Theme,
+  config: AnnotatedConfig
+): AnnotatedLighterResult;
+export function highlightSync(
+  code: string,
+  lang: LanguageAlias,
+  themeOrThemeName: Theme = "dark-plus",
+  config: Config | AnnotatedConfig = {}
+) {
+  const theCode = code || "";
+  const theLang = lang || "text";
+
+  if (typeof theCode !== "string") {
+    throw new Error("Syntax highlighter error: code must be a string");
+  }
+  if (typeof theLang !== "string") {
+    throw new Error("Syntax highlighter error: lang must be a string");
+  }
+
   const { langId, grammar } = getGrammar(theLang);
   const theme = getTheme(themeOrThemeName);
 
@@ -124,10 +160,6 @@ export async function highlight<GivenConfig extends Config>(
       colors: getThemeColors(theme),
     };
   }
-}
-
-export async function preload(langs: LanguageAlias[], theme?: Theme) {
-  await Promise.all([preloadGrammars(langs), preloadTheme(theme)]);
 }
 
 /** @deprecated use highlight instead */

@@ -35,6 +35,7 @@
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "test": "vitest",
+    "typecheck": "vitest typecheck",
     "regenerate": "node ./utils/update.mjs"
   },
   "repository": "https://github.com/code-hike/lighter",
