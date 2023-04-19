@@ -54,7 +54,7 @@ function toFinalTheme(theme: RawTheme | undefined): FinalTheme | undefined {
     ...theme,
     name: theme.name || "unknown-theme",
     type: getColorScheme(theme),
-    settings: theme.settings || theme.tokenColors || [],
+    settings: theme.settings?.slice() || theme.tokenColors?.slice() || [],
     colors: theme.colors || {},
   };
 

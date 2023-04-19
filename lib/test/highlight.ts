@@ -42,6 +42,16 @@ export function runTests({ highlight }) {
     expect(result).toMatchSnapshot();
   });
 
+  test("highlight with frozen theme", async () => {
+    const theme = Object.freeze({
+      tokenColors: Object.freeze([
+        { scope: ["comment"], settings: { foreground: "#8b949e" } },
+      ]),
+    });
+    const result = await highlight("x = 1", "js", theme);
+    expect(result).toMatchSnapshot();
+  });
+
   test("highlight with scopes", async () => {
     const result = await highlight("x = 1", "js", "github-dark", {
       scopes: true,
