@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.6.5
+
+### Patch Changes
+
+- b797dc1: Fix error when theme is frozen
+
 ## 0.6.4
 
 ### Patch Changes
