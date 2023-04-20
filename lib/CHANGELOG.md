@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.6.6
+
+### Patch Changes
+
+- 28d5da1: Fix frozen themes again
+
 ## 0.6.5
 
 ### Patch Changes
