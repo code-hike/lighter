@@ -54,27 +54,34 @@ function toFinalTheme(theme: RawTheme | undefined): FinalTheme | undefined {
     ...theme,
     name: theme.name || "unknown-theme",
     type: getColorScheme(theme),
-    settings: theme.settings?.slice() || theme.tokenColors?.slice() || [],
+    settings: theme.settings || theme.tokenColors || [],
     colors: theme.colors || {},
   };
 
   const globalSetting = finalTheme.settings.find((s) => !s.name && !s.scope);
   if (globalSetting) {
     const { foreground, background } = globalSetting.settings || {};
+    const newColors = {};
     if (foreground && !finalTheme.colors["editor.foreground"]) {
-      finalTheme.colors["editor.foreground"] = foreground;
+      newColors["editor.foreground"] = foreground;
     }
     if (background && !finalTheme.colors["editor.background"]) {
-      finalTheme.colors["editor.background"] = background;
+      newColors["editor.background"] = background;
+    }
+    if (Object.keys(newColors).length > 0) {
+      finalTheme.colors = { ...finalTheme.colors, ...newColors };
     }
   }
   if (!globalSetting) {
-    finalTheme.settings.unshift({
-      settings: {
-        foreground: getColor(finalTheme, "editor.foreground"),
-        background: getColor(finalTheme, "editor.background"),
+    finalTheme.settings = [
+      {
+        settings: {
+          foreground: getColor(finalTheme, "editor.foreground"),
+          background: getColor(finalTheme, "editor.background"),
+        },
       },
-    });
+      ...finalTheme.settings,
+    ];
   }
 
   return finalTheme;

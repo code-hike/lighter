@@ -41,12 +41,19 @@ export function runTests({ highlight }) {
     const result = await highlight("x = 1", "js", {});
     expect(result).toMatchSnapshot();
   });
-
   test("highlight with frozen theme", async () => {
     const theme = Object.freeze({
-      tokenColors: Object.freeze([
-        { scope: ["comment"], settings: { foreground: "#8b949e" } },
-      ]),
+      colors: Object.freeze({}),
+      tokenColors: Object.freeze([]),
+    });
+    const result = await highlight("x = 1", "js", theme);
+    expect(result).toMatchSnapshot();
+  });
+
+  test("highlight with frozen theme with global setting", async () => {
+    const theme = Object.freeze({
+      colors: Object.freeze({}),
+      tokenColors: Object.freeze([{ settings: { foreground: "#bbbbbb" } }]),
     });
     const result = await highlight("x = 1", "js", theme);
     expect(result).toMatchSnapshot();
