@@ -141,6 +141,7 @@ export const THEME_NAMES = [
   "slack-ochin",
   "solarized-dark",
   "solarized-light",
+  "base16",
 ] as const;
 type NamesTuple = typeof THEME_NAMES;
 export type StringTheme = NamesTuple[number];
