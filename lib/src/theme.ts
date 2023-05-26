@@ -37,9 +37,10 @@ export function getTheme(theme: Theme): FinalTheme {
   return toFinalTheme(rawTheme);
 }
 
+const base16 = import("./../themes/base16.json")
 async function reallyLoadThemeByName(name: StringTheme): Promise<RawTheme> {
   try {
-    return await readJSON("themes", name + ".json");
+    return base16;
   } catch (e) {
     return await fetchJSON(`themes/${name}`);
   }

@@ -1,6 +1,6 @@
 {
   "name": "@imownbey/lighter",
-  "version": "0.6.8",
+  "version": "0.6.9",
   "license": "MIT",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.mjs",
@@ -32,7 +32,7 @@
     "vscode-textmate": "^7.0.0"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c --inlineDynamicImports",
     "watch": "rollup -c -w",
     "test": "vitest",
     "typecheck": "vitest typecheck",
