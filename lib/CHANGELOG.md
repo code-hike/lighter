@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.6.7
+
+### Patch Changes
+
+- 7257e74: Support css variables
+
 ## 0.6.6
 
 ### Patch Changes
