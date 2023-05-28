@@ -27,7 +27,7 @@ type FinalTheme = {
         [key: string]: string;
     };
 };
-declare const THEME_NAMES: readonly ["dark-plus", "dracula-soft", "dracula", "github-dark", "github-dark-dimmed", "github-light", "light-plus", "material-darker", "material-default", "material-from-css", "material-lighter", "material-ocean", "material-palenight", "min-dark", "min-light", "monokai", "nord", "one-dark-pro", "poimandres", "slack-dark", "slack-ochin", "solarized-dark", "solarized-light"];
+declare const THEME_NAMES: readonly ["dark-plus", "dracula-soft", "dracula", "github-dark", "github-dark-dimmed", "github-from-css", "github-light", "light-plus", "material-darker", "material-default", "material-from-css", "material-lighter", "material-ocean", "material-palenight", "min-dark", "min-light", "monokai", "nord", "one-dark-pro", "poimandres", "slack-dark", "slack-ochin", "solarized-dark", "solarized-light"];
 type NamesTuple$1 = typeof THEME_NAMES;
 type StringTheme = NamesTuple$1[number];
 type Theme = StringTheme | RawTheme;

@@ -45,11 +45,11 @@ print 2
 export default function Page() {
   return (
     <div style={{ background: "#333" }}>
-      <Code lang="mdx" theme="material-from-css">
+      <Code lang="mdx" theme="github-from-css">
         {code}
       </Code>
       <div data-theme="light">
-        <Code lang="mdx" theme="material-from-css">
+        <Code lang="mdx" theme="github-from-css">
           {code}
         </Code>
       </div>

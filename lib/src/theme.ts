@@ -163,6 +163,7 @@ export const THEME_NAMES = [
   "dracula",
   "github-dark",
   "github-dark-dimmed",
+  "github-from-css",
   "github-light",
   "light-plus",
   "material-darker",

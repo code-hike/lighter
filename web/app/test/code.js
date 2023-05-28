@@ -9,6 +9,7 @@ export async function Code({
   theme,
 }) {
   const { lines, colors } = await highlight(children, lang, theme);
+  // console.log({ colors });
 
   const {
     foreground,

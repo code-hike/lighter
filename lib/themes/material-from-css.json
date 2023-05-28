@@ -521,20 +521,21 @@
     "editor.background": "var(--ch-1)",
     "editor.foreground": "var(--ch-2)",
     "editor.selectionBackground": "var(--ch-14)",
+    "editor.infoForeground": "var(--ch-15)",
     "editor.rangeHighlightBackground": "#FFFFFF0d",
-    "editorLineNumber.foreground": "var(--ch-15)",
+    "editorLineNumber.foreground": "var(--ch-16)",
     "tab.activeBackground": "var(--ch-1)",
     "tab.inactiveBackground": "var(--ch-1)",
-    "tab.activeForeground": "var(--ch-16)",
-    "tab.inactiveForeground": "var(--ch-17)",
+    "tab.activeForeground": "var(--ch-17)",
+    "tab.inactiveForeground": "var(--ch-18)",
     "tab.border": "var(--ch-1)",
     "tab.activeBorder": "#80CBC4",
     "tab.hoverBackground": "var(--ch-1)",
-    "tab.hoverForeground": "var(--ch-17)",
+    "tab.hoverForeground": "var(--ch-18)",
     "editorGroupHeader.tabsBackground": "var(--ch-1)",
-    "list.inactiveSelectionBackground": "var(--ch-18)",
+    "list.inactiveSelectionBackground": "var(--ch-19)",
     "list.inactiveSelectionForeground": "#80CBC4",
     "list.hoverBackground": "var(--ch-1)",
-    "list.hoverForeground": "var(--ch-19)"
+    "list.hoverForeground": "var(--ch-20)"
   }
 }
