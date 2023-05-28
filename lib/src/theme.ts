@@ -56,6 +56,7 @@ function toFinalTheme(theme: RawTheme | undefined): FinalTheme | undefined {
     type: getColorScheme(theme),
     settings: theme.settings || theme.tokenColors || [],
     colors: theme.colors || {},
+    colorNames: theme.colorNames,
   };
 
   const globalSetting = finalTheme.settings.find((s) => !s.name && !s.scope);
@@ -84,10 +85,40 @@ function toFinalTheme(theme: RawTheme | undefined): FinalTheme | undefined {
     ];
   }
 
+  if (theme.type === "from-css" && !finalTheme.colorNames) {
+    const colorNames = {};
+    let counter = 0;
+
+    finalTheme.settings = finalTheme.settings.map((s) => {
+      const setting = { ...s, settings: { ...s.settings } };
+      const { foreground, background } = setting.settings || {};
+      if (foreground && !colorNames[foreground]) {
+        colorNames[foreground] = `#${counter.toString(16).padStart(6, "0")}`;
+        counter++;
+      }
+      if (background && !colorNames[background]) {
+        colorNames[background] = `#${counter.toString(16).padStart(6, "0")}`;
+        counter++;
+      }
+      if (foreground) {
+        setting.settings.foreground = colorNames[foreground];
+      }
+      if (background) {
+        setting.settings.background = colorNames[background];
+      }
+      return setting;
+    });
+
+    finalTheme.colorNames = colorNames;
+  }
+
   return finalTheme;
 }
 
 function getColorScheme(theme: RawTheme) {
+  if (theme.type === "from-css") {
+    return "from-css";
+  }
   const themeType = theme.type
     ? theme.type
     : theme.name?.toLowerCase().includes("light")
@@ -120,9 +151,10 @@ type ThemeSetting = {
 
 export type FinalTheme = {
   name: string;
-  type: "dark" | "light";
+  type: "dark" | "light" | "from-css";
   settings: ThemeSetting[];
   colors: { [key: string]: string };
+  colorNames?: { [key: string]: string };
 };
 
 export const THEME_NAMES = [
@@ -131,10 +163,12 @@ export const THEME_NAMES = [
   "dracula",
   "github-dark",
   "github-dark-dimmed",
+  "github-from-css",
   "github-light",
   "light-plus",
   "material-darker",
   "material-default",
+  "material-from-css",
   "material-lighter",
   "material-ocean",
   "material-palenight",

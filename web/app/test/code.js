@@ -6,17 +6,18 @@ export async function Code({
   style,
   className,
   lineNumbers,
-  unstyled,
   theme,
 }) {
+  const { lines, colors } = await highlight(children, lang, theme);
+  // console.log({ colors });
+
   const {
-    lines,
     foreground,
     background,
     colorScheme,
     selectionBackground,
     lineNumberForeground,
-  } = await highlight(children, lang, theme);
+  } = colors;
 
   const lineCount = lines.length;
   const digits = lineCount.toString().length;

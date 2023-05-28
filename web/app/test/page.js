@@ -1,10 +1,5 @@
 import { Code } from "./code";
-
-export default function Page() {
-  return (
-    <div style={{ background: "#333" }}>
-      <Code lang="mdx" theme="slack-dark">
-        {`# hello
+const code = `# hello
 
 <CH.Code>
 
@@ -19,7 +14,18 @@ print("Hello, two!")
 </CH.Code>
 
 ~~~js
-const re = /ab+c/;
+// to edit the code click the pencil icon ☝️
+// click anywhere else to edit the colors
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  dolor = sit - amet(dolor);
+  return dolor;
+}
+
+function consectetur(...adipiscing) {
+  const elit = adipiscing[0];
+  return sed.eiusmod(elit) ? elit : [elit];
+}
 ~~~
 
 <CH.Section>
@@ -35,11 +41,18 @@ Something _\`def lorem(ipsum)\`_
 
 ~~~py
 print 2
-~~~`}
+~~~`;
+export default function Page() {
+  return (
+    <div style={{ background: "#333" }}>
+      <Code lang="mdx" theme="github-from-css">
+        {code}
       </Code>
-      <Code lang="py" theme="slack-dark">
-        print 2
-      </Code>
+      <div data-theme="light">
+        <Code lang="mdx" theme="github-from-css">
+          {code}
+        </Code>
+      </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@ export type ThemeColors = ReturnType<typeof getThemeColors>;
 
 export function getThemeColors(theme: FinalTheme) {
   return {
-    colorScheme: theme.type,
+    colorScheme: theme.type === "from-css" ? "var(--ch-0)" : theme.type,
     ...getColors(theme),
   };
 }
