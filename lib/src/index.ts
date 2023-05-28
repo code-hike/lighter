@@ -5,6 +5,7 @@ import {
   THEME_NAMES,
   preloadTheme,
   getTheme,
+  UnknownThemeError,
 } from "./theme";
 import { LanguageAlias, LanguageName, LANG_NAMES } from "./language-data";
 import { getThemeColors, ThemeColors } from "./theme-colors";
@@ -26,14 +27,6 @@ import {
   Tokens,
   Token,
 } from "./annotations";
-
-class UnknownThemeError extends Error {
-  theme: string;
-  constructor(theme: string) {
-    super(`Unknown theme: ${theme}`);
-    this.theme = theme;
-  }
-}
 
 type Config = { scopes?: boolean };
 type AnnotatedConfig = { annotations: Annotation[] } & Config;

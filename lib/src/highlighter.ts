@@ -89,8 +89,19 @@ export function highlightTokens(
   theme: FinalTheme
 ) {
   registry.setTheme(theme);
-  const colorMap = registry.getColorMap();
+  const colorMap = getColorMap(theme);
   return tokenize(code, grammar, colorMap);
+}
+
+function getColorMap(theme: FinalTheme) {
+  const colorMap = registry.getColorMap();
+  if (!theme.colorNames) return colorMap;
+  return colorMap.map((c) => {
+    const key = Object.keys(theme.colorNames).find(
+      (key) => theme.colorNames[key].toUpperCase() === c.toUpperCase()
+    );
+    return key || c;
+  });
 }
 
 export function highlightTokensWithScopes(

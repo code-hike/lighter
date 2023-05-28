@@ -18,16 +18,23 @@ type ThemeSetting = {
 };
 type FinalTheme = {
     name: string;
-    type: "dark" | "light";
+    type: "dark" | "light" | "from-css";
     settings: ThemeSetting[];
     colors: {
         [key: string]: string;
     };
+    colorNames?: {
+        [key: string]: string;
+    };
 };
-declare const THEME_NAMES: readonly ["dark-plus", "dracula-soft", "dracula", "github-dark", "github-dark-dimmed", "github-light", "light-plus", "material-darker", "material-default", "material-lighter", "material-ocean", "material-palenight", "min-dark", "min-light", "monokai", "nord", "one-dark-pro", "poimandres", "slack-dark", "slack-ochin", "solarized-dark", "solarized-light"];
+declare const THEME_NAMES: readonly ["dark-plus", "dracula-soft", "dracula", "github-dark", "github-dark-dimmed", "github-light", "light-plus", "material-darker", "material-default", "material-from-css", "material-lighter", "material-ocean", "material-palenight", "min-dark", "min-light", "monokai", "nord", "one-dark-pro", "poimandres", "slack-dark", "slack-ochin", "solarized-dark", "solarized-light"];
 type NamesTuple$1 = typeof THEME_NAMES;
 type StringTheme = NamesTuple$1[number];
 type Theme = StringTheme | RawTheme;
+declare class UnknownThemeError extends Error {
+    theme: string;
+    constructor(theme: string);
+}
 
 declare const LANG_NAMES: string[];
 type NamesTuple = typeof LANG_NAMES;
@@ -64,7 +71,7 @@ declare function getThemeColors(theme: FinalTheme): {
     activeTabTopBorder: string;
     hoverTabBackground: string;
     hoverTabForeground: string;
-    colorScheme: "dark" | "light";
+    colorScheme: string;
 };
 
 type LineNumber = number;
@@ -122,10 +129,6 @@ declare class UnknownLanguageError extends Error {
     constructor(alias: string);
 }
 
-declare class UnknownThemeError extends Error {
-    theme: string;
-    constructor(theme: string);
-}
 type Config = {
     scopes?: boolean;
 };
