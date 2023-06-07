@@ -62,7 +62,7 @@ function toFinalTheme(theme: RawTheme | undefined): FinalTheme | undefined {
     colorNames: theme.colorNames,
   };
 
-  const globalSetting = settings.find((s) => !s.name && !s.scope);
+  const globalSetting = settings.find((s) => !s.scope);
 
   if (globalSetting) {
     const { foreground, background } = globalSetting?.settings || {};
