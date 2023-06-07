@@ -1,56 +1,8 @@
 import { transparent } from "./color";
 import type { FinalTheme } from "./theme";
 
-export type ThemeColors = ReturnType<typeof getThemeColors>;
-
-export function getThemeColors(theme: FinalTheme) {
-  return {
-    colorScheme: getColorScheme(theme),
-    ...getColors(theme),
-  };
-}
-
 export function getColorScheme(theme: FinalTheme) {
   return theme.type === "from-css" ? "var(--ch-0)" : theme.type;
-}
-
-const colorNamesToKeys = {
-  background: "editor.background",
-  foreground: "editor.foreground",
-  lineNumberForeground: "editorLineNumber.foreground",
-  selectionBackground: "editor.selectionBackground",
-  editorBackground: "editor.background",
-  editorGroupHeaderBackground: "editorGroupHeader.tabsBackground",
-  activeTabBackground: "tab.activeBackground",
-  activeTabForeground: "tab.activeForeground",
-  tabBorder: "tab.border",
-  activeTabBorder: "tab.activeBorder",
-  inactiveTabBackground: "tab.inactiveBackground",
-  inactiveTabForeground: "tab.inactiveForeground",
-  diffInsertedTextBackground: "diffEditor.insertedTextBackground",
-  diffInsertedLineBackground: "diffEditor.insertedLineBackground",
-  diffRemovedTextBackground: "diffEditor.removedTextBackground",
-  diffRemovedLineBackground: "diffEditor.removedLineBackground",
-  iconForeground: "icon.foreground",
-  sideBarBackground: "sideBar.background",
-  sideBarForeground: "sideBar.foreground",
-  sideBarBorder: "sideBar.border",
-  listSelectionBackground: "list.inactiveSelectionBackground",
-  listSelectionForeground: "list.inactiveSelectionForeground",
-  listHoverBackground: "list.hoverBackground",
-  listHoverForeground: "list.hoverForeground",
-  tabsBorder: "editorGroupHeader.tabsBorder",
-  activeTabTopBorder: "tab.activeBorderTop",
-  hoverTabBackground: "tab.hoverBackground",
-  hoverTabForeground: "tab.hoverForeground",
-};
-
-function getColors(theme: FinalTheme) {
-  const colors = {};
-  for (const key in colorNamesToKeys) {
-    colors[key] = getColor(theme, colorNamesToKeys[key]);
-  }
-  return colors as typeof colorNamesToKeys;
 }
 
 export function getColor(theme: FinalTheme, name: string): string | undefined {

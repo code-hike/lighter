@@ -9,7 +9,6 @@ import {
   getAllThemeColors,
 } from "./theme";
 import { LanguageAlias, LanguageName, LANG_NAMES } from "./language-data";
-import { ThemeColors, getThemeColors as getThemeColors2 } from "./theme-colors";
 import {
   highlightTokensWithScopes,
   highlightTokens,
@@ -34,12 +33,18 @@ type AnnotatedConfig = { annotations: Annotation[] } & Config;
 type LighterResult = {
   lines: Token[][];
   lang: LanguageName;
-  colors: ThemeColors;
+  style: {
+    color: string;
+    background: string;
+  };
 };
 type AnnotatedLighterResult = {
   lines: Lines;
   lang: LanguageName;
-  colors: ThemeColors;
+  style: {
+    color: string;
+    background: string;
+  };
 };
 
 export { UnknownLanguageError, UnknownThemeError, THEME_NAMES, LANG_NAMES };
@@ -56,7 +61,6 @@ export type {
   TokenGroup,
   Tokens,
   Token,
-  ThemeColors,
   LighterResult,
   AnnotatedLighterResult,
 };
@@ -145,13 +149,19 @@ export function highlightSync(
     return {
       lines: applyAnnotations(lines, annotations),
       lang: langId,
-      colors: getThemeColors2(theme),
+      style: {
+        color: theme.foreground,
+        background: theme.background,
+      },
     };
   } else {
     return {
       lines: lines,
       lang: langId,
-      colors: getThemeColors2(theme),
+      style: {
+        color: theme.foreground,
+        background: theme.background,
+      },
     };
   }
 }
@@ -186,3 +196,5 @@ export async function getThemeColors(themeOrThemeName: Theme) {
   const theme = getTheme(themeOrThemeName);
   return getAllThemeColors(theme);
 }
+
+export type LighterColors = ReturnType<typeof getThemeColors>;

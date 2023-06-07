@@ -16,19 +16,6 @@ type ThemeSetting = {
         background?: string;
     };
 };
-type FinalTheme = {
-    name: string;
-    type: "dark" | "light" | "from-css";
-    foreground: string;
-    background: string;
-    settings: ThemeSetting[];
-    colors: {
-        [key: string]: string;
-    };
-    colorNames?: {
-        [key: string]: string;
-    };
-};
 declare const THEME_NAMES: readonly ["dark-plus", "dracula-soft", "dracula", "github-dark", "github-dark-dimmed", "github-from-css", "github-light", "light-plus", "material-darker", "material-default", "material-from-css", "material-lighter", "material-ocean", "material-palenight", "min-dark", "min-light", "monokai", "nord", "one-dark-pro", "poimandres", "slack-dark", "slack-ochin", "solarized-dark", "solarized-light"];
 type NamesTuple$1 = typeof THEME_NAMES;
 type StringTheme = NamesTuple$1[number];
@@ -42,39 +29,6 @@ declare const LANG_NAMES: string[];
 type NamesTuple = typeof LANG_NAMES;
 type LanguageAlias = NamesTuple[number];
 type LanguageName = "abap" | "actionscript-3" | "ada" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "coffee" | "cpp" | "crystal" | "csharp" | "css" | "cue" | "d" | "dart" | "dax" | "diff" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fish" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hlsl" | "html" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja-html" | "jison" | "json" | "json5" | "jsonc" | "jsonnet" | "jssm" | "jsx" | "julia" | "kotlin" | "kusto" | "latex" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "markdown" | "marko" | "matlab" | "mdx" | "mermaid" | "nginx" | "nim" | "nix" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "python" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "smalltalk" | "solidity" | "sparql" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "swift" | "system-verilog" | "tasl" | "tcl" | "tex" | "toml" | "tsx" | "turtle" | "twig" | "typescript" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue-html" | "vue" | "wasm" | "wenyan" | "wgsl" | "xml" | "xsl" | "yaml" | "zenscript";
-
-type ThemeColors = ReturnType<typeof getThemeColors$1>;
-declare function getThemeColors$1(theme: FinalTheme): {
-    background: string;
-    foreground: string;
-    lineNumberForeground: string;
-    selectionBackground: string;
-    editorBackground: string;
-    editorGroupHeaderBackground: string;
-    activeTabBackground: string;
-    activeTabForeground: string;
-    tabBorder: string;
-    activeTabBorder: string;
-    inactiveTabBackground: string;
-    inactiveTabForeground: string;
-    diffInsertedTextBackground: string;
-    diffInsertedLineBackground: string;
-    diffRemovedTextBackground: string;
-    diffRemovedLineBackground: string;
-    iconForeground: string;
-    sideBarBackground: string;
-    sideBarForeground: string;
-    sideBarBorder: string;
-    listSelectionBackground: string;
-    listSelectionForeground: string;
-    listHoverBackground: string;
-    listHoverForeground: string;
-    tabsBorder: string;
-    activeTabTopBorder: string;
-    hoverTabBackground: string;
-    hoverTabForeground: string;
-    colorScheme: string;
-};
 
 type LineNumber = number;
 type ColumnNumber = number;
@@ -140,12 +94,18 @@ type AnnotatedConfig = {
 type LighterResult = {
     lines: Token[][];
     lang: LanguageName;
-    colors: ThemeColors;
+    style: {
+        color: string;
+        background: string;
+    };
 };
 type AnnotatedLighterResult = {
     lines: Lines;
     lang: LanguageName;
-    colors: ThemeColors;
+    style: {
+        color: string;
+        background: string;
+    };
 };
 
 declare function preload(langs: LanguageAlias[], theme?: Theme): Promise<void>;
@@ -210,5 +170,6 @@ declare function getThemeColors(themeOrThemeName: Theme): Promise<{
         hoverForeground: string;
     };
 }>;
+type LighterColors = ReturnType<typeof getThemeColors>;
 
-export { AnnotatedLighterResult, Annotation, LANG_NAMES, LanguageAlias, LighterResult, Line, LineGroup, Lines, RawTheme, StringTheme, THEME_NAMES, Theme, ThemeColors, Token, TokenGroup, Tokens, UnknownLanguageError, UnknownThemeError, extractAnnotations, getThemeColors, highlight, highlightSync, preload };
+export { AnnotatedLighterResult, Annotation, LANG_NAMES, LanguageAlias, LighterColors, LighterResult, Line, LineGroup, Lines, RawTheme, StringTheme, THEME_NAMES, Theme, Token, TokenGroup, Tokens, UnknownLanguageError, UnknownThemeError, extractAnnotations, getThemeColors, highlight, highlightSync, preload };
