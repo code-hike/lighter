@@ -21,37 +21,6 @@ const y = 2;",
 
 exports[`extract annottations 2`] = `
 {
-  "colors": {
-    "activeTabBackground": "#1E1E1E",
-    "activeTabBorder": "#1E1E1E",
-    "activeTabForeground": "#ffffff",
-    "activeTabTopBorder": undefined,
-    "background": "#1E1E1E",
-    "colorScheme": "dark",
-    "diffInsertedLineBackground": "#9bb95533",
-    "diffInsertedTextBackground": "#9ccc2c33",
-    "diffRemovedLineBackground": "#ff000033",
-    "diffRemovedTextBackground": "#ff000033",
-    "editorBackground": "#1E1E1E",
-    "editorGroupHeaderBackground": "#252526",
-    "foreground": "#D4D4D4",
-    "hoverTabBackground": "#2D2D2D",
-    "hoverTabForeground": "#ffffff80",
-    "iconForeground": "#C5C5C5",
-    "inactiveTabBackground": "#2D2D2D",
-    "inactiveTabForeground": "#ffffff80",
-    "lineNumberForeground": "#858585",
-    "listHoverBackground": "#2A2D2E",
-    "listHoverForeground": undefined,
-    "listSelectionBackground": "#37373D",
-    "listSelectionForeground": undefined,
-    "selectionBackground": "#264F78",
-    "sideBarBackground": "#252526",
-    "sideBarBorder": "#252526",
-    "sideBarForeground": "#D4D4D4",
-    "tabBorder": "#252526",
-    "tabsBorder": undefined,
-  },
   "lang": "javascript",
   "lines": [
     {
@@ -133,6 +102,10 @@ exports[`extract annottations 2`] = `
       "toLineNumber": 2,
     },
   ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
 }
 `;
 
@@ -147,37 +120,6 @@ const y = 2;",
 
 exports[`extract annottations from text 2`] = `
 {
-  "colors": {
-    "activeTabBackground": "#1E1E1E",
-    "activeTabBorder": "#1E1E1E",
-    "activeTabForeground": "#ffffff",
-    "activeTabTopBorder": undefined,
-    "background": "#1E1E1E",
-    "colorScheme": "dark",
-    "diffInsertedLineBackground": "#9bb95533",
-    "diffInsertedTextBackground": "#9ccc2c33",
-    "diffRemovedLineBackground": "#ff000033",
-    "diffRemovedTextBackground": "#ff000033",
-    "editorBackground": "#1E1E1E",
-    "editorGroupHeaderBackground": "#252526",
-    "foreground": "#D4D4D4",
-    "hoverTabBackground": "#2D2D2D",
-    "hoverTabForeground": "#ffffff80",
-    "iconForeground": "#C5C5C5",
-    "inactiveTabBackground": "#2D2D2D",
-    "inactiveTabForeground": "#ffffff80",
-    "lineNumberForeground": "#858585",
-    "listHoverBackground": "#2A2D2E",
-    "listHoverForeground": undefined,
-    "listSelectionBackground": "#37373D",
-    "listSelectionForeground": undefined,
-    "selectionBackground": "#264F78",
-    "sideBarBackground": "#252526",
-    "sideBarBorder": "#252526",
-    "sideBarForeground": "#D4D4D4",
-    "tabBorder": "#252526",
-    "tabsBorder": undefined,
-  },
   "lang": "text",
   "lines": [
     {
@@ -208,42 +150,15 @@ exports[`extract annottations from text 2`] = `
       ],
     },
   ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
 }
 `;
 
 exports[`highlight html with theme 1`] = `
 {
-  "colors": {
-    "activeTabBackground": "#0d1117",
-    "activeTabBorder": "#0d1117",
-    "activeTabForeground": "#c9d1d9",
-    "activeTabTopBorder": "#f78166",
-    "background": "#0d1117",
-    "colorScheme": "dark",
-    "diffInsertedLineBackground": "#23863633",
-    "diffInsertedTextBackground": "#2386364d",
-    "diffRemovedLineBackground": "#da363333",
-    "diffRemovedTextBackground": "#da36334d",
-    "editorBackground": "#0d1117",
-    "editorGroupHeaderBackground": "#010409",
-    "foreground": "#c9d1d9",
-    "hoverTabBackground": "#0d1117",
-    "hoverTabForeground": "#8b949e",
-    "iconForeground": "#8b949e",
-    "inactiveTabBackground": "#010409",
-    "inactiveTabForeground": "#8b949e",
-    "lineNumberForeground": "#6e7681",
-    "listHoverBackground": "#6e76811a",
-    "listHoverForeground": "#c9d1d9",
-    "listSelectionBackground": "#6e768166",
-    "listSelectionForeground": "#c9d1d9",
-    "selectionBackground": "#264F78",
-    "sideBarBackground": "#010409",
-    "sideBarBorder": "#30363d",
-    "sideBarForeground": "#c9d1d9",
-    "tabBorder": "#30363d",
-    "tabsBorder": "#30363d",
-  },
   "lang": "html",
   "lines": [
     [
@@ -309,42 +224,15 @@ exports[`highlight html with theme 1`] = `
       },
     ],
   ],
+  "style": {
+    "background": "#0d1117",
+    "color": "#c9d1d9",
+  },
 }
 `;
 
 exports[`highlight js 1`] = `
 {
-  "colors": {
-    "activeTabBackground": "#1E1E1E",
-    "activeTabBorder": "#1E1E1E",
-    "activeTabForeground": "#ffffff",
-    "activeTabTopBorder": undefined,
-    "background": "#1E1E1E",
-    "colorScheme": "dark",
-    "diffInsertedLineBackground": "#9bb95533",
-    "diffInsertedTextBackground": "#9ccc2c33",
-    "diffRemovedLineBackground": "#ff000033",
-    "diffRemovedTextBackground": "#ff000033",
-    "editorBackground": "#1E1E1E",
-    "editorGroupHeaderBackground": "#252526",
-    "foreground": "#D4D4D4",
-    "hoverTabBackground": "#2D2D2D",
-    "hoverTabForeground": "#ffffff80",
-    "iconForeground": "#C5C5C5",
-    "inactiveTabBackground": "#2D2D2D",
-    "inactiveTabForeground": "#ffffff80",
-    "lineNumberForeground": "#858585",
-    "listHoverBackground": "#2A2D2E",
-    "listHoverForeground": undefined,
-    "listSelectionBackground": "#37373D",
-    "listSelectionForeground": undefined,
-    "selectionBackground": "#264F78",
-    "sideBarBackground": "#252526",
-    "sideBarBorder": "#252526",
-    "sideBarForeground": "#D4D4D4",
-    "tabBorder": "#252526",
-    "tabsBorder": undefined,
-  },
   "lang": "javascript",
   "lines": [
     [
@@ -368,42 +256,15 @@ exports[`highlight js 1`] = `
       },
     ],
   ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
 }
 `;
 
 exports[`highlight text 1`] = `
 {
-  "colors": {
-    "activeTabBackground": "#1E1E1E",
-    "activeTabBorder": "#1E1E1E",
-    "activeTabForeground": "#ffffff",
-    "activeTabTopBorder": undefined,
-    "background": "#1E1E1E",
-    "colorScheme": "dark",
-    "diffInsertedLineBackground": "#9bb95533",
-    "diffInsertedTextBackground": "#9ccc2c33",
-    "diffRemovedLineBackground": "#ff000033",
-    "diffRemovedTextBackground": "#ff000033",
-    "editorBackground": "#1E1E1E",
-    "editorGroupHeaderBackground": "#252526",
-    "foreground": "#D4D4D4",
-    "hoverTabBackground": "#2D2D2D",
-    "hoverTabForeground": "#ffffff80",
-    "iconForeground": "#C5C5C5",
-    "inactiveTabBackground": "#2D2D2D",
-    "inactiveTabForeground": "#ffffff80",
-    "lineNumberForeground": "#858585",
-    "listHoverBackground": "#2A2D2E",
-    "listHoverForeground": undefined,
-    "listSelectionBackground": "#37373D",
-    "listSelectionForeground": undefined,
-    "selectionBackground": "#264F78",
-    "sideBarBackground": "#252526",
-    "sideBarBorder": "#252526",
-    "sideBarForeground": "#D4D4D4",
-    "tabBorder": "#252526",
-    "tabsBorder": undefined,
-  },
   "lang": "text",
   "lines": [
     [
@@ -413,42 +274,15 @@ exports[`highlight text 1`] = `
       },
     ],
   ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
 }
 `;
 
 exports[`highlight with empty theme 1`] = `
 {
-  "colors": {
-    "activeTabBackground": "#1E1E1E",
-    "activeTabBorder": "#1E1E1E",
-    "activeTabForeground": "#ffffff",
-    "activeTabTopBorder": undefined,
-    "background": "#1E1E1E",
-    "colorScheme": "dark",
-    "diffInsertedLineBackground": "#9bb95533",
-    "diffInsertedTextBackground": "#9ccc2c33",
-    "diffRemovedLineBackground": "#ff000033",
-    "diffRemovedTextBackground": "#ff000033",
-    "editorBackground": "#1E1E1E",
-    "editorGroupHeaderBackground": "#252526",
-    "foreground": "#bbbbbb",
-    "hoverTabBackground": "#2D2D2D",
-    "hoverTabForeground": "#ffffff80",
-    "iconForeground": "#C5C5C5",
-    "inactiveTabBackground": "#2D2D2D",
-    "inactiveTabForeground": "#ffffff80",
-    "lineNumberForeground": "#858585",
-    "listHoverBackground": "#2A2D2E",
-    "listHoverForeground": undefined,
-    "listSelectionBackground": "#37373D",
-    "listSelectionForeground": undefined,
-    "selectionBackground": "#264F78",
-    "sideBarBackground": "#252526",
-    "sideBarBorder": "#252526",
-    "sideBarForeground": "#bbbbbb",
-    "tabBorder": "#252526",
-    "tabsBorder": undefined,
-  },
   "lang": "javascript",
   "lines": [
     [
@@ -460,42 +294,15 @@ exports[`highlight with empty theme 1`] = `
       },
     ],
   ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#bbbbbb",
+  },
 }
 `;
 
 exports[`highlight with frozen theme 1`] = `
 {
-  "colors": {
-    "activeTabBackground": "#1E1E1E",
-    "activeTabBorder": "#1E1E1E",
-    "activeTabForeground": "#ffffff",
-    "activeTabTopBorder": undefined,
-    "background": "#1E1E1E",
-    "colorScheme": "dark",
-    "diffInsertedLineBackground": "#9bb95533",
-    "diffInsertedTextBackground": "#9ccc2c33",
-    "diffRemovedLineBackground": "#ff000033",
-    "diffRemovedTextBackground": "#ff000033",
-    "editorBackground": "#1E1E1E",
-    "editorGroupHeaderBackground": "#252526",
-    "foreground": "#bbbbbb",
-    "hoverTabBackground": "#2D2D2D",
-    "hoverTabForeground": "#ffffff80",
-    "iconForeground": "#C5C5C5",
-    "inactiveTabBackground": "#2D2D2D",
-    "inactiveTabForeground": "#ffffff80",
-    "lineNumberForeground": "#858585",
-    "listHoverBackground": "#2A2D2E",
-    "listHoverForeground": undefined,
-    "listSelectionBackground": "#37373D",
-    "listSelectionForeground": undefined,
-    "selectionBackground": "#264F78",
-    "sideBarBackground": "#252526",
-    "sideBarBorder": "#252526",
-    "sideBarForeground": "#bbbbbb",
-    "tabBorder": "#252526",
-    "tabsBorder": undefined,
-  },
   "lang": "javascript",
   "lines": [
     [
@@ -507,42 +314,15 @@ exports[`highlight with frozen theme 1`] = `
       },
     ],
   ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#bbbbbb",
+  },
 }
 `;
 
 exports[`highlight with frozen theme with global setting 1`] = `
 {
-  "colors": {
-    "activeTabBackground": "#1E1E1E",
-    "activeTabBorder": "#1E1E1E",
-    "activeTabForeground": "#ffffff",
-    "activeTabTopBorder": undefined,
-    "background": "#1E1E1E",
-    "colorScheme": "dark",
-    "diffInsertedLineBackground": "#9bb95533",
-    "diffInsertedTextBackground": "#9ccc2c33",
-    "diffRemovedLineBackground": "#ff000033",
-    "diffRemovedTextBackground": "#ff000033",
-    "editorBackground": "#1E1E1E",
-    "editorGroupHeaderBackground": "#252526",
-    "foreground": "#bbbbbb",
-    "hoverTabBackground": "#2D2D2D",
-    "hoverTabForeground": "#ffffff80",
-    "iconForeground": "#C5C5C5",
-    "inactiveTabBackground": "#2D2D2D",
-    "inactiveTabForeground": "#ffffff80",
-    "lineNumberForeground": "#858585",
-    "listHoverBackground": "#2A2D2E",
-    "listHoverForeground": undefined,
-    "listSelectionBackground": "#37373D",
-    "listSelectionForeground": undefined,
-    "selectionBackground": "#264F78",
-    "sideBarBackground": "#252526",
-    "sideBarBorder": "#252526",
-    "sideBarForeground": "#bbbbbb",
-    "tabBorder": "#252526",
-    "tabsBorder": undefined,
-  },
   "lang": "javascript",
   "lines": [
     [
@@ -554,42 +334,15 @@ exports[`highlight with frozen theme with global setting 1`] = `
       },
     ],
   ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#bbbbbb",
+  },
 }
 `;
 
 exports[`highlight with scopes 1`] = `
 {
-  "colors": {
-    "activeTabBackground": "#0d1117",
-    "activeTabBorder": "#0d1117",
-    "activeTabForeground": "#c9d1d9",
-    "activeTabTopBorder": "#f78166",
-    "background": "#0d1117",
-    "colorScheme": "dark",
-    "diffInsertedLineBackground": "#23863633",
-    "diffInsertedTextBackground": "#2386364d",
-    "diffRemovedLineBackground": "#da363333",
-    "diffRemovedTextBackground": "#da36334d",
-    "editorBackground": "#0d1117",
-    "editorGroupHeaderBackground": "#010409",
-    "foreground": "#c9d1d9",
-    "hoverTabBackground": "#0d1117",
-    "hoverTabForeground": "#8b949e",
-    "iconForeground": "#8b949e",
-    "inactiveTabBackground": "#010409",
-    "inactiveTabForeground": "#8b949e",
-    "lineNumberForeground": "#6e7681",
-    "listHoverBackground": "#6e76811a",
-    "listHoverForeground": "#c9d1d9",
-    "listSelectionBackground": "#6e768166",
-    "listSelectionForeground": "#c9d1d9",
-    "selectionBackground": "#264F78",
-    "sideBarBackground": "#010409",
-    "sideBarBorder": "#30363d",
-    "sideBarForeground": "#c9d1d9",
-    "tabBorder": "#30363d",
-    "tabsBorder": "#30363d",
-  },
   "lang": "javascript",
   "lines": [
     [
@@ -643,42 +396,15 @@ exports[`highlight with scopes 1`] = `
       },
     ],
   ],
+  "style": {
+    "background": "#0d1117",
+    "color": "#c9d1d9",
+  },
 }
 `;
 
 exports[`null code 1`] = `
 {
-  "colors": {
-    "activeTabBackground": "#1E1E1E",
-    "activeTabBorder": "#1E1E1E",
-    "activeTabForeground": "#ffffff",
-    "activeTabTopBorder": undefined,
-    "background": "#1E1E1E",
-    "colorScheme": "dark",
-    "diffInsertedLineBackground": "#9bb95533",
-    "diffInsertedTextBackground": "#9ccc2c33",
-    "diffRemovedLineBackground": "#ff000033",
-    "diffRemovedTextBackground": "#ff000033",
-    "editorBackground": "#1E1E1E",
-    "editorGroupHeaderBackground": "#252526",
-    "foreground": "#D4D4D4",
-    "hoverTabBackground": "#2D2D2D",
-    "hoverTabForeground": "#ffffff80",
-    "iconForeground": "#C5C5C5",
-    "inactiveTabBackground": "#2D2D2D",
-    "inactiveTabForeground": "#ffffff80",
-    "lineNumberForeground": "#858585",
-    "listHoverBackground": "#2A2D2E",
-    "listHoverForeground": undefined,
-    "listSelectionBackground": "#37373D",
-    "listSelectionForeground": undefined,
-    "selectionBackground": "#264F78",
-    "sideBarBackground": "#252526",
-    "sideBarBorder": "#252526",
-    "sideBarForeground": "#D4D4D4",
-    "tabBorder": "#252526",
-    "tabsBorder": undefined,
-  },
   "lang": "javascript",
   "lines": [
     [
@@ -690,42 +416,15 @@ exports[`null code 1`] = `
       },
     ],
   ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
 }
 `;
 
 exports[`null lang 1`] = `
 {
-  "colors": {
-    "activeTabBackground": "#1E1E1E",
-    "activeTabBorder": "#1E1E1E",
-    "activeTabForeground": "#ffffff",
-    "activeTabTopBorder": undefined,
-    "background": "#1E1E1E",
-    "colorScheme": "dark",
-    "diffInsertedLineBackground": "#9bb95533",
-    "diffInsertedTextBackground": "#9ccc2c33",
-    "diffRemovedLineBackground": "#ff000033",
-    "diffRemovedTextBackground": "#ff000033",
-    "editorBackground": "#1E1E1E",
-    "editorGroupHeaderBackground": "#252526",
-    "foreground": "#D4D4D4",
-    "hoverTabBackground": "#2D2D2D",
-    "hoverTabForeground": "#ffffff80",
-    "iconForeground": "#C5C5C5",
-    "inactiveTabBackground": "#2D2D2D",
-    "inactiveTabForeground": "#ffffff80",
-    "lineNumberForeground": "#858585",
-    "listHoverBackground": "#2A2D2E",
-    "listHoverForeground": undefined,
-    "listSelectionBackground": "#37373D",
-    "listSelectionForeground": undefined,
-    "selectionBackground": "#264F78",
-    "sideBarBackground": "#252526",
-    "sideBarBorder": "#252526",
-    "sideBarForeground": "#D4D4D4",
-    "tabBorder": "#252526",
-    "tabsBorder": undefined,
-  },
   "lang": "text",
   "lines": [
     [
@@ -735,5 +434,9 @@ exports[`null lang 1`] = `
       },
     ],
   ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
 }
 `;

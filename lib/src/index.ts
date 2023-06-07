@@ -6,9 +6,9 @@ import {
   preloadTheme,
   getTheme,
   UnknownThemeError,
+  getAllThemeColors,
 } from "./theme";
 import { LanguageAlias, LanguageName, LANG_NAMES } from "./language-data";
-import { getThemeColors, ThemeColors } from "./theme-colors";
 import {
   highlightTokensWithScopes,
   highlightTokens,
@@ -33,12 +33,18 @@ type AnnotatedConfig = { annotations: Annotation[] } & Config;
 type LighterResult = {
   lines: Token[][];
   lang: LanguageName;
-  colors: ThemeColors;
+  style: {
+    color: string;
+    background: string;
+  };
 };
 type AnnotatedLighterResult = {
   lines: Lines;
   lang: LanguageName;
-  colors: ThemeColors;
+  style: {
+    color: string;
+    background: string;
+  };
 };
 
 export { UnknownLanguageError, UnknownThemeError, THEME_NAMES, LANG_NAMES };
@@ -55,7 +61,6 @@ export type {
   TokenGroup,
   Tokens,
   Token,
-  ThemeColors,
   LighterResult,
   AnnotatedLighterResult,
 };
@@ -144,35 +149,23 @@ export function highlightSync(
     return {
       lines: applyAnnotations(lines, annotations),
       lang: langId,
-      colors: getThemeColors(theme),
+      style: {
+        color: theme.foreground,
+        background: theme.background,
+      },
     };
   } else {
     return {
       lines: lines,
       lang: langId,
-      colors: getThemeColors(theme),
+      style: {
+        color: theme.foreground,
+        background: theme.background,
+      },
     };
   }
 }
 
-/** @deprecated use highlight instead */
-export async function highlightWithScopes(
-  code: string,
-  alias: LanguageAlias,
-  themeOrThemeName: Theme = "dark-plus"
-) {
-  return highlight(code, alias, themeOrThemeName, { scopes: true });
-}
-
-/** @deprecated use highlight instead */
-export async function annotatedHighlight(
-  code: string,
-  alias: LanguageAlias,
-  themeOrThemeName: Theme = "dark-plus",
-  annotations: Annotation[] = []
-) {
-  return highlight(code, alias, themeOrThemeName, { annotations });
-}
 export async function extractAnnotations(
   code: string,
   lang: LanguageAlias,
@@ -193,3 +186,15 @@ export async function extractAnnotations(
 
   return { code: newCode, annotations };
 }
+
+export async function getThemeColors(themeOrThemeName: Theme) {
+  if (!themeOrThemeName) {
+    throw new Error("Syntax highlighter error: undefined theme");
+  }
+
+  await preload([], themeOrThemeName);
+  const theme = getTheme(themeOrThemeName);
+  return getAllThemeColors(theme);
+}
+
+export type LighterColors = ReturnType<typeof getThemeColors>;

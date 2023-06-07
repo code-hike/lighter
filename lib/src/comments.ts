@@ -11,6 +11,8 @@ const BLOCK_COMMENT = "#012";
 const commentsTheme: FinalTheme = {
   name: "comments",
   type: "light",
+  foreground: "",
+  background: "",
   colors: {},
   settings: [
     { settings: { foreground: "#000" } },

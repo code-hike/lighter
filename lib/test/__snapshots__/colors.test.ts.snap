@@ -1,0 +1,169 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`get theme colors from empty theme 1`] = `
+{
+  "background": "#1E1E1E",
+  "colorScheme": "dark",
+  "editor": {
+    "background": "#1E1E1E",
+    "foreground": "#bbbbbb",
+    "infoForeground": "#3794FF",
+    "lineHighlightBackground": undefined,
+    "rangeHighlightBackground": "#ffffff0b",
+    "selectionBackground": "#264F78",
+  },
+  "editorGroup": {
+    "border": "#444444",
+  },
+  "editorGroupHeader": {
+    "tabsBackground": "#252526",
+  },
+  "editorLineNumber": {
+    "foreground": "#858585",
+  },
+  "focusBorder": "#007FD4",
+  "foreground": "#bbbbbb",
+  "icon": {
+    "foreground": "#C5C5C5",
+  },
+  "input": {
+    "background": "#3C3C3C",
+    "border": undefined,
+    "foreground": "#bbbbbb",
+  },
+  "lighter": {
+    "inlineBackground": "#1e1e1ee6",
+  },
+  "list": {
+    "activeSelectionBackground": "#094771",
+    "activeSelectionForeground": "#fffffe",
+    "hoverBackground": "#2A2D2E",
+    "hoverForeground": undefined,
+  },
+  "sideBar": {
+    "background": "#252526",
+    "border": "#252526",
+    "foreground": "#bbbbbb",
+  },
+  "tab": {
+    "activeBackground": "#1E1E1E",
+    "activeBorder": "#1E1E1E",
+    "activeForeground": "#ffffff",
+    "border": "#252526",
+    "inactiveBackground": "#2D2D2D",
+    "inactiveForeground": "#ffffff80",
+  },
+}
+`;
+
+exports[`get theme colors from theme name 1`] = `
+{
+  "background": "#0d1117",
+  "colorScheme": "dark",
+  "editor": {
+    "background": "#0d1117",
+    "foreground": "#c9d1d9",
+    "infoForeground": "#3794FF",
+    "lineHighlightBackground": "#6e76811a",
+    "rangeHighlightBackground": "#ffffff0b",
+    "selectionBackground": "#264F78",
+  },
+  "editorGroup": {
+    "border": "#30363d",
+  },
+  "editorGroupHeader": {
+    "tabsBackground": "#010409",
+  },
+  "editorLineNumber": {
+    "foreground": "#6e7681",
+  },
+  "focusBorder": "#1f6feb",
+  "foreground": "#c9d1d9",
+  "icon": {
+    "foreground": "#8b949e",
+  },
+  "input": {
+    "background": "#0d1117",
+    "border": "#30363d",
+    "foreground": "#c9d1d9",
+  },
+  "lighter": {
+    "inlineBackground": "#0d1117e6",
+  },
+  "list": {
+    "activeSelectionBackground": "#6e768166",
+    "activeSelectionForeground": "#c9d1d9",
+    "hoverBackground": "#6e76811a",
+    "hoverForeground": "#c9d1d9",
+  },
+  "sideBar": {
+    "background": "#010409",
+    "border": "#30363d",
+    "foreground": "#c9d1d9",
+  },
+  "tab": {
+    "activeBackground": "#0d1117",
+    "activeBorder": "#0d1117",
+    "activeForeground": "#c9d1d9",
+    "border": "#30363d",
+    "inactiveBackground": "#010409",
+    "inactiveForeground": "#8b949e",
+  },
+}
+`;
+
+exports[`get theme colors from theme name from-css 1`] = `
+{
+  "background": "var(--ch-16)",
+  "colorScheme": "var(--ch-0)",
+  "editor": {
+    "background": "var(--ch-16)",
+    "foreground": "var(--ch-4)",
+    "infoForeground": "var(--ch-19)",
+    "lineHighlightBackground": "var(--ch-17)",
+    "rangeHighlightBackground": "var(--ch-18)",
+    "selectionBackground": "var(--ch-20)",
+  },
+  "editorGroup": {
+    "border": "var(--ch-23)",
+  },
+  "editorGroupHeader": {
+    "tabsBackground": "var(--ch-22)",
+  },
+  "editorLineNumber": {
+    "foreground": "var(--ch-24)",
+  },
+  "focusBorder": "var(--ch-21)",
+  "foreground": "var(--ch-4)",
+  "icon": {
+    "foreground": "var(--ch-15)",
+  },
+  "input": {
+    "background": "var(--ch-16)",
+    "border": "var(--ch-23)",
+    "foreground": "var(--ch-4)",
+  },
+  "lighter": {
+    "inlineBackground": "var(--ch-26)",
+  },
+  "list": {
+    "activeSelectionBackground": "var(--ch-25)",
+    "activeSelectionForeground": "var(--ch-4)",
+    "hoverBackground": "var(--ch-17)",
+    "hoverForeground": "var(--ch-4)",
+  },
+  "sideBar": {
+    "background": "var(--ch-22)",
+    "border": "var(--ch-23)",
+    "foreground": "var(--ch-4)",
+  },
+  "tab": {
+    "activeBackground": "var(--ch-16)",
+    "activeBorder": "var(--ch-16)",
+    "activeForeground": "var(--ch-4)",
+    "border": "var(--ch-23)",
+    "inactiveBackground": "var(--ch-22)",
+    "inactiveForeground": "var(--ch-15)",
+  },
+}
+`;
