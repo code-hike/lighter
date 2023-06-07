@@ -76,6 +76,8 @@ function toFinalTheme(theme: RawTheme | undefined): FinalTheme | undefined {
     if (Object.keys(newColors).length > 0) {
       finalTheme.colors = { ...finalTheme.colors, ...newColors };
     }
+    finalTheme.foreground = foreground;
+    finalTheme.background = background;
   }
   if (!globalSetting) {
     finalTheme.settings = [
@@ -89,9 +91,10 @@ function toFinalTheme(theme: RawTheme | undefined): FinalTheme | undefined {
     ];
   }
 
-  const newGlobalSetting = finalTheme.settings.find((s) => !s.name && !s.scope);
-  finalTheme.background = newGlobalSetting?.settings?.background;
-  finalTheme.foreground = newGlobalSetting?.settings?.foreground;
+  finalTheme.background =
+    finalTheme.background || getColor(finalTheme, "editor.background");
+  finalTheme.foreground =
+    finalTheme.foreground || getColor(finalTheme, "editor.foreground");
 
   if (theme.type === "from-css" && !finalTheme.colorNames) {
     const colorNames = {};

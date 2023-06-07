@@ -103,7 +103,7 @@ exports[`extract annottations 2`] = `
     },
   ],
   "style": {
-    "background": undefined,
+    "background": "#1E1E1E",
     "color": "#D4D4D4",
   },
 }
@@ -151,7 +151,7 @@ exports[`extract annottations from text 2`] = `
     },
   ],
   "style": {
-    "background": undefined,
+    "background": "#1E1E1E",
     "color": "#D4D4D4",
   },
 }
@@ -257,7 +257,7 @@ exports[`highlight js 1`] = `
     ],
   ],
   "style": {
-    "background": undefined,
+    "background": "#1E1E1E",
     "color": "#D4D4D4",
   },
 }
@@ -275,7 +275,7 @@ exports[`highlight text 1`] = `
     ],
   ],
   "style": {
-    "background": undefined,
+    "background": "#1E1E1E",
     "color": "#D4D4D4",
   },
 }
@@ -335,7 +335,7 @@ exports[`highlight with frozen theme with global setting 1`] = `
     ],
   ],
   "style": {
-    "background": undefined,
+    "background": "#1E1E1E",
     "color": "#bbbbbb",
   },
 }
@@ -417,7 +417,7 @@ exports[`null code 1`] = `
     ],
   ],
   "style": {
-    "background": undefined,
+    "background": "#1E1E1E",
     "color": "#D4D4D4",
   },
 }
@@ -435,7 +435,7 @@ exports[`null lang 1`] = `
     ],
   ],
   "style": {
-    "background": undefined,
+    "background": "#1E1E1E",
     "color": "#D4D4D4",
   },
 }
