@@ -1,5 +1,17 @@
 # @code-hike/lighter
 
+## 0.7.0
+
+### Minor Changes
+
+- 9f4d748: Extract theme colors to a different function
+
+  Breaking Changes:
+
+  - `highlightWithScopes` removed, use `highlight` instead
+  - `annotatedHighlight` removed, use `highlight` instead
+  - `colors` removed from `highlight` result, now `style` is returned instead (only with `style.background` and `style.color` properties, the rest of the colors are returned by `getThemeColors` function)
+
 ## 0.6.7
 
 ### Patch Changes
