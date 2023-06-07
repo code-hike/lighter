@@ -5,12 +5,14 @@ The syntax highlighter used by Code Hike.
 ```js
 import { highlight } from "@code-hike/lighter";
 
-const { lines, colors } = await highlight(
+const { lines, style } = await highlight(
   /* code  */ "print('hello')",
   /* lang  */ "py",
   /* theme */ "github-dark"
 );
-const { foreground, background } = colors;
+
+// base foreground and background
+const { color, background } = style;
 
 console.log(lines);
 ```
@@ -26,6 +28,16 @@ Output:
     { "style": { "color": "#C9D1D9" }, "content": ")" }
   ]
 ]
+```
+
+For **dark/light theme support with CSS** see [#25](https://github.com/code-hike/lighter/pull/25)
+
+For more theme colors (like line number foreground, selection background, etc.):
+
+```js
+import { getThemeColors } from "@code-hike/lighter";
+
+const themeColors = await getThemeColors("material-darker");
 ```
 
 ## Credits
