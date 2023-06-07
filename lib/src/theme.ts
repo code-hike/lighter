@@ -1,6 +1,6 @@
 import { readJSON } from "./file-system";
 import { fetchJSON } from "./network";
-import { getColor } from "./theme-colors";
+import { getColor, getColorScheme } from "./theme-colors";
 
 const promiseCache = new Map<StringTheme, Promise<RawTheme>>();
 const themeCache = new Map<StringTheme, RawTheme>();
@@ -50,18 +50,22 @@ function toFinalTheme(theme: RawTheme | undefined): FinalTheme | undefined {
     return undefined;
   }
 
+  const settings = theme.settings || theme.tokenColors || [];
+
   const finalTheme: FinalTheme = {
-    ...theme,
     name: theme.name || "unknown-theme",
-    type: getColorScheme(theme),
-    settings: theme.settings || theme.tokenColors || [],
+    type: getThemeType(theme),
+    foreground: "",
+    background: "",
+    settings,
     colors: theme.colors || {},
     colorNames: theme.colorNames,
   };
 
-  const globalSetting = finalTheme.settings.find((s) => !s.name && !s.scope);
+  const globalSetting = settings.find((s) => !s.name && !s.scope);
+
   if (globalSetting) {
-    const { foreground, background } = globalSetting.settings || {};
+    const { foreground, background } = globalSetting?.settings || {};
     const newColors = {};
     if (foreground && !finalTheme.colors["editor.foreground"]) {
       newColors["editor.foreground"] = foreground;
@@ -84,6 +88,10 @@ function toFinalTheme(theme: RawTheme | undefined): FinalTheme | undefined {
       ...finalTheme.settings,
     ];
   }
+
+  const newGlobalSetting = finalTheme.settings.find((s) => !s.name && !s.scope);
+  finalTheme.background = newGlobalSetting?.settings?.background;
+  finalTheme.foreground = newGlobalSetting?.settings?.foreground;
 
   if (theme.type === "from-css" && !finalTheme.colorNames) {
     const colorNames = {};
@@ -115,7 +123,7 @@ function toFinalTheme(theme: RawTheme | undefined): FinalTheme | undefined {
   return finalTheme;
 }
 
-function getColorScheme(theme: RawTheme) {
+function getThemeType(theme: RawTheme) {
   if (theme.type === "from-css") {
     return "from-css";
   }
@@ -152,8 +160,11 @@ type ThemeSetting = {
 export type FinalTheme = {
   name: string;
   type: "dark" | "light" | "from-css";
+  foreground: string;
+  background: string;
   settings: ThemeSetting[];
   colors: { [key: string]: string };
+  // only for "from-css" themes
   colorNames?: { [key: string]: string };
 };
 
@@ -194,4 +205,72 @@ export class UnknownThemeError extends Error {
     super(`Unknown theme: ${theme}`);
     this.theme = theme;
   }
+}
+
+export function getAllThemeColors(theme: FinalTheme) {
+  const c = (key: string) => {
+    if (key === "colorScheme") {
+      return getColorScheme(theme);
+    }
+    if (key === "foreground") {
+      return theme.foreground;
+    }
+    if (key === "background") {
+      return theme.background;
+    }
+    return getColor(theme, key);
+  };
+  return {
+    colorScheme: c("colorScheme"),
+    foreground: c("foreground"),
+    background: c("background"),
+    lighter: {
+      inlineBackground: c("lighter.inlineBackground"),
+    },
+    editor: {
+      background: c("editor.background"),
+      foreground: c("editor.foreground"),
+      lineHighlightBackground: c("editor.lineHighlightBackground"),
+      rangeHighlightBackground: c("editor.rangeHighlightBackground"),
+      infoForeground: c("editor.infoForeground"),
+      selectionBackground: c("editor.selectionBackground"),
+    },
+    focusBorder: c("focusBorder"),
+    tab: {
+      activeBackground: c("tab.activeBackground"),
+      activeForeground: c("tab.activeForeground"),
+      inactiveBackground: c("tab.inactiveBackground"),
+      inactiveForeground: c("tab.inactiveForeground"),
+      border: c("tab.border"),
+      activeBorder: c("tab.activeBorder"),
+    },
+    editorGroup: {
+      border: c("editorGroup.border"),
+    },
+    editorGroupHeader: {
+      tabsBackground: c("editorGroupHeader.tabsBackground"),
+    },
+    editorLineNumber: {
+      foreground: c("editorLineNumber.foreground"),
+    },
+    input: {
+      background: c("input.background"),
+      foreground: c("input.foreground"),
+      border: c("input.border"),
+    },
+    icon: {
+      foreground: c("icon.foreground"),
+    },
+    sideBar: {
+      background: c("sideBar.background"),
+      foreground: c("sideBar.foreground"),
+      border: c("sideBar.border"),
+    },
+    list: {
+      activeSelectionBackground: c("list.activeSelectionBackground"),
+      activeSelectionForeground: c("list.activeSelectionForeground"),
+      hoverBackground: c("list.hoverBackground"),
+      hoverForeground: c("list.hoverForeground"),
+    },
+  };
 }

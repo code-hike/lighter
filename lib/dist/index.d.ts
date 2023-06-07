@@ -19,6 +19,8 @@ type ThemeSetting = {
 type FinalTheme = {
     name: string;
     type: "dark" | "light" | "from-css";
+    foreground: string;
+    background: string;
     settings: ThemeSetting[];
     colors: {
         [key: string]: string;
@@ -41,8 +43,8 @@ type NamesTuple = typeof LANG_NAMES;
 type LanguageAlias = NamesTuple[number];
 type LanguageName = "abap" | "actionscript-3" | "ada" | "apache" | "apex" | "apl" | "applescript" | "ara" | "asm" | "astro" | "awk" | "ballerina" | "bat" | "berry" | "bibtex" | "bicep" | "blade" | "c" | "cadence" | "clarity" | "clojure" | "cmake" | "cobol" | "codeql" | "coffee" | "cpp" | "crystal" | "csharp" | "css" | "cue" | "d" | "dart" | "dax" | "diff" | "docker" | "dream-maker" | "elixir" | "elm" | "erb" | "erlang" | "fish" | "fsharp" | "gdresource" | "gdscript" | "gdshader" | "gherkin" | "git-commit" | "git-rebase" | "glsl" | "gnuplot" | "go" | "graphql" | "groovy" | "hack" | "haml" | "handlebars" | "haskell" | "hcl" | "hlsl" | "html" | "http" | "imba" | "ini" | "java" | "javascript" | "jinja-html" | "jison" | "json" | "json5" | "jsonc" | "jsonnet" | "jssm" | "jsx" | "julia" | "kotlin" | "kusto" | "latex" | "less" | "liquid" | "lisp" | "logo" | "lua" | "make" | "markdown" | "marko" | "matlab" | "mdx" | "mermaid" | "nginx" | "nim" | "nix" | "objective-c" | "objective-cpp" | "ocaml" | "pascal" | "perl" | "php" | "plsql" | "postcss" | "powerquery" | "powershell" | "prisma" | "prolog" | "proto" | "pug" | "puppet" | "purescript" | "python" | "r" | "raku" | "razor" | "reg" | "rel" | "riscv" | "rst" | "ruby" | "rust" | "sas" | "sass" | "scala" | "scheme" | "scss" | "shaderlab" | "shellscript" | "smalltalk" | "solidity" | "sparql" | "sql" | "ssh-config" | "stata" | "stylus" | "svelte" | "swift" | "system-verilog" | "tasl" | "tcl" | "tex" | "toml" | "tsx" | "turtle" | "twig" | "typescript" | "v" | "vb" | "verilog" | "vhdl" | "viml" | "vue-html" | "vue" | "wasm" | "wenyan" | "wgsl" | "xml" | "xsl" | "yaml" | "zenscript";
 
-type ThemeColors = ReturnType<typeof getThemeColors>;
-declare function getThemeColors(theme: FinalTheme): {
+type ThemeColors = ReturnType<typeof getThemeColors$1>;
+declare function getThemeColors$1(theme: FinalTheme): {
     background: string;
     foreground: string;
     lineNumberForeground: string;
@@ -151,13 +153,62 @@ declare function highlight(code: string, lang: LanguageAlias, themeOrThemeName?:
 declare function highlight(code: string, lang: LanguageAlias, themeOrThemeName: Theme, config: AnnotatedConfig): Promise<AnnotatedLighterResult>;
 declare function highlightSync(code: string, lang: LanguageAlias, themeOrThemeName?: Theme, config?: Config): LighterResult;
 declare function highlightSync(code: string, lang: LanguageAlias, themeOrThemeName: Theme, config: AnnotatedConfig): AnnotatedLighterResult;
-/** @deprecated use highlight instead */
-declare function highlightWithScopes(code: string, alias: LanguageAlias, themeOrThemeName?: Theme): Promise<LighterResult>;
-/** @deprecated use highlight instead */
-declare function annotatedHighlight(code: string, alias: LanguageAlias, themeOrThemeName?: Theme, annotations?: Annotation[]): Promise<AnnotatedLighterResult>;
 declare function extractAnnotations(code: string, lang: LanguageAlias, annotationNames?: string[]): Promise<{
     code: string;
     annotations: Annotation[];
 }>;
+declare function getThemeColors(themeOrThemeName: Theme): Promise<{
+    colorScheme: string;
+    foreground: string;
+    background: string;
+    lighter: {
+        inlineBackground: string;
+    };
+    editor: {
+        background: string;
+        foreground: string;
+        lineHighlightBackground: string;
+        rangeHighlightBackground: string;
+        infoForeground: string;
+        selectionBackground: string;
+    };
+    focusBorder: string;
+    tab: {
+        activeBackground: string;
+        activeForeground: string;
+        inactiveBackground: string;
+        inactiveForeground: string;
+        border: string;
+        activeBorder: string;
+    };
+    editorGroup: {
+        border: string;
+    };
+    editorGroupHeader: {
+        tabsBackground: string;
+    };
+    editorLineNumber: {
+        foreground: string;
+    };
+    input: {
+        background: string;
+        foreground: string;
+        border: string;
+    };
+    icon: {
+        foreground: string;
+    };
+    sideBar: {
+        background: string;
+        foreground: string;
+        border: string;
+    };
+    list: {
+        activeSelectionBackground: string;
+        activeSelectionForeground: string;
+        hoverBackground: string;
+        hoverForeground: string;
+    };
+}>;
 
-export { AnnotatedLighterResult, Annotation, LANG_NAMES, LanguageAlias, LighterResult, Line, LineGroup, Lines, RawTheme, StringTheme, THEME_NAMES, Theme, ThemeColors, Token, TokenGroup, Tokens, UnknownLanguageError, UnknownThemeError, annotatedHighlight, extractAnnotations, highlight, highlightSync, highlightWithScopes, preload };
+export { AnnotatedLighterResult, Annotation, LANG_NAMES, LanguageAlias, LighterResult, Line, LineGroup, Lines, RawTheme, StringTheme, THEME_NAMES, Theme, ThemeColors, Token, TokenGroup, Tokens, UnknownLanguageError, UnknownThemeError, extractAnnotations, getThemeColors, highlight, highlightSync, preload };
