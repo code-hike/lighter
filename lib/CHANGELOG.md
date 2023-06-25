@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.7.1
+
+### Patch Changes
+
+- def601e: Add getThemeColorsSync
+
 ## 0.7.0
 
 ### Minor Changes
