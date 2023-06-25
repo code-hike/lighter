@@ -197,4 +197,12 @@ export async function getThemeColors(themeOrThemeName: Theme) {
   return getAllThemeColors(theme);
 }
 
+export function getThemeColorsSync(themeOrThemeName: Theme) {
+  if (!themeOrThemeName) {
+    throw new Error("Syntax highlighter error: undefined theme");
+  }
+  const theme = getTheme(themeOrThemeName);
+  return getAllThemeColors(theme);
+}
+
 export type LighterColors = ReturnType<typeof getThemeColors>;

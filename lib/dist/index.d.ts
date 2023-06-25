@@ -170,6 +170,59 @@ declare function getThemeColors(themeOrThemeName: Theme): Promise<{
         hoverForeground: string;
     };
 }>;
+declare function getThemeColorsSync(themeOrThemeName: Theme): {
+    colorScheme: string;
+    foreground: string;
+    background: string;
+    lighter: {
+        inlineBackground: string;
+    };
+    editor: {
+        background: string;
+        foreground: string;
+        lineHighlightBackground: string;
+        rangeHighlightBackground: string;
+        infoForeground: string;
+        selectionBackground: string;
+    };
+    focusBorder: string;
+    tab: {
+        activeBackground: string;
+        activeForeground: string;
+        inactiveBackground: string;
+        inactiveForeground: string;
+        border: string;
+        activeBorder: string;
+    };
+    editorGroup: {
+        border: string;
+    };
+    editorGroupHeader: {
+        tabsBackground: string;
+    };
+    editorLineNumber: {
+        foreground: string;
+    };
+    input: {
+        background: string;
+        foreground: string;
+        border: string;
+    };
+    icon: {
+        foreground: string;
+    };
+    sideBar: {
+        background: string;
+        foreground: string;
+        border: string;
+    };
+    list: {
+        activeSelectionBackground: string;
+        activeSelectionForeground: string;
+        hoverBackground: string;
+        hoverForeground: string;
+    };
+};
 type LighterColors = ReturnType<typeof getThemeColors>;
 
-export { AnnotatedLighterResult, Annotation, LANG_NAMES, LanguageAlias, LighterColors, LighterResult, Line, LineGroup, Lines, RawTheme, StringTheme, THEME_NAMES, Theme, Token, TokenGroup, Tokens, UnknownLanguageError, UnknownThemeError, extractAnnotations, getThemeColors, highlight, highlightSync, preload };
+export { AnnotatedLighterResult, Annotation, LANG_NAMES, LanguageAlias, LighterColors, LighterResult, Line, LineGroup, Lines, RawTheme, StringTheme, THEME_NAMES, Theme, Token, TokenGroup, Tokens, UnknownLanguageError, UnknownThemeError, extractAnnotations, getThemeColors, getThemeColorsSync, highlight, highlightSync, preload };
