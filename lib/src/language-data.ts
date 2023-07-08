@@ -187,6 +187,7 @@ export const LANG_NAMES = [
   "tsx",
   "turtle",
   "twig",
+  "txt",
   "typescript",
   "v",
   "vb",
@@ -363,6 +364,7 @@ export type LanguageName =
   | "tsx"
   | "turtle"
   | "twig"
+  | "txt"
   | "typescript"
   | "v"
   | "vb"
@@ -531,6 +533,7 @@ export type ScopeName =
   | "source.tsx"
   | "source.turtle"
   | "text.html.twig"
+  | "source.txt"
   | "source.ts"
   | "source.v"
   | "source.asp.vb.net"
@@ -740,6 +743,7 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "tsx": "source.tsx",
   "turtle": "source.turtle",
   "twig": "text.html.twig",
+  "txt": "source.txt",
   "typescript": "source.ts",
   "ts": "source.ts",
   "v": "source.v",
@@ -2181,6 +2185,11 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.js",
       "source.css"
     ]
+  },
+  "source.txt": {
+    "id": "txt",
+    "path": "txt.tmLanguage.json",
+    "embeddedScopes": []
   },
   "source.ts": {
     "id": "typescript",
