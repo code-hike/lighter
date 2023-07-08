@@ -1,5 +1,13 @@
 # @code-hike/lighter
 
+## 0.7.3
+
+### Patch Changes
+
+- c676a69: Better mdx comment annotations
+
+  - remove `{}` after extracting the annotation
+
 ## 0.7.2
 
 ### Patch Changes
