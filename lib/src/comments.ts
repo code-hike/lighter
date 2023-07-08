@@ -35,6 +35,7 @@ export type Annotation = {
 export function extractCommentsFromCode(
   code: string,
   grammar: IGrammar,
+  lang: string,
   annotationNames: string[]
 ) {
   const lines = !grammar
@@ -44,7 +45,7 @@ export function extractCommentsFromCode(
   const allAnnotations: Annotation[] = [];
 
   let lineNumber = 1;
-  const cleanLines = lines
+  const newCode = lines
     .map((line) => {
       const { annotations, lineWithoutComments } = getAnnotationsFromLine(
         line,
@@ -54,16 +55,25 @@ export function extractCommentsFromCode(
 
       allAnnotations.push(...annotations);
 
-      if (lineWithoutComments) {
-        lineNumber++;
+      if (!lineWithoutComments) {
+        return null;
       }
 
-      return lineWithoutComments;
-    })
-    .filter((line) => line !== null);
+      const lineText = lineWithoutComments.map((t) => t.content).join("");
 
-  const newCode = cleanLines
-    .map((line) => line.map((t) => t.content).join(""))
+      // remove mdx comment wrapper https://github.com/code-hike/lighter/issues/23
+      if (
+        lang === "mdx" &&
+        annotations.length > 0 &&
+        lineText.trim() === "{}"
+      ) {
+        return null;
+      }
+
+      lineNumber++;
+      return lineText;
+    })
+    .filter((line) => line !== null)
     .join(`\n`);
 
   return { newCode, annotations: allAnnotations };

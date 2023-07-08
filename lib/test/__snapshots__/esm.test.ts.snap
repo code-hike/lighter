@@ -124,8 +124,7 @@ exports[`extract annottations from mdx 1`] = `
       ],
     },
   ],
-  "code": "{}
-# Hi there
+  "code": "# Hi there
 {/* bar */}",
 }
 `;
@@ -138,18 +137,29 @@ exports[`extract annottations from mdx 2`] = `
       "lineNumber": 1,
       "tokens": [
         {
-          "content": "{}",
+          "content": "# ",
           "style": {
-            "color": "#CE9178",
+            "color": "#569CD6",
+            "fontWeight": "bold",
           },
         },
-      ],
-    },
-    {
-      "lineNumber": 2,
-      "tokens": [
         {
-          "content": "# Hi there",
+          "annotationName": "foo",
+          "annotationQuery": "",
+          "fromColumn": 3,
+          "toColumn": 5,
+          "tokens": [
+            {
+              "content": "Hi ",
+              "style": {
+                "color": "#569CD6",
+                "fontWeight": "bold",
+              },
+            },
+          ],
+        },
+        {
+          "content": "there",
           "style": {
             "color": "#569CD6",
             "fontWeight": "bold",
@@ -158,7 +168,7 @@ exports[`extract annottations from mdx 2`] = `
       ],
     },
     {
-      "lineNumber": 3,
+      "lineNumber": 2,
       "tokens": [
         {
           "content": "{",

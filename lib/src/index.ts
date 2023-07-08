@@ -181,6 +181,7 @@ export async function extractAnnotations(
   const { newCode, annotations } = extractCommentsFromCode(
     code,
     grammar,
+    lang,
     annotationNames
   );
 
