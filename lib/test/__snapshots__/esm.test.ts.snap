@@ -109,6 +109,85 @@ exports[`extract annottations 2`] = `
 }
 `;
 
+exports[`extract annottations from mdx 1`] = `
+{
+  "annotations": [
+    {
+      "name": "foo",
+      "query": "",
+      "ranges": [
+        {
+          "fromColumn": 3,
+          "lineNumber": 1,
+          "toColumn": 5,
+        },
+      ],
+    },
+  ],
+  "code": "{}
+# Hi there
+{/* bar */}",
+}
+`;
+
+exports[`extract annottations from mdx 2`] = `
+{
+  "lang": "mdx",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "tokens": [
+        {
+          "content": "{}",
+          "style": {
+            "color": "#CE9178",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 2,
+      "tokens": [
+        {
+          "content": "# Hi there",
+          "style": {
+            "color": "#569CD6",
+            "fontWeight": "bold",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 3,
+      "tokens": [
+        {
+          "content": "{",
+          "style": {
+            "color": "#CE9178",
+          },
+        },
+        {
+          "content": "/* bar */",
+          "style": {
+            "color": "#6A9955",
+          },
+        },
+        {
+          "content": "}",
+          "style": {
+            "color": "#CE9178",
+          },
+        },
+      ],
+    },
+  ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
+}
+`;
+
 exports[`extract annottations from text 1`] = `
 {
   "annotations": [],
@@ -146,6 +225,80 @@ exports[`extract annottations from text 2`] = `
         {
           "content": "const y = 2;",
           "style": {},
+        },
+      ],
+    },
+  ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
+}
+`;
+
+exports[`extract annottations from txt 1`] = `
+{
+  "annotations": [
+    {
+      "name": "foo",
+      "query": "",
+      "ranges": [
+        {
+          "fromColumn": 3,
+          "lineNumber": 2,
+          "toColumn": 5,
+        },
+      ],
+    },
+  ],
+  "code": "const x = 1;
+const y = 2;",
+}
+`;
+
+exports[`extract annottations from txt 2`] = `
+{
+  "lang": "txt",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "tokens": [
+        {
+          "content": "const x = 1;",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 2,
+      "tokens": [
+        {
+          "content": "co",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "annotationName": "foo",
+          "annotationQuery": "",
+          "fromColumn": 3,
+          "toColumn": 5,
+          "tokens": [
+            {
+              "content": "nst",
+              "style": {
+                "color": "#D4D4D4",
+              },
+            },
+          ],
+        },
+        {
+          "content": " y = 2;",
+          "style": {
+            "color": "#D4D4D4",
+          },
         },
       ],
     },
