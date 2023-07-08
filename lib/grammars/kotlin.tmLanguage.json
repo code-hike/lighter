@@ -114,6 +114,9 @@
           "include": "#character"
         },
         {
+          "include": "#lambda-arrow"
+        },
+        {
           "include": "#operators"
         },
         {
@@ -500,11 +503,11 @@
       ]
     },
     "decimal-literal": {
-      "match": "\\b\\d[\\d_]*(\\.[\\d_]+)?((e|E)\\d+)?(L|F|f)?\\b",
+      "match": "\\b\\d[\\d_]*(\\.[\\d_]+)?((e|E)\\d+)?(u|U)?(L|F|f)?\\b",
       "name": "constant.numeric.decimal.kotlin"
     },
     "hex-literal": {
-      "match": "0(x|X)[A-Fa-f0-9][A-Fa-f0-9_]*",
+      "match": "0(x|X)[A-Fa-f0-9][A-Fa-f0-9_]*(u|U)?",
       "name": "constant.numeric.hex.kotlin"
     },
     "binary-literal": {
@@ -519,9 +522,41 @@
       "match": "\\bnull\\b",
       "name": "constant.language.null.kotlin"
     },
+    "lambda-arrow": {
+      "match": "->",
+      "name": "storage.type.function.arrow.kotlin"
+    },
     "operators": {
-      "match": "<=|>=|===|==|=>|=|\\!==|\\!=|\\+=|\\+\\+|\\+|-=|--|-|\\*=|\\*|/=|/|%=|%|!|\\&\\&|\\&|\\|\\||\\|..",
-      "name": "keyword.operator.kotlin"
+      "patterns": [
+        {
+          "match": "(===?|\\!==?|<=|>=|<|>)",
+          "name": "keyword.operator.comparison.kotlin"
+        },
+        {
+          "match": "([+*/%-]=)",
+          "name": "keyword.operator.assignment.arithmetic.kotlin"
+        },
+        {
+          "match": "(=)",
+          "name": "keyword.operator.assignment.kotlin"
+        },
+        {
+          "match": "([+*/%-])",
+          "name": "keyword.operator.arithmetic.kotlin"
+        },
+        {
+          "match": "(!|&&|\\|\\|)",
+          "name": "keyword.operator.logical.kotlin"
+        },
+        {
+          "match": "(--|\\+\\+)",
+          "name": "keyword.operator.increment-decrement.kotlin"
+        },
+        {
+          "match": "(\\.\\.)",
+          "name": "keyword.operator.range.kotlin"
+        }
+      ]
     },
     "self-reference": {
       "match": "\\b(this|super)(@\\w+)?\\b",

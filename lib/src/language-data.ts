@@ -15,6 +15,7 @@ export const LANG_NAMES = [
   "ballerina",
   "bat",
   "batch",
+  "beancount",
   "berry",
   "be",
   "bibtex",
@@ -38,6 +39,7 @@ export const LANG_NAMES = [
   "cs",
   "css",
   "cue",
+  "cypher",
   "d",
   "dart",
   "dax",
@@ -60,6 +62,8 @@ export const LANG_NAMES = [
   "gherkin",
   "git-commit",
   "git-rebase",
+  "glimmer-js",
+  "glimmer-ts",
   "glsl",
   "gnuplot",
   "go",
@@ -72,6 +76,7 @@ export const LANG_NAMES = [
   "haskell",
   "hs",
   "hcl",
+  "hjson",
   "hlsl",
   "html",
   "http",
@@ -86,6 +91,7 @@ export const LANG_NAMES = [
   "json",
   "json5",
   "jsonc",
+  "jsonl",
   "jsonnet",
   "jssm",
   "fsl",
@@ -108,6 +114,8 @@ export const LANG_NAMES = [
   "matlab",
   "mdx",
   "mermaid",
+  "narrat",
+  "nextflow",
   "nginx",
   "nim",
   "nix",
@@ -158,6 +166,7 @@ export const LANG_NAMES = [
   "sh",
   "shell",
   "zsh",
+  "shellsession",
   "smalltalk",
   "solidity",
   "sparql",
@@ -188,10 +197,12 @@ export const LANG_NAMES = [
   "vimscript",
   "vue-html",
   "vue",
+  "vyper",
   "wasm",
   "wenyan",
   "文言",
   "wgsl",
+  "wolfram",
   "xml",
   "xsl",
   "yaml",
@@ -214,6 +225,7 @@ export type LanguageName =
   | "awk"
   | "ballerina"
   | "bat"
+  | "beancount"
   | "berry"
   | "bibtex"
   | "bicep"
@@ -231,6 +243,7 @@ export type LanguageName =
   | "csharp"
   | "css"
   | "cue"
+  | "cypher"
   | "d"
   | "dart"
   | "dax"
@@ -249,6 +262,8 @@ export type LanguageName =
   | "gherkin"
   | "git-commit"
   | "git-rebase"
+  | "glimmer-js"
+  | "glimmer-ts"
   | "glsl"
   | "gnuplot"
   | "go"
@@ -259,6 +274,7 @@ export type LanguageName =
   | "handlebars"
   | "haskell"
   | "hcl"
+  | "hjson"
   | "hlsl"
   | "html"
   | "http"
@@ -271,6 +287,7 @@ export type LanguageName =
   | "json"
   | "json5"
   | "jsonc"
+  | "jsonl"
   | "jsonnet"
   | "jssm"
   | "jsx"
@@ -289,6 +306,8 @@ export type LanguageName =
   | "matlab"
   | "mdx"
   | "mermaid"
+  | "narrat"
+  | "nextflow"
   | "nginx"
   | "nim"
   | "nix"
@@ -325,6 +344,7 @@ export type LanguageName =
   | "scss"
   | "shaderlab"
   | "shellscript"
+  | "shellsession"
   | "smalltalk"
   | "solidity"
   | "sparql"
@@ -350,9 +370,11 @@ export type LanguageName =
   | "viml"
   | "vue-html"
   | "vue"
+  | "vyper"
   | "wasm"
   | "wenyan"
   | "wgsl"
+  | "wolfram"
   | "xml"
   | "xsl"
   | "yaml"
@@ -371,6 +393,7 @@ export type ScopeName =
   | "source.awk"
   | "source.ballerina"
   | "source.batchfile"
+  | "text.beancount"
   | "source.berry"
   | "text.bibtex"
   | "source.bicep"
@@ -388,6 +411,7 @@ export type ScopeName =
   | "source.cs"
   | "source.css"
   | "source.cue"
+  | "source.cypher"
   | "source.d"
   | "source.dart"
   | "source.dax"
@@ -406,6 +430,8 @@ export type ScopeName =
   | "text.gherkin.feature"
   | "text.git-commit"
   | "text.git-rebase"
+  | "source.gjs"
+  | "source.gts"
   | "source.glsl"
   | "source.gnuplot"
   | "source.go"
@@ -416,6 +442,7 @@ export type ScopeName =
   | "text.html.handlebars"
   | "source.haskell"
   | "source.hcl"
+  | "source.hjson"
   | "source.hlsl"
   | "text.html.basic"
   | "source.http"
@@ -428,6 +455,7 @@ export type ScopeName =
   | "source.json"
   | "source.json5"
   | "source.json.comments"
+  | "source.json.lines"
   | "source.jsonnet"
   | "source.jssm"
   | "source.js.jsx"
@@ -446,6 +474,8 @@ export type ScopeName =
   | "source.matlab"
   | "source.mdx"
   | "source.mermaid"
+  | "source.narrat"
+  | "source.nextflow"
   | "source.nginx"
   | "source.nim"
   | "source.nix"
@@ -482,6 +512,7 @@ export type ScopeName =
   | "source.css.scss"
   | "source.shaderlab"
   | "source.shell"
+  | "text.shell-session"
   | "source.smalltalk"
   | "source.solidity"
   | "source.sparql"
@@ -507,9 +538,11 @@ export type ScopeName =
   | "source.viml"
   | "text.html.vue-html"
   | "source.vue"
+  | "source.vyper"
   | "source.wat"
   | "source.wenyan"
   | "source.wgsl"
+  | "source.wolfram"
   | "text.xml"
   | "text.xml.xsl"
   | "source.yaml"
@@ -536,6 +569,7 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "ballerina": "source.ballerina",
   "bat": "source.batchfile",
   "batch": "source.batchfile",
+  "beancount": "text.beancount",
   "berry": "source.berry",
   "be": "source.berry",
   "bibtex": "text.bibtex",
@@ -559,6 +593,7 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "cs": "source.cs",
   "css": "source.css",
   "cue": "source.cue",
+  "cypher": "source.cypher",
   "d": "source.d",
   "dart": "source.dart",
   "dax": "source.dax",
@@ -581,6 +616,8 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "gherkin": "text.gherkin.feature",
   "git-commit": "text.git-commit",
   "git-rebase": "text.git-rebase",
+  "glimmer-js": "source.gjs",
+  "glimmer-ts": "source.gts",
   "glsl": "source.glsl",
   "gnuplot": "source.gnuplot",
   "go": "source.go",
@@ -593,6 +630,7 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "haskell": "source.haskell",
   "hs": "source.haskell",
   "hcl": "source.hcl",
+  "hjson": "source.hjson",
   "hlsl": "source.hlsl",
   "html": "text.html.basic",
   "http": "source.http",
@@ -607,6 +645,7 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "json": "source.json",
   "json5": "source.json5",
   "jsonc": "source.json.comments",
+  "jsonl": "source.json.lines",
   "jsonnet": "source.jsonnet",
   "jssm": "source.jssm",
   "fsl": "source.jssm",
@@ -629,6 +668,8 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "matlab": "source.matlab",
   "mdx": "source.mdx",
   "mermaid": "source.mermaid",
+  "narrat": "source.narrat",
+  "nextflow": "source.nextflow",
   "nginx": "source.nginx",
   "nim": "source.nim",
   "nix": "source.nix",
@@ -679,6 +720,7 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "sh": "source.shell",
   "shell": "source.shell",
   "zsh": "source.shell",
+  "shellsession": "text.shell-session",
   "smalltalk": "source.smalltalk",
   "solidity": "source.solidity",
   "sparql": "source.sparql",
@@ -709,10 +751,12 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "vimscript": "source.viml",
   "vue-html": "text.html.vue-html",
   "vue": "source.vue",
+  "vyper": "source.vyper",
   "wasm": "source.wat",
   "wenyan": "source.wenyan",
   "文言": "source.wenyan",
   "wgsl": "source.wgsl",
+  "wolfram": "source.wolfram",
   "xml": "text.xml",
   "xsl": "text.xml.xsl",
   "yaml": "source.yaml",
@@ -801,6 +845,11 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   "source.batchfile": {
     "id": "bat",
     "path": "bat.tmLanguage.json",
+    "embeddedScopes": []
+  },
+  "text.beancount": {
+    "id": "beancount",
+    "path": "beancount.tmLanguage.json",
     "embeddedScopes": []
   },
   "source.berry": {
@@ -972,6 +1021,11 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   "source.cue": {
     "id": "cue",
     "path": "cue.tmLanguage.json",
+    "embeddedScopes": []
+  },
+  "source.cypher": {
+    "id": "cypher",
+    "path": "cypher.tmLanguage.json",
     "embeddedScopes": []
   },
   "source.d": {
@@ -1147,6 +1201,29 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.shell"
     ]
   },
+  "source.gjs": {
+    "id": "glimmer-js",
+    "path": "glimmer-js.tmLanguage.json",
+    "embeddedScopes": [
+      "source.yaml",
+      "source.css",
+      "text.html.basic",
+      "text.html.handlebars",
+      "source.js"
+    ]
+  },
+  "source.gts": {
+    "id": "glimmer-ts",
+    "path": "glimmer-ts.tmLanguage.json",
+    "embeddedScopes": [
+      "source.yaml",
+      "source.js",
+      "source.css",
+      "text.html.basic",
+      "text.html.handlebars",
+      "source.ts"
+    ]
+  },
   "source.glsl": {
     "id": "glsl",
     "path": "glsl.tmLanguage.json",
@@ -1273,6 +1350,11 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
     "path": "hcl.tmLanguage.json",
     "embeddedScopes": []
   },
+  "source.hjson": {
+    "id": "hjson",
+    "path": "hjson.tmLanguage.json",
+    "embeddedScopes": []
+  },
   "source.hlsl": {
     "id": "hlsl",
     "path": "hlsl.tmLanguage.json",
@@ -1350,6 +1432,11 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   "source.json.comments": {
     "id": "jsonc",
     "path": "jsonc.tmLanguage.json",
+    "embeddedScopes": []
+  },
+  "source.json.lines": {
+    "id": "jsonl",
+    "path": "jsonl.tmLanguage.json",
     "embeddedScopes": []
   },
   "source.jsonnet": {
@@ -1565,6 +1652,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.swift",
       "text.xml",
       "source.sql",
+      "text.shell-session",
       "source.shell",
       "source.css.scss",
       "source.scala",
@@ -1607,6 +1695,16 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   "source.mermaid": {
     "id": "mermaid",
     "path": "mermaid.tmLanguage.json",
+    "embeddedScopes": []
+  },
+  "source.narrat": {
+    "id": "narrat",
+    "path": "narrat.tmLanguage.json",
+    "embeddedScopes": []
+  },
+  "source.nextflow": {
+    "id": "nextflow",
+    "path": "nextflow.tmLanguage.json",
     "embeddedScopes": []
   },
   "source.nginx": {
@@ -1910,6 +2008,13 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
     "id": "shellscript",
     "path": "shellscript.tmLanguage.json",
     "embeddedScopes": []
+  },
+  "text.shell-session": {
+    "id": "shellsession",
+    "path": "shellsession.tmLanguage.json",
+    "embeddedScopes": [
+      "source.shell"
+    ]
   },
   "source.smalltalk": {
     "id": "smalltalk",
@@ -2243,6 +2348,11 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "text.html.basic"
     ]
   },
+  "source.vyper": {
+    "id": "vyper",
+    "path": "vyper.tmLanguage.json",
+    "embeddedScopes": []
+  },
   "source.wat": {
     "id": "wasm",
     "path": "wasm.tmLanguage.json",
@@ -2256,6 +2366,11 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   "source.wgsl": {
     "id": "wgsl",
     "path": "wgsl.tmLanguage.json",
+    "embeddedScopes": []
+  },
+  "source.wolfram": {
+    "id": "wolfram",
+    "path": "wolfram.tmLanguage.json",
     "embeddedScopes": []
   },
   "text.xml": {
