@@ -1,5 +1,15 @@
 # @code-hike/lighter
 
+## 0.7.2
+
+### Patch Changes
+
+- b701e70: Update grammars
+
+  - Update all grammars
+  - Add txt grammar for text with comments
+  - Add text to the list of LANG_NAMES
+
 ## 0.7.1
 
 ### Patch Changes
