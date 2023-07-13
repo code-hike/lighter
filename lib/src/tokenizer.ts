@@ -1,6 +1,6 @@
 // import { MetadataConsts, FontStyle } from "vscode-textmate";
 
-import { IGrammar, StackElement } from "vscode-textmate";
+import type { IGrammar, StateStack } from "vscode-textmate";
 import { Line, Token } from "./annotations";
 
 // MetadataConsts
@@ -22,7 +22,7 @@ const FontStyle = {
 };
 
 export function tokenize(code: string, grammar: IGrammar, colors: string[]) {
-  let stack: StackElement | null = null;
+  let stack: StateStack | null = null;
   const lines = code.split(/\r?\n|\r/g);
   return lines.map((line) => {
     const { rawTokens, nextStack } = tokenizeLine(grammar, stack, line);
@@ -38,7 +38,7 @@ type RawToken = { content: string; metadata: number };
 
 function tokenizeLine(
   grammar: IGrammar,
-  stack: StackElement,
+  stack: StateStack,
   line: string,
   config?: { preserveWhitespace?: boolean }
 ) {
@@ -90,7 +90,7 @@ export function tokenizeWithScopes(
   grammar: IGrammar,
   colors: string[]
 ) {
-  let stack: StackElement | null = null;
+  let stack: StateStack | null = null;
   const lines = code.split(/\r?\n|\r/g);
 
   return lines.map((line) => {
@@ -110,7 +110,7 @@ export function tokenizeWithScopes(
 
 export function addScopesToLine(
   line: string,
-  stack: StackElement | null,
+  stack: StateStack | null,
   grammar: IGrammar,
   styledTokens: Token[]
 ) {

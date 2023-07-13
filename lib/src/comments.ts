@@ -1,4 +1,4 @@
-import { IGrammar } from "vscode-textmate";
+import type { IGrammar } from "vscode-textmate";
 import { Token } from "./annotations";
 import { highlightText, highlightTokens } from "./highlighter";
 import { CodeRange, parseRelativeRanges } from "./range";

@@ -1,9 +1,10 @@
-import { IGrammar, Registry } from "vscode-textmate";
+import type { IGrammar } from "vscode-textmate";
+import { Registry } from "./vscode-textmate";
 import {
   loadWASM,
   createOnigScanner,
   createOnigString,
-} from "vscode-oniguruma";
+} from "./vscode-oniguruma";
 // @ts-ignore
 import onig from "vscode-oniguruma/release/onig.wasm";
 import { aliasToLangData } from "./language";
