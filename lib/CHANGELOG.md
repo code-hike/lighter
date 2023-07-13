@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.7.4
+
+### Patch Changes
+
+- 24563e6: Remove dynamic import from browser bundle
+
 ## 0.7.3
 
 ### Patch Changes
