@@ -72,7 +72,7 @@ export function getGrammar(alias: LanguageAlias): {
 
 function getGrammarFromRegistry(scopeName: string) {
   const { _syncRegistry } = registry as any;
-  return _syncRegistry?._grammars[scopeName] as IGrammar;
+  return _syncRegistry?._grammars.get(scopeName) as IGrammar;
 }
 
 export class UnknownLanguageError extends Error {
