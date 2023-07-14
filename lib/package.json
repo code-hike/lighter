@@ -26,6 +26,7 @@
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^14.0.0",
     "@rollup/plugin-replace": "^5.0.1",
+    "@rollup/plugin-terser": "^0.4.3",
     "@rollup/pluginutils": "^5.0.2",
     "@types/react": "^18.0.26",
     "jsonc-parser": "^3.2.0",
