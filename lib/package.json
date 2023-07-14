@@ -4,8 +4,16 @@
   "license": "MIT",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.mjs",
-  "browser": "./dist/browser.esm.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "worker": "./dist/worker.esm.mjs",
+      "browser": "./dist/browser.esm.mjs",
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.esm.mjs"
+    }
+  },
   "files": [
     "dist/",
     "grammars/",
