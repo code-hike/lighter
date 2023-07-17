@@ -1,4 +1,4 @@
-import { IRawGrammar } from "vscode-textmate";
+import type { IRawGrammar } from "vscode-textmate";
 import { readJSON } from "./file-system";
 import { scopeToLangData } from "./language";
 import { fetchJSON } from "./network";

@@ -4,8 +4,19 @@
   "license": "MIT",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.mjs",
-  "browser": "./dist/browser.esm.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "worker": "./dist/worker.esm.mjs",
+      "browser": "./dist/browser.esm.mjs",
+      "import": "./dist/index.esm.mjs",
+      "require": "./dist/index.cjs.js",
+      "default": "./dist/index.cjs.js"
+    },
+    "./grammars/*": "./grammars/*",
+    "./themes/*": "./themes/*"
+  },
   "files": [
     "dist/",
     "grammars/",
@@ -18,6 +29,7 @@
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^14.0.0",
     "@rollup/plugin-replace": "^5.0.1",
+    "@rollup/plugin-terser": "^0.4.3",
     "@rollup/pluginutils": "^5.0.2",
     "@types/react": "^18.0.26",
     "jsonc-parser": "^3.2.0",

@@ -1,24 +1,24 @@
-import { IGrammar, Registry } from "vscode-textmate";
+import type { IGrammar } from "vscode-textmate";
+import { Registry } from "./vscode-textmate";
 import {
   loadWASM,
   createOnigScanner,
   createOnigString,
-} from "vscode-oniguruma";
-// @ts-ignore
-import onig from "vscode-oniguruma/release/onig.wasm";
+} from "./vscode-oniguruma";
 import { aliasToLangData } from "./language";
 import { loadGrammarByScope } from "./grammars";
 import { LanguageAlias } from "./language-data";
 import { tokenizeWithScopes, tokenize } from "./tokenizer";
 import { FinalTheme } from "./theme";
 import { Token } from "./annotations";
+import onig from "./wasm";
 
 let registry: Registry | null = null;
 
 export function preloadGrammars(languages: LanguageAlias[]) {
   // initialize the registry the first time
   if (!registry) {
-    const onigLibPromise = loadWASM(onig).then(() => ({
+    const onigLibPromise = loadWASM(onig as any).then(() => ({
       createOnigScanner,
       createOnigString,
     }));
