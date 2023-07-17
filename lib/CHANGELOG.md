@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.8.0
+
+### Minor Changes
+
+- bf83084: Add edge bundle
+
 ## 0.7.4
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # lighter-test
 
+## 0.1.40
+
+### Patch Changes
+
+- Updated dependencies [bf83084]
+  - @code-hike/lighter@0.8.0
+
 ## 0.1.39
 
 ### Patch Changes
