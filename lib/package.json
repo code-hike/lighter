@@ -10,9 +10,12 @@
       "types": "./dist/index.d.ts",
       "worker": "./dist/worker.esm.mjs",
       "browser": "./dist/browser.esm.mjs",
+      "import": "./dist/index.esm.mjs",
       "require": "./dist/index.cjs.js",
-      "import": "./dist/index.esm.mjs"
-    }
+      "default": "./dist/index.cjs.js"
+    },
+    "./grammars/*": "./grammars/*",
+    "./themes/*": "./themes/*"
   },
   "files": [
     "dist/",
