@@ -140,6 +140,7 @@ declare function getThemeColors(themeOrThemeName: Theme): Promise<{
         inactiveForeground: string;
         border: string;
         activeBorder: string;
+        activeBorderTop: string;
     };
     editorGroup: {
         border: string;
@@ -193,6 +194,7 @@ declare function getThemeColorsSync(themeOrThemeName: Theme): {
         inactiveForeground: string;
         border: string;
         activeBorder: string;
+        activeBorderTop: string;
     };
     editorGroup: {
         border: string;

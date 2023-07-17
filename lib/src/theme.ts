@@ -246,6 +246,7 @@ export function getAllThemeColors(theme: FinalTheme) {
       inactiveForeground: c("tab.inactiveForeground"),
       border: c("tab.border"),
       activeBorder: c("tab.activeBorder"),
+      activeBorderTop: c("tab.activeBorderTop"),
     },
     editorGroup: {
       border: c("editorGroup.border"),

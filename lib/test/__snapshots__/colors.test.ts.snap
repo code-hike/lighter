@@ -48,6 +48,7 @@ exports[`get theme colors from empty theme 1`] = `
   "tab": {
     "activeBackground": "#1E1E1E",
     "activeBorder": "#1E1E1E",
+    "activeBorderTop": undefined,
     "activeForeground": "#ffffff",
     "border": "#252526",
     "inactiveBackground": "#2D2D2D",
@@ -104,6 +105,7 @@ exports[`get theme colors from theme name 1`] = `
   "tab": {
     "activeBackground": "#0d1117",
     "activeBorder": "#0d1117",
+    "activeBorderTop": "#f78166",
     "activeForeground": "#c9d1d9",
     "border": "#30363d",
     "inactiveBackground": "#010409",
@@ -160,6 +162,7 @@ exports[`get theme colors from theme name from-css 1`] = `
   "tab": {
     "activeBackground": "var(--ch-16)",
     "activeBorder": "var(--ch-16)",
+    "activeBorderTop": undefined,
     "activeForeground": "var(--ch-4)",
     "border": "var(--ch-23)",
     "inactiveBackground": "var(--ch-22)",
