@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.8.1
+
+### Patch Changes
+
+- a9fae6e: Add activeBorderTop color
+
 ## 0.8.0
 
 ### Minor Changes
