@@ -426,6 +426,42 @@ exports[`highlight js 1`] = `
 }
 `;
 
+exports[`highlight terminal 1`] = `
+{
+  "lang": "terminal",
+  "lines": [
+    [
+      {
+        "content": "Foo",
+        "style": {},
+      },
+    ],
+  ],
+  "style": {
+    "background": "#0d1117",
+    "color": "#c9d1d9",
+  },
+}
+`;
+
+exports[`highlight terminal ansi codes 1`] = `
+{
+  "lang": "terminal",
+  "lines": [
+    [
+      {
+        "content": "Foo",
+        "style": {},
+      },
+    ],
+  ],
+  "style": {
+    "background": "#0d1117",
+    "color": "#c9d1d9",
+  },
+}
+`;
+
 exports[`highlight text 1`] = `
 {
   "lang": "text",

@@ -180,6 +180,7 @@ export const LANG_NAMES = [
   "system-verilog",
   "tasl",
   "tcl",
+  "terminal",
   "tex",
   "text",
   "toml",

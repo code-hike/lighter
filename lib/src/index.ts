@@ -27,6 +27,7 @@ import {
   Tokens,
   Token,
 } from "./annotations";
+import { getTerminalStyle, highlightTerminal } from "./terminal";
 
 type Config = { scopes?: boolean };
 type AnnotatedConfig = { annotations: Annotation[] } & Config;
@@ -140,28 +141,32 @@ export function highlightSync(
   const lines =
     langId == "text"
       ? highlightText(theCode)
+      : langId == "terminal"
+      ? highlightTerminal(theCode, theme)
       : config?.scopes
       ? highlightTokensWithScopes(theCode, grammar, theme)
       : highlightTokens(theCode, grammar, theme);
+
+  const style =
+    langId == "terminal"
+      ? getTerminalStyle(theme)
+      : {
+          color: theme.foreground,
+          background: theme.background,
+        };
 
   if (isAnnotatedConfig(config)) {
     const annotations = config?.annotations || [];
     return {
       lines: applyAnnotations(lines, annotations),
       lang: langId,
-      style: {
-        color: theme.foreground,
-        background: theme.background,
-      },
+      style,
     };
   } else {
     return {
       lines: lines,
       lang: langId,
-      style: {
-        color: theme.foreground,
-        background: theme.background,
-      },
+      style,
     };
   }
 }

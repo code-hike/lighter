@@ -15,6 +15,10 @@ import onig from "./wasm";
 
 let registry: Registry | null = null;
 
+function isGramarless(lang: LanguageAlias) {
+  return lang == "text" || lang == "terminal";
+}
+
 export function preloadGrammars(languages: LanguageAlias[]) {
   // initialize the registry the first time
   if (!registry) {
@@ -29,7 +33,7 @@ export function preloadGrammars(languages: LanguageAlias[]) {
   }
 
   const promises = languages
-    .filter((alias) => alias != "text")
+    .filter((alias) => !isGramarless(alias))
     .map((alias) => {
       const langData = aliasToLangData(alias);
       if (!langData) {
@@ -45,9 +49,9 @@ export function getGrammar(alias: LanguageAlias): {
   langId: string;
   grammar: IGrammar | null;
 } {
-  if (alias == "text") {
+  if (isGramarless(alias)) {
     return {
-      langId: "text",
+      langId: alias,
       grammar: null,
     };
   }

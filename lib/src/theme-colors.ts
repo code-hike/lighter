@@ -112,4 +112,88 @@ const defaults = {
     dark: [transparent, "editor.background", 0.9],
     light: [transparent, "editor.background", 0.9],
   },
+
+  // terminal colors
+  "terminal.background": "editor.background",
+  "terminal.foreground": "editor.foreground",
+  "terminal.ansiBlack": {
+    dark: "#000000",
+    light: "#000000",
+    hc: "#000000",
+  },
+  "terminal.ansiRed": {
+    dark: "#cd3131",
+    light: "#cd3131",
+    hc: "#cd0000",
+  },
+  "terminal.ansiGreen": {
+    dark: "#0DBC79",
+    light: "#00BC00",
+    hc: "#00cd00",
+  },
+  "terminal.ansiYellow": {
+    dark: "#e5e510",
+    light: "#949800",
+    hc: "#cdcd00",
+  },
+  "terminal.ansiBlue": {
+    dark: "#2472c8",
+    light: "#0451a5",
+    hc: "#0000ee",
+  },
+  "terminal.ansiMagenta": {
+    dark: "#bc3fbc",
+    light: "#bc05bc",
+    hc: "#cd00cd",
+  },
+  "terminal.ansiCyan": {
+    dark: "#11a8cd",
+    light: "#0598bc",
+    hc: "#00cdcd",
+  },
+  "terminal.ansiWhite": {
+    dark: "#e5e5e5",
+    light: "#555555",
+    hc: "#e5e5e5",
+  },
+  "terminal.ansiBrightBlack": {
+    dark: "#666666",
+    light: "#666666",
+    hc: "#7f7f7f",
+  },
+  "terminal.ansiBrightRed": {
+    dark: "#f14c4c",
+    light: "#cd3131",
+    hc: "#ff0000",
+  },
+  "terminal.ansiBrightGreen": {
+    dark: "#23d18b",
+    light: "#14CE14",
+    hc: "#00ff00",
+  },
+  "terminal.ansiBrightYellow": {
+    dark: "#f5f543",
+    light: "#b5ba00",
+    hc: "#ffff00",
+  },
+  "terminal.ansiBrightBlue": {
+    dark: "#3b8eea",
+    light: "#0451a5",
+    hc: "#5c5cff",
+  },
+  "terminal.ansiBrightMagenta": {
+    dark: "#d670d6",
+    light: "#bc05bc",
+    hc: "#ff00ff",
+  },
+  "terminal.ansiBrightCyan": {
+    dark: "#29b8db",
+    light: "#0598bc",
+    hc: "#00ffff",
+  },
+  "terminal.ansiBrightWhite": {
+    dark: "#e5e5e5",
+    light: "#a5a5a5",
+    hc: "#ffffff",
+  },
 };
