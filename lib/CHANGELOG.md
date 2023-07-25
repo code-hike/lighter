@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.8.2
+
+### Patch Changes
+
+- 8ceee96: Add terminal highlighting
+
 ## 0.8.1
 
 ### Patch Changes
