@@ -125,7 +125,6 @@ exports[`extract annottations from jsx 1`] = `
     },
   ],
   "code": "const x = <div>
-  {}
   hey
 </div>",
 }
@@ -170,7 +169,7 @@ exports[`extract annottations from jsx 2`] = `
         {
           "content": "  ",
           "style": {
-            "color": "#CE9178",
+            "color": "#D4D4D4",
           },
         },
         {
@@ -180,9 +179,9 @@ exports[`extract annottations from jsx 2`] = `
           "toColumn": 5,
           "tokens": [
             {
-              "content": "{}",
+              "content": "hey",
               "style": {
-                "color": "#CE9178",
+                "color": "#D4D4D4",
               },
             },
           ],
@@ -191,17 +190,6 @@ exports[`extract annottations from jsx 2`] = `
     },
     {
       "lineNumber": 3,
-      "tokens": [
-        {
-          "content": "  hey",
-          "style": {
-            "color": "#D4D4D4",
-          },
-        },
-      ],
-    },
-    {
-      "lineNumber": 4,
       "tokens": [
         {
           "content": "</",

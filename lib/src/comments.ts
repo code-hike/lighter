@@ -61,9 +61,9 @@ export function extractCommentsFromCode(
 
       const lineText = lineWithoutComments.map((t) => t.content).join("");
 
-      // remove mdx comment wrapper https://github.com/code-hike/lighter/issues/23
+      // remove jsx comment wrapper https://github.com/code-hike/lighter/issues/23
       if (
-        lang === "mdx" &&
+        ["mdx", "jsx", "tsx"].includes(lang) &&
         annotations.length > 0 &&
         lineText.trim() === "{}"
       ) {
