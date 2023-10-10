@@ -109,6 +109,128 @@ exports[`extract annottations 2`] = `
 }
 `;
 
+exports[`extract annottations from jsx 1`] = `
+{
+  "annotations": [
+    {
+      "name": "foo",
+      "query": "",
+      "ranges": [
+        {
+          "fromColumn": 3,
+          "lineNumber": 2,
+          "toColumn": 5,
+        },
+      ],
+    },
+  ],
+  "code": "const x = <div>
+  {}
+  hey
+</div>",
+}
+`;
+
+exports[`extract annottations from jsx 2`] = `
+{
+  "lang": "mdx",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "tokens": [
+        {
+          "content": "const x = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "<",
+          "style": {
+            "color": "#808080",
+          },
+        },
+        {
+          "content": "div",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": ">",
+          "style": {
+            "color": "#808080",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 2,
+      "tokens": [
+        {
+          "content": "  ",
+          "style": {
+            "color": "#CE9178",
+          },
+        },
+        {
+          "annotationName": "foo",
+          "annotationQuery": "",
+          "fromColumn": 3,
+          "toColumn": 5,
+          "tokens": [
+            {
+              "content": "{}",
+              "style": {
+                "color": "#CE9178",
+              },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      "lineNumber": 3,
+      "tokens": [
+        {
+          "content": "  hey",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 4,
+      "tokens": [
+        {
+          "content": "</",
+          "style": {
+            "color": "#808080",
+          },
+        },
+        {
+          "content": "div",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": ">",
+          "style": {
+            "color": "#808080",
+          },
+        },
+      ],
+    },
+  ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
+}
+`;
+
 exports[`extract annottations from mdx 1`] = `
 {
   "annotations": [
@@ -450,8 +572,50 @@ exports[`highlight terminal ansi codes 1`] = `
   "lines": [
     [
       {
-        "content": "Foo",
+        "content": " ",
+        "style": {
+          "background": "#3fb950",
+        },
+      },
+      {
+        "content": "astro",
+        "style": {
+          "background": "#3fb950",
+          "color": "#484f58",
+        },
+      },
+      {
+        "content": " ",
+        "style": {
+          "background": "#3fb950",
+        },
+      },
+      {
+        "content": "  ",
         "style": {},
+      },
+      {
+        "content": "v2.9.2",
+        "style": {
+          "color": "#3fb950",
+          "fontWeight": "bold",
+        },
+      },
+      {
+        "content": " ",
+        "style": {},
+      },
+      {
+        "content": "Launch sequence.",
+        "style": {
+          "fontWeight": "bold",
+        },
+      },
+      {
+        "content": "",
+        "style": {
+          "fontWeight": "bold",
+        },
       },
     ],
   ],

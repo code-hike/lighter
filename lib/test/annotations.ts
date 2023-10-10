@@ -56,4 +56,19 @@ const y = 2;`.trim();
     });
     expect(hResult).toMatchSnapshot();
   });
+
+  test("extract annottations from jsx", async () => {
+    const code = `
+const x = <div>
+  {/* foo[3:5] */}
+  hey
+</div>`.trim();
+
+    const result = await extractAnnotations(code, "jsx", ["foo"]);
+    expect(result).toMatchSnapshot();
+    const hResult = await highlight(result.code, "mdx", "dark-plus", {
+      annotations: result.annotations,
+    });
+    expect(hResult).toMatchSnapshot();
+  });
 }
