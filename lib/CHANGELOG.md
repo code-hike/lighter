@@ -1,5 +1,15 @@
 # @code-hike/lighter
 
+## 0.9.0
+
+### Minor Changes
+
+- 567aadb: Add annotation extractor function
+
+### Patch Changes
+
+- 677d2d8: Remove JSX comment wrapper
+
 ## 0.8.2
 
 ### Patch Changes
