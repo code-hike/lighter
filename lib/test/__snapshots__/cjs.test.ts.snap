@@ -430,6 +430,140 @@ exports[`extract annottations from txt 2`] = `
 }
 `;
 
+exports[`extract annottations with prefix 1`] = `
+{
+  "annotations": [
+    {
+      "name": "xy",
+      "query": "bar",
+      "ranges": [
+        {
+          "fromColumn": 3,
+          "lineNumber": 3,
+          "toColumn": 5,
+        },
+      ],
+    },
+  ],
+  "code": "// xyz[3:5] foo
+const x = 1;
+const y = 2;",
+}
+`;
+
+exports[`extract annottations with prefix 2`] = `
+{
+  "lang": "javascript",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "tokens": [
+        {
+          "content": "// xyz[3:5] foo",
+          "style": {
+            "color": "#6A9955",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 2,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "x",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "1",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+        {
+          "content": ";",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 3,
+      "tokens": [
+        {
+          "content": "co",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "annotationName": "xy",
+          "annotationQuery": "bar",
+          "fromColumn": 3,
+          "toColumn": 5,
+          "tokens": [
+            {
+              "content": "nst",
+              "style": {
+                "color": "#569CD6",
+              },
+            },
+          ],
+        },
+        {
+          "content": " ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "y",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "2",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+        {
+          "content": ";",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+  ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
+}
+`;
+
 exports[`highlight html with theme 1`] = `
 {
   "lang": "html",

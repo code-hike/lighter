@@ -48,6 +48,12 @@ type Annotation = {
     query?: string;
     ranges: CodeRange[];
 };
+type AnnotationData = {
+    name: string;
+    rangeString: string;
+    query?: string;
+};
+type AnnotationExtractor = string[] | ((comment: string) => null | AnnotationData);
 
 type Token = {
     content: string;
@@ -113,7 +119,7 @@ declare function highlight(code: string, lang: LanguageAlias, themeOrThemeName?:
 declare function highlight(code: string, lang: LanguageAlias, themeOrThemeName: Theme, config: AnnotatedConfig): Promise<AnnotatedLighterResult>;
 declare function highlightSync(code: string, lang: LanguageAlias, themeOrThemeName?: Theme, config?: Config): LighterResult;
 declare function highlightSync(code: string, lang: LanguageAlias, themeOrThemeName: Theme, config: AnnotatedConfig): AnnotatedLighterResult;
-declare function extractAnnotations(code: string, lang: LanguageAlias, annotationNames?: string[]): Promise<{
+declare function extractAnnotations(code: string, lang: LanguageAlias, annotationExtractor?: AnnotationExtractor): Promise<{
     code: string;
     annotations: Annotation[];
 }>;

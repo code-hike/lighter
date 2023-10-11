@@ -32,11 +32,21 @@ export type Annotation = {
   ranges: CodeRange[];
 };
 
+export type AnnotationData = {
+  name: string;
+  rangeString: string;
+  query?: string;
+};
+
+export type AnnotationExtractor =
+  | string[]
+  | ((comment: string) => null | AnnotationData);
+
 export function extractCommentsFromCode(
   code: string,
   grammar: IGrammar,
   lang: string,
-  annotationNames: string[]
+  annotationExtractor: AnnotationExtractor
 ) {
   const lines = !grammar
     ? highlightText(code)
@@ -49,7 +59,7 @@ export function extractCommentsFromCode(
     .map((line) => {
       const { annotations, lineWithoutComments } = getAnnotationsFromLine(
         line,
-        annotationNames,
+        annotationExtractor,
         lineNumber
       );
 
@@ -81,7 +91,7 @@ export function extractCommentsFromCode(
 
 function getAnnotationsFromLine(
   tokens: Token[],
-  names: string[],
+  annotationExtractor: AnnotationExtractor,
   lineNumber: number
 ) {
   // if no punctuation return empty
@@ -106,12 +116,17 @@ function getAnnotationsFromLine(
       continue;
     }
 
-    const { name, query, rangeString } = getAnnotationData(token.content);
-    if (!names.includes(name)) {
+    const annotationData =
+      typeof annotationExtractor === "function"
+        ? annotationExtractor(token.content)
+        : getAnnotationDataFromNames(token.content, annotationExtractor);
+
+    if (!annotationData) {
       // a comment, but not an annotation
       i++;
       continue;
     }
+    const { name, query, rangeString } = annotationData;
 
     // we have an annotation
     const prevToken = tokens[i - 1];
@@ -156,11 +171,16 @@ function getAnnotationsFromLine(
   };
 }
 
-function getAnnotationData(content: string) {
+function getAnnotationDataFromNames(content: string, names: string[]) {
   const regex = /\s*([\w-]+)?(\([^\)]*\)|\[[^\]]*\])?(.*)$/;
   const match = content.match(regex);
   const name = match[1];
   const rangeString = match[2];
   const query = match[3]?.trim();
+
+  if (!names.includes(name)) {
+    return null;
+  }
+
   return { name, rangeString, query };
 }

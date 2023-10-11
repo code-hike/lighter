@@ -17,7 +17,11 @@ import {
   preloadGrammars,
   highlightText,
 } from "./highlighter";
-import { Annotation, extractCommentsFromCode } from "./comments";
+import {
+  Annotation,
+  AnnotationExtractor,
+  extractCommentsFromCode,
+} from "./comments";
 import {
   applyAnnotations,
   Lines,
@@ -174,9 +178,9 @@ export function highlightSync(
 export async function extractAnnotations(
   code: string,
   lang: LanguageAlias,
-  annotationNames: string[] = []
+  annotationExtractor?: AnnotationExtractor
 ) {
-  if (annotationNames.length === 0) {
+  if (!annotationExtractor) {
     return { code, annotations: [] };
   }
 
@@ -187,7 +191,7 @@ export async function extractAnnotations(
     code,
     grammar,
     lang,
-    annotationNames
+    annotationExtractor
   );
 
   return { code: newCode, annotations };

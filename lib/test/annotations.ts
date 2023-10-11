@@ -71,4 +71,35 @@ const x = <div>
     });
     expect(hResult).toMatchSnapshot();
   });
+
+  test("extract annottations with prefix", async () => {
+    const code = `
+// xyz[3:5] foo
+const x = 1;
+// !xy[3:5] bar
+const y = 2;`.trim();
+
+    const extractor = (comment: string) => {
+      const regex = /\s*(!?[\w-]+)?(\([^\)]*\)|\[[^\]]*\])?(.*)$/;
+      const match = comment.match(regex);
+      const name = match[1];
+      const rangeString = match[2];
+      const query = match[3]?.trim();
+      if (!name || !name.startsWith("!")) {
+        return null;
+      }
+      return {
+        name: name.slice(1),
+        rangeString,
+        query,
+      };
+    };
+
+    const result = await extractAnnotations(code, "jsx", extractor);
+    expect(result).toMatchSnapshot();
+    const hResult = await highlight(result.code, "js", "dark-plus", {
+      annotations: result.annotations,
+    });
+    expect(hResult).toMatchSnapshot();
+  });
 }
