@@ -31,7 +31,6 @@ export function parseRelativeRanges(
     .map((part) => {
       // if the part has columns
       if (part.includes("[")) {
-        console.log("part", part);
         const [lineString, columnSplit] = part.split("[");
         const relativeLineNumber = Number(lineString);
         const globalLineNumber = lineNumber + relativeLineNumber - 1;
