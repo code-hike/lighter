@@ -1,6 +1,14 @@
 import { expect, test } from "vitest";
 
 export function runAnnotationTests({ extractAnnotations, highlight }) {
+  async function extract(code: string, lang: string) {
+    const extracted = await extractAnnotations(code, lang, extractor);
+    const highlighted = await highlight(extracted.code, lang, "dark-plus", {
+      annotations: extracted.annotations,
+    });
+    return { extracted, highlighted };
+  }
+
   test("extract annottations", async () => {
     const code = `
 const x = 1;
@@ -79,27 +87,24 @@ const x = 1;
 // !xy[3:5] bar
 const y = 2;`.trim();
 
-    const extractor = (comment: string) => {
-      const regex = /\s*(!?[\w-]+)?(\([^\)]*\)|\[[^\]]*\])?(.*)$/;
-      const match = comment.match(regex);
-      const name = match[1];
-      const rangeString = match[2];
-      const query = match[3]?.trim();
-      if (!name || !name.startsWith("!")) {
-        return null;
-      }
-      return {
-        name: name.slice(1),
-        rangeString,
-        query,
-      };
-    };
-
-    const result = await extractAnnotations(code, "jsx", extractor);
-    expect(result).toMatchSnapshot();
-    const hResult = await highlight(result.code, "js", "dark-plus", {
-      annotations: result.annotations,
-    });
-    expect(hResult).toMatchSnapshot();
+    const { extracted, highlighted } = await extract(code, "jsx");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
   });
 }
+
+const extractor = (comment: string) => {
+  const regex = /\s*(!?[\w-]+)?(\([^\)]*\)|\[[^\]]*\])?(.*)$/;
+  const match = comment.match(regex);
+  const name = match[1];
+  const rangeString = match[2];
+  const query = match[3]?.trim();
+  if (!name || !name.startsWith("!")) {
+    return null;
+  }
+  return {
+    name: name.slice(1),
+    rangeString,
+    query,
+  };
+};

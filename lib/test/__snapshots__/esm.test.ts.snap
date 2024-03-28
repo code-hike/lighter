@@ -453,7 +453,7 @@ const y = 2;",
 
 exports[`extract annottations with prefix 2`] = `
 {
-  "lang": "javascript",
+  "lang": "jsx",
   "lines": [
     {
       "lineNumber": 1,
