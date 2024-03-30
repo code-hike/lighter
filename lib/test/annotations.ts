@@ -91,6 +91,95 @@ const y = 2;`.trim();
     expect(extracted).toMatchSnapshot();
     expect(highlighted).toMatchSnapshot();
   });
+
+  test("extract empty line annotation with regex", async () => {
+    const code = `
+const y = 2
+// !Focus(/y/) bar
+const c = 2;`.trim();
+
+    const { extracted, highlighted } = await extract(code, "js");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
+  });
+
+  test("extract line annotation with regex", async () => {
+    const code = `
+const y = 2
+// !Focus(/y/) bar
+const cy = 2;
+const fy = 3;`.trim();
+
+    const { extracted, highlighted } = await extract(code, "js");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
+  });
+
+  test("extract line annotation with global regex", async () => {
+    const code = `
+const x = 1
+const y = 2
+// !Focus(/y/g) bar
+const cy = 2 + y;
+const fy = 3;`.trim();
+
+    const { extracted, highlighted } = await extract(code, "js");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
+  });
+
+  test("extract empty annotation with inline regex", async () => {
+    const code = `
+const x = 1
+const y = 2
+// !Focus[/y/] bar
+const c = 2;
+const fy = 3;`.trim();
+
+    const { extracted, highlighted } = await extract(code, "js");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
+  });
+
+  test("extract annotation with inline regex", async () => {
+    const code = `
+const x = 1
+const y = 2
+// !Focus[/y/] bar
+const cy = 2 + y;
+const fy = 3;`.trim();
+
+    const { extracted, highlighted } = await extract(code, "js");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
+  });
+
+  test("extract annotation with inline global regex", async () => {
+    const code = `
+const x = 1
+const y = 2
+// !Focus[/y/g] bar
+const cy = 2 + y;
+const fy = 3;`.trim();
+
+    const { extracted, highlighted } = await extract(code, "js");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
+  });
+
+  test("extract annotation with multiline inline regex", async () => {
+    const code = `
+function C() {
+  // !Fold[/className="(.*?)"/gm] q
+  return <div className="bg-red-500">
+    <span className="text-blue-500"><a className="x">Hello</a></span>
+  </div>
+}`.trim();
+
+    const { extracted, highlighted } = await extract(code, "js");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
+  });
 }
 
 const extractor = (comment: string) => {

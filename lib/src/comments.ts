@@ -3,6 +3,7 @@ import { Token } from "./annotations";
 import { highlightText, highlightTokens } from "./highlighter";
 import { CodeRange, parseRelativeRanges } from "./range";
 import { FinalTheme } from "./theme";
+import { blockRegexToRange, inlineRegexToRange } from "./regex-range";
 
 const PUNCTUATION = "#001";
 const COMMENT = "#010";
@@ -88,12 +89,12 @@ export function extractCommentsFromCode(
     .filter((line) => line !== null)
     .join(`\n`);
 
-  const annotations = allAnnotations.map(
-    ({ rangeString, lineNumber, ...rest }) => {
-      const ranges = parseRelativeRanges(rangeString, lineNumber);
-      return { ...rest, ranges };
-    }
-  );
+  const annotations = allAnnotations
+    .map(({ rangeString, lineNumber, ...rest }) => ({
+      ...rest,
+      ranges: parseRangeString(rangeString, lineNumber, newCode),
+    }))
+    .filter((a) => a.ranges.length > 0);
 
   return { newCode, annotations };
 }
@@ -184,6 +185,19 @@ function getAnnotationsFromLine(
     })),
     lineWithoutComments: newLine,
   };
+}
+
+function parseRangeString(
+  rangeString: string,
+  lineNumber: number,
+  code: string
+) {
+  if (rangeString && rangeString.startsWith("(/")) {
+    return blockRegexToRange(code, rangeString, lineNumber);
+  } else if (rangeString && rangeString.startsWith("[/")) {
+    return inlineRegexToRange(code, rangeString, lineNumber);
+  }
+  return parseRelativeRanges(rangeString, lineNumber);
 }
 
 function getAnnotationDataFromNames(content: string, names: string[]) {
