@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.9.1
+
+### Patch Changes
+
+- 87a94c0: Add regex annotations
+
 ## 0.9.0
 
 ### Minor Changes
