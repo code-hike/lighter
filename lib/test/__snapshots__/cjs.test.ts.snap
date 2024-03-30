@@ -1,5 +1,710 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`extract annotation with inline global regex 1`] = `
+{
+  "annotations": [
+    {
+      "name": "Focus",
+      "query": "bar",
+      "ranges": [
+        {
+          "fromColumn": 8,
+          "lineNumber": 3,
+          "toColumn": 8,
+        },
+        {
+          "fromColumn": 16,
+          "lineNumber": 3,
+          "toColumn": 16,
+        },
+      ],
+    },
+  ],
+  "code": "const x = 1
+const y = 2
+const cy = 2 + y;
+const fy = 3;",
+}
+`;
+
+exports[`extract annotation with inline global regex 2`] = `
+{
+  "lang": "javascript",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "x",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "1",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 2,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "y",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "2",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 3,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "c",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "annotationName": "Focus",
+          "annotationQuery": "bar",
+          "fromColumn": 8,
+          "toColumn": 8,
+          "tokens": [
+            {
+              "content": "y",
+              "style": {
+                "color": "#4FC1FF",
+              },
+            },
+          ],
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "2",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+        {
+          "content": " + ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "annotationName": "Focus",
+          "annotationQuery": "bar",
+          "fromColumn": 16,
+          "toColumn": 16,
+          "tokens": [
+            {
+              "content": "y",
+              "style": {
+                "color": "#9CDCFE",
+              },
+            },
+          ],
+        },
+        {
+          "content": ";",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 4,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "fy",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "3",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+        {
+          "content": ";",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+  ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
+}
+`;
+
+exports[`extract annotation with inline regex 1`] = `
+{
+  "annotations": [
+    {
+      "name": "Focus",
+      "query": "bar",
+      "ranges": [
+        {
+          "fromColumn": 8,
+          "lineNumber": 3,
+          "toColumn": 8,
+        },
+      ],
+    },
+  ],
+  "code": "const x = 1
+const y = 2
+const cy = 2 + y;
+const fy = 3;",
+}
+`;
+
+exports[`extract annotation with inline regex 2`] = `
+{
+  "lang": "javascript",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "x",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "1",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 2,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "y",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "2",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 3,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "c",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "annotationName": "Focus",
+          "annotationQuery": "bar",
+          "fromColumn": 8,
+          "toColumn": 8,
+          "tokens": [
+            {
+              "content": "y",
+              "style": {
+                "color": "#4FC1FF",
+              },
+            },
+          ],
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "2",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+        {
+          "content": " + ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "y",
+          "style": {
+            "color": "#9CDCFE",
+          },
+        },
+        {
+          "content": ";",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 4,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "fy",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "3",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+        {
+          "content": ";",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+  ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
+}
+`;
+
+exports[`extract annotation with multiline inline regex 1`] = `
+{
+  "annotations": [
+    {
+      "name": "Fold",
+      "query": "q",
+      "ranges": [
+        {
+          "fromColumn": 26,
+          "lineNumber": 2,
+          "toColumn": 35,
+        },
+        {
+          "fromColumn": 22,
+          "lineNumber": 3,
+          "toColumn": 34,
+        },
+        {
+          "fromColumn": 51,
+          "lineNumber": 3,
+          "toColumn": 51,
+        },
+      ],
+    },
+  ],
+  "code": "function C() {
+  return <div className="bg-red-500">
+    <span className="text-blue-500"><a className="x">Hello</a></span>
+  </div>
+}",
+}
+`;
+
+exports[`extract annotation with multiline inline regex 2`] = `
+{
+  "lang": "javascript",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "tokens": [
+        {
+          "content": "function ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "C",
+          "style": {
+            "color": "#DCDCAA",
+          },
+        },
+        {
+          "content": "() {",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 2,
+      "tokens": [
+        {
+          "content": "  return ",
+          "style": {
+            "color": "#C586C0",
+          },
+        },
+        {
+          "content": "<",
+          "style": {
+            "color": "#808080",
+          },
+        },
+        {
+          "content": "div ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "className",
+          "style": {
+            "color": "#9CDCFE",
+          },
+        },
+        {
+          "content": "=",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": """,
+          "style": {
+            "color": "#CE9178",
+          },
+        },
+        {
+          "annotationName": "Fold",
+          "annotationQuery": "q",
+          "fromColumn": 26,
+          "toColumn": 35,
+          "tokens": [
+            {
+              "content": "bg-red-500",
+              "style": {
+                "color": "#CE9178",
+              },
+            },
+          ],
+        },
+        {
+          "content": """,
+          "style": {
+            "color": "#CE9178",
+          },
+        },
+        {
+          "content": ">",
+          "style": {
+            "color": "#808080",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 3,
+      "tokens": [
+        {
+          "content": "    <",
+          "style": {
+            "color": "#808080",
+          },
+        },
+        {
+          "content": "span ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "className",
+          "style": {
+            "color": "#9CDCFE",
+          },
+        },
+        {
+          "content": "=",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": """,
+          "style": {
+            "color": "#CE9178",
+          },
+        },
+        {
+          "annotationName": "Fold",
+          "annotationQuery": "q",
+          "fromColumn": 22,
+          "toColumn": 34,
+          "tokens": [
+            {
+              "content": "text-blue-500",
+              "style": {
+                "color": "#CE9178",
+              },
+            },
+          ],
+        },
+        {
+          "content": """,
+          "style": {
+            "color": "#CE9178",
+          },
+        },
+        {
+          "content": "><",
+          "style": {
+            "color": "#808080",
+          },
+        },
+        {
+          "content": "a ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "className",
+          "style": {
+            "color": "#9CDCFE",
+          },
+        },
+        {
+          "content": "=",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": """,
+          "style": {
+            "color": "#CE9178",
+          },
+        },
+        {
+          "annotationName": "Fold",
+          "annotationQuery": "q",
+          "fromColumn": 51,
+          "toColumn": 51,
+          "tokens": [
+            {
+              "content": "x",
+              "style": {
+                "color": "#CE9178",
+              },
+            },
+          ],
+        },
+        {
+          "content": """,
+          "style": {
+            "color": "#CE9178",
+          },
+        },
+        {
+          "content": ">",
+          "style": {
+            "color": "#808080",
+          },
+        },
+        {
+          "content": "Hello",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "</",
+          "style": {
+            "color": "#808080",
+          },
+        },
+        {
+          "content": "a",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "></",
+          "style": {
+            "color": "#808080",
+          },
+        },
+        {
+          "content": "span",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": ">",
+          "style": {
+            "color": "#808080",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 4,
+      "tokens": [
+        {
+          "content": "  </",
+          "style": {
+            "color": "#808080",
+          },
+        },
+        {
+          "content": "div",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": ">",
+          "style": {
+            "color": "#808080",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 5,
+      "tokens": [
+        {
+          "content": "}",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+  ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
+}
+`;
+
 exports[`extract annottations 1`] = `
 {
   "annotations": [
@@ -453,7 +1158,7 @@ const y = 2;",
 
 exports[`extract annottations with prefix 2`] = `
 {
-  "lang": "javascript",
+  "lang": "jsx",
   "lines": [
     {
       "lineNumber": 1,
@@ -544,6 +1249,572 @@ exports[`extract annottations with prefix 2`] = `
         },
         {
           "content": "2",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+        {
+          "content": ";",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+  ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
+}
+`;
+
+exports[`extract empty annotation with inline regex 1`] = `
+{
+  "annotations": [],
+  "code": "const x = 1
+const y = 2
+const c = 2;
+const fy = 3;",
+}
+`;
+
+exports[`extract empty annotation with inline regex 2`] = `
+{
+  "lang": "javascript",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "x",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "1",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 2,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "y",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "2",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 3,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "c",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "2",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+        {
+          "content": ";",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 4,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "fy",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "3",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+        {
+          "content": ";",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+  ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
+}
+`;
+
+exports[`extract empty line annotation with regex 1`] = `
+{
+  "annotations": [],
+  "code": "const y = 2
+const c = 2;",
+}
+`;
+
+exports[`extract empty line annotation with regex 2`] = `
+{
+  "lang": "javascript",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "y",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "2",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 2,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "c",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "2",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+        {
+          "content": ";",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+      ],
+    },
+  ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
+}
+`;
+
+exports[`extract line annotation with global regex 1`] = `
+{
+  "annotations": [
+    {
+      "name": "Focus",
+      "query": "bar",
+      "ranges": [
+        {
+          "fromLineNumber": 3,
+          "toLineNumber": 3,
+        },
+        {
+          "fromLineNumber": 4,
+          "toLineNumber": 4,
+        },
+      ],
+    },
+  ],
+  "code": "const x = 1
+const y = 2
+const cy = 2 + y;
+const fy = 3;",
+}
+`;
+
+exports[`extract line annotation with global regex 2`] = `
+{
+  "lang": "javascript",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "x",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "1",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+      ],
+    },
+    {
+      "lineNumber": 2,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "y",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "2",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+      ],
+    },
+    {
+      "annotationName": "Focus",
+      "annotationQuery": "bar",
+      "fromLineNumber": 3,
+      "lines": [
+        {
+          "lineNumber": 3,
+          "tokens": [
+            {
+              "content": "const ",
+              "style": {
+                "color": "#569CD6",
+              },
+            },
+            {
+              "content": "cy",
+              "style": {
+                "color": "#4FC1FF",
+              },
+            },
+            {
+              "content": " = ",
+              "style": {
+                "color": "#D4D4D4",
+              },
+            },
+            {
+              "content": "2",
+              "style": {
+                "color": "#B5CEA8",
+              },
+            },
+            {
+              "content": " + ",
+              "style": {
+                "color": "#D4D4D4",
+              },
+            },
+            {
+              "content": "y",
+              "style": {
+                "color": "#9CDCFE",
+              },
+            },
+            {
+              "content": ";",
+              "style": {
+                "color": "#D4D4D4",
+              },
+            },
+          ],
+        },
+      ],
+      "toLineNumber": 3,
+    },
+    {
+      "annotationName": "Focus",
+      "annotationQuery": "bar",
+      "fromLineNumber": 4,
+      "lines": [
+        {
+          "lineNumber": 4,
+          "tokens": [
+            {
+              "content": "const ",
+              "style": {
+                "color": "#569CD6",
+              },
+            },
+            {
+              "content": "fy",
+              "style": {
+                "color": "#4FC1FF",
+              },
+            },
+            {
+              "content": " = ",
+              "style": {
+                "color": "#D4D4D4",
+              },
+            },
+            {
+              "content": "3",
+              "style": {
+                "color": "#B5CEA8",
+              },
+            },
+            {
+              "content": ";",
+              "style": {
+                "color": "#D4D4D4",
+              },
+            },
+          ],
+        },
+      ],
+      "toLineNumber": 4,
+    },
+  ],
+  "style": {
+    "background": "#1E1E1E",
+    "color": "#D4D4D4",
+  },
+}
+`;
+
+exports[`extract line annotation with regex 1`] = `
+{
+  "annotations": [
+    {
+      "name": "Focus",
+      "query": "bar",
+      "ranges": [
+        {
+          "fromLineNumber": 2,
+          "toLineNumber": 2,
+        },
+      ],
+    },
+  ],
+  "code": "const y = 2
+const cy = 2;
+const fy = 3;",
+}
+`;
+
+exports[`extract line annotation with regex 2`] = `
+{
+  "lang": "javascript",
+  "lines": [
+    {
+      "lineNumber": 1,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "y",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "2",
+          "style": {
+            "color": "#B5CEA8",
+          },
+        },
+      ],
+    },
+    {
+      "annotationName": "Focus",
+      "annotationQuery": "bar",
+      "fromLineNumber": 2,
+      "lines": [
+        {
+          "lineNumber": 2,
+          "tokens": [
+            {
+              "content": "const ",
+              "style": {
+                "color": "#569CD6",
+              },
+            },
+            {
+              "content": "cy",
+              "style": {
+                "color": "#4FC1FF",
+              },
+            },
+            {
+              "content": " = ",
+              "style": {
+                "color": "#D4D4D4",
+              },
+            },
+            {
+              "content": "2",
+              "style": {
+                "color": "#B5CEA8",
+              },
+            },
+            {
+              "content": ";",
+              "style": {
+                "color": "#D4D4D4",
+              },
+            },
+          ],
+        },
+      ],
+      "toLineNumber": 2,
+    },
+    {
+      "lineNumber": 3,
+      "tokens": [
+        {
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "fy",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
+          "style": {
+            "color": "#D4D4D4",
+          },
+        },
+        {
+          "content": "3",
           "style": {
             "color": "#B5CEA8",
           },

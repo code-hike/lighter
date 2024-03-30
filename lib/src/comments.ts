@@ -3,6 +3,7 @@ import { Token } from "./annotations";
 import { highlightText, highlightTokens } from "./highlighter";
 import { CodeRange, parseRelativeRanges } from "./range";
 import { FinalTheme } from "./theme";
+import { blockRegexToRange, inlineRegexToRange } from "./regex-range";
 
 const PUNCTUATION = "#001";
 const COMMENT = "#010";
@@ -38,6 +39,8 @@ export type AnnotationData = {
   query?: string;
 };
 
+type RawAnnotation = AnnotationData & { lineNumber: number };
+
 export type AnnotationExtractor =
   | string[]
   | ((comment: string) => null | AnnotationData);
@@ -52,7 +55,7 @@ export function extractCommentsFromCode(
     ? highlightText(code)
     : highlightTokens(code, grammar, commentsTheme);
 
-  const allAnnotations: Annotation[] = [];
+  const allAnnotations: RawAnnotation[] = [];
 
   let lineNumber = 1;
   const newCode = lines
@@ -86,14 +89,24 @@ export function extractCommentsFromCode(
     .filter((line) => line !== null)
     .join(`\n`);
 
-  return { newCode, annotations: allAnnotations };
+  const annotations = allAnnotations
+    .map(({ rangeString, lineNumber, ...rest }) => ({
+      ...rest,
+      ranges: parseRangeString(rangeString, lineNumber, newCode),
+    }))
+    .filter((a) => a.ranges.length > 0);
+
+  return { newCode, annotations };
 }
 
 function getAnnotationsFromLine(
   tokens: Token[],
   annotationExtractor: AnnotationExtractor,
   lineNumber: number
-) {
+): {
+  annotations: RawAnnotation[];
+  lineWithoutComments: Token[] | null;
+} {
   // if no punctuation return empty
   if (!tokens.some((token) => token.style.color === PUNCTUATION)) {
     return { annotations: [], lineWithoutComments: tokens };
@@ -104,7 +117,8 @@ function getAnnotationsFromLine(
     tokens: Token[];
     name: string;
     query?: string;
-    ranges: CodeRange[];
+    rangeString: string;
+    lineNumber: number;
   }[] = [];
   let i = 0;
   while (i < tokens.length) {
@@ -144,7 +158,8 @@ function getAnnotationsFromLine(
       tokens: commentTokens,
       name,
       query,
-      ranges: parseRelativeRanges(rangeString, lineNumber),
+      rangeString,
+      lineNumber,
     });
 
     i += 2;
@@ -165,10 +180,24 @@ function getAnnotationsFromLine(
     annotations: comments.map((a) => ({
       name: a.name,
       query: a.query,
-      ranges: a.ranges,
+      lineNumber: a.lineNumber,
+      rangeString: a.rangeString,
     })),
     lineWithoutComments: newLine,
   };
+}
+
+function parseRangeString(
+  rangeString: string,
+  lineNumber: number,
+  code: string
+) {
+  if (rangeString && rangeString.startsWith("(/")) {
+    return blockRegexToRange(code, rangeString, lineNumber);
+  } else if (rangeString && rangeString.startsWith("[/")) {
+    return inlineRegexToRange(code, rangeString, lineNumber);
+  }
+  return parseRelativeRanges(rangeString, lineNumber);
 }
 
 function getAnnotationDataFromNames(content: string, names: string[]) {

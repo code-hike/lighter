@@ -1,6 +1,14 @@
 import { expect, test } from "vitest";
 
 export function runAnnotationTests({ extractAnnotations, highlight }) {
+  async function extract(code: string, lang: string) {
+    const extracted = await extractAnnotations(code, lang, extractor);
+    const highlighted = await highlight(extracted.code, lang, "dark-plus", {
+      annotations: extracted.annotations,
+    });
+    return { extracted, highlighted };
+  }
+
   test("extract annottations", async () => {
     const code = `
 const x = 1;
@@ -79,27 +87,113 @@ const x = 1;
 // !xy[3:5] bar
 const y = 2;`.trim();
 
-    const extractor = (comment: string) => {
-      const regex = /\s*(!?[\w-]+)?(\([^\)]*\)|\[[^\]]*\])?(.*)$/;
-      const match = comment.match(regex);
-      const name = match[1];
-      const rangeString = match[2];
-      const query = match[3]?.trim();
-      if (!name || !name.startsWith("!")) {
-        return null;
-      }
-      return {
-        name: name.slice(1),
-        rangeString,
-        query,
-      };
-    };
+    const { extracted, highlighted } = await extract(code, "jsx");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
+  });
 
-    const result = await extractAnnotations(code, "jsx", extractor);
-    expect(result).toMatchSnapshot();
-    const hResult = await highlight(result.code, "js", "dark-plus", {
-      annotations: result.annotations,
-    });
-    expect(hResult).toMatchSnapshot();
+  test("extract empty line annotation with regex", async () => {
+    const code = `
+const y = 2
+// !Focus(/y/) bar
+const c = 2;`.trim();
+
+    const { extracted, highlighted } = await extract(code, "js");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
+  });
+
+  test("extract line annotation with regex", async () => {
+    const code = `
+const y = 2
+// !Focus(/y/) bar
+const cy = 2;
+const fy = 3;`.trim();
+
+    const { extracted, highlighted } = await extract(code, "js");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
+  });
+
+  test("extract line annotation with global regex", async () => {
+    const code = `
+const x = 1
+const y = 2
+// !Focus(/y/g) bar
+const cy = 2 + y;
+const fy = 3;`.trim();
+
+    const { extracted, highlighted } = await extract(code, "js");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
+  });
+
+  test("extract empty annotation with inline regex", async () => {
+    const code = `
+const x = 1
+const y = 2
+// !Focus[/y/] bar
+const c = 2;
+const fy = 3;`.trim();
+
+    const { extracted, highlighted } = await extract(code, "js");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
+  });
+
+  test("extract annotation with inline regex", async () => {
+    const code = `
+const x = 1
+const y = 2
+// !Focus[/y/] bar
+const cy = 2 + y;
+const fy = 3;`.trim();
+
+    const { extracted, highlighted } = await extract(code, "js");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
+  });
+
+  test("extract annotation with inline global regex", async () => {
+    const code = `
+const x = 1
+const y = 2
+// !Focus[/y/g] bar
+const cy = 2 + y;
+const fy = 3;`.trim();
+
+    const { extracted, highlighted } = await extract(code, "js");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
+  });
+
+  test("extract annotation with multiline inline regex", async () => {
+    const code = `
+function C() {
+  // !Fold[/className="(.*?)"/gm] q
+  return <div className="bg-red-500">
+    <span className="text-blue-500"><a className="x">Hello</a></span>
+  </div>
+}`.trim();
+
+    const { extracted, highlighted } = await extract(code, "js");
+    expect(extracted).toMatchSnapshot();
+    expect(highlighted).toMatchSnapshot();
   });
 }
+
+const extractor = (comment: string) => {
+  const regex = /\s*(!?[\w-]+)?(\([^\)]*\)|\[[^\]]*\])?(.*)$/;
+  const match = comment.match(regex);
+  const name = match[1];
+  const rangeString = match[2];
+  const query = match[3]?.trim();
+  if (!name || !name.startsWith("!")) {
+    return null;
+  }
+  return {
+    name: name.slice(1),
+    rangeString,
+    query,
+  };
+};
