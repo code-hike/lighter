@@ -130,6 +130,7 @@ export const LANG_NAMES = [
   "perl6",
   "php",
   "plsql",
+  "polar",
   "postcss",
   "powerquery",
   "powershell",
@@ -321,6 +322,7 @@ export type LanguageName =
   | "perl"
   | "php"
   | "plsql"
+  | "polar"
   | "postcss"
   | "powerquery"
   | "powershell"
@@ -490,6 +492,7 @@ export type ScopeName =
   | "source.perl"
   | "source.php"
   | "source.plsql.oracle"
+  | "source.polar"
   | "source.css.postcss"
   | "source.powerquery"
   | "source.powershell"
@@ -686,6 +689,7 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "perl": "source.perl",
   "php": "source.php",
   "plsql": "source.plsql.oracle",
+  "polar": "source.polar",
   "postcss": "source.css.postcss",
   "powerquery": "source.powerquery",
   "powershell": "source.powershell",
@@ -1838,6 +1842,11 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   "source.plsql.oracle": {
     "id": "plsql",
     "path": "plsql.tmLanguage.json",
+    "embeddedScopes": []
+  },
+  "source.polar": {
+    "id": "polar",
+    "path": "polar.tmLanguage.json",
     "embeddedScopes": []
   },
   "source.css.postcss": {
