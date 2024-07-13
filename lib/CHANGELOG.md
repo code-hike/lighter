@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.9.2
+
+### Patch Changes
+
+- e2c59bd: Better comment detection
+
 ## 0.9.1
 
 ### Patch Changes
