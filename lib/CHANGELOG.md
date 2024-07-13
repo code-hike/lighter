@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.9.4
+
+### Patch Changes
+
+- 4d60826: Fix indented comments
+
 ## 0.9.3
 
 ### Patch Changes
