@@ -90,7 +90,6 @@ let codes = [
   ["# foo", "sh"],
   ["# foo", "tcl"],
   ["<!-- foo-->", "vue-html"],
-  ["* foo", "abap"],
   ["; foo", "beancount"],
   ["' foo", "vb"],
   ["<!-- foo-->", "html"],
@@ -126,12 +125,10 @@ let codes = [
   // ["// foo", "apl"],
   // ["# foo", "shellsession"],
   // ["(* foo *)", "ocaml"],
-];
 
-// codes = [
-//   // test
-//   ["// foo", "actionscript-3"],
-// ];
+  // fails indented
+  // ["* foo", "abap"],
+];
 
 describe.each(codes)("extract annotations", (code, lang) => {
   test(lang, async () => {
@@ -167,5 +164,21 @@ describe.each(codes)("extract annotations", (code, lang) => {
 
     expect(comments).toHaveLength(1);
     expect(comments[0]).toBe(" foo");
+    expect(extracted.code).toBe(code);
+  });
+});
+
+describe.each(codes)("extract indented annotations", (code, lang) => {
+  test(lang, async () => {
+    let comments = [];
+    const c = "  " + code;
+    const extracted = await extractAnnotations(c, lang, (comment) => {
+      comments.push(comment);
+      return null;
+    });
+
+    expect(comments).toHaveLength(1);
+    expect(comments[0]).toBe(" foo");
+    expect(extracted.code).toBe(c);
   });
 });

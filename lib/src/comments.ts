@@ -148,10 +148,18 @@ function getAnnotationsFromLine(
   ) {
     const prefix = prefixes[lang];
     tokens = tokens.flatMap((token) => {
-      if (token.style.color === COMMENT && token.content.startsWith(prefix)) {
-        const content = token.content.slice(prefix.length);
+      if (token.style.color !== COMMENT) {
+        return [token];
+      }
+      const trimmed = token.content.trimStart();
+      if (trimmed.startsWith(prefix)) {
+        const content = trimmed.slice(prefix.length);
+        const punctuation = token.content.slice(
+          0,
+          token.content.length - content.length
+        );
         const t = [
-          { content: prefix, style: { color: PUNCTUATION } },
+          { content: punctuation, style: { color: PUNCTUATION } },
         ] as Token[];
         if (content.length) {
           t.push({ content, style: token.style });
