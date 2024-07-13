@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 0.9.3
+
+### Patch Changes
+
+- 332a0e8: Add polar grammar
+
 ## 0.9.2
 
 ### Patch Changes
