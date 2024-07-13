@@ -63,7 +63,8 @@ export function extractCommentsFromCode(
       const { annotations, lineWithoutComments } = getAnnotationsFromLine(
         line,
         annotationExtractor,
-        lineNumber
+        lineNumber,
+        lang
       );
 
       allAnnotations.push(...annotations);
@@ -99,14 +100,68 @@ export function extractCommentsFromCode(
   return { newCode, annotations };
 }
 
+// these are the langs that dont have a PUNCTUATION token
+const prefixes = {
+  "actionscript-3": "//",
+  ada: "--",
+  asm: "#",
+  dart: "//",
+  fsharp: "//",
+  graphql: "#",
+  http: "#",
+  rust: "//",
+  sparql: "#",
+  wgsl: "//",
+  jsonnet: "//",
+  kql: "//",
+  zenscript: "//",
+  kusto: "//",
+  turtle: "#",
+  abap: "*",
+  beancount: ";",
+  kotlin: "//",
+  hlsl: "//",
+  berry: "#",
+  cypher: "//",
+  elm: "--",
+  nix: "#",
+  viml: '"',
+  solidity: "//",
+  bat: "REM",
+  shaderlab: "//",
+  sas: "*",
+};
+
 function getAnnotationsFromLine(
   tokens: Token[],
   annotationExtractor: AnnotationExtractor,
-  lineNumber: number
+  lineNumber: number,
+  lang: string
 ): {
   annotations: RawAnnotation[];
   lineWithoutComments: Token[] | null;
 } {
+  // convert prefix to PUNCTUATION
+  if (
+    lang in prefixes &&
+    tokens.some((token) => token.style.color === COMMENT)
+  ) {
+    const prefix = prefixes[lang];
+    tokens = tokens.flatMap((token) => {
+      if (token.style.color === COMMENT && token.content.startsWith(prefix)) {
+        const content = token.content.slice(prefix.length);
+        const t = [
+          { content: prefix, style: { color: PUNCTUATION } },
+        ] as Token[];
+        if (content.length) {
+          t.push({ content, style: token.style });
+        }
+        return t;
+      }
+      return [token];
+    });
+  }
+
   // if no punctuation return empty
   if (!tokens.some((token) => token.style.color === PUNCTUATION)) {
     return { annotations: [], lineWithoutComments: tokens };

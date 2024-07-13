@@ -185,12 +185,12 @@ export async function extractAnnotations(
   }
 
   await preloadGrammars([lang]);
-  const { grammar } = getGrammar(lang);
+  const { grammar, langId } = getGrammar(lang);
 
   const { newCode, annotations } = extractCommentsFromCode(
     code,
     grammar,
-    lang,
+    langId,
     annotationExtractor
   );
 

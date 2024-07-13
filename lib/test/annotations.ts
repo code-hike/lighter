@@ -183,7 +183,10 @@ function C() {
 }
 
 const extractor = (comment: string) => {
-  const regex = /\s*(!?[\w-]+)?(\([^\)]*\)|\[[^\]]*\])?(.*)$/;
+  const annotationPrefix = "!";
+  const regex = new RegExp(
+    `\\s*(${annotationPrefix}?[\\w-]+)?(\\([^\\)]*\\)|\\[[^\\]]*\\])?(.*)$`
+  );
   const match = comment.match(regex);
   const name = match[1];
   const rangeString = match[2];
