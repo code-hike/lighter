@@ -4,11 +4,19 @@ export const LANG_NAMES = [
   "abap",
   "actionscript-3",
   "ada",
+  "angular-expression",
+  "angular-html",
+  "angular-inline-style",
+  "angular-inline-template",
+  "angular-template",
+  "angular-template-blocks",
+  "angular-ts",
   "apache",
   "apex",
   "apl",
   "applescript",
   "ara",
+  "asciidoc",
   "asm",
   "astro",
   "awk",
@@ -32,39 +40,51 @@ export const LANG_NAMES = [
   "cmake",
   "cmd",
   "cobol",
+  "codeowners",
   "codeql",
   "coffee",
+  "common-lisp",
   "console",
   "cpp",
   "crystal",
   "cs",
   "csharp",
   "css",
+  "csv",
   "cue",
   "cypher",
   "d",
   "dart",
   "dax",
+  "desktop",
   "diff",
   "docker",
   "dockerfile",
   "dream-maker",
+  "edge",
   "elixir",
   "elm",
+  "emacs-lisp",
   "erb",
   "erl",
   "erlang",
   "f#",
+  "fennel",
   "fish",
+  "fluent",
+  "fortran-fixed-form",
+  "fortran-free-form",
   "fs",
   "fsharp",
   "fsl",
   "gdresource",
   "gdscript",
   "gdshader",
+  "genie",
   "gherkin",
   "git-commit",
   "git-rebase",
+  "gleam",
   "glimmer-js",
   "glimmer-ts",
   "glsl",
@@ -76,13 +96,17 @@ export const LANG_NAMES = [
   "haml",
   "handlebars",
   "haskell",
+  "haxe",
   "hbs",
   "hcl",
   "hjson",
   "hlsl",
   "hs",
   "html",
+  "html-derivative",
   "http",
+  "hxml",
+  "hy",
   "imba",
   "ini",
   "jade",
@@ -103,24 +127,31 @@ export const LANG_NAMES = [
   "kql",
   "kusto",
   "latex",
+  "lean",
   "less",
   "liquid",
-  "lisp",
+  "log",
   "logo",
   "lua",
+  "luau",
   "make",
   "makefile",
   "markdown",
+  "markdown-vue",
   "marko",
   "matlab",
   "md",
+  "mdc",
   "mdx",
   "mermaid",
+  "mojo",
+  "move",
   "narrat",
   "nextflow",
   "nginx",
   "nim",
   "nix",
+  "nushell",
   "objc",
   "objective-c",
   "objective-cpp",
@@ -130,7 +161,7 @@ export const LANG_NAMES = [
   "perl6",
   "php",
   "plsql",
-  "polar",
+  "po",
   "postcss",
   "powerquery",
   "powershell",
@@ -146,11 +177,16 @@ export const LANG_NAMES = [
   "py",
   "python",
   "ql",
+  "qml",
+  "qmldir",
+  "qss",
   "r",
+  "racket",
   "raku",
   "razor",
   "rb",
   "reg",
+  "regexp",
   "rel",
   "riscv",
   "rs",
@@ -170,7 +206,9 @@ export const LANG_NAMES = [
   "shellsession",
   "smalltalk",
   "solidity",
+  "soy",
   "sparql",
+  "splunk",
   "sql",
   "ssh-config",
   "stata",
@@ -179,19 +217,25 @@ export const LANG_NAMES = [
   "svelte",
   "swift",
   "system-verilog",
+  "systemd",
   "tasl",
   "tcl",
+  "templ",
   "terminal",
+  "terraform",
   "tex",
   "text",
   "toml",
   "ts",
+  "tsv",
   "tsx",
   "turtle",
   "twig",
-  "txt",
   "typescript",
+  "typespec",
+  "typst",
   "v",
+  "vala",
   "vb",
   "verilog",
   "vhdl",
@@ -199,17 +243,22 @@ export const LANG_NAMES = [
   "viml",
   "vimscript",
   "vue",
+  "vue-directives",
   "vue-html",
+  "vue-interpolations",
+  "vue-sfc-style-variable-injection",
   "vyper",
   "wasm",
   "wenyan",
   "wgsl",
+  "wikitext",
   "wolfram",
   "xml",
   "xsl",
   "yaml",
   "yml",
   "zenscript",
+  "zig",
   "zsh",
   "文言"
 ];
@@ -219,11 +268,19 @@ export type LanguageName =
   | "abap"
   | "actionscript-3"
   | "ada"
+  | "angular-expression"
+  | "angular-html"
+  | "angular-inline-style"
+  | "angular-inline-template"
+  | "angular-template-blocks"
+  | "angular-template"
+  | "angular-ts"
   | "apache"
   | "apex"
   | "apl"
   | "applescript"
   | "ara"
+  | "asciidoc"
   | "asm"
   | "astro"
   | "awk"
@@ -240,32 +297,44 @@ export type LanguageName =
   | "clojure"
   | "cmake"
   | "cobol"
+  | "codeowners"
   | "codeql"
   | "coffee"
+  | "common-lisp"
   | "cpp"
   | "crystal"
   | "csharp"
   | "css"
+  | "csv"
   | "cue"
   | "cypher"
   | "d"
   | "dart"
   | "dax"
+  | "desktop"
   | "diff"
   | "docker"
   | "dream-maker"
+  | "edge"
   | "elixir"
   | "elm"
+  | "emacs-lisp"
   | "erb"
   | "erlang"
+  | "fennel"
   | "fish"
+  | "fluent"
+  | "fortran-fixed-form"
+  | "fortran-free-form"
   | "fsharp"
   | "gdresource"
   | "gdscript"
   | "gdshader"
+  | "genie"
   | "gherkin"
   | "git-commit"
   | "git-rebase"
+  | "gleam"
   | "glimmer-js"
   | "glimmer-ts"
   | "glsl"
@@ -277,11 +346,15 @@ export type LanguageName =
   | "haml"
   | "handlebars"
   | "haskell"
+  | "haxe"
   | "hcl"
   | "hjson"
   | "hlsl"
+  | "html-derivative"
   | "html"
   | "http"
+  | "hxml"
+  | "hy"
   | "imba"
   | "ini"
   | "java"
@@ -299,22 +372,29 @@ export type LanguageName =
   | "kotlin"
   | "kusto"
   | "latex"
+  | "lean"
   | "less"
   | "liquid"
-  | "lisp"
+  | "log"
   | "logo"
   | "lua"
+  | "luau"
   | "make"
+  | "markdown-vue"
   | "markdown"
   | "marko"
   | "matlab"
+  | "mdc"
   | "mdx"
   | "mermaid"
+  | "mojo"
+  | "move"
   | "narrat"
   | "nextflow"
   | "nginx"
   | "nim"
   | "nix"
+  | "nushell"
   | "objective-c"
   | "objective-cpp"
   | "ocaml"
@@ -322,7 +402,7 @@ export type LanguageName =
   | "perl"
   | "php"
   | "plsql"
-  | "polar"
+  | "po"
   | "postcss"
   | "powerquery"
   | "powershell"
@@ -333,10 +413,15 @@ export type LanguageName =
   | "puppet"
   | "purescript"
   | "python"
+  | "qml"
+  | "qmldir"
+  | "qss"
   | "r"
+  | "racket"
   | "raku"
   | "razor"
   | "reg"
+  | "regexp"
   | "rel"
   | "riscv"
   | "rst"
@@ -352,7 +437,9 @@ export type LanguageName =
   | "shellsession"
   | "smalltalk"
   | "solidity"
+  | "soy"
   | "sparql"
+  | "splunk"
   | "sql"
   | "ssh-config"
   | "stata"
@@ -360,40 +447,59 @@ export type LanguageName =
   | "svelte"
   | "swift"
   | "system-verilog"
+  | "systemd"
   | "tasl"
   | "tcl"
+  | "templ"
+  | "terraform"
   | "tex"
   | "toml"
+  | "tsv"
   | "tsx"
   | "turtle"
   | "twig"
-  | "txt"
   | "typescript"
+  | "typespec"
+  | "typst"
   | "v"
+  | "vala"
   | "vb"
   | "verilog"
   | "vhdl"
   | "viml"
+  | "vue-directives"
   | "vue-html"
+  | "vue-interpolations"
+  | "vue-sfc-style-variable-injection"
   | "vue"
   | "vyper"
   | "wasm"
   | "wenyan"
   | "wgsl"
+  | "wikitext"
   | "wolfram"
   | "xml"
   | "xsl"
   | "yaml"
-  | "zenscript";
+  | "zenscript"
+  | "zig";
 export type ScopeName = 
   | "source.abap"
   | "source.actionscript.3"
   | "source.ada"
+  | "expression.ng"
+  | "text.html.derivative.ng"
+  | "inline-styles.ng"
+  | "inline-template.ng"
+  | "template.blocks.ng"
+  | "template.ng"
+  | "source.ts.ng"
   | "source.apacheconf"
   | "source.apex"
   | "source.apl"
   | "source.applescript"
   | "source.ara"
+  | "text.asciidoc"
   | "source.asm.x86_64"
   | "source.astro"
   | "source.awk"
@@ -410,32 +516,44 @@ export type ScopeName =
   | "source.clojure"
   | "source.cmake"
   | "source.cobol"
+  | "text.codeowners"
   | "source.ql"
   | "source.coffee"
+  | "source.commonlisp"
   | "source.cpp"
   | "source.crystal"
   | "source.cs"
   | "source.css"
+  | "text.csv"
   | "source.cue"
   | "source.cypher"
   | "source.d"
   | "source.dart"
   | "source.dax"
+  | "source.desktop"
   | "source.diff"
   | "source.dockerfile"
   | "source.dm"
+  | "text.html.edge"
   | "source.elixir"
   | "source.elm"
+  | "source.emacs.lisp"
   | "text.html.erb"
   | "source.erlang"
+  | "source.fnl"
   | "source.fish"
+  | "source.ftl"
+  | "source.fortran.fixed"
+  | "source.fortran.free"
   | "source.fsharp"
   | "source.gdresource"
   | "source.gdscript"
   | "source.gdshader"
+  | "source.genie"
   | "text.gherkin.feature"
   | "text.git-commit"
   | "text.git-rebase"
+  | "source.gleam"
   | "source.gjs"
   | "source.gts"
   | "source.glsl"
@@ -447,11 +565,15 @@ export type ScopeName =
   | "text.haml"
   | "text.html.handlebars"
   | "source.haskell"
+  | "source.hx"
   | "source.hcl"
   | "source.hjson"
   | "source.hlsl"
+  | "text.html.derivative"
   | "text.html.basic"
   | "source.http"
+  | "source.hxml"
+  | "source.hy"
   | "source.imba"
   | "source.ini"
   | "source.java"
@@ -469,22 +591,29 @@ export type ScopeName =
   | "source.kotlin"
   | "source.kusto"
   | "text.tex.latex"
+  | "source.lean4"
   | "source.css.less"
   | "text.html.liquid"
-  | "source.lisp"
+  | "text.log"
   | "source.logo"
   | "source.lua"
+  | "source.luau"
   | "source.makefile"
+  | "markdown.vue.codeblock"
   | "text.html.markdown"
   | "text.marko"
   | "source.matlab"
+  | "text.markdown.mdc"
   | "source.mdx"
-  | "source.mermaid"
+  | "markdown.mermaid.codeblock"
+  | "source.mojo"
+  | "source.move"
   | "source.narrat"
   | "source.nextflow"
   | "source.nginx"
   | "source.nim"
   | "source.nix"
+  | "source.nushell"
   | "source.objc"
   | "source.objcpp"
   | "source.ocaml"
@@ -492,7 +621,7 @@ export type ScopeName =
   | "source.perl"
   | "source.php"
   | "source.plsql.oracle"
-  | "source.polar"
+  | "source.po"
   | "source.css.postcss"
   | "source.powerquery"
   | "source.powershell"
@@ -503,10 +632,15 @@ export type ScopeName =
   | "source.puppet"
   | "source.purescript"
   | "source.python"
+  | "source.qml"
+  | "source.qmldir"
+  | "source.qss"
   | "source.r"
+  | "source.racket"
   | "source.perl.6"
   | "text.aspnetcorerazor"
   | "source.reg"
+  | "source.regexp.python"
   | "source.rel"
   | "source.riscv"
   | "source.rst"
@@ -522,7 +656,9 @@ export type ScopeName =
   | "text.shell-session"
   | "source.smalltalk"
   | "source.solidity"
+  | "text.html.soy"
   | "source.sparql"
+  | "source.splunk_search"
   | "source.sql"
   | "source.ssh-config"
   | "source.stata"
@@ -530,31 +666,42 @@ export type ScopeName =
   | "source.svelte"
   | "source.swift"
   | "source.systemverilog"
+  | "source.systemd"
   | "source.tasl"
   | "source.tcl"
+  | "source.templ"
+  | "source.hcl.terraform"
   | "text.tex"
   | "source.toml"
+  | "text.tsv"
   | "source.tsx"
   | "source.turtle"
   | "text.html.twig"
-  | "source.txt"
   | "source.ts"
+  | "source.tsp"
+  | "source.typst"
   | "source.v"
+  | "source.vala"
   | "source.asp.vb.net"
   | "source.verilog"
   | "source.vhdl"
   | "source.viml"
+  | "vue.directives"
   | "text.html.vue-html"
+  | "vue.interpolations"
+  | "vue.sfc.style.variable.injection"
   | "source.vue"
   | "source.vyper"
   | "source.wat"
   | "source.wenyan"
   | "source.wgsl"
+  | "source.wikitext"
   | "source.wolfram"
   | "text.xml"
   | "text.xml.xsl"
   | "source.yaml"
-  | "source.zenscript";
+  | "source.zenscript"
+  | "source.zig";
 
 export type LanguageData = {
   id: LanguageName;
@@ -566,11 +713,19 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "abap": "source.abap",
   "actionscript-3": "source.actionscript.3",
   "ada": "source.ada",
+  "angular-expression": "expression.ng",
+  "angular-html": "text.html.derivative.ng",
+  "angular-inline-style": "inline-styles.ng",
+  "angular-inline-template": "inline-template.ng",
+  "angular-template-blocks": "template.blocks.ng",
+  "angular-template": "template.ng",
+  "angular-ts": "source.ts.ng",
   "apache": "source.apacheconf",
   "apex": "source.apex",
   "apl": "source.apl",
   "applescript": "source.applescript",
   "ara": "source.ara",
+  "asciidoc": "text.asciidoc",
   "asm": "source.asm.x86_64",
   "astro": "source.astro",
   "awk": "source.awk",
@@ -591,39 +746,51 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "clj": "source.clojure",
   "cmake": "source.cmake",
   "cobol": "source.cobol",
+  "codeowners": "text.codeowners",
   "codeql": "source.ql",
   "ql": "source.ql",
   "coffee": "source.coffee",
+  "common-lisp": "source.commonlisp",
   "cpp": "source.cpp",
   "crystal": "source.crystal",
   "csharp": "source.cs",
   "c#": "source.cs",
   "cs": "source.cs",
   "css": "source.css",
+  "csv": "text.csv",
   "cue": "source.cue",
   "cypher": "source.cypher",
   "d": "source.d",
   "dart": "source.dart",
   "dax": "source.dax",
+  "desktop": "source.desktop",
   "diff": "source.diff",
   "docker": "source.dockerfile",
   "dockerfile": "source.dockerfile",
   "dream-maker": "source.dm",
+  "edge": "text.html.edge",
   "elixir": "source.elixir",
   "elm": "source.elm",
+  "emacs-lisp": "source.emacs.lisp",
   "erb": "text.html.erb",
   "erlang": "source.erlang",
   "erl": "source.erlang",
+  "fennel": "source.fnl",
   "fish": "source.fish",
+  "fluent": "source.ftl",
+  "fortran-fixed-form": "source.fortran.fixed",
+  "fortran-free-form": "source.fortran.free",
   "fsharp": "source.fsharp",
   "f#": "source.fsharp",
   "fs": "source.fsharp",
   "gdresource": "source.gdresource",
   "gdscript": "source.gdscript",
   "gdshader": "source.gdshader",
+  "genie": "source.genie",
   "gherkin": "text.gherkin.feature",
   "git-commit": "text.git-commit",
   "git-rebase": "text.git-rebase",
+  "gleam": "source.gleam",
   "glimmer-js": "source.gjs",
   "glimmer-ts": "source.gts",
   "glsl": "source.glsl",
@@ -637,11 +804,15 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "hbs": "text.html.handlebars",
   "haskell": "source.haskell",
   "hs": "source.haskell",
+  "haxe": "source.hx",
   "hcl": "source.hcl",
   "hjson": "source.hjson",
   "hlsl": "source.hlsl",
+  "html-derivative": "text.html.derivative",
   "html": "text.html.basic",
   "http": "source.http",
+  "hxml": "source.hxml",
+  "hy": "source.hy",
   "imba": "source.imba",
   "ini": "source.ini",
   "properties": "source.ini",
@@ -663,24 +834,31 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "kusto": "source.kusto",
   "kql": "source.kusto",
   "latex": "text.tex.latex",
+  "lean": "source.lean4",
   "less": "source.css.less",
   "liquid": "text.html.liquid",
-  "lisp": "source.lisp",
+  "log": "text.log",
   "logo": "source.logo",
   "lua": "source.lua",
+  "luau": "source.luau",
   "make": "source.makefile",
   "makefile": "source.makefile",
+  "markdown-vue": "markdown.vue.codeblock",
   "markdown": "text.html.markdown",
   "md": "text.html.markdown",
   "marko": "text.marko",
   "matlab": "source.matlab",
+  "mdc": "text.markdown.mdc",
   "mdx": "source.mdx",
-  "mermaid": "source.mermaid",
+  "mermaid": "markdown.mermaid.codeblock",
+  "mojo": "source.mojo",
+  "move": "source.move",
   "narrat": "source.narrat",
   "nextflow": "source.nextflow",
   "nginx": "source.nginx",
   "nim": "source.nim",
   "nix": "source.nix",
+  "nushell": "source.nushell",
   "objective-c": "source.objc",
   "objc": "source.objc",
   "objective-cpp": "source.objcpp",
@@ -689,7 +867,7 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "perl": "source.perl",
   "php": "source.php",
   "plsql": "source.plsql.oracle",
-  "polar": "source.polar",
+  "po": "source.po",
   "postcss": "source.css.postcss",
   "powerquery": "source.powerquery",
   "powershell": "source.powershell",
@@ -704,11 +882,16 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "purescript": "source.purescript",
   "python": "source.python",
   "py": "source.python",
+  "qml": "source.qml",
+  "qmldir": "source.qmldir",
+  "qss": "source.qss",
   "r": "source.r",
+  "racket": "source.racket",
   "raku": "source.perl.6",
   "perl6": "source.perl.6",
   "razor": "text.aspnetcorerazor",
   "reg": "source.reg",
+  "regexp": "source.regexp.python",
   "rel": "source.rel",
   "riscv": "source.riscv",
   "rst": "source.rst",
@@ -732,7 +915,9 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "shellsession": "text.shell-session",
   "smalltalk": "source.smalltalk",
   "solidity": "source.solidity",
+  "soy": "text.html.soy",
   "sparql": "source.sparql",
+  "splunk": "source.splunk_search",
   "sql": "source.sql",
   "ssh-config": "source.ssh-config",
   "stata": "source.stata",
@@ -741,17 +926,23 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "svelte": "source.svelte",
   "swift": "source.swift",
   "system-verilog": "source.systemverilog",
+  "systemd": "source.systemd",
   "tasl": "source.tasl",
   "tcl": "source.tcl",
+  "templ": "source.templ",
+  "terraform": "source.hcl.terraform",
   "tex": "text.tex",
   "toml": "source.toml",
+  "tsv": "text.tsv",
   "tsx": "source.tsx",
   "turtle": "source.turtle",
   "twig": "text.html.twig",
-  "txt": "source.txt",
   "typescript": "source.ts",
   "ts": "source.ts",
+  "typespec": "source.tsp",
+  "typst": "source.typst",
   "v": "source.v",
+  "vala": "source.vala",
   "vb": "source.asp.vb.net",
   "cmd": "source.asp.vb.net",
   "verilog": "source.verilog",
@@ -759,49 +950,112 @@ export const aliasOrIdToScope: Record<LanguageAlias, ScopeName> = {
   "viml": "source.viml",
   "vim": "source.viml",
   "vimscript": "source.viml",
+  "vue-directives": "vue.directives",
   "vue-html": "text.html.vue-html",
+  "vue-interpolations": "vue.interpolations",
+  "vue-sfc-style-variable-injection": "vue.sfc.style.variable.injection",
   "vue": "source.vue",
   "vyper": "source.vyper",
   "wasm": "source.wat",
   "wenyan": "source.wenyan",
   "文言": "source.wenyan",
   "wgsl": "source.wgsl",
+  "wikitext": "source.wikitext",
   "wolfram": "source.wolfram",
   "xml": "text.xml",
   "xsl": "text.xml.xsl",
   "yaml": "source.yaml",
   "yml": "source.yaml",
-  "zenscript": "source.zenscript"
+  "zenscript": "source.zenscript",
+  "zig": "source.zig"
 };
 export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   "source.abap": {
     "id": "abap",
-    "path": "abap.tmLanguage.json",
+    "path": "abap.json",
     "embeddedScopes": []
   },
   "source.actionscript.3": {
     "id": "actionscript-3",
-    "path": "actionscript-3.tmLanguage.json",
+    "path": "actionscript-3.json",
     "embeddedScopes": []
   },
   "source.ada": {
     "id": "ada",
-    "path": "ada.tmLanguage.json",
+    "path": "ada.json",
+    "embeddedScopes": []
+  },
+  "expression.ng": {
+    "id": "angular-expression",
+    "path": "angular-expression.json",
+    "embeddedScopes": []
+  },
+  "text.html.derivative.ng": {
+    "id": "angular-html",
+    "path": "angular-html.json",
+    "embeddedScopes": [
+      "source.css",
+      "source.js",
+      "text.html.basic"
+    ]
+  },
+  "inline-styles.ng": {
+    "id": "angular-inline-style",
+    "path": "angular-inline-style.json",
+    "embeddedScopes": [
+      "source.css",
+      "source.css.scss"
+    ]
+  },
+  "inline-template.ng": {
+    "id": "angular-inline-template",
+    "path": "angular-inline-template.json",
+    "embeddedScopes": [
+      "source.css",
+      "source.js",
+      "expression.ng",
+      "text.html.basic",
+      "template.ng",
+      "text.html.derivative.ng"
+    ]
+  },
+  "template.blocks.ng": {
+    "id": "angular-template-blocks",
+    "path": "angular-template-blocks.json",
+    "embeddedScopes": [
+      "source.css",
+      "source.js",
+      "text.html.basic",
+      "expression.ng",
+      "template.ng",
+      "text.html.derivative.ng"
+    ]
+  },
+  "template.ng": {
+    "id": "angular-template",
+    "path": "angular-template.json",
+    "embeddedScopes": [
+      "expression.ng"
+    ]
+  },
+  "source.ts.ng": {
+    "id": "angular-ts",
+    "path": "angular-ts.json",
     "embeddedScopes": []
   },
   "source.apacheconf": {
     "id": "apache",
-    "path": "apache.tmLanguage.json",
+    "path": "apache.json",
     "embeddedScopes": []
   },
   "source.apex": {
     "id": "apex",
-    "path": "apex.tmLanguage.json",
+    "path": "apex.json",
     "embeddedScopes": []
   },
   "source.apl": {
     "id": "apl",
-    "path": "apl.tmLanguage.json",
+    "path": "apl.json",
     "embeddedScopes": [
       "source.java",
       "source.json",
@@ -813,73 +1067,123 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.applescript": {
     "id": "applescript",
-    "path": "applescript.tmLanguage.json",
+    "path": "applescript.json",
     "embeddedScopes": []
   },
   "source.ara": {
     "id": "ara",
-    "path": "ara.tmLanguage.json",
+    "path": "ara.json",
     "embeddedScopes": []
+  },
+  "text.asciidoc": {
+    "id": "asciidoc",
+    "path": "asciidoc.json",
+    "embeddedScopes": [
+      "source.lua",
+      "source.glsl",
+      "source.regexp.python",
+      "text.csv",
+      "text.xml",
+      "source.ts",
+      "source.toml",
+      "source.swift",
+      "source.sql",
+      "source.shell",
+      "source.css.scss",
+      "source.scala",
+      "source.sass",
+      "source.rust",
+      "source.ruby",
+      "source.r",
+      "source.python",
+      "source.perl",
+      "source.ocaml",
+      "source.objc",
+      "source.makefile",
+      "source.css.less",
+      "source.kotlin",
+      "source.julia",
+      "source.js.jsx",
+      "source.json",
+      "source.js",
+      "source.java",
+      "source.haskell",
+      "source.groovy",
+      "source.go",
+      "source.erlang",
+      "source.elm",
+      "source.elixir",
+      "source.dockerfile",
+      "source.diff",
+      "source.cs",
+      "source.css",
+      "source.cpp",
+      "source.coffee",
+      "source.clojure",
+      "source.c",
+      "text.html.basic",
+      "source.yaml"
+    ]
   },
   "source.asm.x86_64": {
     "id": "asm",
-    "path": "asm.tmLanguage.json",
+    "path": "asm.json",
     "embeddedScopes": []
   },
   "source.astro": {
     "id": "astro",
-    "path": "astro.tmLanguage.json",
+    "path": "astro.json",
     "embeddedScopes": [
       "source.tsx",
+      "source.stylus",
+      "source.css.scss",
+      "source.sass",
       "source.css.postcss",
       "source.css.less",
-      "source.css.scss",
       "source.css",
-      "source.sass",
-      "source.stylus",
       "source.ts",
-      "source.js",
-      "source.json"
+      "source.json",
+      "source.js"
     ]
   },
   "source.awk": {
     "id": "awk",
-    "path": "awk.tmLanguage.json",
+    "path": "awk.json",
     "embeddedScopes": []
   },
   "source.ballerina": {
     "id": "ballerina",
-    "path": "ballerina.tmLanguage.json",
+    "path": "ballerina.json",
     "embeddedScopes": []
   },
   "source.batchfile": {
     "id": "bat",
-    "path": "bat.tmLanguage.json",
+    "path": "bat.json",
     "embeddedScopes": []
   },
   "text.beancount": {
     "id": "beancount",
-    "path": "beancount.tmLanguage.json",
+    "path": "beancount.json",
     "embeddedScopes": []
   },
   "source.berry": {
     "id": "berry",
-    "path": "berry.tmLanguage.json",
+    "path": "berry.json",
     "embeddedScopes": []
   },
   "text.bibtex": {
     "id": "bibtex",
-    "path": "bibtex.tmLanguage.json",
+    "path": "bibtex.json",
     "embeddedScopes": []
   },
   "source.bicep": {
     "id": "bicep",
-    "path": "bicep.tmLanguage.json",
+    "path": "bicep.json",
     "embeddedScopes": []
   },
   "text.html.php.blade": {
     "id": "blade",
-    "path": "blade.tmLanguage.json",
+    "path": "blade.json",
     "embeddedScopes": [
       "source.java",
       "source.css",
@@ -892,32 +1196,32 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.c": {
     "id": "c",
-    "path": "c.tmLanguage.json",
+    "path": "c.json",
     "embeddedScopes": []
   },
   "source.cadence": {
     "id": "cadence",
-    "path": "cadence.tmLanguage.json",
+    "path": "cadence.json",
     "embeddedScopes": []
   },
   "source.clar": {
     "id": "clarity",
-    "path": "clarity.tmLanguage.json",
+    "path": "clarity.json",
     "embeddedScopes": []
   },
   "source.clojure": {
     "id": "clojure",
-    "path": "clojure.tmLanguage.json",
+    "path": "clojure.json",
     "embeddedScopes": []
   },
   "source.cmake": {
     "id": "cmake",
-    "path": "cmake.tmLanguage.json",
+    "path": "cmake.json",
     "embeddedScopes": []
   },
   "source.cobol": {
     "id": "cobol",
-    "path": "cobol.tmLanguage.json",
+    "path": "cobol.json",
     "embeddedScopes": [
       "source.css",
       "source.js",
@@ -926,89 +1230,41 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.sql"
     ]
   },
+  "text.codeowners": {
+    "id": "codeowners",
+    "path": "codeowners.json",
+    "embeddedScopes": []
+  },
   "source.ql": {
     "id": "codeql",
-    "path": "codeql.tmLanguage.json",
-    "embeddedScopes": [
-      "source.gnuplot",
-      "source.haskell",
-      "text.tex",
-      "source.stylus",
-      "source.sass",
-      "source.glsl",
-      "text.bibtex",
-      "text.tex.latex",
-      "source.elixir",
-      "source.erlang",
-      "text.html.handlebars",
-      "source.dart",
-      "source.fsharp",
-      "source.cs",
-      "source.tsx",
-      "source.ts",
-      "source.shell",
-      "source.scala",
-      "source.rust",
-      "source.julia",
-      "source.python",
-      "source.powershell",
-      "source.perl.6",
-      "source.css.scss",
-      "source.swift",
-      "source.objc",
-      "source.css.less",
-      "source.json.comments",
-      "source.json",
-      "source.js",
-      "text.pug",
-      "source.groovy",
-      "source.go",
-      "text.git-rebase",
-      "text.git-commit",
-      "source.dockerfile",
-      "source.diff",
-      "source.cpp",
-      "source.c",
-      "source.coffee",
-      "source.clojure",
-      "source.batchfile",
-      "source.yaml",
-      "text.xml.xsl",
-      "text.xml",
-      "source.asp.vb.net",
-      "source.sql",
-      "source.php",
-      "source.ruby",
-      "source.r",
-      "source.perl",
-      "source.makefile",
-      "source.lua",
-      "source.java",
-      "source.ini",
-      "text.html.basic",
-      "source.css",
-      "text.html.markdown"
-    ]
+    "path": "codeql.json",
+    "embeddedScopes": []
   },
   "source.coffee": {
     "id": "coffee",
-    "path": "coffee.tmLanguage.json",
+    "path": "coffee.json",
     "embeddedScopes": [
       "source.js"
     ]
   },
+  "source.commonlisp": {
+    "id": "common-lisp",
+    "path": "common-lisp.json",
+    "embeddedScopes": []
+  },
   "source.cpp": {
     "id": "cpp",
-    "path": "cpp.tmLanguage.json",
+    "path": "cpp.json",
     "embeddedScopes": [
       "source.c",
       "source.sql",
-      "source.glsl"
+      "source.glsl",
+      "source.regexp.python"
     ]
   },
   "source.crystal": {
     "id": "crystal",
-    "path": "crystal.tmLanguage.json",
+    "path": "crystal.json",
     "embeddedScopes": [
       "source.shell",
       "source.js",
@@ -1020,57 +1276,78 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.cs": {
     "id": "csharp",
-    "path": "csharp.tmLanguage.json",
+    "path": "csharp.json",
     "embeddedScopes": []
   },
   "source.css": {
     "id": "css",
-    "path": "css.tmLanguage.json",
+    "path": "css.json",
+    "embeddedScopes": []
+  },
+  "text.csv": {
+    "id": "csv",
+    "path": "csv.json",
     "embeddedScopes": []
   },
   "source.cue": {
     "id": "cue",
-    "path": "cue.tmLanguage.json",
+    "path": "cue.json",
     "embeddedScopes": []
   },
   "source.cypher": {
     "id": "cypher",
-    "path": "cypher.tmLanguage.json",
+    "path": "cypher.json",
     "embeddedScopes": []
   },
   "source.d": {
     "id": "d",
-    "path": "d.tmLanguage.json",
+    "path": "d.json",
     "embeddedScopes": []
   },
   "source.dart": {
     "id": "dart",
-    "path": "dart.tmLanguage.json",
+    "path": "dart.json",
     "embeddedScopes": []
   },
   "source.dax": {
     "id": "dax",
-    "path": "dax.tmLanguage.json",
+    "path": "dax.json",
+    "embeddedScopes": []
+  },
+  "source.desktop": {
+    "id": "desktop",
+    "path": "desktop.json",
     "embeddedScopes": []
   },
   "source.diff": {
     "id": "diff",
-    "path": "diff.tmLanguage.json",
+    "path": "diff.json",
     "embeddedScopes": []
   },
   "source.dockerfile": {
     "id": "docker",
-    "path": "docker.tmLanguage.json",
+    "path": "docker.json",
     "embeddedScopes": []
   },
   "source.dm": {
     "id": "dream-maker",
-    "path": "dream-maker.tmLanguage.json",
+    "path": "dream-maker.json",
     "embeddedScopes": []
+  },
+  "text.html.edge": {
+    "id": "edge",
+    "path": "edge.json",
+    "embeddedScopes": [
+      "source.css",
+      "source.js",
+      "source.ts",
+      "text.html.derivative",
+      "text.html.basic"
+    ]
   },
   "source.elixir": {
     "id": "elixir",
-    "path": "elixir.tmLanguage.json",
+    "path": "elixir.json",
     "embeddedScopes": [
       "source.css",
       "source.js",
@@ -1079,15 +1356,20 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.elm": {
     "id": "elm",
-    "path": "elm.tmLanguage.json",
+    "path": "elm.json",
     "embeddedScopes": [
       "source.c",
       "source.glsl"
     ]
   },
+  "source.emacs.lisp": {
+    "id": "emacs-lisp",
+    "path": "emacs-lisp.json",
+    "embeddedScopes": []
+  },
   "text.html.erb": {
     "id": "erb",
-    "path": "erb.tmLanguage.json",
+    "path": "erb.json",
     "embeddedScopes": [
       "source.java",
       "source.lua",
@@ -1103,157 +1385,189 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.erlang": {
     "id": "erlang",
-    "path": "erlang.tmLanguage.json",
+    "path": "erlang.json",
+    "embeddedScopes": []
+  },
+  "source.fnl": {
+    "id": "fennel",
+    "path": "fennel.json",
     "embeddedScopes": []
   },
   "source.fish": {
     "id": "fish",
-    "path": "fish.tmLanguage.json",
+    "path": "fish.json",
+    "embeddedScopes": []
+  },
+  "source.ftl": {
+    "id": "fluent",
+    "path": "fluent.json",
+    "embeddedScopes": []
+  },
+  "source.fortran.fixed": {
+    "id": "fortran-fixed-form",
+    "path": "fortran-fixed-form.json",
+    "embeddedScopes": [
+      "source.fortran.free"
+    ]
+  },
+  "source.fortran.free": {
+    "id": "fortran-free-form",
+    "path": "fortran-free-form.json",
     "embeddedScopes": []
   },
   "source.fsharp": {
     "id": "fsharp",
-    "path": "fsharp.tmLanguage.json",
+    "path": "fsharp.json",
     "embeddedScopes": [
-      "source.gnuplot",
-      "source.haskell",
-      "text.tex",
       "source.stylus",
       "source.sass",
+      "source.haskell",
+      "source.gnuplot",
+      "text.tex",
       "source.glsl",
-      "text.bibtex",
-      "text.tex.latex",
-      "source.elixir",
-      "source.erlang",
-      "text.html.handlebars",
-      "source.dart",
-      "source.cs",
-      "source.tsx",
-      "source.ts",
-      "source.shell",
-      "source.scala",
-      "source.rust",
-      "source.julia",
-      "source.python",
-      "source.powershell",
-      "source.perl.6",
-      "source.css.scss",
-      "source.swift",
-      "source.objc",
-      "source.css.less",
-      "source.json.comments",
-      "source.json",
-      "source.js",
-      "text.pug",
-      "source.groovy",
-      "source.go",
-      "text.git-rebase",
-      "text.git-commit",
-      "source.dockerfile",
-      "source.diff",
-      "source.cpp",
-      "source.c",
-      "source.coffee",
-      "source.clojure",
-      "source.batchfile",
       "source.yaml",
       "text.xml.xsl",
       "text.xml",
       "source.asp.vb.net",
+      "source.tsx",
+      "source.ts",
+      "source.swift",
       "source.sql",
-      "source.php",
+      "source.shell",
+      "source.css.scss",
+      "source.scala",
+      "source.rust",
       "source.ruby",
+      "source.regexp.python",
       "source.r",
+      "source.python",
+      "text.pug",
+      "source.powershell",
+      "source.php",
+      "source.perl.6",
       "source.perl",
+      "source.objc",
       "source.makefile",
       "source.lua",
+      "text.log",
+      "source.css.less",
+      "text.tex.latex",
+      "source.julia",
+      "source.json.comments",
+      "source.json",
+      "source.js",
       "source.java",
       "source.ini",
-      "text.html.basic",
+      "text.html.handlebars",
+      "source.groovy",
+      "source.go",
+      "text.git-rebase",
+      "text.git-commit",
+      "source.erlang",
+      "source.elixir",
+      "source.batchfile",
+      "source.dockerfile",
+      "source.diff",
+      "source.dart",
       "source.css",
+      "source.cs",
+      "source.cpp",
+      "source.coffee",
+      "source.clojure",
+      "source.c",
+      "text.bibtex",
+      "text.html.basic",
+      "text.html.derivative",
       "text.html.markdown"
     ]
   },
   "source.gdresource": {
     "id": "gdresource",
-    "path": "gdresource.tmLanguage.json",
+    "path": "gdresource.json",
     "embeddedScopes": [
-      "source.gdscript",
-      "source.gdshader"
+      "source.gdshader",
+      "source.gdscript"
     ]
   },
   "source.gdscript": {
     "id": "gdscript",
-    "path": "gdscript.tmLanguage.json",
+    "path": "gdscript.json",
     "embeddedScopes": []
   },
   "source.gdshader": {
     "id": "gdshader",
-    "path": "gdshader.tmLanguage.json",
+    "path": "gdshader.json",
+    "embeddedScopes": []
+  },
+  "source.genie": {
+    "id": "genie",
+    "path": "genie.json",
     "embeddedScopes": []
   },
   "text.gherkin.feature": {
     "id": "gherkin",
-    "path": "gherkin.tmLanguage.json",
+    "path": "gherkin.json",
     "embeddedScopes": []
   },
   "text.git-commit": {
     "id": "git-commit",
-    "path": "git-commit.tmLanguage.json",
+    "path": "git-commit.json",
     "embeddedScopes": [
       "source.diff"
     ]
   },
   "text.git-rebase": {
     "id": "git-rebase",
-    "path": "git-rebase.tmLanguage.json",
+    "path": "git-rebase.json",
     "embeddedScopes": [
       "source.shell"
     ]
   },
+  "source.gleam": {
+    "id": "gleam",
+    "path": "gleam.json",
+    "embeddedScopes": []
+  },
   "source.gjs": {
     "id": "glimmer-js",
-    "path": "glimmer-js.tmLanguage.json",
+    "path": "glimmer-js.json",
     "embeddedScopes": [
-      "source.yaml",
       "source.css",
       "text.html.basic",
-      "text.html.handlebars",
+      "source.ts",
       "source.js"
     ]
   },
   "source.gts": {
     "id": "glimmer-ts",
-    "path": "glimmer-ts.tmLanguage.json",
+    "path": "glimmer-ts.json",
     "embeddedScopes": [
-      "source.yaml",
-      "source.js",
       "source.css",
       "text.html.basic",
-      "text.html.handlebars",
+      "source.js",
       "source.ts"
     ]
   },
   "source.glsl": {
     "id": "glsl",
-    "path": "glsl.tmLanguage.json",
+    "path": "glsl.json",
     "embeddedScopes": [
       "source.c"
     ]
   },
   "source.gnuplot": {
     "id": "gnuplot",
-    "path": "gnuplot.tmLanguage.json",
+    "path": "gnuplot.json",
     "embeddedScopes": []
   },
   "source.go": {
     "id": "go",
-    "path": "go.tmLanguage.json",
+    "path": "go.json",
     "embeddedScopes": []
   },
   "source.graphql": {
     "id": "graphql",
-    "path": "graphql.tmLanguage.json",
+    "path": "graphql.json",
     "embeddedScopes": [
       "source.tsx",
       "source.js.jsx",
@@ -1263,12 +1577,12 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.groovy": {
     "id": "groovy",
-    "path": "groovy.tmLanguage.json",
+    "path": "groovy.json",
     "embeddedScopes": []
   },
   "source.hack": {
     "id": "hack",
-    "path": "hack.tmLanguage.json",
+    "path": "hack.json",
     "embeddedScopes": [
       "source.css",
       "source.js",
@@ -1278,54 +1592,57 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "text.haml": {
     "id": "haml",
-    "path": "haml.tmLanguage.json",
+    "path": "haml.json",
     "embeddedScopes": [
-      "source.gnuplot",
-      "source.haskell",
-      "text.tex",
       "source.stylus",
+      "source.haskell",
+      "source.gnuplot",
+      "text.tex",
       "source.glsl",
-      "text.bibtex",
-      "text.tex.latex",
-      "source.elixir",
-      "source.erlang",
-      "text.html.handlebars",
-      "source.dart",
-      "source.fsharp",
-      "source.cs",
+      "source.yaml",
+      "text.xml.xsl",
+      "source.asp.vb.net",
       "source.tsx",
       "source.ts",
+      "source.swift",
+      "source.css.scss",
       "source.scala",
       "source.rust",
-      "source.julia",
+      "source.regexp.python",
+      "source.r",
       "source.python",
+      "text.pug",
       "source.powershell",
+      "source.php",
       "source.perl.6",
-      "source.css.scss",
-      "source.swift",
+      "source.perl",
       "source.objc",
+      "source.makefile",
+      "text.log",
       "source.css.less",
+      "text.tex.latex",
+      "source.julia",
       "source.json.comments",
       "source.json",
-      "text.pug",
+      "source.java",
+      "source.ini",
+      "text.html.handlebars",
       "source.groovy",
       "source.go",
       "text.git-rebase",
       "text.git-commit",
+      "source.fsharp",
+      "source.erlang",
+      "source.elixir",
+      "source.batchfile",
       "source.dockerfile",
       "source.diff",
+      "source.dart",
+      "source.cs",
       "source.cpp",
       "source.clojure",
-      "source.batchfile",
-      "source.yaml",
-      "text.xml.xsl",
-      "source.asp.vb.net",
-      "source.php",
-      "source.r",
-      "source.perl",
-      "source.makefile",
-      "source.java",
-      "source.ini",
+      "text.bibtex",
+      "text.html.derivative",
       "source.lua",
       "source.shell",
       "source.c",
@@ -1342,7 +1659,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "text.html.handlebars": {
     "id": "handlebars",
-    "path": "handlebars.tmLanguage.json",
+    "path": "handlebars.json",
     "embeddedScopes": [
       "source.yaml",
       "source.js",
@@ -1352,27 +1669,41 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.haskell": {
     "id": "haskell",
-    "path": "haskell.tmLanguage.json",
+    "path": "haskell.json",
+    "embeddedScopes": []
+  },
+  "source.hx": {
+    "id": "haxe",
+    "path": "haxe.json",
     "embeddedScopes": []
   },
   "source.hcl": {
     "id": "hcl",
-    "path": "hcl.tmLanguage.json",
+    "path": "hcl.json",
     "embeddedScopes": []
   },
   "source.hjson": {
     "id": "hjson",
-    "path": "hjson.tmLanguage.json",
+    "path": "hjson.json",
     "embeddedScopes": []
   },
   "source.hlsl": {
     "id": "hlsl",
-    "path": "hlsl.tmLanguage.json",
+    "path": "hlsl.json",
     "embeddedScopes": []
+  },
+  "text.html.derivative": {
+    "id": "html-derivative",
+    "path": "html-derivative.json",
+    "embeddedScopes": [
+      "source.css",
+      "source.js",
+      "text.html.basic"
+    ]
   },
   "text.html.basic": {
     "id": "html",
-    "path": "html.tmLanguage.json",
+    "path": "html.json",
     "embeddedScopes": [
       "source.css",
       "source.js"
@@ -1380,7 +1711,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.http": {
     "id": "http",
-    "path": "http.tmLanguage.json",
+    "path": "http.json",
     "embeddedScopes": [
       "source.tsx",
       "source.js.jsx",
@@ -1393,29 +1724,43 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.shell"
     ]
   },
+  "source.hxml": {
+    "id": "hxml",
+    "path": "hxml.json",
+    "embeddedScopes": [
+      "source.hx"
+    ]
+  },
+  "source.hy": {
+    "id": "hy",
+    "path": "hy.json",
+    "embeddedScopes": []
+  },
   "source.imba": {
     "id": "imba",
-    "path": "imba.tmLanguage.json",
-    "embeddedScopes": []
+    "path": "imba.json",
+    "embeddedScopes": [
+      "source.ts"
+    ]
   },
   "source.ini": {
     "id": "ini",
-    "path": "ini.tmLanguage.json",
+    "path": "ini.json",
     "embeddedScopes": []
   },
   "source.java": {
     "id": "java",
-    "path": "java.tmLanguage.json",
+    "path": "java.json",
     "embeddedScopes": []
   },
   "source.js": {
     "id": "javascript",
-    "path": "javascript.tmLanguage.json",
+    "path": "javascript.json",
     "embeddedScopes": []
   },
   "text.html.jinja": {
     "id": "jinja-html",
-    "path": "jinja-html.tmLanguage.json",
+    "path": "jinja-html.json",
     "embeddedScopes": [
       "source.css",
       "source.js",
@@ -1424,52 +1769,53 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.jison": {
     "id": "jison",
-    "path": "jison.tmLanguage.json",
+    "path": "jison.json",
     "embeddedScopes": [
       "source.js"
     ]
   },
   "source.json": {
     "id": "json",
-    "path": "json.tmLanguage.json",
+    "path": "json.json",
     "embeddedScopes": []
   },
   "source.json5": {
     "id": "json5",
-    "path": "json5.tmLanguage.json",
+    "path": "json5.json",
     "embeddedScopes": []
   },
   "source.json.comments": {
     "id": "jsonc",
-    "path": "jsonc.tmLanguage.json",
+    "path": "jsonc.json",
     "embeddedScopes": []
   },
   "source.json.lines": {
     "id": "jsonl",
-    "path": "jsonl.tmLanguage.json",
+    "path": "jsonl.json",
     "embeddedScopes": []
   },
   "source.jsonnet": {
     "id": "jsonnet",
-    "path": "jsonnet.tmLanguage.json",
+    "path": "jsonnet.json",
     "embeddedScopes": []
   },
   "source.jssm": {
     "id": "jssm",
-    "path": "jssm.tmLanguage.json",
+    "path": "jssm.json",
     "embeddedScopes": []
   },
   "source.js.jsx": {
     "id": "jsx",
-    "path": "jsx.tmLanguage.json",
+    "path": "jsx.json",
     "embeddedScopes": []
   },
   "source.julia": {
     "id": "julia",
-    "path": "julia.tmLanguage.json",
+    "path": "julia.json",
     "embeddedScopes": [
       "source.c",
       "source.glsl",
+      "source.regexp.python",
       "source.sql",
       "source.r",
       "source.js",
@@ -1479,147 +1825,231 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.kotlin": {
     "id": "kotlin",
-    "path": "kotlin.tmLanguage.json",
+    "path": "kotlin.json",
     "embeddedScopes": []
   },
   "source.kusto": {
     "id": "kusto",
-    "path": "kusto.tmLanguage.json",
+    "path": "kusto.json",
     "embeddedScopes": []
   },
   "text.tex.latex": {
     "id": "latex",
-    "path": "latex.tmLanguage.json",
+    "path": "latex.json",
     "embeddedScopes": [
       "source.glsl",
-      "source.shell",
+      "source.regexp.python",
+      "source.c",
       "source.sql",
       "source.cpp",
-      "source.c",
       "source.r",
-      "source.gnuplot",
       "source.scala",
-      "source.rust",
       "source.yaml",
-      "source.python",
-      "source.ts",
-      "source.js",
-      "source.ruby",
-      "source.julia",
-      "source.lua",
-      "source.java",
       "text.xml",
+      "source.ts",
+      "source.rust",
+      "source.ruby",
+      "source.python",
+      "source.lua",
+      "source.js",
+      "source.julia",
+      "source.java",
       "text.html.basic",
       "source.haskell",
+      "source.gnuplot",
       "source.css",
+      "source.shell",
       "text.tex"
     ]
   },
+  "source.lean4": {
+    "id": "lean",
+    "path": "lean.json",
+    "embeddedScopes": []
+  },
   "source.css.less": {
     "id": "less",
-    "path": "less.tmLanguage.json",
-    "embeddedScopes": [
-      "source.css"
-    ]
+    "path": "less.json",
+    "embeddedScopes": []
   },
   "text.html.liquid": {
     "id": "liquid",
-    "path": "liquid.tmLanguage.json",
+    "path": "liquid.json",
     "embeddedScopes": [
-      "source.js",
-      "source.json",
       "source.css",
+      "source.json",
+      "source.js",
       "text.html.basic"
     ]
   },
-  "source.lisp": {
-    "id": "lisp",
-    "path": "lisp.tmLanguage.json",
+  "text.log": {
+    "id": "log",
+    "path": "log.json",
     "embeddedScopes": []
   },
   "source.logo": {
     "id": "logo",
-    "path": "logo.tmLanguage.json",
+    "path": "logo.json",
     "embeddedScopes": []
   },
   "source.lua": {
     "id": "lua",
-    "path": "lua.tmLanguage.json",
+    "path": "lua.json",
     "embeddedScopes": [
       "source.c"
     ]
   },
-  "source.makefile": {
-    "id": "make",
-    "path": "make.tmLanguage.json",
+  "source.luau": {
+    "id": "luau",
+    "path": "luau.json",
     "embeddedScopes": []
   },
-  "text.html.markdown": {
-    "id": "markdown",
-    "path": "markdown.tmLanguage.json",
+  "source.makefile": {
+    "id": "make",
+    "path": "make.json",
+    "embeddedScopes": []
+  },
+  "markdown.vue.codeblock": {
+    "id": "markdown-vue",
+    "path": "markdown-vue.json",
     "embeddedScopes": [
-      "source.gnuplot",
       "source.haskell",
+      "source.gnuplot",
       "text.tex",
-      "source.stylus",
-      "source.sass",
       "source.glsl",
-      "text.bibtex",
-      "text.tex.latex",
-      "source.elixir",
-      "source.erlang",
-      "text.html.handlebars",
-      "source.dart",
-      "source.fsharp",
-      "source.cs",
-      "source.tsx",
-      "source.ts",
+      "text.xml.xsl",
+      "text.xml",
+      "source.asp.vb.net",
+      "source.swift",
+      "source.sql",
       "source.shell",
       "source.scala",
       "source.rust",
-      "source.julia",
+      "source.ruby",
+      "source.regexp.python",
+      "source.r",
       "source.python",
       "source.powershell",
+      "source.php",
       "source.perl.6",
-      "source.css.scss",
-      "source.swift",
+      "source.perl",
       "source.objc",
-      "source.css.less",
-      "source.json.comments",
-      "source.json",
-      "source.js",
-      "text.pug",
+      "source.makefile",
+      "source.lua",
+      "text.log",
+      "text.tex.latex",
+      "source.julia",
+      "source.java",
+      "source.ini",
+      "text.html.handlebars",
       "source.groovy",
       "source.go",
       "text.git-rebase",
       "text.git-commit",
+      "source.fsharp",
+      "source.erlang",
+      "source.elixir",
+      "source.batchfile",
       "source.dockerfile",
       "source.diff",
+      "source.dart",
+      "source.cs",
       "source.cpp",
-      "source.c",
-      "source.coffee",
       "source.clojure",
-      "source.batchfile",
+      "source.c",
+      "text.bibtex",
+      "text.html.derivative",
+      "source.graphql",
+      "source.toml",
+      "source.yaml",
+      "source.json5",
+      "source.json.comments",
+      "source.json",
+      "source.coffee",
+      "source.tsx",
+      "source.js.jsx",
+      "source.ts",
+      "source.js",
+      "source.css.less",
+      "source.css.scss",
+      "source.css",
+      "source.sass",
+      "source.stylus",
+      "text.pug",
+      "text.html.markdown",
+      "text.html.basic",
+      "source.vue"
+    ]
+  },
+  "text.html.markdown": {
+    "id": "markdown",
+    "path": "markdown.json",
+    "embeddedScopes": [
+      "source.stylus",
+      "source.sass",
+      "source.haskell",
+      "source.gnuplot",
+      "text.tex",
+      "source.glsl",
       "source.yaml",
       "text.xml.xsl",
       "text.xml",
       "source.asp.vb.net",
+      "source.tsx",
+      "source.ts",
+      "source.swift",
       "source.sql",
-      "source.php",
+      "source.shell",
+      "source.css.scss",
+      "source.scala",
+      "source.rust",
       "source.ruby",
+      "source.regexp.python",
       "source.r",
+      "source.python",
+      "text.pug",
+      "source.powershell",
+      "source.php",
+      "source.perl.6",
       "source.perl",
+      "source.objc",
       "source.makefile",
       "source.lua",
+      "text.log",
+      "source.css.less",
+      "text.tex.latex",
+      "source.julia",
+      "source.json.comments",
+      "source.json",
+      "source.js",
       "source.java",
       "source.ini",
+      "text.html.handlebars",
+      "source.groovy",
+      "source.go",
+      "text.git-rebase",
+      "text.git-commit",
+      "source.fsharp",
+      "source.erlang",
+      "source.elixir",
+      "source.batchfile",
+      "source.dockerfile",
+      "source.diff",
+      "source.dart",
+      "source.css",
+      "source.cs",
+      "source.cpp",
+      "source.coffee",
+      "source.clojure",
+      "source.c",
+      "text.bibtex",
       "text.html.basic",
-      "source.css"
+      "text.html.derivative"
     ]
   },
   "text.marko": {
     "id": "marko",
-    "path": "marko.tmLanguage.json",
+    "path": "marko.json",
     "embeddedScopes": [
       "source.js",
       "source.css.scss",
@@ -1629,36 +2059,109 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.matlab": {
     "id": "matlab",
-    "path": "matlab.tmLanguage.json",
+    "path": "matlab.json",
     "embeddedScopes": []
+  },
+  "text.markdown.mdc": {
+    "id": "mdc",
+    "path": "mdc.json",
+    "embeddedScopes": [
+      "source.stylus",
+      "source.sass",
+      "source.haskell",
+      "source.gnuplot",
+      "text.tex",
+      "source.glsl",
+      "text.xml.xsl",
+      "text.xml",
+      "source.asp.vb.net",
+      "source.tsx",
+      "source.ts",
+      "source.swift",
+      "source.sql",
+      "source.shell",
+      "source.css.scss",
+      "source.scala",
+      "source.rust",
+      "source.ruby",
+      "source.regexp.python",
+      "source.r",
+      "source.python",
+      "text.pug",
+      "source.powershell",
+      "source.php",
+      "source.perl.6",
+      "source.perl",
+      "source.objc",
+      "source.makefile",
+      "source.lua",
+      "text.log",
+      "source.css.less",
+      "text.tex.latex",
+      "source.julia",
+      "source.json.comments",
+      "source.json",
+      "source.js",
+      "source.java",
+      "source.ini",
+      "text.html.handlebars",
+      "source.groovy",
+      "source.go",
+      "text.git-rebase",
+      "text.git-commit",
+      "source.fsharp",
+      "source.erlang",
+      "source.elixir",
+      "source.batchfile",
+      "source.dockerfile",
+      "source.diff",
+      "source.dart",
+      "source.css",
+      "source.cs",
+      "source.cpp",
+      "source.coffee",
+      "source.clojure",
+      "source.c",
+      "text.bibtex",
+      "text.html.basic",
+      "text.html.derivative",
+      "source.yaml",
+      "text.html.markdown"
+    ]
   },
   "source.mdx": {
     "id": "mdx",
-    "path": "mdx.tmLanguage.json",
+    "path": "mdx.json",
     "embeddedScopes": [
-      "source.gnuplot",
-      "text.tex",
       "source.stylus",
       "source.sass",
-      "text.bibtex",
-      "text.tex.latex",
-      "text.html.handlebars",
-      "source.dart",
-      "source.fsharp",
-      "source.powershell",
-      "source.perl.6",
-      "source.json.comments",
+      "source.gnuplot",
+      "text.tex",
+      "text.xml.xsl",
+      "source.asp.vb.net",
       "text.pug",
+      "source.powershell",
+      "source.php",
+      "source.perl.6",
+      "text.log",
+      "text.tex.latex",
+      "source.json.comments",
+      "text.html.handlebars",
       "source.groovy",
       "text.git-rebase",
       "text.git-commit",
+      "source.fsharp",
       "source.batchfile",
-      "text.xml.xsl",
-      "source.asp.vb.net",
-      "source.php",
+      "source.dart",
+      "text.bibtex",
+      "text.html.derivative",
       "source.js.jsx",
       "source.glsl",
+      "source.regexp.python",
+      "source.yaml",
+      "source.tsx",
       "source.ts",
+      "source.toml",
       "source.swift",
       "text.xml",
       "source.sql",
@@ -1696,30 +2199,37 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.cpp",
       "source.coffee",
       "source.clojure",
-      "source.c",
-      "source.yaml",
-      "source.toml",
-      "source.tsx"
+      "source.c"
     ]
   },
-  "source.mermaid": {
+  "markdown.mermaid.codeblock": {
     "id": "mermaid",
-    "path": "mermaid.tmLanguage.json",
+    "path": "mermaid.json",
+    "embeddedScopes": []
+  },
+  "source.mojo": {
+    "id": "mojo",
+    "path": "mojo.json",
+    "embeddedScopes": []
+  },
+  "source.move": {
+    "id": "move",
+    "path": "move.json",
     "embeddedScopes": []
   },
   "source.narrat": {
     "id": "narrat",
-    "path": "narrat.tmLanguage.json",
+    "path": "narrat.json",
     "embeddedScopes": []
   },
   "source.nextflow": {
     "id": "nextflow",
-    "path": "nextflow.tmLanguage.json",
+    "path": "nextflow.json",
     "embeddedScopes": []
   },
   "source.nginx": {
     "id": "nginx",
-    "path": "nginx.tmLanguage.json",
+    "path": "nginx.json",
     "embeddedScopes": [
       "source.c",
       "source.lua"
@@ -1727,58 +2237,61 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.nim": {
     "id": "nim",
-    "path": "nim.tmLanguage.json",
+    "path": "nim.json",
     "embeddedScopes": [
-      "source.gnuplot",
-      "source.haskell",
-      "text.tex",
       "source.stylus",
       "source.sass",
-      "text.bibtex",
-      "text.tex.latex",
-      "source.elixir",
-      "source.erlang",
-      "text.html.handlebars",
-      "source.dart",
-      "source.fsharp",
-      "source.cs",
+      "source.haskell",
+      "source.gnuplot",
+      "text.tex",
+      "source.yaml",
+      "text.xml.xsl",
+      "source.asp.vb.net",
       "source.tsx",
       "source.ts",
+      "source.swift",
+      "source.sql",
       "source.shell",
+      "source.css.scss",
       "source.scala",
       "source.rust",
-      "source.julia",
+      "source.ruby",
+      "source.regexp.python",
+      "source.r",
       "source.python",
+      "text.pug",
       "source.powershell",
+      "source.php",
       "source.perl.6",
-      "source.css.scss",
-      "source.swift",
+      "source.perl",
       "source.objc",
+      "source.makefile",
+      "source.lua",
+      "text.log",
       "source.css.less",
+      "text.tex.latex",
+      "source.julia",
       "source.json.comments",
       "source.json",
-      "text.pug",
+      "source.ini",
+      "text.html.handlebars",
       "source.groovy",
       "source.go",
       "text.git-rebase",
       "text.git-commit",
+      "source.fsharp",
+      "source.erlang",
+      "source.elixir",
+      "source.batchfile",
       "source.dockerfile",
       "source.diff",
+      "source.dart",
+      "source.cs",
       "source.cpp",
       "source.coffee",
       "source.clojure",
-      "source.batchfile",
-      "source.yaml",
-      "text.xml.xsl",
-      "source.asp.vb.net",
-      "source.sql",
-      "source.php",
-      "source.ruby",
-      "source.r",
-      "source.perl",
-      "source.makefile",
-      "source.lua",
-      "source.ini",
+      "text.bibtex",
+      "text.html.derivative",
       "source.java",
       "text.html.markdown",
       "source.glsl",
@@ -1791,32 +2304,37 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.nix": {
     "id": "nix",
-    "path": "nix.tmLanguage.json",
+    "path": "nix.json",
+    "embeddedScopes": []
+  },
+  "source.nushell": {
+    "id": "nushell",
+    "path": "nushell.json",
     "embeddedScopes": []
   },
   "source.objc": {
     "id": "objective-c",
-    "path": "objective-c.tmLanguage.json",
+    "path": "objective-c.json",
     "embeddedScopes": []
   },
   "source.objcpp": {
     "id": "objective-cpp",
-    "path": "objective-cpp.tmLanguage.json",
+    "path": "objective-cpp.json",
     "embeddedScopes": []
   },
   "source.ocaml": {
     "id": "ocaml",
-    "path": "ocaml.tmLanguage.json",
+    "path": "ocaml.json",
     "embeddedScopes": []
   },
   "source.pascal": {
     "id": "pascal",
-    "path": "pascal.tmLanguage.json",
+    "path": "pascal.json",
     "embeddedScopes": []
   },
   "source.perl": {
     "id": "perl",
-    "path": "perl.tmLanguage.json",
+    "path": "perl.json",
     "embeddedScopes": [
       "source.java",
       "source.sql",
@@ -1828,7 +2346,7 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.php": {
     "id": "php",
-    "path": "php.tmLanguage.json",
+    "path": "php.json",
     "embeddedScopes": [
       "source.java",
       "source.css",
@@ -1841,47 +2359,47 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.plsql.oracle": {
     "id": "plsql",
-    "path": "plsql.tmLanguage.json",
+    "path": "plsql.json",
     "embeddedScopes": []
   },
-  "source.polar": {
-    "id": "polar",
-    "path": "polar.tmLanguage.json",
+  "source.po": {
+    "id": "po",
+    "path": "po.json",
     "embeddedScopes": []
   },
   "source.css.postcss": {
     "id": "postcss",
-    "path": "postcss.tmLanguage.json",
+    "path": "postcss.json",
     "embeddedScopes": []
   },
   "source.powerquery": {
     "id": "powerquery",
-    "path": "powerquery.tmLanguage.json",
+    "path": "powerquery.json",
     "embeddedScopes": []
   },
   "source.powershell": {
     "id": "powershell",
-    "path": "powershell.tmLanguage.json",
+    "path": "powershell.json",
     "embeddedScopes": []
   },
   "source.prisma": {
     "id": "prisma",
-    "path": "prisma.tmLanguage.json",
+    "path": "prisma.json",
     "embeddedScopes": []
   },
   "source.prolog": {
     "id": "prolog",
-    "path": "prolog.tmLanguage.json",
+    "path": "prolog.json",
     "embeddedScopes": []
   },
   "source.proto": {
     "id": "proto",
-    "path": "proto.tmLanguage.json",
+    "path": "proto.json",
     "embeddedScopes": []
   },
   "text.pug": {
     "id": "pug",
-    "path": "pug.tmLanguage.json",
+    "path": "pug.json",
     "embeddedScopes": [
       "text.html.basic",
       "source.coffee",
@@ -1894,32 +2412,54 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.puppet": {
     "id": "puppet",
-    "path": "puppet.tmLanguage.json",
+    "path": "puppet.json",
     "embeddedScopes": []
   },
   "source.purescript": {
     "id": "purescript",
-    "path": "purescript.tmLanguage.json",
+    "path": "purescript.json",
     "embeddedScopes": []
   },
   "source.python": {
     "id": "python",
-    "path": "python.tmLanguage.json",
+    "path": "python.json",
+    "embeddedScopes": []
+  },
+  "source.qml": {
+    "id": "qml",
+    "path": "qml.json",
+    "embeddedScopes": [
+      "source.js"
+    ]
+  },
+  "source.qmldir": {
+    "id": "qmldir",
+    "path": "qmldir.json",
+    "embeddedScopes": []
+  },
+  "source.qss": {
+    "id": "qss",
+    "path": "qss.json",
     "embeddedScopes": []
   },
   "source.r": {
     "id": "r",
-    "path": "r.tmLanguage.json",
+    "path": "r.json",
+    "embeddedScopes": []
+  },
+  "source.racket": {
+    "id": "racket",
+    "path": "racket.json",
     "embeddedScopes": []
   },
   "source.perl.6": {
     "id": "raku",
-    "path": "raku.tmLanguage.json",
+    "path": "raku.json",
     "embeddedScopes": []
   },
   "text.aspnetcorerazor": {
     "id": "razor",
-    "path": "razor.tmLanguage.json",
+    "path": "razor.json",
     "embeddedScopes": [
       "source.css",
       "source.js",
@@ -1929,22 +2469,27 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.reg": {
     "id": "reg",
-    "path": "reg.tmLanguage.json",
+    "path": "reg.json",
+    "embeddedScopes": []
+  },
+  "source.regexp.python": {
+    "id": "regexp",
+    "path": "regexp.json",
     "embeddedScopes": []
   },
   "source.rel": {
     "id": "rel",
-    "path": "rel.tmLanguage.json",
+    "path": "rel.json",
     "embeddedScopes": []
   },
   "source.riscv": {
     "id": "riscv",
-    "path": "riscv.tmLanguage.json",
+    "path": "riscv.json",
     "embeddedScopes": []
   },
   "source.rst": {
     "id": "rst",
-    "path": "rst.tmLanguage.json",
+    "path": "rst.json",
     "embeddedScopes": [
       "source.java",
       "source.lua",
@@ -1954,18 +2499,20 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "text.html.basic",
       "source.sql",
       "source.glsl",
-      "source.ruby",
-      "source.cmake",
+      "source.regexp.python",
+      "text.html.derivative",
       "source.yaml",
-      "source.shell",
-      "source.js",
+      "source.ruby",
       "source.python",
-      "source.cpp"
+      "source.js",
+      "source.cpp",
+      "source.shell",
+      "source.cmake"
     ]
   },
   "source.ruby": {
     "id": "ruby",
-    "path": "ruby.tmLanguage.json",
+    "path": "ruby.json",
     "embeddedScopes": [
       "source.java",
       "source.lua",
@@ -1980,156 +2527,173 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.rust": {
     "id": "rust",
-    "path": "rust.tmLanguage.json",
+    "path": "rust.json",
     "embeddedScopes": []
   },
   "source.sas": {
     "id": "sas",
-    "path": "sas.tmLanguage.json",
+    "path": "sas.json",
     "embeddedScopes": [
       "source.sql"
     ]
   },
   "source.sass": {
     "id": "sass",
-    "path": "sass.tmLanguage.json",
+    "path": "sass.json",
     "embeddedScopes": []
   },
   "source.scala": {
     "id": "scala",
-    "path": "scala.tmLanguage.json",
+    "path": "scala.json",
     "embeddedScopes": []
   },
   "source.scheme": {
     "id": "scheme",
-    "path": "scheme.tmLanguage.json",
+    "path": "scheme.json",
     "embeddedScopes": []
   },
   "source.css.scss": {
     "id": "scss",
-    "path": "scss.tmLanguage.json",
+    "path": "scss.json",
     "embeddedScopes": [
       "source.css"
     ]
   },
   "source.shaderlab": {
     "id": "shaderlab",
-    "path": "shaderlab.tmLanguage.json",
+    "path": "shaderlab.json",
     "embeddedScopes": [
       "source.hlsl"
     ]
   },
   "source.shell": {
     "id": "shellscript",
-    "path": "shellscript.tmLanguage.json",
+    "path": "shellscript.json",
     "embeddedScopes": []
   },
   "text.shell-session": {
     "id": "shellsession",
-    "path": "shellsession.tmLanguage.json",
+    "path": "shellsession.json",
     "embeddedScopes": [
       "source.shell"
     ]
   },
   "source.smalltalk": {
     "id": "smalltalk",
-    "path": "smalltalk.tmLanguage.json",
+    "path": "smalltalk.json",
     "embeddedScopes": []
   },
   "source.solidity": {
     "id": "solidity",
-    "path": "solidity.tmLanguage.json",
+    "path": "solidity.json",
     "embeddedScopes": []
+  },
+  "text.html.soy": {
+    "id": "soy",
+    "path": "soy.json",
+    "embeddedScopes": [
+      "source.css",
+      "source.js",
+      "text.html.basic"
+    ]
   },
   "source.sparql": {
     "id": "sparql",
-    "path": "sparql.tmLanguage.json",
+    "path": "sparql.json",
     "embeddedScopes": [
       "source.turtle"
     ]
   },
+  "source.splunk_search": {
+    "id": "splunk",
+    "path": "splunk.json",
+    "embeddedScopes": []
+  },
   "source.sql": {
     "id": "sql",
-    "path": "sql.tmLanguage.json",
+    "path": "sql.json",
     "embeddedScopes": []
   },
   "source.ssh-config": {
     "id": "ssh-config",
-    "path": "ssh-config.tmLanguage.json",
+    "path": "ssh-config.json",
     "embeddedScopes": []
   },
   "source.stata": {
     "id": "stata",
-    "path": "stata.tmLanguage.json",
+    "path": "stata.json",
     "embeddedScopes": [
       "source.sql"
     ]
   },
   "source.stylus": {
     "id": "stylus",
-    "path": "stylus.tmLanguage.json",
+    "path": "stylus.json",
     "embeddedScopes": []
   },
   "source.svelte": {
     "id": "svelte",
-    "path": "svelte.tmLanguage.json",
+    "path": "svelte.json",
     "embeddedScopes": [
-      "source.gnuplot",
       "source.haskell",
+      "source.gnuplot",
       "text.tex",
       "source.glsl",
-      "text.bibtex",
-      "text.tex.latex",
-      "source.elixir",
-      "source.erlang",
-      "text.html.handlebars",
-      "source.dart",
-      "source.fsharp",
-      "source.cs",
-      "source.tsx",
-      "source.shell",
-      "source.scala",
-      "source.rust",
-      "source.julia",
-      "source.python",
-      "source.powershell",
-      "source.perl.6",
-      "source.swift",
-      "source.objc",
-      "source.json.comments",
-      "source.json",
-      "source.groovy",
-      "source.go",
-      "text.git-rebase",
-      "text.git-commit",
-      "source.dockerfile",
-      "source.diff",
-      "source.cpp",
-      "source.c",
-      "source.clojure",
-      "source.batchfile",
       "source.yaml",
       "text.xml.xsl",
       "text.xml",
       "source.asp.vb.net",
+      "source.tsx",
+      "source.swift",
       "source.sql",
-      "source.php",
+      "source.shell",
+      "source.scala",
+      "source.rust",
       "source.ruby",
+      "source.regexp.python",
       "source.r",
+      "source.python",
+      "source.powershell",
+      "source.php",
+      "source.perl.6",
       "source.perl",
+      "source.objc",
       "source.makefile",
       "source.lua",
+      "text.log",
+      "text.tex.latex",
+      "source.julia",
+      "source.json.comments",
+      "source.json",
       "source.java",
       "source.ini",
+      "text.html.handlebars",
+      "source.groovy",
+      "source.go",
+      "text.git-rebase",
+      "text.git-commit",
+      "source.fsharp",
+      "source.erlang",
+      "source.elixir",
+      "source.batchfile",
+      "source.dockerfile",
+      "source.diff",
+      "source.dart",
+      "source.cs",
+      "source.cpp",
+      "source.clojure",
+      "source.c",
+      "text.bibtex",
+      "text.html.derivative",
       "text.html.basic",
       "text.html.markdown",
       "text.pug",
+      "source.stylus",
+      "source.css.scss",
+      "source.sass",
       "source.css.postcss",
       "source.css.less",
-      "source.css.scss",
       "source.css",
-      "source.sass",
-      "source.stylus",
       "source.coffee",
       "source.ts",
       "source.js"
@@ -2137,49 +2701,73 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.swift": {
     "id": "swift",
-    "path": "swift.tmLanguage.json",
+    "path": "swift.json",
     "embeddedScopes": []
   },
   "source.systemverilog": {
     "id": "system-verilog",
-    "path": "system-verilog.tmLanguage.json",
+    "path": "system-verilog.json",
+    "embeddedScopes": []
+  },
+  "source.systemd": {
+    "id": "systemd",
+    "path": "systemd.json",
     "embeddedScopes": []
   },
   "source.tasl": {
     "id": "tasl",
-    "path": "tasl.tmLanguage.json",
+    "path": "tasl.json",
     "embeddedScopes": []
   },
   "source.tcl": {
     "id": "tcl",
-    "path": "tcl.tmLanguage.json",
+    "path": "tcl.json",
+    "embeddedScopes": []
+  },
+  "source.templ": {
+    "id": "templ",
+    "path": "templ.json",
+    "embeddedScopes": [
+      "source.css",
+      "source.js",
+      "source.go"
+    ]
+  },
+  "source.hcl.terraform": {
+    "id": "terraform",
+    "path": "terraform.json",
     "embeddedScopes": []
   },
   "text.tex": {
     "id": "tex",
-    "path": "tex.tmLanguage.json",
+    "path": "tex.json",
     "embeddedScopes": [
       "source.r"
     ]
   },
   "source.toml": {
     "id": "toml",
-    "path": "toml.tmLanguage.json",
+    "path": "toml.json",
+    "embeddedScopes": []
+  },
+  "text.tsv": {
+    "id": "tsv",
+    "path": "tsv.json",
     "embeddedScopes": []
   },
   "source.tsx": {
     "id": "tsx",
-    "path": "tsx.tmLanguage.json",
+    "path": "tsx.json",
     "embeddedScopes": []
   },
   "source.turtle": {
     "id": "turtle",
-    "path": "turtle.tmLanguage.json",
+    "path": "turtle.json",
     "embeddedScopes": []
   },
   "text.html.twig": {
     "id": "twig",
-    "path": "twig.tmLanguage.json",
+    "path": "twig.json",
     "embeddedScopes": [
       "source.java",
       "source.lua",
@@ -2192,99 +2780,185 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.ruby",
       "source.python",
       "source.php",
+      "source.css.scss",
       "source.js",
       "source.css"
     ]
   },
-  "source.txt": {
-    "id": "txt",
-    "path": "txt.tmLanguage.json",
-    "embeddedScopes": []
-  },
   "source.ts": {
     "id": "typescript",
-    "path": "typescript.tmLanguage.json",
+    "path": "typescript.json",
+    "embeddedScopes": []
+  },
+  "source.tsp": {
+    "id": "typespec",
+    "path": "typespec.json",
+    "embeddedScopes": []
+  },
+  "source.typst": {
+    "id": "typst",
+    "path": "typst.json",
     "embeddedScopes": []
   },
   "source.v": {
     "id": "v",
-    "path": "v.tmLanguage.json",
+    "path": "v.json",
+    "embeddedScopes": []
+  },
+  "source.vala": {
+    "id": "vala",
+    "path": "vala.json",
     "embeddedScopes": []
   },
   "source.asp.vb.net": {
     "id": "vb",
-    "path": "vb.tmLanguage.json",
+    "path": "vb.json",
     "embeddedScopes": []
   },
   "source.verilog": {
     "id": "verilog",
-    "path": "verilog.tmLanguage.json",
+    "path": "verilog.json",
     "embeddedScopes": []
   },
   "source.vhdl": {
     "id": "vhdl",
-    "path": "vhdl.tmLanguage.json",
+    "path": "vhdl.json",
     "embeddedScopes": []
   },
   "source.viml": {
     "id": "viml",
-    "path": "viml.tmLanguage.json",
+    "path": "viml.json",
     "embeddedScopes": []
   },
-  "text.html.vue-html": {
-    "id": "vue-html",
-    "path": "vue-html.tmLanguage.json",
+  "vue.directives": {
+    "id": "vue-directives",
+    "path": "vue-directives.json",
     "embeddedScopes": [
-      "source.gnuplot",
       "source.haskell",
+      "source.gnuplot",
       "text.tex",
       "source.glsl",
-      "text.bibtex",
-      "text.tex.latex",
-      "source.elixir",
-      "source.erlang",
-      "text.html.handlebars",
-      "source.dart",
-      "source.fsharp",
-      "source.cs",
+      "text.xml.xsl",
+      "text.xml",
+      "source.asp.vb.net",
+      "source.swift",
+      "source.sql",
       "source.shell",
       "source.scala",
       "source.rust",
-      "source.julia",
+      "source.ruby",
+      "source.regexp.python",
+      "source.r",
       "source.python",
       "source.powershell",
+      "source.php",
       "source.perl.6",
-      "source.swift",
+      "source.perl",
       "source.objc",
+      "source.makefile",
+      "source.lua",
+      "text.log",
+      "text.tex.latex",
+      "source.julia",
+      "source.java",
+      "source.ini",
+      "text.html.handlebars",
       "source.groovy",
       "source.go",
       "text.git-rebase",
       "text.git-commit",
+      "source.fsharp",
+      "source.erlang",
+      "source.elixir",
+      "source.batchfile",
       "source.dockerfile",
       "source.diff",
+      "source.dart",
+      "source.cs",
       "source.cpp",
-      "source.c",
-      "source.coffee",
       "source.clojure",
-      "source.batchfile",
-      "text.xml.xsl",
-      "text.xml",
-      "source.asp.vb.net",
-      "source.sql",
-      "source.php",
-      "source.ruby",
-      "source.r",
-      "source.perl",
-      "source.makefile",
-      "source.lua",
-      "source.java",
-      "source.ini",
+      "source.c",
+      "text.bibtex",
+      "text.html.derivative",
       "source.graphql",
       "source.toml",
       "source.yaml",
       "source.json5",
       "source.json.comments",
       "source.json",
+      "source.coffee",
+      "source.tsx",
+      "source.js.jsx",
+      "source.ts",
+      "source.js",
+      "source.css.less",
+      "source.css.scss",
+      "source.css",
+      "source.sass",
+      "source.stylus",
+      "text.pug",
+      "text.html.markdown",
+      "text.html.basic",
+      "source.vue"
+    ]
+  },
+  "text.html.vue-html": {
+    "id": "vue-html",
+    "path": "vue-html.json",
+    "embeddedScopes": [
+      "source.haskell",
+      "source.gnuplot",
+      "text.tex",
+      "source.glsl",
+      "text.xml.xsl",
+      "text.xml",
+      "source.asp.vb.net",
+      "source.swift",
+      "source.sql",
+      "source.shell",
+      "source.scala",
+      "source.rust",
+      "source.ruby",
+      "source.regexp.python",
+      "source.r",
+      "source.python",
+      "source.powershell",
+      "source.php",
+      "source.perl.6",
+      "source.perl",
+      "source.objc",
+      "source.makefile",
+      "source.lua",
+      "text.log",
+      "text.tex.latex",
+      "source.julia",
+      "source.java",
+      "source.ini",
+      "text.html.handlebars",
+      "source.groovy",
+      "source.go",
+      "text.git-rebase",
+      "text.git-commit",
+      "source.fsharp",
+      "source.erlang",
+      "source.elixir",
+      "source.batchfile",
+      "source.dockerfile",
+      "source.diff",
+      "source.dart",
+      "source.cs",
+      "source.cpp",
+      "source.clojure",
+      "source.c",
+      "text.bibtex",
+      "text.html.derivative",
+      "source.graphql",
+      "source.toml",
+      "source.yaml",
+      "source.json5",
+      "source.json.comments",
+      "source.json",
+      "source.coffee",
       "source.tsx",
       "source.js.jsx",
       "source.ts",
@@ -2300,60 +2974,142 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
       "source.vue"
     ]
   },
-  "source.vue": {
-    "id": "vue",
-    "path": "vue.tmLanguage.json",
+  "vue.interpolations": {
+    "id": "vue-interpolations",
+    "path": "vue-interpolations.json",
     "embeddedScopes": [
-      "source.gnuplot",
       "source.haskell",
+      "source.gnuplot",
       "text.tex",
       "source.glsl",
-      "text.bibtex",
-      "text.tex.latex",
-      "source.elixir",
-      "source.erlang",
-      "text.html.handlebars",
-      "source.dart",
-      "source.fsharp",
-      "source.cs",
+      "text.xml.xsl",
+      "text.xml",
+      "source.asp.vb.net",
+      "source.swift",
+      "source.sql",
       "source.shell",
       "source.scala",
       "source.rust",
-      "source.julia",
+      "source.ruby",
+      "source.regexp.python",
+      "source.r",
       "source.python",
       "source.powershell",
+      "source.php",
       "source.perl.6",
-      "source.swift",
+      "source.perl",
       "source.objc",
+      "source.makefile",
+      "source.lua",
+      "text.log",
+      "text.tex.latex",
+      "source.julia",
+      "source.java",
+      "source.ini",
+      "text.html.handlebars",
       "source.groovy",
       "source.go",
       "text.git-rebase",
       "text.git-commit",
+      "source.fsharp",
+      "source.erlang",
+      "source.elixir",
+      "source.batchfile",
       "source.dockerfile",
       "source.diff",
+      "source.dart",
+      "source.cs",
       "source.cpp",
-      "source.c",
-      "source.coffee",
       "source.clojure",
-      "source.batchfile",
-      "text.xml.xsl",
-      "text.xml",
-      "source.asp.vb.net",
-      "source.sql",
-      "source.php",
-      "source.ruby",
-      "source.r",
-      "source.perl",
-      "source.makefile",
-      "source.lua",
-      "source.java",
-      "source.ini",
+      "source.c",
+      "text.bibtex",
+      "text.html.derivative",
       "source.graphql",
       "source.toml",
       "source.yaml",
       "source.json5",
       "source.json.comments",
       "source.json",
+      "source.coffee",
+      "source.tsx",
+      "source.js.jsx",
+      "source.ts",
+      "source.js",
+      "source.css.less",
+      "source.css.scss",
+      "source.css",
+      "source.sass",
+      "source.stylus",
+      "text.pug",
+      "text.html.markdown",
+      "text.html.basic",
+      "source.vue"
+    ]
+  },
+  "vue.sfc.style.variable.injection": {
+    "id": "vue-sfc-style-variable-injection",
+    "path": "vue-sfc-style-variable-injection.json",
+    "embeddedScopes": [
+      "source.js"
+    ]
+  },
+  "source.vue": {
+    "id": "vue",
+    "path": "vue.json",
+    "embeddedScopes": [
+      "source.haskell",
+      "source.gnuplot",
+      "text.tex",
+      "source.glsl",
+      "text.xml.xsl",
+      "text.xml",
+      "source.asp.vb.net",
+      "source.swift",
+      "source.sql",
+      "source.shell",
+      "source.scala",
+      "source.rust",
+      "source.ruby",
+      "source.regexp.python",
+      "source.r",
+      "source.python",
+      "source.powershell",
+      "source.php",
+      "source.perl.6",
+      "source.perl",
+      "source.objc",
+      "source.makefile",
+      "source.lua",
+      "text.log",
+      "text.tex.latex",
+      "source.julia",
+      "source.java",
+      "source.ini",
+      "text.html.handlebars",
+      "source.groovy",
+      "source.go",
+      "text.git-rebase",
+      "text.git-commit",
+      "source.fsharp",
+      "source.erlang",
+      "source.elixir",
+      "source.batchfile",
+      "source.dockerfile",
+      "source.diff",
+      "source.dart",
+      "source.cs",
+      "source.cpp",
+      "source.clojure",
+      "source.c",
+      "text.bibtex",
+      "text.html.derivative",
+      "source.graphql",
+      "source.toml",
+      "source.yaml",
+      "source.json5",
+      "source.json.comments",
+      "source.json",
+      "source.coffee",
       "source.tsx",
       "source.js.jsx",
       "source.ts",
@@ -2370,39 +3126,106 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.vyper": {
     "id": "vyper",
-    "path": "vyper.tmLanguage.json",
+    "path": "vyper.json",
     "embeddedScopes": []
   },
   "source.wat": {
     "id": "wasm",
-    "path": "wasm.tmLanguage.json",
+    "path": "wasm.json",
     "embeddedScopes": []
   },
   "source.wenyan": {
     "id": "wenyan",
-    "path": "wenyan.tmLanguage.json",
+    "path": "wenyan.json",
     "embeddedScopes": []
   },
   "source.wgsl": {
     "id": "wgsl",
-    "path": "wgsl.tmLanguage.json",
+    "path": "wgsl.json",
     "embeddedScopes": []
+  },
+  "source.wikitext": {
+    "id": "wikitext",
+    "path": "wikitext.json",
+    "embeddedScopes": [
+      "source.stylus",
+      "source.sass",
+      "source.tsx",
+      "text.log",
+      "text.git-rebase",
+      "text.git-commit",
+      "text.html.derivative",
+      "source.haskell",
+      "source.gnuplot",
+      "text.tex",
+      "source.glsl",
+      "source.regexp.python",
+      "source.yaml",
+      "text.xml.xsl",
+      "text.xml",
+      "source.asp.vb.net",
+      "source.ts",
+      "source.swift",
+      "source.sql",
+      "source.shell",
+      "source.css.scss",
+      "source.scala",
+      "source.rust",
+      "source.ruby",
+      "source.r",
+      "source.python",
+      "text.pug",
+      "source.powershell",
+      "source.php",
+      "source.perl.6",
+      "source.perl",
+      "source.objc",
+      "text.html.markdown",
+      "source.makefile",
+      "source.lua",
+      "source.css.less",
+      "text.tex.latex",
+      "source.julia",
+      "source.json.comments",
+      "source.js",
+      "source.java",
+      "source.ini",
+      "text.html.handlebars",
+      "source.groovy",
+      "source.go",
+      "source.fsharp",
+      "source.erlang",
+      "source.elixir",
+      "source.dockerfile",
+      "source.diff",
+      "source.dart",
+      "source.css",
+      "source.cs",
+      "source.cpp",
+      "source.coffee",
+      "source.clojure",
+      "source.c",
+      "text.bibtex",
+      "source.batchfile",
+      "source.json",
+      "text.html.basic"
+    ]
   },
   "source.wolfram": {
     "id": "wolfram",
-    "path": "wolfram.tmLanguage.json",
+    "path": "wolfram.json",
     "embeddedScopes": []
   },
   "text.xml": {
     "id": "xml",
-    "path": "xml.tmLanguage.json",
+    "path": "xml.json",
     "embeddedScopes": [
       "source.java"
     ]
   },
   "text.xml.xsl": {
     "id": "xsl",
-    "path": "xsl.tmLanguage.json",
+    "path": "xsl.json",
     "embeddedScopes": [
       "source.java",
       "text.xml"
@@ -2410,12 +3233,17 @@ export const scopeToLanguageData: Record<ScopeName, LanguageData> = {
   },
   "source.yaml": {
     "id": "yaml",
-    "path": "yaml.tmLanguage.json",
+    "path": "yaml.json",
     "embeddedScopes": []
   },
   "source.zenscript": {
     "id": "zenscript",
-    "path": "zenscript.tmLanguage.json",
+    "path": "zenscript.json",
+    "embeddedScopes": []
+  },
+  "source.zig": {
+    "id": "zig",
+    "path": "zig.json",
     "embeddedScopes": []
   }
 };
