@@ -104,4 +104,4 @@ const terminalCode = `
 [0m│ ◠ [96m◡[0m ◠  Good luck out there, astronaut! 🚀
 ╰─────╯`.trim();
 
-export const runtime = "edge";
+// export const runtime = "edge";
