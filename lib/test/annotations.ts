@@ -74,7 +74,7 @@ const x = <div>
 
     const result = await extractAnnotations(code, "jsx", ["foo"]);
     expect(result).toMatchSnapshot();
-    const hResult = await highlight(result.code, "mdx", "dark-plus", {
+    const hResult = await highlight(result.code, "jsx", "dark-plus", {
       annotations: result.annotations,
     });
     expect(hResult).toMatchSnapshot();
