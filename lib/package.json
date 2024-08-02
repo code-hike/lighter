@@ -1,7 +1,7 @@
 {
   "name": "@code-hike/lighter",
   "type": "module",
-  "version": "0.9.4",
+  "version": "1.0.0-beta.0",
   "description": "Code Hike's syntax highlighter",
   "license": "MIT",
   "exports": {

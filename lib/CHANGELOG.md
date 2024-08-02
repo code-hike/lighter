@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 1.0.0-beta.0
+
+### Major Changes
+
+- Drop CJS and use dynamic imports for grammars
+
 ## 0.9.4
 
 ### Patch Changes
