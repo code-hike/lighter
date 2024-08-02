@@ -1,4 +1,4 @@
-import { readJSON } from "./file-system";
+import { readTheme } from "./file-system";
 import { fetchJSON } from "./network";
 import { getColor, getColorScheme } from "./theme-colors";
 
@@ -39,7 +39,7 @@ export function getTheme(theme: Theme): FinalTheme {
 
 async function reallyLoadThemeByName(name: StringTheme): Promise<RawTheme> {
   try {
-    return await readJSON("themes", name + ".json");
+    return await readTheme(name);
   } catch (e) {
     return await fetchJSON(`themes/${name}`);
   }

@@ -6,5 +6,9 @@ const LIGHTER_VERSION = "__LIGHTER_VERSION__";
 // /themes/${name}.json
 export async function fetchJSON(endpoint: string) {
   const r = await fetch(`https://lighter.codehike.org/${endpoint}.json`);
+  // console.log(`https://lighter.codehike.org/${endpoint}.json`, r.status);
+  if (!r.ok) {
+    return undefined;
+  }
   return await r.json();
 }

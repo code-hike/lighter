@@ -1,26 +1,25 @@
 {
   "name": "@code-hike/lighter",
+  "type": "module",
   "version": "0.9.4",
+  "description": "Code Hike's syntax highlighter",
   "license": "MIT",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.esm.mjs",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "worker": "./dist/worker.esm.mjs",
       "browser": "./dist/browser.esm.mjs",
-      "import": "./dist/index.esm.mjs",
-      "require": "./dist/index.cjs.js",
-      "default": "./dist/index.cjs.js"
+      "default": "./dist/index.esm.mjs"
     },
-    "./grammars/*": "./grammars/*",
-    "./themes/*": "./themes/*"
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json",
+    "./*": "./dist/*"
   },
+  "main": "./dist/index.esm.js",
+  "module": "./dist/index.esm.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist/",
-    "grammars/",
-    "themes/"
+    "dist"
   ],
   "devDependencies": {
     "@babel/core": "^7.19.0",
@@ -41,18 +40,19 @@
     "typescript": "^4.9.4",
     "vitest": "1.0.0-beta.1",
     "vscode-oniguruma": "1.7.0",
-    "vscode-textmate": "9.0.0"
+    "vscode-textmate": "9.0.0",
+    "tm-grammars": "1.16.2"
   },
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -c -w",
-    "test": "vitest",
+    "test": "vitest --test-timeout 10000",
     "typecheck": "vitest typecheck",
     "regenerate": "node ./utils/update.mjs"
   },
   "repository": "https://github.com/code-hike/lighter",
-  "homepage": "https://lighter.codehike.org",
-  "funding": "https://github.com/code-hike/lighter?sponsor=1",
+  "homepage": "https://codehike.org",
+  "funding": "https://github.com/sponsors/code-hike",
   "dependencies": {
     "ansi-sequence-parser": "1.1.1"
   }

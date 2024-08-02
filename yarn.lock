@@ -2867,6 +2867,11 @@ tinyspy@^2.2.0:
   resolved "https://registry.yarnpkg.com/tinyspy/-/tinyspy-2.2.0.tgz#9dc04b072746520b432f77ea2c2d17933de5d6ce"
   integrity sha512-d2eda04AN/cPOR89F7Xv5bK/jrQEhmcLFe6HFldoeO9AJtps+fqEnh486vnT/8y4bw38pSyxDcTCAq+Ks2aJTg==
 
+tm-grammars@1.16.2:
+  version "1.16.2"
+  resolved "https://registry.yarnpkg.com/tm-grammars/-/tm-grammars-1.16.2.tgz#a2311f5af90a2fa8293b9ce995d4b74114417956"
+  integrity sha512-XTxg7/sFP6pLrLaBap1tmzWQjozFUBpw2EC/uE3ElAEtxJtzVMUkPes+ixR5HC88wFdDyRxYilvIHRRCSDZ3nQ==
+
 tmp@^0.0.33:
   version "0.0.33"
   resolved "https://registry.yarnpkg.com/tmp/-/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"
