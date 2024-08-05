@@ -2,6 +2,7 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "module": "esnext",
-    "target": "es2017"
+    "target": "es2017",
+    "resolveJsonModule": true
   }
 }

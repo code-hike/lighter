@@ -1,5 +1,5 @@
 import type { IRawGrammar } from "vscode-textmate";
-import { readJSON } from "./file-system";
+import { readGrammar } from "./file-system";
 import { scopeToLangData } from "./language";
 import { fetchJSON } from "./network";
 
@@ -24,7 +24,7 @@ export async function loadGrammarByScope(
   let grammarPromise: undefined | Promise<IRawGrammar> = undefined;
 
   if (shouldUseFileSystemPromise === undefined) {
-    grammarPromise = loadGrammarFromFile(lang.path);
+    grammarPromise = readGrammar(lang.id);
     shouldUseFileSystemPromise = grammarPromise
       .then(() => true)
       .catch(() => false);
@@ -35,7 +35,7 @@ export async function loadGrammarByScope(
   }
 
   if (shouldUseFileSystem) {
-    const promise = grammarPromise || loadGrammarFromFile(lang.path);
+    const promise = grammarPromise || readGrammar(lang.id);
     sourceToGrammarPromise.set(scope, promise);
     return promise;
   }
@@ -48,20 +48,17 @@ export async function loadGrammarByScope(
   const subScopes = lang.embeddedScopes;
   subScopes.forEach((subScope) => {
     if (!sourceToGrammarPromise.has(subScope)) {
-      const subPromise = fetchPromise.then(
-        (gs) => gs.find((g) => g.scopeName === subScope)!
+      const subPromise = fetchPromise.then((gs) =>
+        gs?.find((g) => g.scopeName === subScope)
       );
+
       sourceToGrammarPromise.set(subScope, subPromise);
     }
   });
 
-  const promise = fetchPromise.then(
-    (gs: IRawGrammar[]) => gs.find((g) => g.scopeName === scope)!
+  const promise = fetchPromise.then((gs: IRawGrammar[]) =>
+    gs?.find((g) => g.scopeName === scope)
   );
   sourceToGrammarPromise.set(scope, promise);
   return promise;
-}
-
-export async function loadGrammarFromFile(path: string) {
-  return (await readJSON("grammars", path)) as IRawGrammar;
 }

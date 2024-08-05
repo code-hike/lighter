@@ -1,5 +1,21 @@
 # @code-hike/lighter
 
+## 1.0.0
+
+### Major Changes
+
+- b6ec951: Drop CJS and use dynamic imports for grammars
+
+### Patch Changes
+
+- Add warning message when using network
+
+## 1.0.0-beta.0
+
+### Major Changes
+
+- Drop CJS and use dynamic imports for grammars
+
 ## 0.9.4
 
 ### Patch Changes

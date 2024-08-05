@@ -837,13 +837,25 @@ exports[`extract annottations from jsx 1`] = `
 
 exports[`extract annottations from jsx 2`] = `
 {
-  "lang": "mdx",
+  "lang": "jsx",
   "lines": [
     {
       "lineNumber": 1,
       "tokens": [
         {
-          "content": "const x = ",
+          "content": "const ",
+          "style": {
+            "color": "#569CD6",
+          },
+        },
+        {
+          "content": "x",
+          "style": {
+            "color": "#4FC1FF",
+          },
+        },
+        {
+          "content": " = ",
           "style": {
             "color": "#D4D4D4",
           },

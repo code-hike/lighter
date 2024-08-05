@@ -5,6 +5,9 @@ const LIGHTER_VERSION = "__LIGHTER_VERSION__";
 // /grammars/${name}.json
 // /themes/${name}.json
 export async function fetchJSON(endpoint: string) {
+  console.warn(
+    `Code Hike warning: Fetching resource from network "${endpoint}"`
+  );
   if (typeof fetch === "function") {
     // console.log(`using fetch`, `https://lighter.codehike.org/${endpoint}.json`);
     const r = await fetch(`https://lighter.codehike.org/${endpoint}.json`);
