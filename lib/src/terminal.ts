@@ -1,7 +1,7 @@
 import { FinalTheme } from "./theme";
 import { Token } from "./annotations";
 import { Color, createAnsiSequenceParser } from "ansi-sequence-parser";
-import { getColor } from "./theme-colors";
+import { getColor, getColorScheme } from "./theme-colors";
 
 export function highlightTerminal(code: string, theme: FinalTheme): Token[][] {
   const parser = createAnsiSequenceParser();
@@ -76,5 +76,6 @@ export function getTerminalStyle(theme: FinalTheme) {
   return {
     color: getColor(theme, "terminal.foreground"),
     background: getColor(theme, "terminal.background"),
+    colorScheme: getColorScheme(theme),
   };
 }

@@ -197,6 +197,7 @@ exports[`extract annotation with inline global regex 2`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -385,6 +386,7 @@ exports[`extract annotation with inline regex 2`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -701,6 +703,7 @@ exports[`extract annotation with multiline inline regex 2`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -810,6 +813,7 @@ exports[`extract annottations 2`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -932,6 +936,7 @@ exports[`extract annottations from jsx 2`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -1021,6 +1026,7 @@ exports[`extract annottations from mdx 2`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -1069,6 +1075,7 @@ exports[`extract annottations from text 2`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -1143,6 +1150,7 @@ exports[`extract annottations from txt 2`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -1277,6 +1285,7 @@ exports[`extract annottations with prefix 2`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -1427,6 +1436,7 @@ exports[`extract empty annotation with inline regex 2`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -1511,6 +1521,7 @@ exports[`extract empty line annotation with regex 2`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -1704,6 +1715,7 @@ exports[`extract line annotation with global regex 2`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -1843,6 +1855,7 @@ exports[`extract line annotation with regex 2`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -1917,6 +1930,7 @@ exports[`highlight html with theme 1`] = `
   "style": {
     "background": "#0d1117",
     "color": "#c9d1d9",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -1949,6 +1963,7 @@ exports[`highlight js 1`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -1967,6 +1982,7 @@ exports[`highlight terminal 1`] = `
   "style": {
     "background": "#0d1117",
     "color": "#c9d1d9",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -2027,6 +2043,7 @@ exports[`highlight terminal ansi codes 1`] = `
   "style": {
     "background": "#0d1117",
     "color": "#c9d1d9",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -2045,6 +2062,7 @@ exports[`highlight text 1`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -2065,6 +2083,7 @@ exports[`highlight with empty theme 1`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#bbbbbb",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -2085,6 +2104,7 @@ exports[`highlight with frozen theme 1`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#bbbbbb",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -2105,6 +2125,7 @@ exports[`highlight with frozen theme with global setting 1`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#bbbbbb",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -2167,6 +2188,7 @@ exports[`highlight with scopes 1`] = `
   "style": {
     "background": "#0d1117",
     "color": "#c9d1d9",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -2187,6 +2209,7 @@ exports[`null code 1`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;
@@ -2205,6 +2228,7 @@ exports[`null lang 1`] = `
   "style": {
     "background": "#1E1E1E",
     "color": "#D4D4D4",
+    "colorScheme": "dark",
   },
 }
 `;

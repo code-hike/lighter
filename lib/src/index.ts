@@ -32,6 +32,7 @@ import {
   Token,
 } from "./annotations";
 import { getTerminalStyle, highlightTerminal } from "./terminal";
+import { getColorScheme } from "./theme-colors";
 
 type Config = { scopes?: boolean };
 type AnnotatedConfig = { annotations: Annotation[] } & Config;
@@ -41,6 +42,7 @@ type LighterResult = {
   style: {
     color: string;
     background: string;
+    colorScheme: string;
   };
 };
 type AnnotatedLighterResult = {
@@ -49,6 +51,7 @@ type AnnotatedLighterResult = {
   style: {
     color: string;
     background: string;
+    colorScheme: string;
   };
 };
 
@@ -157,6 +160,7 @@ export function highlightSync(
       : {
           color: theme.foreground,
           background: theme.background,
+          colorScheme: getColorScheme(theme),
         };
 
   if (isAnnotatedConfig(config)) {

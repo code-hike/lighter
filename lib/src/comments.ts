@@ -130,6 +130,7 @@ const prefixes = {
   bat: "REM",
   shaderlab: "//",
   sas: "*",
+  clarity: ";;",
 };
 
 function getAnnotationsFromLine(

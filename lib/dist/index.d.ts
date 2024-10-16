@@ -103,6 +103,7 @@ type LighterResult = {
     style: {
         color: string;
         background: string;
+        colorScheme: string;
     };
 };
 type AnnotatedLighterResult = {
@@ -111,6 +112,7 @@ type AnnotatedLighterResult = {
     style: {
         color: string;
         background: string;
+        colorScheme: string;
     };
 };
 

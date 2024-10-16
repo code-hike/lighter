@@ -120,6 +120,7 @@ let codes = [
   ["// foo", "shader"],
   ["// foo", "shaderlab"],
   ["* foo", "sas"],
+  [";; foo", "clarity"],
 
   // fail
   // ["// foo", "apl"],

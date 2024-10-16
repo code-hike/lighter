@@ -9,7 +9,7 @@ const x = 20
 `.trim();
 // const code = `// foo `;
 const alias = "js";
-const theme = "dracula";
+const theme = "github-from-css";
 
 async function run() {
   const result = await highlight(code, alias, theme, { scopes: true });
@@ -23,6 +23,8 @@ async function run() {
       s: t.scopes?.join(" ").slice(0, 24),
     }))
   );
+
+  console.log(result.style);
 }
 
 import { Console } from "console";
