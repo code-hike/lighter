@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 1.0.1
+
+### Patch Changes
+
+- b285910: Add `colorScheme` to style
+
 ## 1.0.0
 
 ### Major Changes
