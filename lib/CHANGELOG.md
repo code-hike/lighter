@@ -1,5 +1,11 @@
 # @code-hike/lighter
 
+## 1.0.2
+
+### Patch Changes
+
+- dc4ce57: Update grammars
+
 ## 1.0.1
 
 ### Patch Changes
