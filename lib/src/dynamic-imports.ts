@@ -44,10 +44,14 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/bicep.json");
     case "blade":
       return import("tm-grammars/grammars/blade.json");
+    case "bsl":
+      return import("tm-grammars/grammars/bsl.json");
     case "c":
       return import("tm-grammars/grammars/c.json");
     case "cadence":
       return import("tm-grammars/grammars/cadence.json");
+    case "cairo":
+      return import("tm-grammars/grammars/cairo.json");
     case "clarity":
       return import("tm-grammars/grammars/clarity.json");
     case "clojure":
@@ -64,6 +68,8 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/coffee.json");
     case "common-lisp":
       return import("tm-grammars/grammars/common-lisp.json");
+    case "coq":
+      return import("tm-grammars/grammars/coq.json");
     case "cpp":
       return import("tm-grammars/grammars/cpp.json");
     case "crystal":
@@ -236,6 +242,8 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/mdx.json");
     case "mermaid":
       return import("tm-grammars/grammars/mermaid.json");
+    case "mipsasm":
+      return import("tm-grammars/grammars/mipsasm.json");
     case "mojo":
       return import("tm-grammars/grammars/mojo.json");
     case "move":
@@ -326,6 +334,8 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/scheme.json");
     case "scss":
       return import("tm-grammars/grammars/scss.json");
+    case "sdbl":
+      return import("tm-grammars/grammars/sdbl.json");
     case "shaderlab":
       return import("tm-grammars/grammars/shaderlab.json");
     case "shellscript":
@@ -358,6 +368,8 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/system-verilog.json");
     case "systemd":
       return import("tm-grammars/grammars/systemd.json");
+    case "talonscript":
+      return import("tm-grammars/grammars/talonscript.json");
     case "tasl":
       return import("tm-grammars/grammars/tasl.json");
     case "tcl":
