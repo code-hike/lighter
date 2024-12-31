@@ -276,6 +276,8 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/plsql.json");
     case "po":
       return import("tm-grammars/grammars/po.json");
+    case "polar":
+      return import("tm-grammars/grammars/polar.json");
     case "postcss":
       return import("tm-grammars/grammars/postcss.json");
     case "powerquery":

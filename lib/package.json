@@ -54,6 +54,6 @@
   "funding": "https://github.com/sponsors/code-hike",
   "dependencies": {
     "ansi-sequence-parser": "1.1.1",
-    "tm-grammars": "^1.21.10"
+    "tm-grammars": "^1.22.0"
   }
 }
