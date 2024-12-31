@@ -2867,10 +2867,10 @@ tinyspy@^2.2.0:
   resolved "https://registry.yarnpkg.com/tinyspy/-/tinyspy-2.2.0.tgz#9dc04b072746520b432f77ea2c2d17933de5d6ce"
   integrity sha512-d2eda04AN/cPOR89F7Xv5bK/jrQEhmcLFe6HFldoeO9AJtps+fqEnh486vnT/8y4bw38pSyxDcTCAq+Ks2aJTg==
 
-tm-grammars@^1.21.10:
-  version "1.21.10"
-  resolved "https://registry.yarnpkg.com/tm-grammars/-/tm-grammars-1.21.10.tgz#978b2fa8ceea6bda6df39bf888af0e216cd0e909"
-  integrity sha512-0TSAeQ90vvh0xRGdLw/HZG3K4M9gE1rwhGDB29QtoA5h2eRRD8tlGwukBJKx/y23l9EDbMP3+2QFeJqMsVOgBQ==
+tm-grammars@^1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/tm-grammars/-/tm-grammars-1.22.0.tgz#5bba813016cad974183854a936775671f7dc3f2d"
+  integrity sha512-sjtT/JxrBHyHfkuLu/Fyp2FNZSVZCbroyZfRKzFQ76d3678AMKiXbUlTKdvv7uyW7ssrNP7WB+9/7iBal6P/XA==
 
 tmp@^0.0.33:
   version "0.0.33"
